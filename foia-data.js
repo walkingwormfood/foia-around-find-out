@@ -11,7 +11,7 @@ const FOIA = {
     tagline: "Independent investigators found these things in public records. A FOIA request makes the government hand over the official paperwork that would prove it. Pick a finding — we'll draft the request.",
     statute: "Freedom of Information Act, 5 U.S.C. § 552",
     portal: "https://www.foia.gov",
-    submit_note: "Email is the fast path — it opens a message already addressed and written, so you just review and hit send. You can also file at the federal portal, FOIA.gov, but heads-up: it's a maze of forms, fields, and click-throughs, and the link just drops you on its landing page with no sense of the process. Use email wherever it's offered below.",
+    submit_note: "Two ways to file. Email is fastest — it opens a message already addressed and written, so you just review and send — but a growing number of agencies have stopped accepting FOIA by email (DHS ended it in January 2026) and now require their own portal. So email is offered below only where it still works (look for the ✉ on a request); everything else copies the letter and opens that agency's portal (↗). The federal portal at FOIA.gov also works, but it's a maze of forms and click-throughs that just drops you on a landing page with no sense of the process.",
     narrowing_note: "Each request is deliberately narrow — specific agency, specific document types, named subjects, and a date range. Broad requests (\"all records about X\") are routinely denied as overbroad; narrow ones get answered. Edit before sending if you want to tighten further.",
     do_not: "This tool only drafts a letter — it submits nothing and collects nothing you type. Don't fire identical mass copies at one office; agencies deprioritize duplicates. Pick the angle that fits you."
   },

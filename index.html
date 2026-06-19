@@ -142,8 +142,13 @@
     const sources = (inv.sources||[]).map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)).join(" · ");
     const reqs = inv.requests.map((r,i) => {
       const a = agencyById(r.agencyId);
-      return `<div class="req"><div class="desc">${esc(r.summary)}<span class="agency">${esc(a?a.name:r.agencyId)}</span></div>`+
-             `<button class="btn gen" data-inv="${esc(inv.id)}" data-req="${i}">Generate this request</button></div>`;
+      const email = !!(a && a.email);
+      const icon = email ? "✉" : "↗";
+      const tag = email ? "email" : "portal";
+      const title = email ? ("Opens a pre-addressed email to " + a.name)
+                          : ("Copies the letter and opens " + (a?a.name:"the agency") + "'s FOIA portal");
+      return `<div class="req"><div class="desc">${esc(r.summary)}<span class="agency">${esc(a?a.name:r.agencyId)} · ${tag}</span></div>`+
+             `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate this request</button></div>`;
     }).join("");
     card.innerHTML =
       `<div class="by">Reported by <span class="who">${esc(inv.investigator)}</span> · ${links}`+
