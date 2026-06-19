@@ -666,6 +666,36 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "us-israel-military-merger",
+      categories: ["Israel / foreign influence"],
+      investigator: "Tommy G (on Julian Dorey's podcast)",
+      investigatorLinks: [
+        { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
+      ],
+      status: "reported",
+      finding: "Tommy G reports that proposed legislation (he cites Sections 224 and 226), co-led by Rep. Adam Smith (D) and Rep. Mike Rogers (R), would deeply integrate U.S. and Israeli military and defense-industrial operations — allowing Israeli firms to operate here, adding broad data-sharing, and reducing the requirement to notify Congress and the public about aid to Israel. Netanyahu reportedly claimed credit for the framework.",
+      implication: "The bill itself sits in Congress (FOIA-exempt), but the executive-branch side is requestable: any U.S.-Israel defense-integration framework, the arms/financing records, and any provision reducing aid-notification transparency. (Proposed legislation may change; \"merger\" is Tommy G's framing; U.S.-Israel defense cooperation is longstanding and bipartisan.)",
+      sources: [
+        { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD / DSCA — the U.S.-Israel defense-integration framework + arms/financing records",
+          subject: "FOIA Request: U.S.-Israel defense-industrial integration framework and security-assistance records",
+          records: "I request a copy of any interagency agreement, memorandum of understanding, framework document, or implementation plan held by the Office of the Secretary of Defense or the Defense Security Cooperation Agency concerning the integration of U.S. and Israeli military or defense-industrial operations — including any provision permitting Israeli defense firms to operate in the United States, and any change to the notification requirements for security assistance to Israel — dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "state",
+          summary: "State / PM — Israeli defense-firm U.S. operations + aid-notification changes",
+          subject: "FOIA Request: State Department records on U.S.-Israel defense integration and aid-notification provisions",
+          records: "I request a copy of any agreement, policy memorandum, or framework document held by the Bureau of Political-Military Affairs concerning the establishment or operation of Israeli defense or weapons-manufacturing firms in the United States, and any record concerning changes to congressional or public notification requirements for security assistance to Israel, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
