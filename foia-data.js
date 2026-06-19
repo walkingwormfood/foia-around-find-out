@@ -85,7 +85,7 @@ const FOIA = {
           agencyId: "state",
           summary: "State Dept — its agreements & communications with NDS about passports.gov",
           subject: "FOIA Request: Department of State records concerning the National Design Studio and passports.gov",
-          records: "I request the following records: all interagency agreements, memoranda of understanding (MOUs), and email communications between the U.S. Department of State and the National Design Studio — or any office within the Executive Office of the President — concerning the domain passports.gov or any subdomain of passports.gov, created or sent between January 1, 2025 and the date this request is processed.",
+          records: "I request a copy of the specific instrument(s) that authorized the Executive Office of the President or the National Design Studio — rather than the Department of State — to register or operate the passports.gov domain: namely, any interagency agreement, memorandum of understanding, memorandum of agreement, or delegation of authority between the Department of State and the National Design Studio (or the Executive Office of the President) concerning passports.gov, executed or in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         },
         {
@@ -115,13 +115,13 @@ const FOIA = {
           agencyId: "gsa",
           summary: "GSA — Greg Hogan's detail from NDS to login.gov",
           subject: "FOIA Request: detail of Greg Hogan from the National Design Studio to login.gov",
-          records: "I request the following records: all detail agreements, memoranda of understanding, appointment or onboarding records, and reimbursable-detail paperwork concerning the assignment of Greg Hogan from the National Design Studio to login.gov or the Technology Transformation Service, dated between January 1, 2026 and the date this request is processed."
+          records: "I request a copy of the detail agreement, the appointment or assignment memorandum, and any reimbursable-detail (e.g., IPA) paperwork documenting the detail of Greg Hogan from the National Design Studio to login.gov or the Technology Transformation Service, limited to records dated between January 1, 2026 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence."
         },
         {
           agencyId: "gsa",
           summary: "GSA — plans to extend login.gov to passports & driver's licenses",
           subject: "FOIA Request: login.gov expansion to passport and driver's-license verification",
-          records: "I request the following records: all planning documents, requirement specifications, and internal communications concerning the expansion of login.gov identity verification to cover U.S. passports or state driver's licenses, created between January 1, 2026 and the date this request is processed."
+          records: "I request a copy of any project charter, statement of work, requirements document, or interagency agreement concerning the expansion of login.gov identity verification to cover U.S. passports or state driver's licenses, dated between January 1, 2026 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence."
         }
       ]
     },
@@ -144,7 +144,7 @@ const FOIA = {
           agencyId: "eac",
           summary: "EAC — its dealings with NDS over vote.gov",
           subject: "FOIA Request: Election Assistance Commission records concerning the National Design Studio and vote.gov",
-          records: "I request the following records: all communications, interagency agreements, and project or design documents between the U.S. Election Assistance Commission and the National Design Studio — or any office within the Executive Office of the President — concerning vote.gov or any preview, replacement, or redesign of vote.gov, created between January 1, 2026 and the date this request is processed.",
+          records: "I request a copy of any interagency agreement, memorandum of understanding, statement of work, or task order between the U.S. Election Assistance Commission and the National Design Studio (or the Executive Office of the President) concerning vote.gov — or any preview, replacement, or redesign of vote.gov — dated between January 1, 2026 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
@@ -190,7 +190,7 @@ const FOIA = {
           agencyId: "omb",
           summary: "OMB — contracts & privacy reviews for PostHog on federal sites",
           subject: "FOIA Request: federal use of PostHog analytics software",
-          records: "I request the following records: all contracts, task orders, procurement records, data-processing agreements, and privacy reviews concerning the use of PostHog analytics software (including any session-recording features) on federal .gov websites, dated between January 1, 2025 and the date this request is processed.",
+          records: "I request a copy of any contract, task order, or data-processing agreement covering the use of PostHog analytics software on the federal websites realfood.gov or techforce.gov, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
