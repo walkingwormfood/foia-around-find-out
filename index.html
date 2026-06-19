@@ -50,6 +50,13 @@
   .btn.email{background:var(--ok);color:var(--bg);border-color:var(--ok);font-weight:600}
   .btn.link{background:transparent;border-color:#2f5043;color:var(--ok)}
   .btn.gen{flex:0 0 auto}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 2px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;border:1px solid var(--line);border-radius:20px;padding:5px 12px;cursor:pointer;background:var(--panel);color:var(--ink2)}
+  .chip:hover{border-color:#39414e}
+  .chip.active{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+  .cats{margin:8px 0 2px}
+  .cat{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:6px}
+  .card.hide{display:none}
 
   #gen{display:none;background:var(--panel2);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;scroll-margin-top:14px}
   #gen.open{display:block}
@@ -89,6 +96,7 @@
   <div class="note" id="narrowing"></div>
 
   <h2 class="section">Pick a finding</h2>
+  <div class="filters" id="filters"></div>
   <div id="findings"></div>
 
   <div id="gen">
@@ -138,6 +146,7 @@
   FOIA.investigations.forEach(inv => {
     const card = document.createElement("div");
     card.className = "card";
+    card.dataset.cats = (inv.categories||[]).join("|");
     const links = (inv.investigatorLinks||[]).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join(" · ");
     const sources = (inv.sources||[]).map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)).join(" · ");
     const reqs = inv.requests.map((r,i) => {
@@ -155,10 +164,32 @@
       `<span class="badge ${esc(inv.status)}">${esc(inv.status)}</span></div>`+
       `<div class="finding">${esc(inv.finding)}</div>`+
       `<div class="implication">${esc(inv.implication)}</div>`+
+      ((inv.categories||[]).length ? `<div class="cats">${inv.categories.map(c=>`<span class="cat">${esc(c)}</span>`).join("")}</div>` : "")+
       (sources ? `<div class="meta-row"><span class="lbl">Sources</span>${sources}</div>` : "")+
       `<div class="pry"><span class="lbl">What you can pry loose</span>${reqs}</div>`;
     wrap.appendChild(card);
   });
+
+  // category filter chips
+  const allCats = [...new Set(FOIA.investigations.flatMap(i => i.categories || []))];
+  let activeCat = "All";
+  function renderChips(){
+    const box = $("filters"); box.innerHTML = "";
+    ["All", ...allCats].forEach(c => {
+      const chip = document.createElement("button");
+      chip.className = "chip" + (c === activeCat ? " active" : "");
+      chip.textContent = c;
+      chip.addEventListener("click", () => { activeCat = c; applyFilter(); renderChips(); });
+      box.appendChild(chip);
+    });
+  }
+  function applyFilter(){
+    document.querySelectorAll("#findings .card").forEach(card => {
+      const cats = (card.dataset.cats || "").split("|");
+      card.classList.toggle("hide", activeCat !== "All" && !cats.includes(activeCat));
+    });
+  }
+  renderChips();
 
   FOIA.agencies.forEach(a => { const o=document.createElement("option"); o.value=a.id; o.textContent=a.name; $("advAgency").appendChild(o); });
 

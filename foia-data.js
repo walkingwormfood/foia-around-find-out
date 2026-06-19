@@ -1,9 +1,9 @@
-/* FOIA Around and Find Out — data
+/* FOIA Around, Find Out — data
  * Pure data, no dependencies. Drives index.html.
- * Model: investigations[] (a credited finding + the narrow FOIA requests it motivates).
- * Every request is NARROW BY DEFAULT — named entities, specific document types, date ranges —
- * because broad "all records about X" requests get soft-denied as overbroad.
- * The human reviews and submits via FOIA.gov. Placeholders: {{NAME}} {{EMAIL}} {{ADDRESS}} {{DATE}}
+ * Model: investigations[] (a credited finding + the narrow FOIA requests it motivates), tagged by category/thread.
+ * NARROW BY DEFAULT — ask for specific named instruments (agreements/MOUs/SOWs/detail orders/records schedules/PIAs),
+ * NOT "all documents/communications", and disclaim the email search. Broad requests get soft-denied as overbroad.
+ * The human reviews and submits via email or the agency portal. Placeholders: {{NAME}} {{EMAIL}} {{ADDRESS}} {{DATE}}
  */
 const FOIA = {
   meta: {
@@ -12,11 +12,10 @@ const FOIA = {
     statute: "Freedom of Information Act, 5 U.S.C. § 552",
     portal: "https://www.foia.gov",
     submit_note: "Two ways to file. Email is fastest — it opens a message already addressed and written, so you just review and send — but a growing number of agencies have stopped accepting FOIA by email (DHS ended it in January 2026) and now require their own portal. So email is offered below only where it still works (look for the ✉ on a request); everything else copies the letter and opens that agency's portal (↗). The federal portal at FOIA.gov also works, but it's a maze of forms and click-throughs that just drops you on a landing page with no sense of the process.",
-    narrowing_note: "Each request is deliberately narrow — specific agency, specific document types, named subjects, and a date range. Broad requests (\"all records about X\") are routinely denied as overbroad; narrow ones get answered. Edit before sending if you want to tighten further.",
+    narrowing_note: "Each request is deliberately narrow — a specific named instrument (an agreement, MOU, detail order, records schedule, disclosure), specific subjects, and a date range, with the burdensome email search disclaimed. Broad requests (\"all records about X\") are routinely denied as overbroad; narrow ones get answered. Edit before sending if you want to tighten further.",
     do_not: "This tool only drafts a letter — it submits nothing and collects nothing you type. Don't fire identical mass copies at one office; agencies deprioritize duplicates. Pick the angle that fits you."
   },
 
-  /* Reusable paragraphs appended to every generated request. */
   boilerplate: {
     burden_carveout:
       "To minimize processing burden, I am not requesting classified information, sensitive security or " +
@@ -45,7 +44,7 @@ const FOIA = {
       "if that would speed processing.\n\nSincerely,\n{{NAME}}\n{{EMAIL}}"
   },
 
-  /* Agencies referenced by investigations. Submit through FOIA.gov (pick the agency there). */
+  /* Agencies referenced by investigations. email: null => portal-only (deep-link + copy). */
   agencies: [
     { id: "state", name: "U.S. Department of State", email: null,
       portal: "https://foia.state.gov/Request/FOIA.aspx",
@@ -61,17 +60,23 @@ const FOIA = {
       submitNote: "EAC accepts email/mail/fax but publishes no general FOIA mailbox — use its FOIA page for the current contact." },
     { id: "omb", name: "Office of Management and Budget", email: "OMBFOIA@omb.eop.gov",
       portal: "https://www.foia.gov",
-      submitNote: "OMB accepts FOIA by email." }
+      submitNote: "OMB accepts FOIA by email." },
+    { id: "usadf", name: "U.S. African Development Foundation", email: "info@usadf.gov",
+      portal: "https://www.usadf.gov/contact-us",
+      submitNote: "USADF accepts FOIA by email — mark the subject line \"Freedom of Information Act Request\"." },
+    { id: "oge", name: "U.S. Office of Government Ethics", email: "usoge@oge.gov",
+      portal: "https://www.oge.gov",
+      submitNote: "OGE accepts FOIA by email." }
   ],
 
-  /* Each investigation: a credited finding + the narrow requests that would surface the records behind it. */
   investigations: [
     {
       id: "passports-eop",
+      categories: ["NDS takeover"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
-        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
-        { label: "Substack", url: "https://thedreydossier.substack.com" }
+        { label: "\"Trump Built A New Passport.gov Website\"", url: "https://thedreydossier.substack.com/p/trump-built-a-new-passport-website" },
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" }
       ],
       status: "confirmed",
       finding: "passports.gov is registered to the Executive Office of the President — not the State Department that issues passports.",
@@ -83,10 +88,9 @@ const FOIA = {
       requests: [
         {
           agencyId: "state",
-          summary: "State Dept — its agreements & communications with NDS about passports.gov",
-          subject: "FOIA Request: Department of State records concerning the National Design Studio and passports.gov",
-          records: "I request a copy of the specific instrument(s) that authorized the Executive Office of the President or the National Design Studio — rather than the Department of State — to register or operate the passports.gov domain: namely, any interagency agreement, memorandum of understanding, memorandum of agreement, or delegation of authority between the Department of State and the National Design Studio (or the Executive Office of the President) concerning passports.gov, executed or in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          ask_no_records: true
+          summary: "State Dept — the instrument authorizing EOP/NDS to operate passports.gov",
+          subject: "FOIA Request: Department of State authorization for passports.gov under the EOP/National Design Studio",
+          records: "I request a copy of the specific instrument(s) that authorized the Executive Office of the President or the National Design Studio — rather than the Department of State — to register or operate the passports.gov domain: namely, any interagency agreement, memorandum of understanding, memorandum of agreement, or delegation of authority between the Department of State and the National Design Studio (or the Executive Office of the President) concerning passports.gov, executed or in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence."
         },
         {
           agencyId: "nara",
@@ -99,6 +103,7 @@ const FOIA = {
     },
     {
       id: "hogan-login-gov",
+      categories: ["NDS takeover"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -127,10 +132,11 @@ const FOIA = {
     },
     {
       id: "vote-gov-preview",
+      categories: ["NDS takeover"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
-        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
-        { label: "Substack", url: "https://thedreydossier.substack.com" }
+        { label: "\"I found a second vote.gov\"", url: "https://thedreydossier.substack.com/p/i-found-a-second-votegov-and-its" },
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" }
       ],
       status: "confirmed",
       finding: "NDS built a preview replacement of the Election Assistance Commission's vote.gov — even as DOJ reportedly told a court that the voter-registration infrastructure \"does not exist.\"",
@@ -151,6 +157,7 @@ const FOIA = {
     },
     {
       id: "no-pias-sorns",
+      categories: ["Surveillance & privacy", "NDS takeover"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -174,16 +181,18 @@ const FOIA = {
     },
     {
       id: "posthog-federal",
+      categories: ["Surveillance & privacy"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
         { label: "Substack", url: "https://thedreydossier.substack.com" }
       ],
       status: "confirmed",
-      finding: "The PostHog analytics SDK — and, on realfood.gov, its session recorder — appears in the code of multiple federal .gov sites (realfood.gov, techforce.gov, trumpaccounts.gov).",
+      finding: "The PostHog analytics SDK — and, on realfood.gov, its session recorder — appears in the code of multiple federal .gov sites (realfood.gov, techforce.gov, trumpaccounts.gov); PostHog's own customers page listed \"Design studio of the US Government.\"",
       implication: "Third-party behavioral analytics, including session recording, embedded in federal websites. (Note: trumpaccounts.gov is Treasury's, so the common thread is the vendor, not a single owner.)",
       sources: [
-        { label: "JavaScript bundle inspection", url: "" }
+        { label: "JavaScript bundle inspection", url: "" },
+        { label: "PostHog customers page", url: "https://posthog.com/customers" }
       ],
       requests: [
         {
@@ -191,6 +200,79 @@ const FOIA = {
           summary: "OMB — contracts & privacy reviews for PostHog on federal sites",
           subject: "FOIA Request: federal use of PostHog analytics software",
           records: "I request a copy of any contract, task order, or data-processing agreement covering the use of PostHog analytics software on the federal websites realfood.gov or techforce.gov, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "akash-usadf",
+      categories: ["NDS takeover"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Substack", url: "https://thedreydossier.substack.com" }
+      ],
+      status: "confirmed",
+      finding: "An @ndstudio.gov address (akash@ndstudio.gov) is the CISA-registered security contact for an independent agency's domain, usadf.gov.",
+      implication: "A National Design Studio staffer listed as the security contact for the U.S. African Development Foundation's own domain — with no public authorization on record.",
+      sources: [
+        { label: "CISA dotgov-data", url: "https://github.com/cisagov/dotgov-data" }
+      ],
+      requests: [
+        {
+          agencyId: "usadf",
+          summary: "USADF — the authorization for an @ndstudio.gov security contact",
+          subject: "FOIA Request: authorization for a National Design Studio security contact on usadf.gov",
+          records: "I request a copy of any interagency agreement, memorandum of understanding, or written authorization permitting the National Design Studio, or any @ndstudio.gov email holder (including akash@ndstudio.gov), to serve as the registered security or administrative contact for the usadf.gov domain, in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "gebbia-coi",
+      categories: ["Conflict of interest"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Substack", url: "https://thedreydossier.substack.com" }
+      ],
+      status: "confirmed",
+      finding: "Joe Gebbia leads the National Design Studio (effective Aug 21, 2025) while reportedly retaining an active Tesla board seat — with no public ethics disclosure linked.",
+      implication: "A presidential-appointee design chief with an unresolved private-sector tie and no visible Form 278e disclosure or ethics waiver.",
+      sources: [
+        { label: "Executive Order 14338", url: "" },
+        { label: "FedScoop / Wikipedia (URLs pending)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "oge",
+          summary: "OGE — Gebbia's financial disclosure + any ethics waiver",
+          subject: "FOIA Request: OGE Form 278e and ethics waiver for Joe Gebbia",
+          records: "I request a copy of the OGE Form 278e public financial disclosure report filed by Joe Gebbia in connection with his federal appointment, and any ethics waiver, recusal agreement, or authorization to hold outside positions issued to him, dated between August 1, 2025 and the date this request is processed.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "automonitor",
+      categories: ["Surveillance & privacy"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Substack", url: "https://thedreydossier.substack.com" }
+      ],
+      status: "confirmed",
+      finding: "The National Design Studio serves a ~540-line behavioral-tracking script (\"AutoMonitor\") from its own infrastructure (cdn.infra.ndstudio.gov), posting data to a separate pipeline (analytics.infra.ndstudio.gov), loaded on federal sites.",
+      implication: "A proprietary behavioral-tracking pipeline run by a White House design office across federal websites — purpose inferred from the code; data retention and downstream use are undocumented.",
+      sources: [
+        { label: "Live script fetch + reverse-engineering (The Drey Dossier)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "omb",
+          summary: "OMB — privacy review/authorization for NDS tracking scripts on federal sites",
+          subject: "FOIA Request: authorization and privacy review for National Design Studio tracking scripts on federal websites",
+          records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization permitting the National Design Studio to load behavioral-tracking or analytics scripts served from ndstudio.gov infrastructure (including cdn.infra.ndstudio.gov) onto federal agency websites, dated between August 1, 2025 and the date this request is processed.",
           ask_no_records: true
         }
       ]
