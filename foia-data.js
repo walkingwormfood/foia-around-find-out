@@ -791,6 +791,31 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "maralago-prostitute-party-tip",
+      categories: ["Human trafficking"],
+      investigator: "Sharlene Rochard (Epstein survivor) + the released Epstein files",
+      investigatorLinks: [
+        { label: "Rochard interview — \"The Briefing with Jen Psaki\" (MS NOW)", url: "https://www.youtube.com/watch?v=Yoi4aUZ0EDM" },
+        { label: "Raw Story coverage", url: "https://www.rawstory.com/donald-trump-jeffrey-epstein-2674617242/" }
+      ],
+      status: "reported",
+      finding: "An FBI document in the released Epstein files records a tip describing a party \"for prostitutes\" at Mar-a-Lago tied to Donald Trump. Epstein survivor Sharlene Rochard, a former model, has said on the record that she attended Mar-a-Lago parties as a young model.",
+      implication: "The tip and any FBI follow-up are federal records. A FOIA can surface the full, unredacted document and whether the tip was ever investigated. (This is a third-party tip/allegation contained in the files, not an adjudicated finding; DOJ's July 2025 memo claimed no client list.)",
+      sources: [
+        { label: "Epstein files tip on Mar-a-Lago \"prostitute party\" (Yahoo)", url: "https://www.yahoo.com/news/articles/epstein-files-dump-reveals-tip-022850330.html" },
+        { label: "Raw Story", url: "https://www.rawstory.com/donald-trump-jeffrey-epstein-2674617242/" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the full unredacted Mar-a-Lago \"prostitute party\" tip document + any investigation",
+          subject: "FOIA Request: FBI document and investigative file on the Mar-a-Lago \"prostitute party\" tip in the Epstein files",
+          records: "I request a copy of the FBI document(s) referenced in the released Epstein files that record a tip describing a party \"for prostitutes\" at Mar-a-Lago, including the full unredacted record and any related lead sheet, investigative file, or disposition concerning that tip.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
