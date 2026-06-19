@@ -81,7 +81,10 @@ const FOIA = {
       submitNote: "DoD routes FOIA by component — via FOIA.gov, select Office of the Secretary of Defense/Joint Staff for OSD officials, or the Department of the Army." },
     { id: "usss", name: "U.S. Secret Service", email: null,
       portal: "https://www.securerelease.us",
-      submitNote: "As of Oct 2025, USSS takes FOIA only through its SecureRelease portal (securerelease.us) or by mail — no email." }
+      submitNote: "As of Oct 2025, USSS takes FOIA only through its SecureRelease portal (securerelease.us) or by mail — no email." },
+    { id: "dhs", name: "U.S. Department of Homeland Security", email: null,
+      portal: "https://www.dhs.gov/foia",
+      submitNote: "DHS ended email and mail FOIA intake (Jan 2026) — submit only via FOIA.gov or a DHS FOIA portal." }
   ],
 
   investigations: [
@@ -739,6 +742,52 @@ const FOIA = {
           summary: "GSA / FedRAMP — Check Point's federal authorization + which agencies deploy it",
           subject: "FOIA Request: FedRAMP authorization and federal deployment of Check Point cybersecurity products",
           records: "I request a copy of any FedRAMP authorization package or authorization-to-operate (ATO) on file for Check Point Software products, and any record identifying federal agencies that have procured or deployed Check Point cybersecurity products and the data-access or monitoring scope of those deployments, from January 1, 2023 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "save-system-voter-database",
+      categories: ["Elections & voting", "Surveillance & privacy"],
+      investigator: "More Perfect Union",
+      investigatorLinks: [
+        { label: "More Perfect Union — \"The Shocking Billionaire Plot To Steal The Election\"", url: "https://www.youtube.com/watch?v=GUHm6MfnPvw" }
+      ],
+      status: "reported",
+      finding: "More Perfect Union reports that a Trump executive order directs DHS to build a \"supercharged\" federal citizenship-and-voter-eligibility database (the \"SAVE System\"), forcing three federal agencies to assemble a national voter roll on a 60-day deadline — which experts say the government is not authorized by law to do and which produces false positives that flag citizens as noncitizens.",
+      implication: "A federal database adjudicating who is eligible to vote — its design, legal authority, accuracy/error rates, and the agencies feeding it — are public records. (U.S. elections are constitutionally administered by the states, which sharpens the authorization question this request would document.)",
+      sources: [
+        { label: "More Perfect Union — election investigation", url: "https://www.youtube.com/watch?v=GUHm6MfnPvw" }
+      ],
+      requests: [
+        {
+          agencyId: "dhs",
+          summary: "DHS — the SAVE System / federal voter-citizenship database design + legal authority",
+          subject: "FOIA Request: the SAVE System federal citizenship and voter-eligibility verification database",
+          records: "I request a copy of records concerning the SAVE System or any federal citizenship- and voter-eligibility verification database, including its design or architecture documents, the legal-authority memorandum supporting its creation and use for voter eligibility, any accuracy or false-positive-rate assessment, and any interagency agreement directing its creation, from January 1, 2025 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "doj-state-voter-data",
+      categories: ["Elections & voting"],
+      investigator: "More Perfect Union",
+      investigatorLinks: [
+        { label: "More Perfect Union — \"The Shocking Billionaire Plot To Steal The Election\"", url: "https://www.youtube.com/watch?v=GUHm6MfnPvw" }
+      ],
+      status: "reported",
+      finding: "More Perfect Union reports that the Department of Justice made unprecedented requests to states for sensitive voter information — including data on individual voters reportedly targeted for disenfranchisement — which roughly a dozen states complied with, while the administration sued 30 states plus the District of Columbia for refusing.",
+      implication: "What the DOJ requested, the legal basis it asserted, and how it retains and uses voter data it obtained are federal records. (The lawsuits are public; the underlying request letters and data-handling policies are the requestable piece.)",
+      sources: [
+        { label: "More Perfect Union — election investigation", url: "https://www.youtube.com/watch?v=GUHm6MfnPvw" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the request letters to states + legal basis + voter-data retention policy",
+          subject: "FOIA Request: DOJ requests to states for voter-registration data and related data-handling",
+          records: "I request a copy of records concerning the Department of Justice's 2025 requests to U.S. states and the District of Columbia for voter-registration or voter-eligibility data, including the request letters, the legal authority asserted, and any policy governing the retention, use, or sharing of voter data received in response, from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
