@@ -642,6 +642,30 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "flock-federal-alpr",
+      categories: ["Surveillance & privacy"],
+      investigator: "Tommy G (on Julian Dorey's podcast)",
+      investigatorLinks: [
+        { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
+      ],
+      status: "reported",
+      finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records.",
+      sources: [
+        { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
+        { label: "Ben Jordan — Flock reporting", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — US Marshals / FBI access agreements with Flock Safety's ALPR network",
+          subject: "FOIA Request: U.S. Marshals Service and FBI access to Flock Safety's ALPR network",
+          records: "I request a copy of any contract, memorandum of understanding, data-sharing agreement, or access-and-audit policy governing the U.S. Marshals Service's and/or the FBI's access to or use of Flock Safety's automated license-plate-reader (ALPR) network, in effect between January 1, 2024 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
