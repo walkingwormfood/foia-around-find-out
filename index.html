@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOIA Around and Find Out</title>
+<meta name="description" content="Independent investigators found things in public records. A FOIA request makes the government hand over the documents behind them. Pick a finding — we draft the request. Client-side only, no tracking.">
+<style>
+  :root{
+    --bg:#0c0e12; --panel:#13161c; --panel2:#171b22; --line:#262c36;
+    --ink:#e7ebf0; --ink2:#9aa4b2; --faint:#5c6675;
+    --accent:#d8c08a; --ok:#6fae8f; --warn:#d8a36a;
+    --mono:"SFMono-Regular",ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent)}
+  .wrap{max-width:880px;margin:0 auto;padding:0 18px}
+  header{border-bottom:1px solid var(--line);padding:30px 0 20px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+  h1{margin:.25em 0 .15em;font-size:30px;letter-spacing:-.01em}
+  .tagline{color:var(--ink2);font-size:15px;max-width:64ch}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;margin:16px 0;font-size:13px;color:var(--ink2)}
+  .note b{color:var(--ink)}
+
+  main{padding:14px 0 60px}
+  h2.section{font-size:13px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:26px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+
+  /* investigation cards */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+  .by{font-size:12px;color:var(--ink2);margin-bottom:8px}
+  .by .who{color:var(--accent);font-weight:600}
+  .badge{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:20px;padding:2px 9px;color:var(--ink2);margin-left:6px}
+  .badge.confirmed{color:var(--ok);border-color:#2f5043}
+  .badge.contested{color:var(--warn);border-color:#5a4326}
+  .finding{font-size:17px;font-weight:600;margin:2px 0 6px}
+  .implication{color:var(--ink2);font-size:14px;margin:0 0 10px}
+  .meta-row{font-size:12px;color:var(--faint);margin:8px 0}
+  .meta-row .lbl{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;margin-right:6px}
+  .pry{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+  .pry .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:8px}
+  .req{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:8px 0;border-top:1px solid var(--panel2)}
+  .req:first-of-type{border-top:none}
+  .req .desc{font-size:13.5px;color:var(--ink)}
+  .req .agency{display:block;font-size:11px;color:var(--faint);font-family:var(--mono);margin-top:2px}
+  .btn{font-family:var(--mono);font-size:12.5px;border-radius:7px;padding:8px 13px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);white-space:nowrap}
+  .btn:hover{border-color:#39414e}
+  .btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+  .btn.gen{flex:0 0 auto}
+
+  /* generator */
+  #gen{display:none;background:var(--panel2);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;scroll-margin-top:14px}
+  #gen.open{display:block}
+  #gen .for{font-size:13px;color:var(--ink2);margin-bottom:4px}
+  #gen .for b{color:var(--ink)}
+  .field{margin:12px 0}
+  label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  select,input[type=text],input[type=email],textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:10px 12px;font-size:14px;font-family:var(--sans)}
+  textarea{font-family:var(--mono);font-size:12.5px;line-height:1.55;min-height:300px;white-space:pre-wrap}
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .row .field{flex:1;min-width:200px}
+  .checks{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
+  .checks label{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:13px;color:var(--ink2);cursor:pointer}
+  .checks input{width:auto}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 2px}
+  .btn.link{background:transparent;border-color:#2f5043;color:var(--ok);text-decoration:none;display:inline-block}
+  .copied{color:var(--ok);font-size:12px;font-family:var(--mono)}
+  .out-wrap{display:none;margin-top:10px}
+  details.adv{margin-top:24px;border:1px solid var(--line);border-radius:8px;padding:0 14px;background:var(--panel)}
+  details.adv summary{cursor:pointer;padding:12px 0;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+  details.adv[open]{padding-bottom:14px}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 50px;color:var(--faint);font-size:12px}
+  footer code{font-family:var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--ink2)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="kicker">Public records · client-side · no tracking</div>
+    <h1>FOIA Around and Find Out</h1>
+    <p class="tagline" id="tagline"></p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="note" id="narrowing"></div>
+
+  <h2 class="section">Pick a finding</h2>
+  <div id="findings"></div>
+
+  <!-- generator (revealed when a request is picked) -->
+  <div id="gen">
+    <div class="for" id="genFor"></div>
+    <div class="row">
+      <div class="field"><label for="name">Your name</label><input type="text" id="name" placeholder="Jane Q. Public"></div>
+      <div class="field"><label for="email">Your email</label><input type="email" id="email" placeholder="you@example.com"></div>
+    </div>
+    <div class="field"><label for="addr">Mailing address (optional)</label><input type="text" id="addr" placeholder="123 Main St, City, ST 00000"></div>
+    <div class="checks">
+      <label><input type="checkbox" id="fee" checked> Request fee waiver</label>
+      <label><input type="checkbox" id="exp" checked> Request expedited processing</label>
+    </div>
+    <div class="actions"><button class="btn primary" id="genBtn">Draft the request</button></div>
+    <div class="out-wrap" id="outWrap">
+      <div class="field"><label for="out">Your request — review and edit before sending</label><textarea id="out" spellcheck="false"></textarea></div>
+      <div class="actions">
+        <button class="btn" id="copy">Copy</button>
+        <button class="btn" id="dl">Download .txt</button>
+        <a class="btn link" id="portal" href="https://www.foia.gov" target="_blank" rel="noopener">Submit at FOIA.gov →</a>
+        <span class="copied" id="copied" hidden>copied</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- advanced: custom request -->
+  <details class="adv">
+    <summary>Advanced · write a custom request</summary>
+    <div class="field"><label for="advAgency">Agency</label><select id="advAgency"></select></div>
+    <div class="field"><label for="advRecords">What records (be narrow — entities, document types, dates)</label>
+      <textarea id="advRecords" style="min-height:120px" placeholder="I request the following records: all [document types] between [Agency] and [named entity] concerning [specific subject], from [date] to present."></textarea></div>
+    <div class="actions"><button class="btn" id="advUse">Use this in the drafter ↑</button></div>
+  </details>
+</main>
+
+<footer>
+  <div class="wrap" id="footer"></div>
+</footer>
+
+<script src="foia-data.js"></script>
+<script>
+  const $ = id => document.getElementById(id);
+  const esc = s => (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const agencyById = id => FOIA.agencies.find(a => a.id === id);
+
+  $("tagline").textContent = FOIA.meta.tagline;
+  $("narrowing").innerHTML = "<b>Why these are narrow:</b> " + esc(FOIA.meta.narrowing_note);
+  $("footer").innerHTML = "Client-side only — nothing you type leaves your browser, no analytics, no network calls. The Submit button just opens <code>foia.gov</code>; you file it yourself. " + esc(FOIA.meta.do_not) + " · CC0 — fork it, mirror it.";
+
+  let current = null; // {subject, records, agencyId, askNoRecords, label}
+
+  // render investigation cards
+  const wrap = $("findings");
+  FOIA.investigations.forEach(inv => {
+    const card = document.createElement("div");
+    card.className = "card";
+    const links = (inv.investigatorLinks||[]).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join(" · ");
+    const sources = (inv.sources||[]).map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)).join(" · ");
+    const reqs = inv.requests.map((r,i) => {
+      const a = agencyById(r.agencyId);
+      return `<div class="req"><div class="desc">${esc(r.summary)}<span class="agency">${esc(a?a.name:r.agencyId)}</span></div>`+
+             `<button class="btn gen" data-inv="${esc(inv.id)}" data-req="${i}">Generate this request</button></div>`;
+    }).join("");
+    card.innerHTML =
+      `<div class="by">Reported by <span class="who">${esc(inv.investigator)}</span> · ${links}`+
+      `<span class="badge ${esc(inv.status)}">${esc(inv.status)}</span></div>`+
+      `<div class="finding">${esc(inv.finding)}</div>`+
+      `<div class="implication">${esc(inv.implication)}</div>`+
+      (sources ? `<div class="meta-row"><span class="lbl">Sources</span>${sources}</div>` : "")+
+      `<div class="pry"><span class="lbl">What you can pry loose</span>${reqs}</div>`;
+    wrap.appendChild(card);
+  });
+
+  // populate advanced agency list
+  FOIA.agencies.forEach(a => { const o=document.createElement("option"); o.value=a.id; o.textContent=a.name; $("advAgency").appendChild(o); });
+
+  // wire generate buttons
+  document.querySelectorAll("button.gen").forEach(b => b.addEventListener("click", () => {
+    const inv = FOIA.investigations.find(x => x.id === b.dataset.inv);
+    const r = inv.requests[+b.dataset.req];
+    loadRequest({ subject:r.subject, records:r.records, agencyId:r.agencyId, askNoRecords:!!r.ask_no_records, label:r.summary });
+  }));
+
+  function loadRequest(req){
+    current = req;
+    const a = agencyById(req.agencyId);
+    $("genFor").innerHTML = "Drafting: <b>" + esc(req.label) + "</b> — to " + esc(a?a.name:req.agencyId);
+    $("outWrap").style.display = "none";
+    $("gen").classList.add("open");
+    $("gen").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function fill(str, map){ return Object.keys(map).reduce((s,k)=> s.split("{{"+k+"}}").join(map[k]), str); }
+
+  function generate(){
+    if(!current) return;
+    const a = agencyById(current.agencyId);
+    const name = $("name").value.trim() || "[your name]";
+    const email = $("email").value.trim() || "[your email]";
+    const addr = $("addr").value.trim();
+    const today = new Date().toLocaleDateString("en-US", {year:"numeric", month:"long", day:"numeric"});
+    const map = { NAME:name, EMAIL:email, ADDRESS:addr, DATE:today };
+    const b = FOIA.boilerplate;
+    const L = [];
+    L.push(name); if(addr) L.push(addr); L.push(email); L.push(today); L.push("");
+    L.push("FOIA Officer"); L.push(a ? a.name : current.agencyId); L.push("(submitted via FOIA.gov)"); L.push("");
+    L.push(current.subject); L.push("");
+    L.push("Dear FOIA Officer,"); L.push("");
+    L.push("This is a request under the " + FOIA.meta.statute + "."); L.push("");
+    L.push(current.records); L.push("");
+    if(current.askNoRecords){ L.push(b.no_records); L.push(""); }
+    L.push(b.burden_carveout); L.push("");
+    if($("fee").checked){ L.push(b.fee_waiver); L.push(""); }
+    if($("exp").checked){ L.push(b.expedited); L.push(""); }
+    L.push(b.segregability); L.push("");
+    L.push(b.format); L.push("");
+    L.push(fill(b.closing, map));
+    $("out").value = L.join("\n");
+    $("outWrap").style.display = "block";
+    $("copied").hidden = true;
+    $("out").scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+  $("genBtn").addEventListener("click", generate);
+
+  $("copy").addEventListener("click", async ()=>{
+    try { await navigator.clipboard.writeText($("out").value); $("copied").hidden=false; setTimeout(()=>$("copied").hidden=true,2000); }
+    catch(e){ $("out").select(); document.execCommand("copy"); $("copied").hidden=false; }
+  });
+  $("dl").addEventListener("click", ()=>{
+    const blob = new Blob([$("out").value], {type:"text/plain"});
+    const u = document.createElement("a"); u.href = URL.createObjectURL(blob);
+    u.download = "foia-request.txt"; u.click(); URL.revokeObjectURL(u.href);
+  });
+
+  $("advUse").addEventListener("click", ()=>{
+    const id = $("advAgency").value;
+    const recs = $("advRecords").value.trim();
+    if(!recs) { $("advRecords").focus(); return; }
+    loadRequest({ subject:"FOIA Request", records:recs, agencyId:id, askNoRecords:false, label:"custom request" });
+  });
+</script>
+</body>
+</html>
