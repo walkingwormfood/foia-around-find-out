@@ -66,7 +66,13 @@ const FOIA = {
       submitNote: "USADF accepts FOIA by email — mark the subject line \"Freedom of Information Act Request\"." },
     { id: "oge", name: "U.S. Office of Government Ethics", email: "usoge@oge.gov",
       portal: "https://www.oge.gov",
-      submitNote: "OGE accepts FOIA by email." }
+      submitNote: "OGE accepts FOIA by email." },
+    { id: "doj", name: "U.S. Department of Justice", email: null,
+      portal: "https://www.justice.gov/oip/submit-and-track-request-or-appeal",
+      submitNote: "DOJ takes FOIA through its FOIA STAR portal (or the relevant component's portal), not email." },
+    { id: "fbi", name: "Federal Bureau of Investigation", email: null,
+      portal: "https://efoia.fbi.gov",
+      submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only." }
   ],
 
   investigations: [
@@ -273,6 +279,104 @@ const FOIA = {
           summary: "OMB — privacy review/authorization for NDS tracking scripts on federal sites",
           subject: "FOIA Request: authorization and privacy review for National Design Studio tracking scripts on federal websites",
           records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization permitting the National Design Studio to load behavioral-tracking or analytics scripts served from ndstudio.gov infrastructure (including cdn.infra.ndstudio.gov) onto federal agency websites, dated between August 1, 2025 and the date this request is processed.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "doj-no-client-list",
+      categories: ["Human trafficking"],
+      investigator: "The New York Times",
+      investigatorLinks: [
+        { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      status: "confirmed",
+      finding: "On July 7, 2025, the DOJ and FBI released an unsigned memo concluding — after reviewing 300+ GB of evidence — that there was no Epstein \"client list\" and reaffirming his 2019 death as suicide; the accompanying ~11 hours of jail video was missing about a minute.",
+      implication: "The federal review that officially closed the case. The memo, the evidence it reviewed, and the complete unedited video are records the public can request. (The missing minute was later attributed to a nightly system reset.)",
+      sources: [
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the complete, unedited facility video for the date of Epstein's death",
+          subject: "FOIA Request: complete unedited surveillance video referenced in the July 7, 2025 Epstein memo",
+          records: "I request a copy of the complete, unedited surveillance-camera footage from the federal facility where Jeffrey Epstein died, covering the 24-hour period of his death, as referenced in the July 7, 2025 joint DOJ/FBI memorandum. I am requesting the original continuous recording, not an excerpted or compiled version.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "doj",
+          summary: "DOJ — the July 7, 2025 memo + the index of evidence it reviewed",
+          subject: "FOIA Request: July 7, 2025 DOJ/FBI Epstein memorandum and evidence index",
+          records: "I request a copy of the final July 7, 2025 joint DOJ/FBI memorandum concerning the Jeffrey Epstein review, together with any index, inventory, or list identifying the categories of evidence reviewed in reaching its conclusions. To keep this request narrow and minimize search burden, I am not seeking general email correspondence."
+        }
+      ]
+    },
+    {
+      id: "maxwell-blanche-interview",
+      categories: ["Human trafficking"],
+      investigator: "The New York Times",
+      investigatorLinks: [
+        { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      status: "confirmed",
+      finding: "Deputy Attorney General Todd Blanche interviewed Ghislaine Maxwell over two days in late July 2025; soon after, she was quietly moved to a minimum-security prison camp — a transfer left unexplained at the time (Blanche later cited threats to her life).",
+      implication: "A senior DOJ interview of the only convicted co-conspirator, followed by an unexplained transfer. The interview records are requestable.",
+      sources: [
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — records of Blanche's late-July 2025 interview of Maxwell",
+          subject: "FOIA Request: DOJ records of the July 2025 interview of Ghislaine Maxwell by Deputy AG Todd Blanche",
+          records: "I request a copy of any interview memoranda, FD-302 reports, or transcripts documenting the interview of Ghislaine Maxwell conducted by Deputy Attorney General Todd Blanche over two days in late July 2025. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "epstein-pages-withheld",
+      categories: ["Human trafficking"],
+      investigator: "John Kiriakou (on Julian Dorey's podcast)",
+      investigatorLinks: [
+        { label: "The Deep State — Kiriakou × Dorey, Pt 1", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" }
+      ],
+      status: "confirmed",
+      finding: "John Kiriakou says roughly 3–3.5 million additional Epstein-related pages remain withheld despite the Epstein Files Transparency Act (which he cites as passing the House 419–1 and the Senate 100–0).",
+      implication: "If a near-unanimous transparency law was enacted, the index of what was identified — and any decision to withhold — are themselves records. (Kiriakou's page figure and vote counts are on-air assertions; this request tests them against the record.)",
+      sources: [
+        { label: "The Deep State — Kiriakou × Dorey, Pt 1 (@1:08)", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the records index + any withholding determination under the Transparency Act",
+          subject: "FOIA Request: records identified and withheld under the Epstein Files Transparency Act",
+          records: "I request a copy of the index, log, or schedule of records identified for processing under the Epstein Files Transparency Act, and any written determination withholding records from release under that Act, dated from the Act's enactment to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "bondi-binders",
+      categories: ["Human trafficking"],
+      investigator: "The New York Times",
+      investigatorLinks: [
+        { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      status: "confirmed",
+      finding: "On February 27, 2025, the White House handed right-wing influencers binders labeled \"the Epstein files\" in the Roosevelt Room; the material (flight logs, contact lists, summaries) had nearly all been previously released, and the binders were reportedly unvetted.",
+      implication: "A staged \"release\" of mostly-public material. What was actually in the binders, who assembled them, and how they were prepared are requestable records.",
+      sources: [
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the binder contents + who assembled them",
+          subject: "FOIA Request: contents and preparation of the February 27, 2025 'Epstein files' binders",
+          records: "I request a copy of the materials compiled into the binders labeled \"the Epstein files\" distributed at the White House on February 27, 2025, and any records identifying what was included in those binders and which Department of Justice office assembled or vetted them. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
