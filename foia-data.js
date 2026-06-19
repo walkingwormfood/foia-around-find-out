@@ -78,7 +78,10 @@ const FOIA = {
       submitNote: "Treasury takes FOIA through its portal (foia.treasury.gov) or FOIA.gov." },
     { id: "dod", name: "U.S. Department of Defense", email: null,
       portal: "https://www.foia.gov",
-      submitNote: "DoD routes FOIA by component — via FOIA.gov, select Office of the Secretary of Defense/Joint Staff for OSD officials, or the Department of the Army." }
+      submitNote: "DoD routes FOIA by component — via FOIA.gov, select Office of the Secretary of Defense/Joint Staff for OSD officials, or the Department of the Army." },
+    { id: "usss", name: "U.S. Secret Service", email: null,
+      portal: "https://www.securerelease.us",
+      submitNote: "As of Oct 2025, USSS takes FOIA only through its SecureRelease portal (securerelease.us) or by mail — no email." }
   ],
 
   investigations: [
@@ -459,7 +462,7 @@ const FOIA = {
       ],
       status: "reported",
       finding: "Candace Owens reports that the office of the Under Secretary of Defense for Intelligence & Security (Bradley Hansell) tasked a government flight, \"SAM702,\" with an unusual early-September 2025 itinerary — Tucson, an overnight at Fort Huachuca (an Army intelligence base), then El Paso — and that her FOIA request for its records was deferred under an \"unusual burden\" exception (queued at roughly #3,500).",
-      implication: "A military aircraft's tasking order, manifest, and itinerary are ordinarily releasable records. This request seeks who tasked SAM702 on those dates and why; the reported FOIA deferral is itself part of the story. (Single-source, on-air account — the request is what tests it.)",
+      implication: "A military aircraft's tasking order, manifest, and itinerary are ordinarily releasable records. This request seeks the flight's own records — who tasked SAM702 on those dates and where it went; the reported FOIA stonewalling is the backdrop, not the ask. (Single-source, on-air account — the request is what tests it.)",
       sources: [
         { label: "Candace Owens, Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
       ],
@@ -469,6 +472,77 @@ const FOIA = {
           summary: "DoD — SAM702 tasking order, manifest, and itinerary (Sept 2025)",
           subject: "FOIA Request: tasking and manifest for military flight SAM702, September 2025",
           records: "I request a copy of the tasking order, passenger manifest, and itinerary for the military flight designated SAM702 for the period September 7–9, 2025, including records identifying the office that requested or sponsored the mission. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "fbi-kirk-tipline",
+      categories: ["Kirk assassination & coverup", "NDS takeover"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Substack", url: "https://thedreydossier.substack.com" }
+      ],
+      status: "confirmed",
+      finding: "The National Design Studio built a preview of an \"FBI Charlie Kirk tip-line\" site (fbi-kirk-tipline.previews.ndstudio.gov, with a certificate on record) — while the public domain fbi-kirk-tipline.gov was never registered.",
+      implication: "A White House design office stood up infrastructure for an FBI tip line on the Kirk case that never publicly launched. Whether it reflects a real, authorized FBI program — and who directed it — is a records question. (A preview is not a launched program; the certificate was set to expire June 11, 2026, so its renewal or lapse signals whether the program continued.)",
+      sources: [
+        { label: "crt.sh (cert 24970208643)", url: "https://crt.sh" },
+        { label: "CISA dotgov-data", url: "https://github.com/cisagov/dotgov-data" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — records of any Charlie Kirk tip-line site/program + NDS role",
+          subject: "FOIA Request: FBI \"Charlie Kirk\" tip-line website or program and any National Design Studio involvement",
+          records: "I request a copy of any records concerning an FBI tip-line website or program relating to Charlie Kirk — including any site at fbi-kirk-tipline.gov or hosted on National Design Studio infrastructure — and any interagency agreement, task order, or authorization between the FBI and the National Design Studio regarding such a site, from September 1, 2025 to the date this request is processed.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "kolvet-eeob-visit",
+      categories: ["Kirk assassination & coverup"],
+      investigator: "Candace Owens",
+      investigatorLinks: [
+        { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      status: "reported",
+      finding: "Candace Owens reports that Andrew Kolvet, Charlie Kirk's producer, was at the White House / Eisenhower Executive Office Building the day before the DOJ released the Epstein files — while a Charlie Kirk show was pre-recorded (with Kash Patel) to make it appear he was in Arizona.",
+      implication: "If a Kirk-world figure took a White House meeting the day before a major Epstein-files release, entry records would document it. Strong caveat: courts have ruled White House visitor logs held by the Secret Service are often NOT agency records subject to FOIA, so this may be denied on that ground (EEOB-tenant agencies like OMB are a separate avenue). Single-source, on-air account.",
+      sources: [
+        { label: "Candace Owens, Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      requests: [
+        {
+          agencyId: "usss",
+          summary: "Secret Service — EEOB/White House entry records for Andrew Kolvet",
+          subject: "FOIA Request: White House complex / EEOB access records for Andrew Kolvet",
+          records: "I request a copy of any entry, exit, visitor, or access records for Andrew Kolvet at the White House complex and the Eisenhower Executive Office Building on the date of, and the day before, the Department of Justice's public release of the Epstein files (please insert the specific calendar date before filing). I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "dod-erika-messaging",
+      categories: ["Kirk assassination & coverup"],
+      investigator: "Candace Owens",
+      investigatorLinks: [
+        { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      status: "reported",
+      finding: "Candace Owens alleges the Department of Defense (\"Department of War\") orchestrated messaging to artificially boost Erika Kirk to the #1 social-media trend; she cites no documentary evidence.",
+      implication: "A claim that a federal department ran a domestic messaging/influence effort around a private individual. If true, public-affairs guidance or social-media records would exist. Single-source, on-air allegation with no evidence shown — this request is what would confirm or refute it.",
+      sources: [
+        { label: "Candace Owens, Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD — any public-affairs/social-media activity re Erika Kirk",
+          subject: "FOIA Request: Department of Defense public-affairs or social-media records concerning Erika Kirk",
+          records: "I request a copy of any public-affairs guidance, social-media activity log, or messaging directive concerning Erika Kirk issued by or within the Department of Defense, from September 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
