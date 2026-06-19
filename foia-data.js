@@ -619,6 +619,29 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "butler-investigation",
+      categories: ["Butler shooting"],
+      investigator: "Candace Owens (citing Tucker Carlson)",
+      investigatorLinks: [
+        { label: "Candace — Ep 348", url: "https://www.youtube.com/watch?v=WoXd4oLwd3w" }
+      ],
+      status: "reported",
+      finding: "Tucker Carlson claimed (on Mario Nawfal's show, replayed by Candace Owens) that \"Trump shut down the investigation into Butler\" — the July 13, 2024 assassination attempt at Trump's Butler, Pennsylvania rally — and that Dan Bongino was \"terrified.\" Candace raised whether the attempt had been staged.",
+      implication: "If the federal investigation into a presidential assassination attempt was halted or curtailed, its case status and any closure directive would be on record. Single-source, secondhand claim (Tucker via Candace); \"staged\" is an open question she polled, not a finding — this request is what would test the \"shut it down\" assertion.",
+      sources: [
+        { label: "Candace Owens, Ep 348 (@1:26)", url: "https://www.youtube.com/watch?v=WoXd4oLwd3w" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — status / closure records for the Butler shooting investigation",
+          subject: "FOIA Request: investigative status and any closure directive for the July 13, 2024 Butler assassination attempt",
+          records: "I request a copy of any records reflecting the current investigative status of, or any directive to close, halt, or curtail, the FBI's investigation into the July 13, 2024 assassination attempt on Donald Trump in Butler, Pennsylvania — including any final case-disposition or closure memorandum. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
