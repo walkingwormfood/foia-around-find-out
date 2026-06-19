@@ -719,6 +719,29 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "checkpoint-federal-footprint",
+      categories: ["Israel / foreign influence", "Surveillance & privacy"],
+      investigator: "Tommy G",
+      investigatorLinks: [
+        { label: "Tommy G — \"What Every American Should Know about Data Centers\"", url: "https://www.youtube.com/watch?v=MHJtIkfA-s8" }
+      ],
+      status: "reported",
+      finding: "Tommy G reports that Check Point — an Israeli cybersecurity firm founded by Shlomo Kramer, a veteran of the IDF's Unit 8200 (Israel's NSA-equivalent) — serves as a security gatekeeper for nearly every top-50 Fortune 500 company (a data-center whistleblower said it monitors all employee communications), and Kramer publicly argued the U.S. should \"limit the First Amendment.\"",
+      implication: "If a firm tied to a foreign signals-intelligence unit secures major U.S. infrastructure, its footprint in federal systems is a public-records question: which federal agencies use Check Point, under what authorizations, and with what data-access or monitoring scope. (Check Point is a mainstream, widely-used vendor and foreign-headquartered security vendors are common and can be FedRAMP-authorized — the request simply surfaces the federal specifics.)",
+      sources: [
+        { label: "Tommy G — data-centers investigation", url: "https://www.youtube.com/watch?v=MHJtIkfA-s8" }
+      ],
+      requests: [
+        {
+          agencyId: "gsa",
+          summary: "GSA / FedRAMP — Check Point's federal authorization + which agencies deploy it",
+          subject: "FOIA Request: FedRAMP authorization and federal deployment of Check Point cybersecurity products",
+          records: "I request a copy of any FedRAMP authorization package or authorization-to-operate (ATO) on file for Check Point Software products, and any record identifying federal agencies that have procured or deployed Check Point cybersecurity products and the data-access or monitoring scope of those deployments, from January 1, 2023 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
