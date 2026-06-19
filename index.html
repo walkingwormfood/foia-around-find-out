@@ -251,11 +251,18 @@
     const subj = current.subject || "FOIA Request";
     // Email — one click — only where the agency actually accepts email
     if(a && a.email){
+      const body = $("out").value;
       const m = document.createElement("a");
       m.className = "btn email";
       m.textContent = "✉ Email this request";
-      m.href = "mailto:" + a.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent($("out").value);
+      m.href = "mailto:" + a.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
       box.appendChild(m);
+      // Gmail web compose — works for Gmail-in-browser users regardless of the OS mailto handler
+      const g = document.createElement("a");
+      g.className = "btn"; g.target = "_blank"; g.rel = "noopener";
+      g.textContent = "Open in Gmail";
+      g.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(a.email) + "&su=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+      box.appendChild(g);
     }
     const c = document.createElement("button"); c.className="btn"; c.textContent="Copy"; c.addEventListener("click", doCopy); box.appendChild(c);
     const d = document.createElement("button"); d.className="btn"; d.textContent="Download .txt";
@@ -267,7 +274,7 @@
     box.appendChild(p);
     const sp = document.createElement("span"); sp.className="copied"; sp.id="copied"; sp.hidden=true; sp.textContent="copied"; box.appendChild(sp);
     let hint = a && a.submitNote ? a.submitNote : "";
-    if(a && a.email) hint += " If the email opens cut off, click Copy and paste the letter in.";
+    if(a && a.email) hint += " Use \"Open in Gmail\" if you read mail in the browser; \"✉ Email\" uses your computer's default mail app. If either opens cut off, click Copy and paste the letter in.";
     else hint += " This agency has no one-click email — click Copy, then paste your request into its portal.";
     $("submitHint").textContent = hint;
   }
