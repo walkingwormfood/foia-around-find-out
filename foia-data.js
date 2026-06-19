@@ -696,6 +696,29 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "trump-jr-osc-loan",
+      categories: ["Conflict of interest"],
+      investigator: "Tommy G",
+      investigatorLinks: [
+        { label: "Tommy G — \"Investigating How the Pentagon Wastes Trillions\"", url: "https://www.youtube.com/watch?v=ZsCUvzD_vqY" }
+      ],
+      status: "reported",
+      finding: "Tommy G reports that a startup co-founded by Donald Trump Jr. received a roughly $626 million Pentagon award — described as the single largest loan ever issued by the Department of Defense's Office of Strategic Capital (taxpayer-funded).",
+      implication: "A loan of this size, from a DoD financing office, to a venture tied to the President's son is exactly what conflict-of-interest review and award-selection records exist to document. The loan agreement, application, selection memos, and any ethics screening are requestable.",
+      sources: [
+        { label: "Tommy G — Pentagon waste investigation", url: "https://www.youtube.com/watch?v=ZsCUvzD_vqY" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD / Office of Strategic Capital — the loan agreement + selection + ethics review",
+          subject: "FOIA Request: Office of Strategic Capital loan to a startup co-founded by Donald Trump Jr.",
+          records: "I request a copy of the loan or award agreement, application, selection or scoring memoranda, and any conflict-of-interest or ethics screening for the Department of Defense Office of Strategic Capital award (reported at approximately $626 million) to a startup co-founded by Donald Trump Jr., from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
