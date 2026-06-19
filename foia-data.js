@@ -546,6 +546,79 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "posthog-no-contract",
+      categories: ["Surveillance & privacy"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Substack", url: "https://thedreydossier.substack.com" }
+      ],
+      status: "confirmed",
+      finding: "The PostHog analytics software running on multiple federal .gov sites has no government contract on record (USASpending returns zero) and no FedRAMP authorization — the cloud-security clearance normally required for software handling federal users' data.",
+      implication: "Behavioral-analytics software collecting data from federal-site visitors with no visible contract and no FedRAMP authorization. The procurement trail — including sub-threshold purchase-card buys that wouldn't appear on USASpending — is requestable.",
+      sources: [
+        { label: "USASpending (0 results)", url: "https://www.usaspending.gov" },
+        { label: "FedRAMP Marketplace (not listed)", url: "https://marketplace.fedramp.gov" }
+      ],
+      requests: [
+        {
+          agencyId: "gsa",
+          summary: "GSA — any FedRAMP authorization or federal purchase record for PostHog",
+          subject: "FOIA Request: FedRAMP authorization and procurement records for PostHog analytics",
+          records: "I request a copy of any FedRAMP authorization package, security assessment, or authorization-to-operate (ATO) on file for the analytics software PostHog, and any record of a federal contract, task order, or purchase-card transaction for PostHog, from January 1, 2025 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "trumprx-input-capture",
+      categories: ["Surveillance & privacy"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Substack", url: "https://thedreydossier.substack.com" }
+      ],
+      status: "confirmed",
+      finding: "trumprx.gov runs PostHog with input-masking turned OFF and persistent per-person profiles — a configuration that can capture what visitors type (e.g., drug searches) and tie it to a lasting profile. The site's own privacy-policy.txt names PostHog.",
+      implication: "A federal site configured to capture visitors' typed searches and link them to persistent profiles via a third-party tool. Its privacy review, data-processing terms, and what the analytics retains are requestable.",
+      sources: [
+        { label: "Live JavaScript inspection", url: "" },
+        { label: "trumprx.gov privacy-policy.txt", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "omb",
+          summary: "OMB — privacy review / data-processing records for analytics on trumprx.gov",
+          subject: "FOIA Request: privacy review and data-processing records for PostHog analytics on trumprx.gov",
+          records: "I request a copy of any Privacy Impact Assessment, privacy review, or data-processing agreement governing the use of PostHog analytics (including any input-capture or session-recording features) on trumprx.gov, from January 1, 2025 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "bondi-list-reversal",
+      categories: ["Human trafficking"],
+      investigator: "The New York Times",
+      investigatorLinks: [
+        { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      status: "confirmed",
+      finding: "On Feb 21, 2025, Attorney General Pam Bondi said an Epstein \"client list\" was \"sitting on my desk right now to review\"; less than five months later, the July 7 DOJ/FBI memo concluded no client list existed.",
+      implication: "A public reversal by the Attorney General — from \"on my desk\" to \"does not exist.\" The records she was reviewing in February, and the basis for the July conclusion, are requestable from DOJ.",
+      sources: [
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the records behind Bondi's \"on my desk\" → \"no list\" reversal",
+          subject: "FOIA Request: Epstein records reviewed by the Attorney General (Feb 2025) and the basis for the July 2025 no-client-list conclusion",
+          records: "I request a copy of any records reflecting the Epstein-related material the Attorney General referenced as being \"on my desk\" for review in February 2025, and any memorandum or analysis stating the basis for the July 7, 2025 conclusion that no Epstein client list exists, dated between January 1 and July 31, 2025. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
