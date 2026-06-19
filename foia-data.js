@@ -7,10 +7,11 @@
  */
 const FOIA = {
   meta: {
-    product: "FOIA Around and Find Out",
-    tagline: "Independent investigators found these things in public records. A FOIA request makes the government hand over the documents behind them. Pick a finding — we'll draft the request.",
+    product: "FOIA Around, Find Out",
+    tagline: "Independent investigators found these things in public records. A FOIA request makes the government hand over the official paperwork that would prove it. Pick a finding — we'll draft the request.",
     statute: "Freedom of Information Act, 5 U.S.C. § 552",
     portal: "https://www.foia.gov",
+    submit_note: "Email is the fast path — it opens a message already addressed and written, so you just review and hit send. You can also file at the federal portal, FOIA.gov, but heads-up: it's a maze of forms, fields, and click-throughs, and the link just drops you on its landing page with no sense of the process. Use email wherever it's offered below.",
     narrowing_note: "Each request is deliberately narrow — specific agency, specific document types, named subjects, and a date range. Broad requests (\"all records about X\") are routinely denied as overbroad; narrow ones get answered. Edit before sending if you want to tighten further.",
     do_not: "This tool only drafts a letter — it submits nothing and collects nothing you type. Don't fire identical mass copies at one office; agencies deprioritize duplicates. Pick the angle that fits you."
   },
@@ -46,11 +47,21 @@ const FOIA = {
 
   /* Agencies referenced by investigations. Submit through FOIA.gov (pick the agency there). */
   agencies: [
-    { id: "state",    name: "U.S. Department of State", note: "Issues passports; does not appear to be the registrant of passports.gov." },
-    { id: "nara",     name: "National Archives and Records Administration", note: "Holds records schedules — tests whether NDS filed the required records-management paperwork." },
-    { id: "gsa",      name: "U.S. General Services Administration", note: "Runs login.gov and the Technology Transformation Service; holds Hogan's detail paperwork." },
-    { id: "eac",      name: "U.S. Election Assistance Commission", note: "Owns vote.gov." },
-    { id: "omb",      name: "Office of Management and Budget", note: "EOP component subject to FOIA; oversees federal privacy (PIAs/SORNs) and web policy." }
+    { id: "state", name: "U.S. Department of State", email: null,
+      portal: "https://foia.state.gov/Request/FOIA.aspx",
+      submitNote: "State takes FOIA only through its own portal (foia.state.gov) or by mail — no public email intake." },
+    { id: "nara", name: "National Archives and Records Administration", email: "foia@nara.gov",
+      portal: "https://www.archives.gov/foia/foia-request.html",
+      submitNote: "NARA accepts FOIA by email, mail, or fax." },
+    { id: "gsa", name: "U.S. General Services Administration", email: null,
+      portal: "https://www.gsa.gov/reference/freedom-of-information-act-foia",
+      submitNote: "GSA requires its PAL portal (linked on that page) or mail — not email." },
+    { id: "eac", name: "U.S. Election Assistance Commission", email: null,
+      portal: "https://www.eac.gov/foia/freedom-information-act-foia",
+      submitNote: "EAC accepts email/mail/fax but publishes no general FOIA mailbox — use its FOIA page for the current contact." },
+    { id: "omb", name: "Office of Management and Budget", email: "OMBFOIA@omb.eop.gov",
+      portal: "https://www.foia.gov",
+      submitNote: "OMB accepts FOIA by email." }
   ],
 
   /* Each investigation: a credited finding + the narrow requests that would surface the records behind it. */

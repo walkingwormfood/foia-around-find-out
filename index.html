@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FOIA Around and Find Out</title>
-<meta name="description" content="Independent investigators found things in public records. A FOIA request makes the government hand over the documents behind them. Pick a finding — we draft the request. Client-side only, no tracking.">
+<title>FOIA Around, Find Out</title>
+<meta name="description" content="Independent investigators found things in public records. A FOIA request makes the government hand over the official paperwork. Pick a finding — we draft the request. Client-side only, no tracking.">
 <style>
   :root{
     --bg:#0c0e12; --panel:#13161c; --panel2:#171b22; --line:#262c36;
@@ -20,14 +20,14 @@
   header{border-bottom:1px solid var(--line);padding:30px 0 20px}
   .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
   h1{margin:.25em 0 .15em;font-size:30px;letter-spacing:-.01em}
-  .tagline{color:var(--ink2);font-size:15px;max-width:64ch}
-  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;margin:16px 0;font-size:13px;color:var(--ink2)}
+  .tagline{color:var(--ink2);font-size:15px;max-width:66ch}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;margin:14px 0;font-size:13px;color:var(--ink2)}
   .note b{color:var(--ink)}
+  .note.submit{border-left-color:var(--ok)}
 
   main{padding:14px 0 60px}
   h2.section{font-size:13px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:26px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 
-  /* investigation cards */
   .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
   .by{font-size:12px;color:var(--ink2);margin-bottom:8px}
   .by .who{color:var(--accent);font-weight:600}
@@ -44,12 +44,13 @@
   .req:first-of-type{border-top:none}
   .req .desc{font-size:13.5px;color:var(--ink)}
   .req .agency{display:block;font-size:11px;color:var(--faint);font-family:var(--mono);margin-top:2px}
-  .btn{font-family:var(--mono);font-size:12.5px;border-radius:7px;padding:8px 13px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);white-space:nowrap}
+  .btn{font-family:var(--mono);font-size:12.5px;border-radius:7px;padding:8px 13px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);white-space:nowrap;text-decoration:none;display:inline-block}
   .btn:hover{border-color:#39414e}
   .btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+  .btn.email{background:var(--ok);color:var(--bg);border-color:var(--ok);font-weight:600}
+  .btn.link{background:transparent;border-color:#2f5043;color:var(--ok)}
   .btn.gen{flex:0 0 auto}
 
-  /* generator */
   #gen{display:none;background:var(--panel2);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;scroll-margin-top:14px}
   #gen.open{display:block}
   #gen .for{font-size:13px;color:var(--ink2);margin-bottom:4px}
@@ -64,8 +65,8 @@
   .checks label{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:13px;color:var(--ink2);cursor:pointer}
   .checks input{width:auto}
   .actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 2px}
-  .btn.link{background:transparent;border-color:#2f5043;color:var(--ok);text-decoration:none;display:inline-block}
   .copied{color:var(--ok);font-size:12px;font-family:var(--mono)}
+  .submit-hint{font-size:12px;color:var(--faint);margin-top:8px}
   .out-wrap{display:none;margin-top:10px}
   details.adv{margin-top:24px;border:1px solid var(--line);border-radius:8px;padding:0 14px;background:var(--panel)}
   details.adv summary{cursor:pointer;padding:12px 0;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
@@ -78,18 +79,18 @@
 <header>
   <div class="wrap">
     <div class="kicker">Public records · client-side · no tracking</div>
-    <h1>FOIA Around and Find Out</h1>
+    <h1>FOIA Around, Find Out</h1>
     <p class="tagline" id="tagline"></p>
   </div>
 </header>
 
 <main class="wrap">
+  <div class="note submit" id="submitNote"></div>
   <div class="note" id="narrowing"></div>
 
   <h2 class="section">Pick a finding</h2>
   <div id="findings"></div>
 
-  <!-- generator (revealed when a request is picked) -->
   <div id="gen">
     <div class="for" id="genFor"></div>
     <div class="row">
@@ -104,16 +105,11 @@
     <div class="actions"><button class="btn primary" id="genBtn">Draft the request</button></div>
     <div class="out-wrap" id="outWrap">
       <div class="field"><label for="out">Your request — review and edit before sending</label><textarea id="out" spellcheck="false"></textarea></div>
-      <div class="actions">
-        <button class="btn" id="copy">Copy</button>
-        <button class="btn" id="dl">Download .txt</button>
-        <a class="btn link" id="portal" href="https://www.foia.gov" target="_blank" rel="noopener">Submit at FOIA.gov →</a>
-        <span class="copied" id="copied" hidden>copied</span>
-      </div>
+      <div class="actions" id="actions"></div>
+      <div class="submit-hint" id="submitHint"></div>
     </div>
   </div>
 
-  <!-- advanced: custom request -->
   <details class="adv">
     <summary>Advanced · write a custom request</summary>
     <div class="field"><label for="advAgency">Agency</label><select id="advAgency"></select></div>
@@ -123,9 +119,7 @@
   </details>
 </main>
 
-<footer>
-  <div class="wrap" id="footer"></div>
-</footer>
+<footer><div class="wrap" id="footer"></div></footer>
 
 <script src="foia-data.js"></script>
 <script>
@@ -134,12 +128,12 @@
   const agencyById = id => FOIA.agencies.find(a => a.id === id);
 
   $("tagline").textContent = FOIA.meta.tagline;
+  $("submitNote").innerHTML = "<b>How to file:</b> " + esc(FOIA.meta.submit_note);
   $("narrowing").innerHTML = "<b>Why these are narrow:</b> " + esc(FOIA.meta.narrowing_note);
-  $("footer").innerHTML = "Client-side only — nothing you type leaves your browser, no analytics, no network calls. The Submit button just opens <code>foia.gov</code>; you file it yourself. " + esc(FOIA.meta.do_not) + " · CC0 — fork it, mirror it.";
+  $("footer").innerHTML = "Client-side only — nothing you type leaves your browser, no analytics, no network calls. The buttons open your email app or the agency's site; you file it yourself. " + esc(FOIA.meta.do_not) + " · CC0 — fork it, mirror it.";
 
   let current = null; // {subject, records, agencyId, askNoRecords, label}
 
-  // render investigation cards
   const wrap = $("findings");
   FOIA.investigations.forEach(inv => {
     const card = document.createElement("div");
@@ -161,10 +155,8 @@
     wrap.appendChild(card);
   });
 
-  // populate advanced agency list
   FOIA.agencies.forEach(a => { const o=document.createElement("option"); o.value=a.id; o.textContent=a.name; $("advAgency").appendChild(o); });
 
-  // wire generate buttons
   document.querySelectorAll("button.gen").forEach(b => b.addEventListener("click", () => {
     const inv = FOIA.investigations.find(x => x.id === b.dataset.inv);
     const r = inv.requests[+b.dataset.req];
@@ -193,7 +185,7 @@
     const b = FOIA.boilerplate;
     const L = [];
     L.push(name); if(addr) L.push(addr); L.push(email); L.push(today); L.push("");
-    L.push("FOIA Officer"); L.push(a ? a.name : current.agencyId); L.push("(submitted via FOIA.gov)"); L.push("");
+    L.push("FOIA Officer"); L.push(a ? a.name : current.agencyId); L.push("");
     L.push(current.subject); L.push("");
     L.push("Dear FOIA Officer,"); L.push("");
     L.push("This is a request under the " + FOIA.meta.statute + "."); L.push("");
@@ -207,25 +199,47 @@
     L.push(fill(b.closing, map));
     $("out").value = L.join("\n");
     $("outWrap").style.display = "block";
-    $("copied").hidden = true;
+    renderActions();
     $("out").scrollIntoView({behavior:"smooth", block:"nearest"});
   }
   $("genBtn").addEventListener("click", generate);
 
-  $("copy").addEventListener("click", async ()=>{
-    try { await navigator.clipboard.writeText($("out").value); $("copied").hidden=false; setTimeout(()=>$("copied").hidden=true,2000); }
-    catch(e){ $("out").select(); document.execCommand("copy"); $("copied").hidden=false; }
-  });
-  $("dl").addEventListener("click", ()=>{
-    const blob = new Blob([$("out").value], {type:"text/plain"});
-    const u = document.createElement("a"); u.href = URL.createObjectURL(blob);
-    u.download = "foia-request.txt"; u.click(); URL.revokeObjectURL(u.href);
-  });
+  function flashCopied(){ const s=$("copied"); if(s){ s.hidden=false; setTimeout(()=>s.hidden=true,2000); } }
+  function doCopy(){ const t=$("out"); (navigator.clipboard ? navigator.clipboard.writeText(t.value).then(flashCopied).catch(fallbackCopy) : fallbackCopy()); }
+  function fallbackCopy(){ $("out").select(); try{document.execCommand("copy");}catch(e){} flashCopied(); }
+
+  function renderActions(){
+    const a = agencyById(current.agencyId);
+    const box = $("actions");
+    box.innerHTML = "";
+    const subj = current.subject || "FOIA Request";
+    // Email — one click — only where the agency actually accepts email
+    if(a && a.email){
+      const m = document.createElement("a");
+      m.className = "btn email";
+      m.textContent = "✉ Email this request";
+      m.href = "mailto:" + a.email + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent($("out").value);
+      box.appendChild(m);
+    }
+    const c = document.createElement("button"); c.className="btn"; c.textContent="Copy"; c.addEventListener("click", doCopy); box.appendChild(c);
+    const d = document.createElement("button"); d.className="btn"; d.textContent="Download .txt";
+    d.addEventListener("click", ()=>{ const blob=new Blob([$("out").value],{type:"text/plain"}); const u=document.createElement("a"); u.href=URL.createObjectURL(blob); u.download="foia-request.txt"; u.click(); URL.revokeObjectURL(u.href); });
+    box.appendChild(d);
+    const p = document.createElement("a"); p.className="btn link"; p.target="_blank"; p.rel="noopener";
+    p.href = (a && a.portal) ? a.portal : FOIA.meta.portal;
+    p.textContent = (a && a.email) ? "Or file on the portal →" : ("Copy, then open " + (a?a.name:"the portal") + " →");
+    box.appendChild(p);
+    const sp = document.createElement("span"); sp.className="copied"; sp.id="copied"; sp.hidden=true; sp.textContent="copied"; box.appendChild(sp);
+    let hint = a && a.submitNote ? a.submitNote : "";
+    if(a && a.email) hint += " If the email opens cut off, click Copy and paste the letter in.";
+    else hint += " This agency has no one-click email — click Copy, then paste your request into its portal.";
+    $("submitHint").textContent = hint;
+  }
 
   $("advUse").addEventListener("click", ()=>{
     const id = $("advAgency").value;
     const recs = $("advRecords").value.trim();
-    if(!recs) { $("advRecords").focus(); return; }
+    if(!recs){ $("advRecords").focus(); return; }
     loadRequest({ subject:"FOIA Request", records:recs, agencyId:id, askNoRecords:false, label:"custom request" });
   });
 </script>
