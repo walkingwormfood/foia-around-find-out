@@ -72,7 +72,13 @@ const FOIA = {
       submitNote: "DOJ takes FOIA through its FOIA STAR portal (or the relevant component's portal), not email." },
     { id: "fbi", name: "Federal Bureau of Investigation", email: null,
       portal: "https://efoia.fbi.gov",
-      submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only." }
+      submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only." },
+    { id: "treasury", name: "U.S. Department of the Treasury", email: null,
+      portal: "https://foia.treasury.gov",
+      submitNote: "Treasury takes FOIA through its portal (foia.treasury.gov) or FOIA.gov." },
+    { id: "dod", name: "U.S. Department of Defense", email: null,
+      portal: "https://www.foia.gov",
+      submitNote: "DoD routes FOIA by component — via FOIA.gov, select Office of the Secretary of Defense/Joint Staff for OSD officials, or the Department of the Army." }
   ],
 
   investigations: [
@@ -377,6 +383,92 @@ const FOIA = {
           summary: "DOJ — the binder contents + who assembled them",
           subject: "FOIA Request: contents and preparation of the February 27, 2025 'Epstein files' binders",
           records: "I request a copy of the materials compiled into the binders labeled \"the Epstein files\" distributed at the White House on February 27, 2025, and any records identifying what was included in those binders and which Department of Justice office assembled or vetted them. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "dialog-society-officials",
+      categories: ["Conflict of interest"],
+      investigator: "Ian Carroll",
+      investigatorLinks: [
+        { label: "Ian Carroll — \"Recent Peter Thiel allegations\"", url: "https://www.youtube.com/watch?v=T3Vcra08-IQ" }
+      ],
+      status: "confirmed",
+      finding: "A leaked roster of Peter Thiel's secretive, off-the-record \"Dialog\" society (exposed June 16, 2026 by Wired, from researcher maia arson crimew's leak) places sitting Cabinet officials alongside executives of the industries they regulate — e.g., Treasury Secretary Scott Bessent with data-broker chairman Auren Hoffman (SafeGraph / LiveRamp), and Army Secretary Dan Driscoll with Palantir's Joe Lonsdale, whose software runs Pentagon and ICE systems.",
+      implication: "Senior executive officials convening privately, under no-attribution rules, with executives of industries they regulate — a textbook conflict-of-interest question. Attendees reportedly used personal/corporate email to keep communications outside FOIA, so the requestable records are official-travel authorizations, ethics reviews, and recusals — not emails.",
+      sources: [
+        { label: "Wired exposé (Jun 16 2026)", url: "" },
+        { label: "Washington Times (Jun 18 2026)", url: "https://www.washingtontimes.com/news/2026/jun/18/data-leak-unmasks-members-peter-thiels-elite-secretive-dialog-society/" },
+        { label: "maia arson crimew (leak)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "treasury",
+          summary: "Treasury — Bessent's travel authorization + ethics review re Dialog",
+          subject: "FOIA Request: travel and ethics records re Secretary Bessent's participation in the Dialog society",
+          records: "I request a copy of any official-travel authorization, ethics review, or recusal record concerning Treasury Secretary Scott Bessent's participation in the organization known as Dialog (the invitation-only society co-founded by Peter Thiel) or its retreats, from January 1, 2025 to the date this request is processed. I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dod",
+          summary: "DoD/Army — Driscoll's travel authorization + ethics review re Dialog",
+          subject: "FOIA Request: travel and ethics records re Army Secretary Driscoll's participation in the Dialog society",
+          records: "I request a copy of any official-travel authorization, ethics review, or recusal record concerning Secretary of the Army Dan Driscoll's participation in the organization known as Dialog (the invitation-only society co-founded by Peter Thiel) or its retreats, from January 1, 2025 to the date this request is processed. I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "feinberg-cerberus",
+      categories: ["Conflict of interest"],
+      investigator: "Candace Owens",
+      investigatorLinks: [
+        { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      status: "confirmed",
+      finding: "Deputy Secretary of Defense Stephen Feinberg co-founded Cerberus Capital Management, which owned the private-military contractor DynCorp (2010–2020) — a firm tied to a documented Bosnia sex-trafficking scandal exposed by whistleblower Kathryn Bolkovac. Feinberg has said he divested, but the extent of any continuing ties is unclear.",
+      implication: "The Pentagon's second-in-command, a $5B Cerberus co-founder, previously owned a mercenary firm linked to a trafficking scandal. His financial-disclosure and divestiture/recusal records are exactly what federal ethics filings exist to surface.",
+      sources: [
+        { label: "Candace Owens, Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" },
+        { label: "Cerberus (confirmation announcement)", url: "https://www.cerberus.com/media/cerberus-co-founder-steve-feinberg-confirmed-as-u-s-deputy-secretary-of-defense/" }
+      ],
+      requests: [
+        {
+          agencyId: "oge",
+          summary: "OGE — Feinberg's Form 278e + divestiture/ethics agreement",
+          subject: "FOIA Request: OGE Form 278e and ethics agreement for Deputy Secretary of Defense Stephen Feinberg",
+          records: "I request a copy of the OGE Form 278e public financial disclosure report filed by Stephen Feinberg in connection with his appointment as Deputy Secretary of Defense, together with any ethics agreement, divestiture plan, or recusal statement filed with that appointment, dated from January 1, 2025 to the date this request is processed.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dod",
+          summary: "DoD — any recusal/screening arrangement re Cerberus",
+          subject: "FOIA Request: recusal and screening records for Deputy Secretary Feinberg concerning Cerberus Capital Management",
+          records: "I request a copy of any recusal, screening arrangement, or ethics-screening memorandum on file at the Department of Defense governing Deputy Secretary of Defense Stephen Feinberg's involvement in matters affecting Cerberus Capital Management or its former portfolio holdings, from January 1, 2025 to the date this request is processed. I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "sam702-flight",
+      categories: ["Conflict of interest"],
+      investigator: "Candace Owens",
+      investigatorLinks: [
+        { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      status: "reported",
+      finding: "Candace Owens reports that the office of the Under Secretary of Defense for Intelligence & Security (Bradley Hansell) tasked a government flight, \"SAM702,\" with an unusual early-September 2025 itinerary — Tucson, an overnight at Fort Huachuca (an Army intelligence base), then El Paso — and that her FOIA request for its records was deferred under an \"unusual burden\" exception (queued at roughly #3,500).",
+      implication: "A military aircraft's tasking order, manifest, and itinerary are ordinarily releasable records. This request seeks who tasked SAM702 on those dates and why; the reported FOIA deferral is itself part of the story. (Single-source, on-air account — the request is what tests it.)",
+      sources: [
+        { label: "Candace Owens, Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD — SAM702 tasking order, manifest, and itinerary (Sept 2025)",
+          subject: "FOIA Request: tasking and manifest for military flight SAM702, September 2025",
+          records: "I request a copy of the tasking order, passenger manifest, and itinerary for the military flight designated SAM702 for the period September 7–9, 2025, including records identifying the office that requested or sponsored the mission. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
