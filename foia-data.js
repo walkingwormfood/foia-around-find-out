@@ -192,7 +192,7 @@ const FOIA = {
           agencyId: "omb",
           summary: "OMB — any privacy assessment (PIA/SORN) covering an NDS system",
           subject: "FOIA Request: Privacy Impact Assessments and System of Records Notices for National Design Studio programs",
-          records: "I request the following records: any Privacy Impact Assessment (PIA) or System of Records Notice (SORN) prepared for, covering, or referencing any National Design Studio program or information system, dated between August 1, 2025 and the date this request is processed.",
+          records: "I request a copy of any Privacy Impact Assessment (PIA) or System of Records Notice (SORN) prepared for a National Design Studio program or information system since the studio's establishment in August 2025. These are discrete, published privacy documents, not a broad search; if none exists, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
@@ -290,7 +290,7 @@ const FOIA = {
           agencyId: "omb",
           summary: "OMB — privacy review/authorization for NDS tracking scripts on federal sites",
           subject: "FOIA Request: authorization and privacy review for National Design Studio tracking scripts on federal websites",
-          records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization permitting the National Design Studio to load behavioral-tracking or analytics scripts served from ndstudio.gov infrastructure (including cdn.infra.ndstudio.gov) onto federal agency websites, dated between August 1, 2025 and the date this request is processed.",
+          records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization on file permitting the National Design Studio to load behavioral-tracking or analytics scripts (including those served from cdn.infra.ndstudio.gov) onto federal agency websites, since the studio's establishment in August 2025. To keep this request narrow, I am not seeking general email correspondence; if no such authorization exists, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
@@ -499,7 +499,7 @@ const FOIA = {
           agencyId: "fbi",
           summary: "FBI — records of any Charlie Kirk tip-line site/program + NDS role",
           subject: "FOIA Request: FBI \"Charlie Kirk\" tip-line website or program and any National Design Studio involvement",
-          records: "I request a copy of any records concerning an FBI tip-line website or program relating to Charlie Kirk — including any site at fbi-kirk-tipline.gov or hosted on National Design Studio infrastructure — and any interagency agreement, task order, or authorization between the FBI and the National Design Studio regarding such a site, from September 1, 2025 to the date this request is processed.",
+          records: "I request a copy of any interagency agreement, task order, statement of work, or written authorization between the FBI and the National Design Studio concerning an FBI \"Charlie Kirk\" tip-line website or program (including any site at fbi-kirk-tipline.gov), dated from September 1, 2025 to the date this request is processed. To keep this request narrow, I am not seeking general email correspondence; if no such records exist, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
@@ -741,7 +741,7 @@ const FOIA = {
           agencyId: "gsa",
           summary: "GSA / FedRAMP — Check Point's federal authorization + which agencies deploy it",
           subject: "FOIA Request: FedRAMP authorization and federal deployment of Check Point cybersecurity products",
-          records: "I request a copy of any FedRAMP authorization package or authorization-to-operate (ATO) on file for Check Point Software products, and any record identifying federal agencies that have procured or deployed Check Point cybersecurity products and the data-access or monitoring scope of those deployments, from January 1, 2023 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          records: "I request a copy of the FedRAMP authorization package(s) and any agency authorization-to-operate (ATO) on file for Check Point Software products, including the list of federal agencies covered by each such authorization. (I am requesting the FedRAMP/ATO records themselves — discrete, catalogued documents — not every agency's deployment details.) If no such records exist, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
@@ -764,7 +764,7 @@ const FOIA = {
           agencyId: "dhs",
           summary: "DHS — the SAVE System / federal voter-citizenship database design + legal authority",
           subject: "FOIA Request: the SAVE System federal citizenship and voter-eligibility verification database",
-          records: "I request a copy of records concerning the SAVE System or any federal citizenship- and voter-eligibility verification database, including its design or architecture documents, the legal-authority memorandum supporting its creation and use for voter eligibility, any accuracy or false-positive-rate assessment, and any interagency agreement directing its creation, from January 1, 2025 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
+          records: "I request a copy of the following records for the SAVE System (the federal citizenship/voter-eligibility verification database): its design or architecture document(s), the legal-authority memorandum supporting its use for voter eligibility, any accuracy or false-positive-rate assessment, and the interagency agreement directing its creation, from January 1, 2025 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
@@ -787,7 +787,7 @@ const FOIA = {
           agencyId: "doj",
           summary: "DOJ — the request letters to states + legal basis + voter-data retention policy",
           subject: "FOIA Request: DOJ requests to states for voter-registration data and related data-handling",
-          records: "I request a copy of records concerning the Department of Justice's 2025 requests to U.S. states and the District of Columbia for voter-registration or voter-eligibility data, including the request letters, the legal authority asserted, and any policy governing the retention, use, or sharing of voter data received in response, from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          records: "I request a copy of the request letters the Department of Justice sent to U.S. states and the District of Columbia in 2025 seeking voter-registration or voter-eligibility data, the memorandum stating the legal authority asserted for those requests, and any written policy governing the retention, use, or sharing of voter data received in response, from January 1, 2025 to the date this request is processed. To keep this request narrow, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
@@ -859,7 +859,7 @@ const FOIA = {
           agencyId: "fbi",
           summary: "FBI — its ADL agreements, the tips/referrals the ADL provided, and the termination basis",
           subject: "FOIA Request: FBI's relationship with the Anti-Defamation League and the October 2025 termination",
-          records: "I request a copy of records concerning the FBI's relationship with the Anti-Defamation League, including: any memorandum of understanding or partnership agreement; the tips, referrals, or reports the ADL provided to the FBI about U.S. individuals or organizations; ADL-provided training materials; and any records supporting the October 2025 decision to terminate the relationship, including the basis for the determination that the ADL was \"spying on conservative groups,\" from January 1, 2015 to the date this request is processed.",
+          records: "I request a copy of: (1) any memorandum of understanding, partnership agreement, or information-sharing agreement between the FBI and the Anti-Defamation League in effect during 2015–2025; and (2) the records underlying FBI Director Kash Patel's October 2025 decision to terminate that relationship, including the determination or memorandum stating the basis for the finding that the ADL was \"spying on conservative groups.\" To keep this request narrow, I am not seeking the full historical body of ADL tips or general email correspondence.",
           ask_no_records: true
         }
       ]
