@@ -84,7 +84,10 @@ const FOIA = {
       submitNote: "As of Oct 2025, USSS takes FOIA only through its SecureRelease portal (securerelease.us) or by mail — no email." },
     { id: "dhs", name: "U.S. Department of Homeland Security", email: null,
       portal: "https://www.dhs.gov/foia",
-      submitNote: "DHS ended email and mail FOIA intake (Jan 2026) — submit only via FOIA.gov or a DHS FOIA portal." }
+      submitNote: "DHS ended email and mail FOIA intake (Jan 2026) — submit only via FOIA.gov or a DHS FOIA portal." },
+    { id: "odni", name: "Office of the Director of National Intelligence", email: "DNI-FOIA@dni.gov",
+      portal: "https://www.dni.gov/index.php/foia",
+      submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." }
   ],
 
   investigations: [
@@ -626,14 +629,16 @@ const FOIA = {
     {
       id: "butler-investigation",
       categories: ["Butler shooting"],
-      investigator: "Candace Owens (citing Tucker Carlson)",
+      investigator: "Tucker Carlson (on Mario Nawfal), via Candace Owens",
       investigatorLinks: [
+        { label: "Mario Nawfal × Tucker Carlson", url: "https://www.youtube.com/watch?v=seaUXVin4Gw" },
         { label: "Candace — Ep 348", url: "https://www.youtube.com/watch?v=WoXd4oLwd3w" }
       ],
       status: "reported",
-      finding: "Tucker Carlson claimed (on Mario Nawfal's show, replayed by Candace Owens) that \"Trump shut down the investigation into Butler\" — the July 13, 2024 assassination attempt at Trump's Butler, Pennsylvania rally — and that Dan Bongino was \"terrified.\" Candace raised whether the attempt had been staged.",
-      implication: "If the federal investigation into a presidential assassination attempt was halted or curtailed, its case status and any closure directive would be on record. Single-source, secondhand claim (Tucker via Candace); \"staged\" is an open question she polled, not a finding — this request is what would test the \"shut it down\" assertion.",
+      finding: "Tucker Carlson claimed (on Mario Nawfal's show, replayed by Candace Owens) that \"Trump shut down the investigation into Butler\" — the July 13, 2024 assassination attempt at Trump's Butler, Pennsylvania rally — attributing the account to Dan Bongino, whom he described as \"terrified.\" Carlson also said he came into possession of social-media posts attributed to shooter Thomas Matthew Crooks, from before the shooting, that the FBI had said did not exist. Candace separately raised whether the attempt had been staged.",
+      implication: "Two testable records here: (1) if the federal investigation into a presidential assassination attempt was halted or curtailed, its case status and any closure directive would be on record; and (2) if the FBI identified Crooks' social-media posts after saying none existed, the records cataloguing those accounts would exist. Single-source, secondhand claims (Tucker via Candace); \"staged\" is an open question Candace polled, not a finding — these requests are what would test the assertions.",
       sources: [
+        { label: "Mario Nawfal × Tucker Carlson interview", url: "https://www.youtube.com/watch?v=seaUXVin4Gw" },
         { label: "Candace Owens, Ep 348 (@1:26)", url: "https://www.youtube.com/watch?v=WoXd4oLwd3w" }
       ],
       requests: [
@@ -642,6 +647,13 @@ const FOIA = {
           summary: "FBI — status / closure records for the Butler shooting investigation",
           subject: "FOIA Request: investigative status and any closure directive for the July 13, 2024 Butler assassination attempt",
           records: "I request a copy of any records reflecting the current investigative status of, or any directive to close, halt, or curtail, the FBI's investigation into the July 13, 2024 assassination attempt on Donald Trump in Butler, Pennsylvania — including any final case-disposition or closure memorandum. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "fbi",
+          summary: "FBI — records of Thomas Matthew Crooks' social-media accounts/posts identified in the investigation",
+          subject: "FOIA Request: records of Thomas Matthew Crooks' social-media accounts and posts in the Butler shooting investigation",
+          records: "I request a copy of any records identifying or compiling social-media accounts or posts attributed to Thomas Matthew Crooks (the deceased July 13, 2024 Butler shooter) that were identified, collected, or analyzed during the FBI's investigation of that shooting — including any internal summary, list, or log of such accounts and posts and the date each was identified. To keep this request narrow and minimize search burden, I am not seeking general email correspondence or unrelated third parties' private information.",
           ask_no_records: true
         }
       ]
@@ -681,7 +693,9 @@ const FOIA = {
       finding: "Tommy G reports that proposed legislation (he cites Sections 224 and 226), co-led by Rep. Adam Smith (D) and Rep. Mike Rogers (R), would deeply integrate U.S. and Israeli military and defense-industrial operations — allowing Israeli firms to operate here, adding broad data-sharing, and reducing the requirement to notify Congress and the public about aid to Israel. Netanyahu reportedly claimed credit for the framework.",
       implication: "The bill itself sits in Congress (FOIA-exempt), but the executive-branch side is requestable: any U.S.-Israel defense-integration framework, the arms/financing records, and any provision reducing aid-notification transparency. (Proposed legislation may change; \"merger\" is Tommy G's framing; U.S.-Israel defense cooperation is longstanding and bipartisan.)",
       sources: [
-        { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
+        { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
+        { label: "James Li (51/49) — corroborating (cites §219, formerly §224)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
+        { label: "Tucker Carlson on Mario Nawfal — corroborating (cites §226/224 NDAA)", url: "https://www.youtube.com/watch?v=seaUXVin4Gw" }
       ],
       requests: [
         {
@@ -696,6 +710,61 @@ const FOIA = {
           summary: "State / PM — Israeli defense-firm U.S. operations + aid-notification changes",
           subject: "FOIA Request: State Department records on U.S.-Israel defense integration and aid-notification provisions",
           records: "I request a copy of any agreement, policy memorandum, or framework document held by the Bureau of Political-Military Affairs concerning the establishment or operation of Israeli defense or weapons-manufacturing firms in the United States, and any record concerning changes to congressional or public notification requirements for security assistance to Israel, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "us-israel-aid-to-partnership-mou",
+      categories: ["Israel / foreign influence"],
+      investigator: "James Li (51/49)",
+      investigatorLinks: [
+        { label: "James Li (51/49) — \"We aren't just funding Israel. (It's way worse)\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" }
+      ],
+      status: "reported",
+      finding: "James Li reports — and reads aloud — a letter he attributes to Israeli PM Benjamin Netanyahu, addressed to Rep. Marlin Stutzman (R-IN), endorsing a plan to \"shift the framework for U.S.-Israel defense cooperation from aid to partnership.\" The letter references a May 27, 2026 meeting in Jerusalem and a new memorandum of understanding that would draw down U.S. financial military assistance over the next decade and replace it with joint co-development, co-production, and mutual investment (advanced missile defense, AI, unmanned systems, cyber, next-gen platforms).",
+      implication: "A new U.S.-Israel MOU replacing the current aid framework would be negotiated by the executive branch (State and DoD), so the draft MOU or framework document and any U.S. record of the May 27, 2026 Jerusalem meeting are requestable — even though Congress's role isn't. (The letter and its authenticity are Li's reporting; U.S.-Israel security cooperation is longstanding and bipartisan, and the current 2016 ten-year MOU runs through 2028 — a successor framework is a normal, expected negotiation.)",
+      sources: [
+        { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" }
+      ],
+      requests: [
+        {
+          agencyId: "state",
+          summary: "State / PM — the draft successor U.S.-Israel MOU + the May 27, 2026 Jerusalem meeting record",
+          subject: "FOIA Request: successor U.S.-Israel defense-cooperation MOU and May 2026 Jerusalem meeting records",
+          records: "I request a copy of any draft or final memorandum of understanding, framework document, or term sheet held by the Bureau of Political-Military Affairs concerning a successor to the 2016 U.S.-Israel Memorandum of Understanding on military assistance — specifically any instrument shifting U.S.-Israel defense cooperation from financial aid to co-development, co-production, or joint investment — together with any meeting record, readout, or memorandum of conversation for the May 27, 2026 meeting in Jerusalem between U.S. and Israeli officials on this subject, from January 1, 2026 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dod",
+          summary: "DoD / DSCA — the successor security-assistance framework + aid-drawdown plan",
+          subject: "FOIA Request: successor U.S.-Israel security-assistance framework and aid-drawdown records",
+          records: "I request a copy of any memorandum of understanding, framework document, or implementation plan held by the Office of the Secretary of Defense or the Defense Security Cooperation Agency concerning a successor to the 2016 U.S.-Israel military-assistance MOU, including any plan to draw down U.S. financial military assistance to Israel over a multi-year period and replace it with co-development, co-production, or joint-investment arrangements, from January 1, 2026 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "us-israel-intel-sharing-622",
+      categories: ["Israel / foreign influence"],
+      investigator: "James Li (51/49) and Trita Parsi (on The Young Turks)",
+      investigatorLinks: [
+        { label: "James Li (51/49) — \"We aren't just funding Israel.\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
+        { label: "The Young Turks — Trita Parsi on the right's turn against Israel", url: "https://www.youtube.com/watch?v=fKBdYHghWYY" }
+      ],
+      status: "reported",
+      finding: "Both James Li and Trita Parsi (on TYT) point to Section 622 of a 192-page intelligence authorization bill, titled \"United States-Israel Intelligence Sharing Enhancement\" and attributed to Sen. Tom Cotton. It would direct the President — acting through the Director of National Intelligence and, as necessary, the Secretary of Defense — to expand intelligence sharing with the Government of Israel, while restricting any suspension or reduction of that sharing absent a specific national-security determination reported to Congress.",
+      implication: "The bill text itself is a legislative product (not FOIA-able), but the executive branch already operates under existing U.S.-Israel intelligence-sharing arrangements that such a provision would lock in — and those instruments are records. A FOIA can surface whether a current intelligence-sharing agreement or MOU with Israel exists and its governing scope. (Caveat: intelligence-sharing records are frequently withheld under national-security exemptions or met with a Glomar response; this request seeks the existence and governing instrument, not classified content. The reading of Section 622 is Li's and Parsi's; the provision was in draft as reported.)",
+      sources: [
+        { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
+        { label: "The Young Turks (Parsi) — cites Responsible Statecraft", url: "https://www.youtube.com/watch?v=fKBdYHghWYY" }
+      ],
+      requests: [
+        {
+          agencyId: "odni",
+          summary: "ODNI — any existing U.S.-Israel intelligence-sharing agreement/MOU and its governing terms",
+          subject: "FOIA Request: existing U.S.-Israel intelligence-sharing agreement or memorandum of understanding",
+          records: "I request a copy of any currently effective agreement, memorandum of understanding, or written arrangement between the U.S. Intelligence Community and the Government of Israel that governs the sharing of intelligence, including any unclassified governing instrument, annex, or implementing directive identifying its scope and the conditions under which sharing may be suspended or reduced. I am requesting the governing instrument(s) and their non-exempt terms, not the underlying shared intelligence itself. To keep this request narrow, I am not seeking general email correspondence. If responsive records are withheld in full, I request a description of each withheld record and the specific exemption claimed.",
           ask_no_records: true
         }
       ]
