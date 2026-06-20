@@ -816,6 +816,29 @@ const FOIA = {
           ask_no_records: true
         }
       ]
+    },
+    {
+      id: "doj-antisemitism-task-force",
+      categories: ["Israel / foreign influence"],
+      investigator: "Ian Carroll",
+      investigatorLinks: [
+        { label: "Ian Carroll (video)", url: "https://www.youtube.com/watch?v=vkYVyuYDDmA" }
+      ],
+      status: "reported",
+      finding: "Ian Carroll reports that Leo Terrell — a Department of Justice official who chairs the DOJ Task Force to Combat Antisemitism — publicly vowed on social media to make a private citizen \"permanently unemployable\" over the person's speech, tagging employers.",
+      implication: "A federal task force, and a DOJ official invoking it to target an individual for speech, raise public-records and civil-liberties questions: the task force's charter and mandate, the criteria it applies, the individuals/organizations/cases it has acted on, and any coordination with outside advocacy groups. (Combating antisemitism is the task force's stated civil-rights mission; this request concerns its scope, targets, and transparency — not the mission itself.)",
+      sources: [
+        { label: "Ian Carroll (video)", url: "https://www.youtube.com/watch?v=vkYVyuYDDmA" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the antisemitism task force's charter, targets, and outside-group coordination",
+          subject: "FOIA Request: charter, scope, and case activity of the DOJ Task Force to Combat Antisemitism",
+          records: "I request a copy of the charter, mission statement, and operating procedures of the Department of Justice Task Force to Combat Antisemitism; any list or log of individuals, organizations, or cases it has investigated, referred, or taken action on; and any records of its coordination with outside advocacy organizations, dated from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
     }
   ]
 };
