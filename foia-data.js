@@ -819,7 +819,7 @@ const FOIA = {
     },
     {
       id: "doj-antisemitism-task-force",
-      categories: ["Israel / foreign influence"],
+      categories: ["Israel / foreign influence", "Civil liberties"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "Ian Carroll (video)", url: "https://www.youtube.com/watch?v=vkYVyuYDDmA" }
@@ -836,6 +836,30 @@ const FOIA = {
           summary: "DOJ — the antisemitism task force's charter, targets, and outside-group coordination",
           subject: "FOIA Request: charter, scope, and case activity of the DOJ Task Force to Combat Antisemitism",
           records: "I request a copy of the charter, mission statement, and operating procedures of the Department of Justice Task Force to Combat Antisemitism; any list or log of individuals, organizations, or cases it has investigated, referred, or taken action on; and any records of its coordination with outside advocacy organizations, dated from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "fbi-adl-relationship",
+      categories: ["Civil liberties", "Surveillance & privacy"],
+      investigator: "Public reporting",
+      investigatorLinks: [
+        { label: "Al Jazeera — FBI cuts ties with ADL", url: "https://www.aljazeera.com/news/2025/10/2/fbi-cuts-ties-with-anti-defamation-league-amid-conservative-backlash" }
+      ],
+      status: "confirmed",
+      finding: "The FBI maintained a decades-long partnership with the Anti-Defamation League — the ADL trained FBI agents (reportedly every new agent since 2000) and fed the Bureau extremism \"tips\" for years. In October 2025, FBI Director Kash Patel terminated the relationship, accusing the ADL of \"spying on conservative groups\" after it listed Charlie Kirk's Turning Point USA as \"extremist.\"",
+      implication: "A private advocacy group feeding referrals and training into federal law enforcement for decades raises core civil-liberties questions: which U.S. individuals and organizations the ADL flagged to the FBI, what the Bureau did with that information, and the basis for both the partnership and its abrupt termination. Those are federal records.",
+      sources: [
+        { label: "Al Jazeera (Oct 2025)", url: "https://www.aljazeera.com/news/2025/10/2/fbi-cuts-ties-with-anti-defamation-league-amid-conservative-backlash" },
+        { label: "Washington Examiner", url: "https://www.washingtonexaminer.com/news/investigations/3833964/patel-ends-fbi-partnership-political-front-adl/" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — its ADL agreements, the tips/referrals the ADL provided, and the termination basis",
+          subject: "FOIA Request: FBI's relationship with the Anti-Defamation League and the October 2025 termination",
+          records: "I request a copy of records concerning the FBI's relationship with the Anti-Defamation League, including: any memorandum of understanding or partnership agreement; the tips, referrals, or reports the ADL provided to the FBI about U.S. individuals or organizations; ADL-provided training materials; and any records supporting the October 2025 decision to terminate the relationship, including the basis for the determination that the ADL was \"spying on conservative groups,\" from January 1, 2015 to the date this request is processed.",
           ask_no_records: true
         }
       ]
