@@ -114,7 +114,7 @@ const FOIA = {
           agencyId: "nara",
           summary: "NARA — any records schedule filed for NDS",
           subject: "FOIA Request: records schedules filed by or for the National Design Studio",
-          records: "I request the following records: any records schedule, records-disposition authority, or records-management agreement filed by, for, or on behalf of the National Design Studio, dated between August 1, 2025 and the date this request is processed.",
+          records: "I request a copy of any records schedule or records-disposition authority that the National Design Studio has filed with the National Archives since the studio's establishment in August 2025 — a single, discrete, catalogued document, not a broad search. If none has been filed, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
