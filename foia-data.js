@@ -864,16 +864,18 @@ const FOIA = {
     {
       id: "maralago-prostitute-party-tip",
       categories: ["Human trafficking"],
-      investigator: "Sharlene Rochard (Epstein survivor) + the released Epstein files",
+      investigator: "Sharlene Rochard & Molly Skye Brown (Epstein survivors) + the released Epstein files",
       investigatorLinks: [
         { label: "Rochard interview — \"The Briefing with Jen Psaki\" (MS NOW)", url: "https://www.youtube.com/watch?v=Yoi4aUZ0EDM" },
+        { label: "Brown interview — Kim Iversen Show (Jun 2026)", url: "https://www.youtube.com/watch?v=OZk34l_4iZ8" },
         { label: "Raw Story coverage", url: "https://www.rawstory.com/donald-trump-jeffrey-epstein-2674617242/" }
       ],
       status: "reported",
-      finding: "An FBI document in the released Epstein files records a tip describing a party \"for prostitutes\" at Mar-a-Lago tied to Donald Trump. Epstein survivor Sharlene Rochard, a former model, has said on the record that she attended Mar-a-Lago parties as a young model.",
-      implication: "The tip and any FBI follow-up are federal records. A FOIA can surface the full, unredacted document and whether the tip was ever investigated. (This is a third-party tip/allegation contained in the files, not an adjudicated finding; DOJ's July 2025 memo claimed no client list.)",
+      finding: "An FBI document in the released Epstein files records a tip describing a party \"for prostitutes\" at Mar-a-Lago tied to Donald Trump. Two Epstein survivors have separately spoken on the record: Sharlene Rochard, a former model, says she attended Mar-a-Lago parties as a young model; and Molly Skye Brown says she was lured in 2001 to an Epstein/Maxwell-connected Palm Beach party at which Ghislaine Maxwell announced the group was moving to Mar-a-Lago \"by personal invitation\" of Donald Trump — and that recently released DOJ files corroborate parts of her account.",
+      implication: "The tip and any FBI follow-up are federal records. A FOIA can surface the full, unredacted document and whether the tip was ever investigated. (These are third-party tips and survivor recollections contained in or corroborated by the files, not adjudicated findings — and the survivors' broader accounts vary in verifiability; cited here only for the on-record statements that the party occurred. DOJ's July 2025 memo claimed no client list.)",
       sources: [
         { label: "Epstein files tip on Mar-a-Lago \"prostitute party\" (Yahoo)", url: "https://www.yahoo.com/news/articles/epstein-files-dump-reveals-tip-022850330.html" },
+        { label: "Molly Skye Brown on the Kim Iversen Show (Jun 2026)", url: "https://www.youtube.com/watch?v=OZk34l_4iZ8" },
         { label: "Raw Story", url: "https://www.rawstory.com/donald-trump-jeffrey-epstein-2674617242/" }
       ],
       requests: [
