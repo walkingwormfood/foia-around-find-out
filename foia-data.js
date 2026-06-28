@@ -24,8 +24,8 @@ const FOIA = {
     fee_waiver:
       "Fee waiver: I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public " +
       "interest because it is likely to contribute significantly to public understanding of the operations and " +
-      "activities of government — specifically, how federal digital and identity infrastructure is being built, " +
-      "authorized, and used — and is not in my commercial interest. If a fee waiver is denied, please notify me " +
+      "activities of government — specifically, how federal authority is exercised and how government programs and " +
+      "investigations are authorized and conducted — and is not in my commercial interest. If a fee waiver is denied, please notify me " +
       "before incurring any costs over $25.",
     expedited:
       "Expedited processing: I request expedited processing under 5 U.S.C. § 552(a)(6)(E). There is an urgency to " +
@@ -931,6 +931,82 @@ const FOIA = {
           summary: "FBI — its ADL agreements, the tips/referrals the ADL provided, and the termination basis",
           subject: "FOIA Request: FBI's relationship with the Anti-Defamation League and the October 2025 termination",
           records: "I request a copy of: (1) any memorandum of understanding, partnership agreement, or information-sharing agreement between the FBI and the Anti-Defamation League in effect during 2015–2025; and (2) the records underlying FBI Director Kash Patel's October 2025 decision to terminate that relationship, including the determination or memorandum stating the basis for the finding that the ADL was \"spying on conservative groups.\" To keep this request narrow, I am not seeking the full historical body of ADL tips or general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "bondi-media-guidelines-rollback",
+      categories: ["Press freedom"],
+      investigator: "Ian Carroll",
+      investigatorLinks: [
+        { label: "\"A Free Press: DOJ goes after the first amendment\"", url: "https://www.youtube.com/watch?v=bxNNY9FtPVs" }
+      ],
+      status: "confirmed",
+      finding: "In April 2025, Attorney General Pam Bondi issued a memo rescinding the Garland-era policy that protected journalists in leak investigations — again allowing federal investigators to pursue reporters' communications.",
+      implication: "The internal DOJ guardrail requiring senior approval before subpoenaing journalists' records was rolled back by memorandum, clearing the path for the grand-jury subpoenas of Washington Post and Wall Street Journal reporters that followed.",
+      sources: [
+        { label: "Washington Post / AP (Apr 2025)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the Bondi memo + revised news-media guidelines (28 C.F.R. § 50.10)",
+          subject: "FOIA Request: April 2025 Attorney General memorandum revising the news-media policy (28 C.F.R. § 50.10)",
+          records: "I request a copy of the memorandum issued by Attorney General Pamela Bondi in or around April 2025 that rescinded or revised the Department's policy governing the use of subpoenas, search warrants, and other compulsory legal process directed at members of the news media (the policy reflected at 28 C.F.R. § 50.10), together with the current superseding policy text. This is a request for specific, discrete, catalogued policy documents — not general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "wapo-reporter-home-raid-2026",
+      categories: ["Press freedom"],
+      investigator: "Ian Carroll",
+      investigatorLinks: [
+        { label: "\"A Free Press: DOJ goes after the first amendment\"", url: "https://www.youtube.com/watch?v=bxNNY9FtPVs" }
+      ],
+      status: "confirmed",
+      finding: "In January 2026 the DOJ executed a search at a Washington Post reporter's home as part of a criminal leak investigation of a government contractor already charged with disclosing national-security information.",
+      implication: "A search warrant served on a working journalist's residence — an escalation beyond subpoenas — tied to an already-charged contractor leak case whose docket and warrant affidavit are matters of record.",
+      sources: [
+        { label: "Washington Post (Jan 2026)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the search-warrant application, affidavit, and return for the reporter's residence",
+          subject: "FOIA Request: search-warrant application and affidavit for the January 2026 search of a Washington Post reporter's residence",
+          records: "I request a copy of the search-warrant application, supporting affidavit, and warrant return for the January 2026 search of the residence of a Washington Post journalist conducted in connection with a criminal investigation into the unauthorized disclosure of national-security information by a government contractor. I request only the warrant package and return — discrete, catalogued case documents — not general investigative files or email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "doj",
+          summary: "DOJ — the senior-official authorization required to target a journalist",
+          subject: "FOIA Request: news-media-policy authorization for the January 2026 search of a Washington Post reporter's residence",
+          records: "I request a copy of the written authorization, approval memorandum, or certification required under the Department's news-media policy (28 C.F.R. § 50.10) for the January 2026 search of a Washington Post reporter's residence — specifically the Attorney General or designated senior-official approval documenting that the policy's requirements were satisfied. This is a request for a specific, discrete approval record, not general correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "iran-airman-rescue-op-2025",
+      categories: ["Press freedom", "Military ops"],
+      investigator: "Ian Carroll",
+      investigatorLinks: [
+        { label: "\"A Free Press: DOJ goes after the first amendment\"", url: "https://www.youtube.com/watch?v=bxNNY9FtPVs" }
+      ],
+      status: "confirmed",
+      finding: "The leak that triggered the 2026 reporter subpoenas concerned a 2025 U.S. operation — framed publicly as a downed-airman rescue — that reporters noted occurred conspicuously near Iranian nuclear facilities and reportedly ended with U.S. forces destroying their own equipment in place.",
+      implication: "A large personnel-and-aircraft operation, officially a pilot rescue, sited next to nuclear facilities and ending in self-destruction of equipment — the embarrassment the leak investigation appears aimed at, more than any genuine source-protection harm. The operational core is classified, but property-accountability and cost records are a different, more disclosable category.",
+      sources: [
+        { label: "Washington Post / Wall Street Journal reporting (2025)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD — equipment loss / destruction-in-place & cost records (disclosable portions only)",
+          subject: "FOIA Request: equipment loss, destruction-in-place, and cost records for the 2025 personnel-recovery operation in or near Iran",
+          records: "I request copies of unclassified or reasonably segregable records documenting the loss, abandonment, or deliberate destruction-in-place of U.S. government equipment during the personnel-recovery (downed-aircrew) operation conducted in or near Iran in approximately 2025 — specifically property-accountability records such as financial liability investigations of property loss (reports of survey) and any summary of the replacement or acquisition cost of the destroyed equipment. I am not requesting classified operational details, sources, methods, locations, or tactics; please release all reasonably segregable non-exempt portions, including aggregate cost figures and property-accountability summaries.",
           ask_no_records: true
         }
       ]
