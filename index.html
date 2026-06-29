@@ -7,19 +7,19 @@
 <meta name="description" content="Independent investigators found things in public records. A FOIA request makes the government hand over the official paperwork. Pick a finding — we draft the request. Client-side only, no tracking.">
 <style>
   :root{
-    --bg:#0c0e12; --panel:#13161c; --panel2:#171b22; --line:#262c36;
-    --ink:#e7ebf0; --ink2:#9aa4b2; --faint:#5c6675;
-    --accent:#d8c08a; --ok:#6fae8f; --warn:#d8a36a;
+    --bg:#0a0a0b; --panel:#13110d; --panel2:#1b150d; --line:#36291a;
+    --ink:#ece4d4; --ink2:#b29a76; --faint:#6f5f46;
+    --accent:#ff9e42; --ok:#d2a44e; --warn:#ffc070;
     --mono:"SFMono-Regular",ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;background-image:linear-gradient(rgba(0,0,0,.16) 50%,transparent 50%);background-size:100% 3px}
   a{color:var(--accent)}
   .wrap{max-width:880px;margin:0 auto;padding:0 18px}
   header{border-bottom:1px solid var(--line);padding:30px 0 20px}
   .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
-  h1{margin:.25em 0 .15em;font-size:30px;letter-spacing:-.01em}
+  h1{margin:.25em 0 .15em;font-size:30px;letter-spacing:-.01em;color:var(--accent);text-shadow:0 0 14px rgba(255,158,66,.35)}
   .tagline{color:var(--ink2);font-size:15px;max-width:66ch}
   .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;margin:14px 0;font-size:13px;color:var(--ink2)}
   .note b{color:var(--ink)}
@@ -45,21 +45,23 @@
   .req .desc{font-size:13.5px;color:var(--ink)}
   .req .agency{display:block;font-size:11px;color:var(--faint);font-family:var(--mono);margin-top:2px}
   .btn{font-family:var(--mono);font-size:12.5px;border-radius:7px;padding:8px 13px;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink);white-space:nowrap;text-decoration:none;display:inline-block}
-  .btn:hover{border-color:#39414e}
+  .btn:hover{border-color:var(--accent)}
   .btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
   .btn.email{background:var(--ok);color:var(--bg);border-color:var(--ok);font-weight:600}
   .btn.link{background:transparent;border-color:#2f5043;color:var(--ok)}
-  .btn.gen{flex:0 0 auto}
+  .btn.gen{flex:0 0 auto;background:transparent;border-color:var(--accent);color:var(--accent)}
+  .btn.gen:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 2px}
   .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;border:1px solid var(--line);border-radius:20px;padding:5px 12px;cursor:pointer;background:var(--panel);color:var(--ink2)}
   .chip:hover{border-color:#39414e}
-  .chip.active{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+  .chip.active{background:rgba(255,158,66,.12);color:var(--accent);border-color:var(--accent);text-shadow:0 0 6px rgba(255,158,66,.4)}
   .cats{margin:8px 0 2px}
   .cat{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:6px}
   .card.hide{display:none}
 
   #gen{display:none;background:var(--panel2);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;scroll-margin-top:14px}
-  #gen.open{display:block}
+  #gen.open{display:block;animation:genExpand .22s ease}
+  @keyframes genExpand{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
   #gen .for{font-size:13px;color:var(--ink2);margin-bottom:4px}
   #gen .for b{color:var(--ink)}
   .field{margin:12px 0}
@@ -80,6 +82,22 @@
   details.adv[open]{padding-bottom:14px}
   footer{border-top:1px solid var(--line);margin-top:30px;padding:18px 0 50px;color:var(--faint);font-size:12px}
   footer code{font-family:var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--ink2)}
+  .facet{margin:10px 0 2px}
+  .facet-lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
+  .chip.ent.active{background:rgba(255,158,66,.12);border-color:var(--accent);color:var(--accent);text-shadow:0 0 6px rgba(255,158,66,.4)}
+  .ents{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+  .ents .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-right:6px}
+  .epill{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:20px;padding:2px 9px;margin:0 4px 4px 0;cursor:pointer;background:var(--panel2);color:var(--ink2)}
+  .epill:hover{border-color:#39414e}
+  .epill.active{background:rgba(255,158,66,.12);border-color:var(--accent);color:var(--accent);text-shadow:0 0 6px rgba(255,158,66,.4)}
+  .ecallout{font-size:13px;border-left-color:var(--ok)}
+  .ecallout b{color:var(--ink)}
+  .catfacet summary{cursor:pointer;list-style:none;outline:none}
+  .catfacet summary::-webkit-details-marker{display:none}
+  .catfacet summary .facet-lbl{display:inline}
+  .catfacet summary::before{content:"▸ ";color:var(--faint);font-family:var(--mono)}
+  .catfacet[open] summary::before{content:"▾ "}
+  .catfacet[open] .filters{margin-top:8px}
 </style>
 </head>
 <body>
@@ -96,7 +114,9 @@
   <div class="note" id="narrowing"></div>
 
   <h2 class="section">Pick a finding</h2>
-  <div class="filters" id="filters"></div>
+  <details class="facet catfacet"><summary><span class="facet-lbl">Filter by category</span></summary><div class="filters" id="filters"></div></details>
+  <div class="facet"><span class="facet-lbl">Biggest threads — who &amp; what the findings touch · click any to connect the dots</span><div class="filters" id="entityFilters"></div></div>
+  <div class="note" id="entityCallout" style="display:none"></div>
   <div id="findings"></div>
 
   <div id="gen">
@@ -134,6 +154,7 @@
   const $ = id => document.getElementById(id);
   const esc = s => (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   const agencyById = id => FOIA.agencies.find(a => a.id === id);
+  const entName = id => { const e = (FOIA.entities||[]).find(x => x.id === id); return e ? e.name : id; };
 
   $("tagline").textContent = FOIA.meta.tagline;
   $("submitNote").innerHTML = "<b>How to file:</b> " + esc(FOIA.meta.submit_note);
@@ -147,6 +168,7 @@
     const card = document.createElement("div");
     card.className = "card";
     card.dataset.cats = (inv.categories||[]).join("|");
+    card.dataset.ents = (inv.entities||[]).join("|");
     const links = (inv.investigatorLinks||[]).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join(" · ");
     const sources = (inv.sources||[]).map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)).join(" · ");
     const reqs = inv.requests.map((r,i) => {
@@ -166,6 +188,7 @@
       `<div class="implication">${esc(inv.implication)}</div>`+
       ((inv.categories||[]).length ? `<div class="cats">${inv.categories.map(c=>`<span class="cat">${esc(c)}</span>`).join("")}</div>` : "")+
       (sources ? `<div class="meta-row"><span class="lbl">Sources</span>${sources}</div>` : "")+
+      ((inv.entities||[]).length ? `<div class="ents"><span class="lbl">Touches</span>${inv.entities.map(id=>`<button class="epill" data-ent="${esc(id)}">${esc(entName(id))}</button>`).join("")}</div>` : "")+
       `<div class="pry"><span class="lbl">What you can pry loose</span>${reqs}</div>`;
     wrap.appendChild(card);
   });
@@ -183,19 +206,68 @@
       box.appendChild(chip);
     });
   }
+  let activeEnt = null;
+  const entCount = {};
+  FOIA.investigations.forEach(i => (i.entities||[]).forEach(e => entCount[e] = (entCount[e]||0)+1));
+  const connectors = Object.keys(entCount).filter(e => entCount[e] >= 2)
+    .sort((a,b) => entCount[b]-entCount[a] || entName(a).localeCompare(entName(b)));
+
   function applyFilter(){
     document.querySelectorAll("#findings .card").forEach(card => {
       const cats = (card.dataset.cats || "").split("|");
-      card.classList.toggle("hide", activeCat !== "All" && !cats.includes(activeCat));
+      const ents = (card.dataset.ents || "").split("|");
+      const catOk = activeCat === "All" || cats.includes(activeCat);
+      const entOk = !activeEnt || ents.includes(activeEnt);
+      card.classList.toggle("hide", !(catOk && entOk));
+    });
+    document.querySelectorAll(".epill").forEach(p => p.classList.toggle("active", !!activeEnt && p.dataset.ent === activeEnt));
+    updateCallout();
+  }
+
+  function renderEntityChips(){
+    const box = $("entityFilters"); box.innerHTML = "";
+    const mk = (label, on, fn) => { const b=document.createElement("button"); b.className="chip ent"+(on?" active":""); b.innerHTML=label; b.addEventListener("click",fn); return b; };
+    box.appendChild(mk("All entities", activeEnt===null, () => { activeEnt=null; applyFilter(); renderEntityChips(); }));
+    connectors.forEach(id => {
+      const b = mk(esc(entName(id))+" <span style='opacity:.55'>"+entCount[id]+"</span>", activeEnt===id,
+        () => { activeEnt = (activeEnt===id ? null : id); applyFilter(); renderEntityChips(); });
+      b.style.fontSize = (11 + Math.min(entCount[id], 8)) + "px";  // bigger thread = bigger chip = the shape
+      box.appendChild(b);
     });
   }
+
+  function updateCallout(){
+    const co = $("entityCallout");
+    if(!activeEnt){ co.style.display="none"; co.className="note"; return; }
+    const shown = FOIA.investigations.filter(i => (i.entities||[]).includes(activeEnt));
+    const cats = new Set(); shown.forEach(i => (i.categories||[]).forEach(c => cats.add(c)));
+    co.style.display = "block";
+    co.className = "note ecallout";
+    co.innerHTML = "<b>"+esc(entName(activeEnt))+"</b> — "+shown.length+" finding"+(shown.length>1?"s":"")+
+      " across <b>"+cats.size+" categor"+(cats.size>1?"ies":"y")+"</b>. "+
+      (cats.size>1 ? "The category filter alone would scatter these into "+cats.size+" separate buckets." : "");
+  }
+
+  document.addEventListener("click", e => {
+    const pill = e.target.closest && e.target.closest(".epill");
+    if(!pill) return;
+    const id = pill.dataset.ent;
+    activeEnt = (activeEnt===id ? null : id);
+    applyFilter(); renderEntityChips();
+    $("entityFilters").scrollIntoView({behavior:"smooth", block:"nearest"});
+  });
+
   renderChips();
+  renderEntityChips();
+  applyFilter();
 
   FOIA.agencies.forEach(a => { const o=document.createElement("option"); o.value=a.id; o.textContent=a.name; $("advAgency").appendChild(o); });
 
   document.querySelectorAll("button.gen").forEach(b => b.addEventListener("click", () => {
     const inv = FOIA.investigations.find(x => x.id === b.dataset.inv);
     const r = inv.requests[+b.dataset.req];
+    const card = b.closest(".card");
+    if(card) card.insertAdjacentElement("afterend", $("gen"));  // expand the drafter inline, right below this finding
     loadRequest({ subject:r.subject, records:r.records, agencyId:r.agencyId, askNoRecords:!!r.ask_no_records, label:r.summary });
   }));
 
@@ -205,7 +277,7 @@
     $("genFor").innerHTML = "Drafting: <b>" + esc(req.label) + "</b> — to " + esc(a?a.name:req.agencyId);
     $("outWrap").style.display = "none";
     $("gen").classList.add("open");
-    $("gen").scrollIntoView({behavior:"smooth", block:"start"});
+    $("gen").scrollIntoView({behavior:"smooth", block:"nearest"});
   }
 
   function fill(str, map){ return Object.keys(map).reduce((s,k)=> s.split("{{"+k+"}}").join(map[k]), str); }

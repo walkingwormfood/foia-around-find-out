@@ -90,10 +90,73 @@ const FOIA = {
       submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." }
   ],
 
+  /* Entities the investigations reference — the connective tissue across categories.
+   * type: person | org | company | program | place | country.
+   * Investigations link to these by id. The investigator (who REPORTED a finding) is deliberately NOT an entity. */
+  entities: [
+    { id: "nds", name: "National Design Studio", type: "org" },
+    { id: "eop", name: "Executive Office of the President", type: "org" },
+    { id: "state-dept", name: "U.S. Department of State", type: "org" },
+    { id: "passports-gov", name: "passports.gov", type: "program" },
+    { id: "login-gov", name: "login.gov", type: "program" },
+    { id: "vote-gov", name: "vote.gov", type: "program" },
+    { id: "trumprx-gov", name: "trumprx.gov", type: "program" },
+    { id: "save-system", name: "SAVE System", type: "program" },
+    { id: "greg-hogan", name: "Greg Hogan", type: "person" },
+    { id: "eac", name: "U.S. Election Assistance Commission", type: "org" },
+    { id: "doj", name: "U.S. Department of Justice", type: "org" },
+    { id: "fbi", name: "Federal Bureau of Investigation", type: "org" },
+    { id: "dod", name: "U.S. Department of Defense", type: "org" },
+    { id: "dhs", name: "U.S. Department of Homeland Security", type: "org" },
+    { id: "treasury", name: "U.S. Department of the Treasury", type: "org" },
+    { id: "gsa", name: "U.S. General Services Administration", type: "org" },
+    { id: "odni", name: "Office of the Director of National Intelligence", type: "org" },
+    { id: "usadf", name: "U.S. African Development Foundation", type: "org" },
+    { id: "posthog", name: "PostHog", type: "company" },
+    { id: "tesla", name: "Tesla", type: "company" },
+    { id: "palantir", name: "Palantir", type: "company" },
+    { id: "cerberus", name: "Cerberus Capital Management", type: "company" },
+    { id: "flock", name: "Flock Safety", type: "company" },
+    { id: "check-point", name: "Check Point", type: "company" },
+    { id: "dialog-society", name: "Dialog society", type: "org" },
+    { id: "unit-8200", name: "Unit 8200", type: "org" },
+    { id: "adl", name: "Anti-Defamation League", type: "org" },
+    { id: "washington-post", name: "The Washington Post", type: "org" },
+    { id: "gebbia", name: "Joe Gebbia", type: "person" },
+    { id: "epstein", name: "Jeffrey Epstein", type: "person" },
+    { id: "maxwell", name: "Ghislaine Maxwell", type: "person" },
+    { id: "blanche", name: "Todd Blanche", type: "person" },
+    { id: "bondi", name: "Pam Bondi", type: "person" },
+    { id: "thiel", name: "Peter Thiel", type: "person" },
+    { id: "bessent", name: "Scott Bessent", type: "person" },
+    { id: "hoffman", name: "Auren Hoffman", type: "person" },
+    { id: "driscoll", name: "Dan Driscoll", type: "person" },
+    { id: "lonsdale", name: "Joe Lonsdale", type: "person" },
+    { id: "feinberg", name: "Stephen Feinberg", type: "person" },
+    { id: "hansell", name: "Bradley Hansell", type: "person" },
+    { id: "charlie-kirk", name: "Charlie Kirk", type: "person" },
+    { id: "erika-kirk", name: "Erika Kirk", type: "person" },
+    { id: "kolvet", name: "Andrew Kolvet", type: "person" },
+    { id: "kash-patel", name: "Kash Patel", type: "person" },
+    { id: "crooks", name: "Thomas Matthew Crooks", type: "person" },
+    { id: "trump", name: "Donald Trump", type: "person" },
+    { id: "trump-jr", name: "Donald Trump Jr.", type: "person" },
+    { id: "bongino", name: "Dan Bongino", type: "person" },
+    { id: "netanyahu", name: "Benjamin Netanyahu", type: "person" },
+    { id: "tom-cotton", name: "Tom Cotton", type: "person" },
+    { id: "shlomo-kramer", name: "Shlomo Kramer", type: "person" },
+    { id: "leo-terrell", name: "Leo Terrell", type: "person" },
+    { id: "fort-huachuca", name: "Fort Huachuca", type: "place" },
+    { id: "mar-a-lago", name: "Mar-a-Lago", type: "place" },
+    { id: "israel", name: "Israel", type: "country" },
+    { id: "iran", name: "Iran", type: "country" },
+  ],
+
   investigations: [
     {
       id: "passports-eop",
       categories: ["NDS takeover"],
+      entities: ["nds", "eop", "state-dept", "passports-gov"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "\"Trump Built A New Passport.gov Website\"", url: "https://thedreydossier.substack.com/p/trump-built-a-new-passport-website" },
@@ -125,6 +188,7 @@ const FOIA = {
     {
       id: "hogan-login-gov",
       categories: ["NDS takeover"],
+      entities: ["nds", "greg-hogan", "login-gov", "passports-gov"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -154,6 +218,7 @@ const FOIA = {
     {
       id: "vote-gov-preview",
       categories: ["NDS takeover"],
+      entities: ["nds", "eac", "vote-gov", "doj"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "\"I found a second vote.gov\"", url: "https://thedreydossier.substack.com/p/i-found-a-second-votegov-and-its" },
@@ -179,6 +244,7 @@ const FOIA = {
     {
       id: "no-pias-sorns",
       categories: ["Surveillance & privacy", "NDS takeover"],
+      entities: ["nds"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -203,6 +269,7 @@ const FOIA = {
     {
       id: "posthog-federal",
       categories: ["Surveillance & privacy"],
+      entities: ["nds", "posthog"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -228,6 +295,7 @@ const FOIA = {
     {
       id: "akash-usadf",
       categories: ["NDS takeover"],
+      entities: ["nds", "usadf"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -252,6 +320,7 @@ const FOIA = {
     {
       id: "gebbia-coi",
       categories: ["Conflict of interest"],
+      entities: ["nds", "gebbia", "tesla"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -277,6 +346,7 @@ const FOIA = {
     {
       id: "automonitor",
       categories: ["Surveillance & privacy"],
+      entities: ["nds"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -301,6 +371,7 @@ const FOIA = {
     {
       id: "doj-no-client-list",
       categories: ["Human trafficking"],
+      entities: ["epstein", "doj", "fbi"],
       investigator: "The New York Times",
       investigatorLinks: [
         { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
@@ -330,6 +401,7 @@ const FOIA = {
     {
       id: "maxwell-blanche-interview",
       categories: ["Human trafficking"],
+      entities: ["epstein", "maxwell", "blanche", "doj"],
       investigator: "The New York Times",
       investigatorLinks: [
         { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
@@ -353,6 +425,7 @@ const FOIA = {
     {
       id: "epstein-pages-withheld",
       categories: ["Human trafficking"],
+      entities: ["epstein", "doj"],
       investigator: "John Kiriakou (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "The Deep State — Kiriakou × Dorey, Pt 1", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" }
@@ -376,6 +449,7 @@ const FOIA = {
     {
       id: "bondi-binders",
       categories: ["Human trafficking"],
+      entities: ["epstein", "bondi", "eop", "doj"],
       investigator: "The New York Times",
       investigatorLinks: [
         { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
@@ -399,6 +473,7 @@ const FOIA = {
     {
       id: "dialog-society-officials",
       categories: ["Conflict of interest"],
+      entities: ["thiel", "bessent", "hoffman", "driscoll", "lonsdale", "palantir", "dialog-society", "treasury", "dod"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "Ian Carroll — \"Recent Peter Thiel allegations\"", url: "https://www.youtube.com/watch?v=T3Vcra08-IQ" }
@@ -431,6 +506,7 @@ const FOIA = {
     {
       id: "feinberg-cerberus",
       categories: ["Conflict of interest"],
+      entities: ["feinberg", "cerberus", "dod"],
       investigator: "Candace Owens",
       investigatorLinks: [
         { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
@@ -462,6 +538,7 @@ const FOIA = {
     {
       id: "sam702-flight",
       categories: ["Conflict of interest"],
+      entities: ["fort-huachuca", "hansell", "dod"],
       investigator: "Candace Owens",
       investigatorLinks: [
         { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
@@ -485,6 +562,7 @@ const FOIA = {
     {
       id: "fbi-kirk-tipline",
       categories: ["Kirk assassination & coverup", "NDS takeover"],
+      entities: ["nds", "fbi", "charlie-kirk"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -510,6 +588,7 @@ const FOIA = {
     {
       id: "kolvet-eeob-visit",
       categories: ["Kirk assassination & coverup"],
+      entities: ["kolvet", "charlie-kirk", "kash-patel", "eop", "epstein"],
       investigator: "Candace Owens",
       investigatorLinks: [
         { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
@@ -533,6 +612,7 @@ const FOIA = {
     {
       id: "dod-erika-messaging",
       categories: ["Kirk assassination & coverup"],
+      entities: ["erika-kirk", "charlie-kirk", "dod"],
       investigator: "Candace Owens",
       investigatorLinks: [
         { label: "Candace — Ep 352", url: "https://www.youtube.com/watch?v=3QJqtW_NOSI" }
@@ -556,6 +636,7 @@ const FOIA = {
     {
       id: "posthog-no-contract",
       categories: ["Surveillance & privacy"],
+      entities: ["posthog", "gsa"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -581,6 +662,7 @@ const FOIA = {
     {
       id: "trumprx-input-capture",
       categories: ["Surveillance & privacy"],
+      entities: ["posthog", "trumprx-gov"],
       investigator: "The Drey Dossier",
       investigatorLinks: [
         { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
@@ -606,6 +688,7 @@ const FOIA = {
     {
       id: "bondi-list-reversal",
       categories: ["Human trafficking"],
+      entities: ["epstein", "bondi", "doj"],
       investigator: "The New York Times",
       investigatorLinks: [
         { label: "NYT — Haberman & Swan (Jun 2026)", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
@@ -629,6 +712,7 @@ const FOIA = {
     {
       id: "butler-investigation",
       categories: ["Butler shooting"],
+      entities: ["fbi", "crooks", "trump", "bongino"],
       investigator: "Tucker Carlson (on Mario Nawfal), via Candace Owens",
       investigatorLinks: [
         { label: "Mario Nawfal × Tucker Carlson", url: "https://www.youtube.com/watch?v=seaUXVin4Gw" },
@@ -661,6 +745,7 @@ const FOIA = {
     {
       id: "flock-federal-alpr",
       categories: ["Surveillance & privacy"],
+      entities: ["flock", "fbi", "doj"],
       investigator: "Tommy G (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
@@ -685,6 +770,7 @@ const FOIA = {
     {
       id: "us-israel-military-merger",
       categories: ["Israel / foreign influence"],
+      entities: ["israel", "netanyahu", "dod", "state-dept"],
       investigator: "Tommy G (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
@@ -717,6 +803,7 @@ const FOIA = {
     {
       id: "us-israel-aid-to-partnership-mou",
       categories: ["Israel / foreign influence"],
+      entities: ["israel", "netanyahu", "state-dept", "dod"],
       investigator: "James Li (51/49)",
       investigatorLinks: [
         { label: "James Li (51/49) — \"We aren't just funding Israel. (It's way worse)\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" }
@@ -747,6 +834,7 @@ const FOIA = {
     {
       id: "us-israel-intel-sharing-622",
       categories: ["Israel / foreign influence"],
+      entities: ["israel", "tom-cotton", "odni", "dod"],
       investigator: "James Li (51/49) and Trita Parsi (on The Young Turks)",
       investigatorLinks: [
         { label: "James Li (51/49) — \"We aren't just funding Israel.\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
@@ -772,6 +860,7 @@ const FOIA = {
     {
       id: "trump-jr-osc-loan",
       categories: ["Conflict of interest"],
+      entities: ["trump-jr", "dod"],
       investigator: "Tommy G",
       investigatorLinks: [
         { label: "Tommy G — \"Investigating How the Pentagon Wastes Trillions\"", url: "https://www.youtube.com/watch?v=ZsCUvzD_vqY" }
@@ -795,6 +884,7 @@ const FOIA = {
     {
       id: "checkpoint-federal-footprint",
       categories: ["Israel / foreign influence", "Surveillance & privacy"],
+      entities: ["check-point", "shlomo-kramer", "unit-8200", "israel", "gsa"],
       investigator: "Tommy G",
       investigatorLinks: [
         { label: "Tommy G — \"What Every American Should Know about Data Centers\"", url: "https://www.youtube.com/watch?v=MHJtIkfA-s8" }
@@ -818,6 +908,7 @@ const FOIA = {
     {
       id: "save-system-voter-database",
       categories: ["Elections & voting", "Surveillance & privacy"],
+      entities: ["dhs", "save-system"],
       investigator: "More Perfect Union",
       investigatorLinks: [
         { label: "More Perfect Union — \"The Shocking Billionaire Plot To Steal The Election\"", url: "https://www.youtube.com/watch?v=GUHm6MfnPvw" }
@@ -841,6 +932,7 @@ const FOIA = {
     {
       id: "doj-state-voter-data",
       categories: ["Elections & voting"],
+      entities: ["doj"],
       investigator: "More Perfect Union",
       investigatorLinks: [
         { label: "More Perfect Union — \"The Shocking Billionaire Plot To Steal The Election\"", url: "https://www.youtube.com/watch?v=GUHm6MfnPvw" }
@@ -864,6 +956,7 @@ const FOIA = {
     {
       id: "maralago-prostitute-party-tip",
       categories: ["Human trafficking"],
+      entities: ["epstein", "maxwell", "trump", "mar-a-lago", "fbi"],
       investigator: "Sharlene Rochard & Molly Skye Brown (Epstein survivors) + the released Epstein files",
       investigatorLinks: [
         { label: "Rochard interview — \"The Briefing with Jen Psaki\" (MS NOW)", url: "https://www.youtube.com/watch?v=Yoi4aUZ0EDM" },
@@ -891,6 +984,7 @@ const FOIA = {
     {
       id: "doj-antisemitism-task-force",
       categories: ["Israel / foreign influence", "Civil liberties"],
+      entities: ["doj", "leo-terrell", "israel"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "Ian Carroll (video)", url: "https://www.youtube.com/watch?v=vkYVyuYDDmA" }
@@ -914,6 +1008,7 @@ const FOIA = {
     {
       id: "fbi-adl-relationship",
       categories: ["Civil liberties", "Surveillance & privacy"],
+      entities: ["fbi", "adl", "kash-patel", "charlie-kirk"],
       investigator: "Public reporting",
       investigatorLinks: [
         { label: "Al Jazeera — FBI cuts ties with ADL", url: "https://www.aljazeera.com/news/2025/10/2/fbi-cuts-ties-with-anti-defamation-league-amid-conservative-backlash" }
@@ -938,6 +1033,7 @@ const FOIA = {
     {
       id: "bondi-media-guidelines-rollback",
       categories: ["Press freedom"],
+      entities: ["bondi", "doj"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "\"A Free Press: DOJ goes after the first amendment\"", url: "https://www.youtube.com/watch?v=bxNNY9FtPVs" }
@@ -961,6 +1057,7 @@ const FOIA = {
     {
       id: "wapo-reporter-home-raid-2026",
       categories: ["Press freedom"],
+      entities: ["fbi", "doj", "washington-post"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "\"A Free Press: DOJ goes after the first amendment\"", url: "https://www.youtube.com/watch?v=bxNNY9FtPVs" }
@@ -991,6 +1088,7 @@ const FOIA = {
     {
       id: "iran-airman-rescue-op-2025",
       categories: ["Press freedom", "Military ops"],
+      entities: ["dod", "iran", "washington-post"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "\"A Free Press: DOJ goes after the first amendment\"", url: "https://www.youtube.com/watch?v=bxNNY9FtPVs" }
