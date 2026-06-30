@@ -90,7 +90,10 @@ const FOIA = {
       submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." },
     { id: "dfc", name: "U.S. International Development Finance Corporation", email: "FOIA@dfc.gov",
       portal: "https://www.foia.gov",
-      submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." }
+      submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." },
+    { id: "interior", name: "U.S. Department of the Interior", email: null,
+      portal: "https://www.doi.gov/foia",
+      submitNote: "Interior routes FOIA by bureau — submit via FOIA.gov or the DOI FOIA portal; for public-lands records, direct it to the Bureau of Land Management (BLM)." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -156,12 +159,16 @@ const FOIA = {
     { id: "dfc", name: "U.S. International Development Finance Corporation", type: "org" },
     { id: "ben-black", name: "Ben Black", type: "person" },
     { id: "prospera", name: "Próspera (Honduras charter city)", type: "program" },
+    { id: "prosperity-zones", name: "Prosperity zones / Blueprint for America", type: "program" },
+    { id: "new-american-industrial-alliance", name: "New American Industrial Alliance", type: "org" },
+    { id: "subic-bay", name: "Subic Bay AI industrial park", type: "place" },
+    { id: "philippines", name: "Philippines", type: "country" },
   ],
 
   investigations: [
     {
       id: "dfc-ben-black-prospera",
-      categories: ["Conflict of interest"],
+      categories: ["Network state", "Conflict of interest"],
       entities: ["dfc", "ben-black", "prospera", "thiel"],
       investigator: "More Perfect Union",
       investigatorLinks: [
@@ -186,6 +193,69 @@ const FOIA = {
           summary: "DFC — its Honduras / La Ceiba / Próspera-adjacent investment commitments",
           subject: "FOIA Request: DFC investment commitments concerning Honduras, La Ceiba, and Próspera",
           records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee or board decision record of the U.S. International Development Finance Corporation concerning projects in Honduras — specifically any investment in or relating to the city of La Ceiba or the charter city known as Próspera (Roatán) — together with any recusal or ethics-screening record governing the agency head's involvement in those matters, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "prosperity-zones-federal-land",
+      categories: ["Network state", "Conflict of interest"],
+      entities: ["prosperity-zones", "new-american-industrial-alliance", "prospera", "thiel"],
+      investigator: "More Perfect Union",
+      investigatorLinks: [
+        { label: "\"Peter Thiel's Plan To Replace Democracy\"", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+      ],
+      status: "reported",
+      finding: "More Perfect Union reports a lobbying push — the \"Blueprint for America\" — for \"prosperity zones\" and \"maritime prosperity zones\": districts on American soil with reduced regulation, created by selling federal and public land to private companies for low-tax, low-regulation havens. Co-sponsors include the New American Industrial Alliance and the company behind Próspera (Honduras), whose lobbying disclosures show hundreds of thousands of dollars spent pushing the plan.",
+      implication: "A plan to transfer federal and public land to private operators for deregulated corporate enclaves is exactly the kind of policy whose framework documents, interagency planning, and land-disposal records are federal records. (The \"Blueprint\" and prosperity-zone framing are MPU's reporting and lobbying-disclosure-derived; these requests test what the agencies actually hold.)",
+      sources: [
+        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" },
+        { label: "Senate lobbying disclosures (LDA filings)", url: "https://lda.senate.gov/system/public/" }
+      ],
+      requests: [
+        {
+          agencyId: "interior",
+          summary: "Interior/BLM — any plan to sell or designate public land for \"prosperity zones\"",
+          subject: "FOIA Request: Interior records on \"prosperity zones\" and disposal of public land",
+          records: "I request a copy of any framework document, plan, interagency agreement, or land-disposal record held by the Department of the Interior or the Bureau of Land Management concerning the designation, sale, lease, or transfer of public land for \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "gsa",
+          summary: "GSA — any \"prosperity zones\" / Blueprint-for-America federal-property records",
+          subject: "FOIA Request: GSA records on \"prosperity zones\" and disposal of federal property",
+          records: "I request a copy of any framework document, plan, interagency agreement, or real-property disposal record held by the U.S. General Services Administration concerning \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" and the sale or transfer of federal property for low-regulation corporate development, dated between January 1, 2025 and the date this request is processed. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "subic-bay-ai-park",
+      categories: ["Network state", "Conflict of interest"],
+      entities: ["subic-bay", "philippines", "lonsdale", "thiel"],
+      investigator: "More Perfect Union",
+      investigatorLinks: [
+        { label: "\"Peter Thiel's Plan To Replace Democracy\"", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+      ],
+      status: "reported",
+      finding: "More Perfect Union reports that Joe Lonsdale (8VC co-founder and Thiel associate) helped staff the Trump administration and accompanied administration officials to the Philippines to christen a new regulatory zone — a \"historic deal\" for an approximately 4,000-acre \"AI-native industrial park\" next to Subic Bay, described as a startup-city-style development.",
+      implication: "A private venture-capital figure embedded in an official U.S. delegation to inaugurate a foreign \"regulatory zone\" his network stands to profit from raises conflict-of-interest and foreign-deal-transparency questions. The agreement or memorandum, the delegation roster, and any U.S. financing commitment are federal records. (Lonsdale's role and the deal's framing are MPU's reporting; these requests test the official record.)",
+      sources: [
+        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+      ],
+      requests: [
+        {
+          agencyId: "state",
+          summary: "State — the Subic Bay AI-park agreement + the U.S. delegation roster",
+          subject: "FOIA Request: State Department records on the Subic Bay AI industrial park and U.S. delegation",
+          records: "I request a copy of any agreement, memorandum of understanding, framework document, or signing/ceremony record held by the Department of State concerning the approximately 4,000-acre \"AI-native industrial park\" or regulatory zone near Subic Bay, Philippines, together with any record identifying the members of the U.S. delegation to that event, including any private-sector participants (such as Joe Lonsdale or 8VC), dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dfc",
+          summary: "DFC — any U.S. financing commitment for the Subic Bay project",
+          subject: "FOIA Request: DFC financing records for the Subic Bay (Philippines) AI industrial park",
+          records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee decision record of the U.S. International Development Finance Corporation concerning the AI-native industrial park or regulatory zone near Subic Bay, Philippines, dated between January 1, 2025 and the date this request is processed. If no responsive records exist, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
