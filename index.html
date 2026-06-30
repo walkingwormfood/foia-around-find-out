@@ -320,7 +320,7 @@
     const a = agencyById(current.agencyId);
     const box = $("actions");
     box.innerHTML = "";
-    const subj = current.subject || "FOIA Request";
+    const subj = (a && a.emailSubject) ? a.emailSubject : (current.subject || "FOIA Request");
     // Email — one click — only where the agency actually accepts email
     if(a && a.email){
       const body = $("out").value;

@@ -46,22 +46,22 @@ const FOIA = {
 
   /* Agencies referenced by investigations. email: null => portal-only (deep-link + copy). */
   agencies: [
-    { id: "state", name: "U.S. Department of State", email: null,
-      portal: "https://foia.state.gov/Request/FOIA.aspx",
-      submitNote: "State takes FOIA only through its own portal (foia.state.gov) or by mail — no public email intake." },
+    { id: "state", name: "U.S. Department of State", email: "FOIARequest@state.gov", emailSubject: "Freedom of Information Act/Privacy Act Request",
+      portal: "https://foia.state.gov/Request/Submit.aspx",
+      submitNote: "State accepts FOIA by email (FOIARequest@state.gov), its PAL portal, mail, or fax (202-485-1669). The subject line MUST read \"Freedom of Information Act/Privacy Act Request\"." },
     { id: "nara", name: "National Archives and Records Administration", email: "foia@nara.gov",
       portal: "https://www.archives.gov/foia/foia-request.html",
       submitNote: "NARA accepts FOIA by email, mail, or fax." },
     { id: "gsa", name: "U.S. General Services Administration", email: null,
-      portal: "https://www.gsa.gov/reference/freedom-of-information-act-foia",
-      submitNote: "GSA requires its PAL portal (linked on that page) or mail — not email." },
-    { id: "eac", name: "U.S. Election Assistance Commission", email: null,
+      portal: "https://pal.gsa.gov/",
+      submitNote: "GSA requires its PAL portal (pal.gsa.gov) or mail (FOIA Requester Service Center (LG), 1800 F St NW, Rm 7308, Washington DC 20405) — gsa.foia@gsa.gov is for inquiries, not submission." },
+    { id: "eac", name: "U.S. Election Assistance Commission", email: "sparsons@eac.gov",
       portal: "https://www.eac.gov/foia/freedom-information-act-foia",
-      submitNote: "EAC accepts email/mail/fax but publishes no general FOIA mailbox — use its FOIA page for the current contact." },
+      submitNote: "EAC accepts FOIA by email, mail, or fax. Email goes to the FOIA officer, Seton Parsons, Associate Counsel (sparsons@eac.gov); no special subject line required. Mail: 633 3rd St NW, Suite 200, Washington DC 20001 · fax 301-734-3108." },
     { id: "omb", name: "Office of Management and Budget", email: "OMBFOIA@omb.eop.gov",
       portal: "https://www.foia.gov",
       submitNote: "OMB accepts FOIA by email." },
-    { id: "usadf", name: "U.S. African Development Foundation", email: "info@usadf.gov",
+    { id: "usadf", name: "U.S. African Development Foundation", email: "info@usadf.gov", emailSubject: "Freedom of Information Act Request",
       portal: "https://www.usadf.gov/contact-us",
       submitNote: "USADF accepts FOIA by email — mark the subject line \"Freedom of Information Act Request\"." },
     { id: "oge", name: "U.S. Office of Government Ethics", email: "usoge@oge.gov",
@@ -73,9 +73,9 @@ const FOIA = {
     { id: "fbi", name: "Federal Bureau of Investigation", email: null,
       portal: "https://efoia.fbi.gov",
       submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only." },
-    { id: "treasury", name: "U.S. Department of the Treasury", email: null,
+    { id: "treasury", name: "U.S. Department of the Treasury", email: "FOIA@treasury.gov",
       portal: "https://foia.treasury.gov",
-      submitNote: "Treasury takes FOIA through its portal (foia.treasury.gov) or FOIA.gov." },
+      submitNote: "Treasury accepts FOIA by email (FOIA@treasury.gov), its portal (foia.treasury.gov), FOIA.gov, or mail. For a specific bureau, you may route directly through the portal." },
     { id: "dod", name: "U.S. Department of Defense", email: null,
       portal: "https://www.foia.gov",
       submitNote: "DoD routes FOIA by component — via FOIA.gov, select Office of the Secretary of Defense/Joint Staff for OSD officials, or the Department of the Army." },
@@ -84,10 +84,13 @@ const FOIA = {
       submitNote: "As of Oct 2025, USSS takes FOIA only through its SecureRelease portal (securerelease.us) or by mail — no email." },
     { id: "dhs", name: "U.S. Department of Homeland Security", email: null,
       portal: "https://www.dhs.gov/foia",
-      submitNote: "DHS ended email and mail FOIA intake (Jan 2026) — submit only via FOIA.gov or a DHS FOIA portal." },
+      submitNote: "As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA requests — submit only via FOIA.gov or the SecureRelease portal (HQ/CBP/FEMA/ICE/TSA/USCG/USSS); USCIS via its online account." },
     { id: "odni", name: "Office of the Director of National Intelligence", email: "DNI-FOIA@dni.gov",
       portal: "https://www.dni.gov/index.php/foia",
-      submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." }
+      submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." },
+    { id: "dfc", name: "U.S. International Development Finance Corporation", email: "FOIA@dfc.gov",
+      portal: "https://www.foia.gov",
+      submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -150,9 +153,43 @@ const FOIA = {
     { id: "mar-a-lago", name: "Mar-a-Lago", type: "place" },
     { id: "israel", name: "Israel", type: "country" },
     { id: "iran", name: "Iran", type: "country" },
+    { id: "dfc", name: "U.S. International Development Finance Corporation", type: "org" },
+    { id: "ben-black", name: "Ben Black", type: "person" },
+    { id: "prospera", name: "Próspera (Honduras charter city)", type: "program" },
   ],
 
   investigations: [
+    {
+      id: "dfc-ben-black-prospera",
+      categories: ["Conflict of interest"],
+      entities: ["dfc", "ben-black", "prospera", "thiel"],
+      investigator: "More Perfect Union",
+      investigatorLinks: [
+        { label: "\"Peter Thiel's Plan To Replace Democracy\"", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+      ],
+      status: "reported",
+      finding: "More Perfect Union reports that the U.S. International Development Finance Corporation (DFC) — the federal agency that invests tax dollars in private projects abroad, led by Ben Black (whom the report ties to Jeffrey Epstein) — is being lobbied for re-funding, and that Black traveled to Honduras promising investment in real estate and technology including La Ceiba, a city slated to be absorbed by Próspera, the Thiel/Pronomos-backed for-profit charter city.",
+      implication: "A federal financing agency steering public money toward a privatized \"network state\" project its own leadership has personally promoted raises core conflict-of-interest and ethics questions. The DFC's Honduras investment commitments, and the agency head's financial-disclosure and recusal records, are exactly what federal ethics filings and agency records exist to surface. (Black's Epstein tie and the Próspera linkage are MPU's reporting; this request tests them against the record.)",
+      sources: [
+        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+      ],
+      requests: [
+        {
+          agencyId: "oge",
+          summary: "OGE — Ben Black's financial disclosure + any ethics/recusal re Próspera/Pronomos",
+          subject: "FOIA Request: OGE Form 278e and ethics/recusal records for DFC head Ben Black",
+          records: "I request a copy of the OGE Form 278e public financial disclosure report filed by Ben Black in connection with his leadership of the U.S. International Development Finance Corporation, together with any ethics agreement, recusal statement, or authorization to participate concerning his interests in or dealings with Próspera, Pronomos Capital, or charter-city / \"network state\" ventures, dated from January 1, 2025 to the date this request is processed.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dfc",
+          summary: "DFC — its Honduras / La Ceiba / Próspera-adjacent investment commitments",
+          subject: "FOIA Request: DFC investment commitments concerning Honduras, La Ceiba, and Próspera",
+          records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee or board decision record of the U.S. International Development Finance Corporation concerning projects in Honduras — specifically any investment in or relating to the city of La Ceiba or the charter city known as Próspera (Roatán) — together with any recusal or ethics-screening record governing the agency head's involvement in those matters, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
     {
       id: "passports-eop",
       categories: ["NDS takeover"],
