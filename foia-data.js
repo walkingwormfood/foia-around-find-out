@@ -92,8 +92,8 @@ const FOIA = {
       portal: "https://www.foia.gov",
       submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." },
     { id: "interior", name: "U.S. Department of the Interior", email: null,
-      portal: "https://www.doi.gov/foia",
-      submitNote: "Interior routes FOIA by bureau — submit via FOIA.gov or the DOI FOIA portal; for public-lands records, direct it to the Bureau of Land Management (BLM)." }
+      portal: "https://securefoia.doi.gov",
+      submitNote: "Interior takes FOIA ONLY electronically — via its FOIAXpress Public Access Link (securefoia.doi.gov) or FOIA.gov; emailed requests are rejected. Public-lands records route to the Bureau of Land Management (BLM), which is also electronic-only." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
