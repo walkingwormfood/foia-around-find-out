@@ -115,6 +115,7 @@
 
   <h2 class="section">Pick a finding</h2>
   <details class="facet catfacet"><summary><span class="facet-lbl">Filter by category</span></summary><div class="filters" id="filters"></div></details>
+  <details class="facet catfacet"><summary><span class="facet-lbl">Filter by investigator / outlet — who reported it or corroborates it</span></summary><div class="filters" id="voiceFilters"></div></details>
   <div class="facet"><span class="facet-lbl">Biggest threads — who &amp; what the findings touch · click any to connect the dots</span><div class="filters" id="entityFilters"></div></div>
   <div class="note" id="entityCallout" style="display:none"></div>
   <div id="findings"></div>
@@ -163,12 +164,42 @@
 
   let current = null; // {subject, records, agencyId, askNoRecords, label}
 
+  // canonical voices: [display name, match substrings] — matched against the
+  // investigator credit AND the source labels/urls, so a corroborating outlet
+  // (e.g. Unlimited Hangout, cited in sources only) is browsable too.
+  const VOICES = [
+    ["Unlimited Hangout", ["unlimited hangout", "unlimitedhangout.com"]],
+    ["More Perfect Union", ["more perfect union"]],
+    ["The Drey Dossier", ["drey dossier"]],
+    ["The New York Times", ["new york times", "nyt", "nytimes.com"]],
+    ["Candace Owens", ["candace owens"]],
+    ["Ian Carroll", ["ian carroll"]],
+    ["Tommy G", ["tommy g"]],
+    ["James Li (51/49)", ["james li"]],
+    ["Tucker Carlson", ["tucker carlson"]],
+    ["John Kiriakou", ["kiriakou"]],
+    ["Trita Parsi / TYT", ["trita parsi", "young turks"]],
+    ["Julian Dorey", ["dorey"]],
+    ["Kim Iversen Show", ["iversen"]],
+    ["Epstein survivors", ["rochard", "molly skye brown", "epstein survivors"]],
+    ["Public reporting", ["public reporting"]]
+  ];
+  function voicesFor(inv){
+    const hay = [
+      inv.investigator || "",
+      ...(inv.investigatorLinks||[]).map(l => l.label + " " + l.url),
+      ...(inv.sources||[]).map(s => s.label + " " + (s.url||""))
+    ].join(" · ").toLowerCase();
+    return VOICES.filter(([,pats]) => pats.some(p => hay.includes(p))).map(([name]) => name);
+  }
+
   const wrap = $("findings");
   FOIA.investigations.forEach(inv => {
     const card = document.createElement("div");
     card.className = "card";
     card.dataset.cats = (inv.categories||[]).join("|");
     card.dataset.ents = (inv.entities||[]).join("|");
+    card.dataset.voices = voicesFor(inv).join("|");
     const links = (inv.investigatorLinks||[]).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join(" · ");
     const sources = (inv.sources||[]).map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)).join(" · ");
     const reqs = inv.requests.map((r,i) => {
@@ -206,6 +237,21 @@
       box.appendChild(chip);
     });
   }
+  // investigator / outlet chips
+  let activeVoice = null;
+  const voiceCount = {};
+  FOIA.investigations.forEach(i => voicesFor(i).forEach(v => voiceCount[v] = (voiceCount[v]||0)+1));
+  const voiceNames = Object.keys(voiceCount).sort((a,b) => voiceCount[b]-voiceCount[a] || a.localeCompare(b));
+  function renderVoiceChips(){
+    const box = $("voiceFilters"); box.innerHTML = "";
+    const mk = (label, on, fn) => { const b=document.createElement("button"); b.className="chip"+(on?" active":""); b.innerHTML=label; b.addEventListener("click",fn); return b; };
+    box.appendChild(mk("All", activeVoice===null, () => { activeVoice=null; applyFilter(); renderVoiceChips(); }));
+    voiceNames.forEach(v => {
+      box.appendChild(mk(esc(v)+" <span style='opacity:.55'>"+voiceCount[v]+"</span>", activeVoice===v,
+        () => { activeVoice = (activeVoice===v ? null : v); applyFilter(); renderVoiceChips(); }));
+    });
+  }
+
   let activeEnt = null;
   const entCount = {};
   FOIA.investigations.forEach(i => (i.entities||[]).forEach(e => entCount[e] = (entCount[e]||0)+1));
@@ -216,9 +262,11 @@
     document.querySelectorAll("#findings .card").forEach(card => {
       const cats = (card.dataset.cats || "").split("|");
       const ents = (card.dataset.ents || "").split("|");
+      const voices = (card.dataset.voices || "").split("|");
       const catOk = activeCat === "All" || cats.includes(activeCat);
       const entOk = !activeEnt || ents.includes(activeEnt);
-      card.classList.toggle("hide", !(catOk && entOk));
+      const voiceOk = !activeVoice || voices.includes(activeVoice);
+      card.classList.toggle("hide", !(catOk && entOk && voiceOk));
     });
     document.querySelectorAll(".epill").forEach(p => p.classList.toggle("active", !!activeEnt && p.dataset.ent === activeEnt));
     updateCallout();
@@ -258,6 +306,7 @@
   });
 
   renderChips();
+  renderVoiceChips();
   renderEntityChips();
   applyFilter();
 
