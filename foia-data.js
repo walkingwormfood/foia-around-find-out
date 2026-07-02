@@ -93,7 +93,13 @@ const FOIA = {
       submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." },
     { id: "interior", name: "U.S. Department of the Interior", email: null,
       portal: "https://securefoia.doi.gov",
-      submitNote: "Interior takes FOIA ONLY electronically — via its FOIAXpress Public Access Link (securefoia.doi.gov) or FOIA.gov; emailed requests are rejected. Public-lands records route to the Bureau of Land Management (BLM), which is also electronic-only." }
+      submitNote: "Interior takes FOIA ONLY electronically — via its FOIAXpress Public Access Link (securefoia.doi.gov) or FOIA.gov; emailed requests are rejected. Public-lands records route to the Bureau of Land Management (BLM), which is also electronic-only." },
+    { id: "navsea", name: "U.S. Navy — Naval Sea Systems Command (NAVSEA)", email: "NAVSEAFOIA@navy.mil",
+      portal: "https://www.securerelease.us",
+      submitNote: "NAVSEA — the parent command of NSWC Crane — accepts FOIA by email (NAVSEAFOIA@navy.mil), the SecureRelease portal (securerelease.us), FOIA.gov, or mail (Commander, NAVSEA, SEA 00A5, FOIA/Privacy Program Division, 1333 Isaac Hull Ave SE, Washington Navy Yard, DC 20376-2101). Requester Service Center: 202-781-4124." },
+    { id: "epa", name: "U.S. Environmental Protection Agency", email: null,
+      portal: "https://www.epa.gov/foia",
+      submitNote: "EPA takes FOIA electronically — via its FOIAXpress public access link (epa.gov/foia) or FOIA.gov — or by mail to the National FOIA Office. FOIAonline is retired; email submission is not offered." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -163,6 +169,9 @@ const FOIA = {
     { id: "new-american-industrial-alliance", name: "New American Industrial Alliance", type: "org" },
     { id: "subic-bay", name: "Subic Bay AI industrial park", type: "place" },
     { id: "philippines", name: "Philippines", type: "country" },
+    { id: "cbp", name: "U.S. Customs and Border Protection", type: "org" },
+    { id: "aes", name: "Accurate Energetic Systems (AES)", type: "company" },
+    { id: "nswc-crane", name: "NSWC Crane Division", type: "org" },
   ],
 
   investigations: [
@@ -748,6 +757,44 @@ const FOIA = {
       ]
     },
     {
+      id: "crane-aes-xs-device",
+      categories: ["Kirk assassination & coverup"],
+      entities: ["aes", "nswc-crane", "dod", "charlie-kirk"],
+      investigator: "Baron Coleman",
+      investigatorLinks: [
+        { label: "\"Explosive\" Documents FOIA; AES Documents Produced — Ep 135", url: "https://www.youtube.com/watch?v=l3lKV39xOjs&t=1742s" }
+      ],
+      status: "reported",
+      finding: "Baron Coleman obtained, via a Navy FOIA answered June 23, 2026, 33 pages on a contract between Naval Surface Warfare Center, Crane Division (Crane, Indiana) and Accurate Energetic Systems (AES) — the Tennessee explosives plant destroyed with 16 dead on October 10, 2025 — for a C4-based \"demolition charge, AP, extra small mini\" (~$440,000), ordered around April 1, 2025 with a firm August 25, 2025 delivery date. The production applied the rare exemption B7F (disclosure \"could reasonably be expected to endanger the life or physical safety of any individual\") to the project code, the operational requirement name, and quantities; the statement of work unusually permitted additive manufacturing (3D printing) with tolerance deviations accepted \"provided assembly may be completed.\" The day after the AES blast, news broke that EPA had cited Crane in September 2025 for mishandling hazardous waste and explosives.",
+      implication: "A sole-source buy of a novel miniature anti-personnel charge, on a hard deadline, whose very requirement name is withheld as life-endangering — followed within weeks by the destruction of its manufacturer. The procurement paperwork that must exist answers what B7F conceals: the sole-source Justification & Approval states the requirement and why AES; the receiving report shows who accepted delivery and when; post-October-10 contract modifications show how the government closed out a contract with a vendor that had ceased to exist. (The contract facts are from the produced FOIA documents as shown on-screen by Coleman; any connection to the Kirk assassination is his explicitly-labeled hypothesis — these requests test the record, not the hypothesis.)",
+      sources: [
+        { label: "Baron Coleman, Ep 135 — document walkthrough begins ~29:00", url: "https://www.youtube.com/watch?v=l3lKV39xOjs&t=1742s" }
+      ],
+      requests: [
+        {
+          agencyId: "navsea",
+          summary: "NAVSEA — the sole-source Justification & Approval for the Crane–AES \"extra small\" charge",
+          subject: "FOIA Request: Justification & Approval and requirements document for NSWC Crane contract with Accurate Energetic Systems (demolition charge, AP, extra small mini)",
+          records: "I request a copy of the Justification and Approval (J&A) for other than full and open competition, or any limited-source or sole-source justification, supporting the contract awarded in or around April 2025 by Naval Surface Warfare Center, Crane Division to Accurate Energetic Systems, LLC (McEwen, Tennessee) for the item described in the statement of work as \"demolition charge, AP, extra small mini,\" together with the purchase request or requirements document stating the operational requirement the procurement supported. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "navsea",
+          summary: "NAVSEA — acceptance record + any post-explosion modification/close-out of the same contract",
+          subject: "FOIA Request: DD Form 250 and post-October 2025 modifications for NSWC Crane contract with Accurate Energetic Systems",
+          records: "I request a copy of the material inspection and receiving report (DD Form 250) or equivalent acceptance record, and any contract modification, termination notice, or close-out document dated after October 10, 2025, for the contract awarded in or around April 2025 by Naval Surface Warfare Center, Crane Division to Accurate Energetic Systems, LLC (McEwen, Tennessee) for the item described as \"demolition charge, AP, extra small mini.\" To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "epa",
+          summary: "EPA — the September 2025 notice of violation to Crane for hazardous-waste/explosives handling",
+          subject: "FOIA Request: EPA notice of violation and inspection report concerning Naval Support Activity Crane (September 2025)",
+          records: "I request a copy of the notice of violation or enforcement notice issued by the U.S. Environmental Protection Agency in or around September 2025 to Naval Support Activity Crane and/or Crane Army Ammunition Activity (Crane, Indiana) concerning the handling, storage, or management of hazardous waste and explosives, together with the underlying RCRA inspection report and any written response from the Navy or Army, dated between June 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
       id: "posthog-no-contract",
       categories: ["Surveillance & privacy"],
       entities: ["posthog", "gsa"],
@@ -867,7 +914,7 @@ const FOIA = {
       ],
       status: "reported",
       finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
-      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records.",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.)",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "Ben Jordan — Flock reporting", url: "" },
@@ -879,6 +926,13 @@ const FOIA = {
           summary: "DOJ — US Marshals / FBI access agreements with Flock Safety's ALPR network",
           subject: "FOIA Request: U.S. Marshals Service and FBI access to Flock Safety's ALPR network",
           records: "I request a copy of any contract, memorandum of understanding, data-sharing agreement, or access-and-audit policy governing the U.S. Marshals Service's and/or the FBI's access to or use of Flock Safety's automated license-plate-reader (ALPR) network, in effect between January 1, 2024 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dhs",
+          summary: "DHS/ICE — policy and request records for obtaining Flock ALPR data via local law enforcement",
+          subject: "FOIA Request: ICE policy and request records concerning Flock Safety ALPR data obtained through state and local law enforcement",
+          records: "I request a copy of any policy memorandum, guidance document, directive, or standard request form or template governing U.S. Immigration and Customs Enforcement's acquisition or use of automated license-plate-reader (ALPR) data from Flock Safety systems by way of requests to state or local law enforcement agencies, together with any log, register, or audit record of such requests, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
@@ -1101,6 +1155,37 @@ const FOIA = {
           summary: "FBI — the full unredacted Mar-a-Lago \"prostitute party\" tip document + any investigation",
           subject: "FOIA Request: FBI document and investigative file on the Mar-a-Lago \"prostitute party\" tip in the Epstein files",
           records: "I request a copy of the FBI document(s) referenced in the released Epstein files that record a tip describing a party \"for prostitutes\" at Mar-a-Lago, including the full unredacted record and any related lead sheet, investigative file, or disposition concerning that tip.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "epstein-cbp-officers",
+      categories: ["Human trafficking"],
+      entities: ["epstein", "cbp", "fbi"],
+      investigator: "Unlimited Hangout (Webb & Goodwin) + the released Epstein files",
+      investigatorLinks: [
+        { label: "\"First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise\"", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
+      ],
+      status: "reported",
+      finding: "Unlimited Hangout reports that the released Epstein files document Epstein's efforts to cultivate personal relationships with six U.S. customs officers in the U.S. Virgin Islands and Florida — three of them based at the USVI's main airport, Cyril E. King (STT), including one supervisor — offering free travel, financial advice, gifts, and employment opportunities; one officer solicited a \"hard-money loan\" from Epstein. Epstein reportedly sought to learn which officers would be on duty when he was traveling, and his relationship with one officer was extensive enough that the FBI opened an investigation into it in October 2019, months after his death.",
+      implication: "A trafficking operation's logistics run through the border checkpoint, and these documents suggest the checkpoint was being cultivated. The FBI's October 2019 investigation and CBP's internal-integrity records are exactly the records that would show whether the government examined its own gatekeepers — and what it found. (The cultivation efforts are in the released files as reported by Unlimited Hangout; the FBI investigation's existence is reported there too, but its scope and outcome are unknown — that is what these requests test.)",
+      sources: [
+        { label: "Unlimited Hangout — First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the October 2019 investigation of Epstein's relationship with a customs officer",
+          subject: "FOIA Request: FBI records of the October 2019 investigation concerning Jeffrey Epstein's relationship with a U.S. Customs and Border Protection officer",
+          records: "I request a copy of the case-opening and case-closing documentation, and any final investigative report or summary memorandum, of the Federal Bureau of Investigation's investigation opened in or around October 2019 concerning Jeffrey Epstein's relationship with a U.S. Customs and Border Protection officer, as referenced in materials released from the Epstein files. Jeffrey Epstein is deceased, extinguishing his personal-privacy interests; I am not seeking the names of the officers involved, which may be redacted. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dhs",
+          summary: "DHS/CBP — Office of Professional Responsibility records on Epstein's contacts with customs officers",
+          subject: "FOIA Request: CBP Office of Professional Responsibility records concerning Jeffrey Epstein's contacts with CBP personnel",
+          records: "I request a copy of any Office of Professional Responsibility (or predecessor Internal Affairs) investigation record, integrity or misconduct referral, or security referral held by U.S. Customs and Border Protection concerning Jeffrey Epstein's contacts or relationships with CBP officers stationed in the U.S. Virgin Islands (including Cyril E. King Airport) or Florida, dated between January 1, 2015 and December 31, 2020. Jeffrey Epstein is deceased, extinguishing his personal-privacy interests; I am not seeking the names of the officers involved, which may be redacted. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
