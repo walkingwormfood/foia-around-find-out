@@ -176,9 +176,10 @@ const FOIA = {
       ],
       status: "reported",
       finding: "More Perfect Union reports that the U.S. International Development Finance Corporation (DFC) — the federal agency that invests tax dollars in private projects abroad, led by Ben Black (whom the report ties to Jeffrey Epstein) — is being lobbied for re-funding, and that Black traveled to Honduras promising investment in real estate and technology including La Ceiba, a city slated to be absorbed by Próspera, the Thiel/Pronomos-backed for-profit charter city.",
-      implication: "A federal financing agency steering public money toward a privatized \"network state\" project its own leadership has personally promoted raises core conflict-of-interest and ethics questions. The DFC's Honduras investment commitments, and the agency head's financial-disclosure and recusal records, are exactly what federal ethics filings and agency records exist to surface. (Black's Epstein tie and the Próspera linkage are MPU's reporting; this request tests them against the record.)",
+      implication: "A federal financing agency steering public money toward a privatized \"network state\" project its own leadership has personally promoted raises core conflict-of-interest and ethics questions. The DFC's Honduras investment commitments, and the agency head's financial-disclosure and recusal records, are exactly what federal ethics filings and agency records exist to surface. (Black's Epstein tie, his DFC role, and the La Ceiba plans are MPU's reporting; Próspera's Pronomos/Thiel backing and its ZEDE legal history are independently documented by Unlimited Hangout's City-States investigation. This request tests the DFC-specific claims against the record.)",
       sources: [
-        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" },
+        { label: "Unlimited Hangout — City-States Without Limits, Part 1", url: "https://unlimitedhangout.com/2025/10/investigative-reports/city-states-without-limits-part-1/" }
       ],
       requests: [
         {
@@ -210,7 +211,9 @@ const FOIA = {
       implication: "A plan to transfer federal and public land to private operators for deregulated corporate enclaves is exactly the kind of policy whose framework documents, interagency planning, and land-disposal records are federal records. (The \"Blueprint\" and prosperity-zone framing are MPU's reporting and lobbying-disclosure-derived; these requests test what the agencies actually hold.)",
       sources: [
         { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" },
-        { label: "Senate lobbying disclosures (LDA filings)", url: "https://lda.senate.gov/system/public/" }
+        { label: "Senate lobbying disclosures (LDA filings)", url: "https://lda.senate.gov/system/public/" },
+        { label: "Unlimited Hangout — City-States Without Limits, Part 2", url: "https://unlimitedhangout.com/2025/10/investigative-reports/city-states-without-limits-part-2/" },
+        { label: "Unlimited Hangout — The Dark MAGA Gov-Corp Technate, Part 2", url: "https://unlimitedhangout.com/2025/03/investigative-reports/the-dark-maga-gov-corp-technate-part-2/" }
       ],
       requests: [
         {
@@ -241,7 +244,8 @@ const FOIA = {
       finding: "More Perfect Union reports that Joe Lonsdale (8VC co-founder and Thiel associate) helped staff the Trump administration and accompanied administration officials to the Philippines to christen a new regulatory zone — a \"historic deal\" for an approximately 4,000-acre \"AI-native industrial park\" next to Subic Bay, described as a startup-city-style development.",
       implication: "A private venture-capital figure embedded in an official U.S. delegation to inaugurate a foreign \"regulatory zone\" his network stands to profit from raises conflict-of-interest and foreign-deal-transparency questions. The agreement or memorandum, the delegation roster, and any U.S. financing commitment are federal records. (Lonsdale's role and the deal's framing are MPU's reporting; these requests test the official record.)",
       sources: [
-        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" }
+        { label: "More Perfect Union — Peter Thiel's Plan To Replace Democracy", url: "https://www.youtube.com/watch?v=6iLf2h_fo-w" },
+        { label: "Unlimited Hangout — City-States Without Limits, Part 2", url: "https://unlimitedhangout.com/2025/10/investigative-reports/city-states-without-limits-part-2/" }
       ],
       requests: [
         {
@@ -487,7 +491,8 @@ const FOIA = {
       finding: "On July 7, 2025, the DOJ and FBI released an unsigned memo concluding — after reviewing 300+ GB of evidence — that there was no Epstein \"client list\" and reaffirming his 2019 death as suicide; the accompanying ~11 hours of jail video was missing about a minute.",
       implication: "The federal review that officially closed the case. The memo, the evidence it reviewed, and the complete unedited video are records the public can request. (The missing minute was later attributed to a nightly system reset.)",
       sources: [
-        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" },
+        { label: "Unlimited Hangout — First Friends, Part 2 (the First Couple's consigliere)", url: "https://unlimitedhangout.com/2025/08/investigative-series/first-friendspt2/" }
       ],
       requests: [
         {
@@ -517,7 +522,8 @@ const FOIA = {
       finding: "Deputy Attorney General Todd Blanche interviewed Ghislaine Maxwell over two days in late July 2025; soon after, she was quietly moved to a minimum-security prison camp — a transfer left unexplained at the time (Blanche later cited threats to her life).",
       implication: "A senior DOJ interview of the only convicted co-conspirator, followed by an unexplained transfer. The interview records are requestable.",
       sources: [
-        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" },
+        { label: "Unlimited Hangout — First Friends, Part 2 (the First Couple's consigliere)", url: "https://unlimitedhangout.com/2025/08/investigative-series/first-friendspt2/" }
       ],
       requests: [
         {
@@ -541,7 +547,8 @@ const FOIA = {
       finding: "John Kiriakou says roughly 3–3.5 million additional Epstein-related pages remain withheld despite the Epstein Files Transparency Act (which he cites as passing the House 419–1 and the Senate 100–0).",
       implication: "If a near-unanimous transparency law was enacted, the index of what was identified — and any decision to withhold — are themselves records. (Kiriakou's page figure and vote counts are on-air assertions; this request tests them against the record.)",
       sources: [
-        { label: "The Deep State — Kiriakou × Dorey, Pt 1 (@1:08)", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" }
+        { label: "The Deep State — Kiriakou × Dorey, Pt 1 (@1:08)", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" },
+        { label: "Unlimited Hangout — First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
       ],
       requests: [
         {
@@ -804,7 +811,8 @@ const FOIA = {
       finding: "On Feb 21, 2025, Attorney General Pam Bondi said an Epstein \"client list\" was \"sitting on my desk right now to review\"; less than five months later, the July 7 DOJ/FBI memo concluded no client list existed.",
       implication: "A public reversal by the Attorney General — from \"on my desk\" to \"does not exist.\" The records she was reviewing in February, and the basis for the July conclusion, are requestable from DOJ.",
       sources: [
-        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" }
+        { label: "NYT — Haberman & Swan, Jun 10 2026", url: "https://www.nytimes.com/2026/06/10/magazine/trump-epstein-files-white-house-vance-doj.html" },
+        { label: "Unlimited Hangout — First Friends, Part 2 (the First Couple's consigliere)", url: "https://unlimitedhangout.com/2025/08/investigative-series/first-friendspt2/" }
       ],
       requests: [
         {
@@ -862,7 +870,8 @@ const FOIA = {
       implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records.",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
-        { label: "Ben Jordan — Flock reporting", url: "" }
+        { label: "Ben Jordan — Flock reporting", url: "" },
+        { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" }
       ],
       requests: [
         {
@@ -888,7 +897,8 @@ const FOIA = {
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "James Li (51/49) — corroborating (cites §219, formerly §224)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
-        { label: "Tucker Carlson on Mario Nawfal — corroborating (cites §226/224 NDAA)", url: "https://www.youtube.com/watch?v=seaUXVin4Gw" }
+        { label: "Tucker Carlson on Mario Nawfal — corroborating (cites §226/224 NDAA)", url: "https://www.youtube.com/watch?v=seaUXVin4Gw" },
+        { label: "Unlimited Hangout — Palestine: \"Peace to Prosperity\" Through Technocracy", url: "https://unlimitedhangout.com/2023/12/investigative-reports/palestine-peace-to-prosperity-through-technocracy/" }
       ],
       requests: [
         {
@@ -919,7 +929,8 @@ const FOIA = {
       finding: "James Li reports — and reads aloud — a letter he attributes to Israeli PM Benjamin Netanyahu, addressed to Rep. Marlin Stutzman (R-IN), endorsing a plan to \"shift the framework for U.S.-Israel defense cooperation from aid to partnership.\" The letter references a May 27, 2026 meeting in Jerusalem and a new memorandum of understanding that would draw down U.S. financial military assistance over the next decade and replace it with joint co-development, co-production, and mutual investment (advanced missile defense, AI, unmanned systems, cyber, next-gen platforms).",
       implication: "A new U.S.-Israel MOU replacing the current aid framework would be negotiated by the executive branch (State and DoD), so the draft MOU or framework document and any U.S. record of the May 27, 2026 Jerusalem meeting are requestable — even though Congress's role isn't. (The letter and its authenticity are Li's reporting; U.S.-Israel security cooperation is longstanding and bipartisan, and the current 2016 ten-year MOU runs through 2028 — a successor framework is a normal, expected negotiation.)",
       sources: [
-        { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" }
+        { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
+        { label: "Unlimited Hangout — Isabel Maxwell: Israel's \"Back Door\" Into Silicon Valley", url: "https://unlimitedhangout.com/2020/07/investigative-reports/isabel-maxwell-israels-back-door-into-silicon-valley/" }
       ],
       requests: [
         {
@@ -952,7 +963,8 @@ const FOIA = {
       implication: "The bill text itself is a legislative product (not FOIA-able), but the executive branch already operates under existing U.S.-Israel intelligence-sharing arrangements that such a provision would lock in — and those instruments are records. A FOIA can surface whether a current intelligence-sharing agreement or MOU with Israel exists and its governing scope. (Caveat: intelligence-sharing records are frequently withheld under national-security exemptions or met with a Glomar response; this request seeks the existence and governing instrument, not classified content. The reading of Section 622 is Li's and Parsi's; the provision was in draft as reported.)",
       sources: [
         { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
-        { label: "The Young Turks (Parsi) — cites Responsible Statecraft", url: "https://www.youtube.com/watch?v=fKBdYHghWYY" }
+        { label: "The Young Turks (Parsi) — cites Responsible Statecraft", url: "https://www.youtube.com/watch?v=fKBdYHghWYY" },
+        { label: "Unlimited Hangout — Another Mega Group Spy Scandal? Samanage, Sabotage, and the SolarWinds Hack", url: "https://unlimitedhangout.com/2021/01/investigative-reports/another-mega-group-spy-scandal-samanage-sabotage-and-the-solarwinds-hack/" }
       ],
       requests: [
         {
@@ -976,7 +988,8 @@ const FOIA = {
       finding: "Tommy G reports that a startup co-founded by Donald Trump Jr. received a roughly $626 million Pentagon award — described as the single largest loan ever issued by the Department of Defense's Office of Strategic Capital (taxpayer-funded).",
       implication: "A loan of this size, from a DoD financing office, to a venture tied to the President's son is exactly what conflict-of-interest review and award-selection records exist to document. The loan agreement, application, selection memos, and any ethics screening are requestable.",
       sources: [
-        { label: "Tommy G — Pentagon waste investigation", url: "https://www.youtube.com/watch?v=ZsCUvzD_vqY" }
+        { label: "Tommy G — Pentagon waste investigation", url: "https://www.youtube.com/watch?v=ZsCUvzD_vqY" },
+        { label: "Unlimited Hangout — The Secret History of Polymarket, Part 1", url: "https://unlimitedhangout.com/2026/06/investigative-series/the-secret-history-of-polymarket-part-1/" }
       ],
       requests: [
         {
@@ -1000,7 +1013,9 @@ const FOIA = {
       finding: "Tommy G reports that Check Point — an Israeli cybersecurity firm founded by Shlomo Kramer, a veteran of the IDF's Unit 8200 (Israel's NSA-equivalent) — serves as a security gatekeeper for nearly every top-50 Fortune 500 company (a data-center whistleblower said it monitors all employee communications), and Kramer publicly argued the U.S. should \"limit the First Amendment.\"",
       implication: "If a firm tied to a foreign signals-intelligence unit secures major U.S. infrastructure, its footprint in federal systems is a public-records question: which federal agencies use Check Point, under what authorizations, and with what data-access or monitoring scope. (Check Point is a mainstream, widely-used vendor and foreign-headquartered security vendors are common and can be FedRAMP-authorized — the request simply surfaces the federal specifics.)",
       sources: [
-        { label: "Tommy G — data-centers investigation", url: "https://www.youtube.com/watch?v=MHJtIkfA-s8" }
+        { label: "Tommy G — data-centers investigation", url: "https://www.youtube.com/watch?v=MHJtIkfA-s8" },
+        { label: "Unlimited Hangout — Why a Shadowy Tech Firm With Ties to Israeli Intelligence Is Running Doomsday Election Simulations", url: "https://unlimitedhangout.com/2020/01/investigative-series/why-a-shadowy-tech-firm-with-ties-to-israeli-intelligence-is-running-doomsday-election-simulations/" },
+        { label: "Unlimited Hangout — Another Mega Group Spy Scandal? Samanage, Sabotage, and the SolarWinds Hack", url: "https://unlimitedhangout.com/2021/01/investigative-reports/another-mega-group-spy-scandal-samanage-sabotage-and-the-solarwinds-hack/" }
       ],
       requests: [
         {
@@ -1072,11 +1087,13 @@ const FOIA = {
       ],
       status: "reported",
       finding: "An FBI document in the released Epstein files records a tip describing a party \"for prostitutes\" at Mar-a-Lago tied to Donald Trump. Two Epstein survivors have separately spoken on the record: Sharlene Rochard, a former model, says she attended Mar-a-Lago parties as a young model; and Molly Skye Brown says she was lured in 2001 to an Epstein/Maxwell-connected Palm Beach party at which Ghislaine Maxwell announced the group was moving to Mar-a-Lago \"by personal invitation\" of Donald Trump — and that recently released DOJ files corroborate parts of her account.",
-      implication: "The tip and any FBI follow-up are federal records. A FOIA can surface the full, unredacted document and whether the tip was ever investigated. (These are third-party tips and survivor recollections contained in or corroborated by the files, not adjudicated findings — and the survivors' broader accounts vary in verifiability; cited here only for the on-record statements that the party occurred. DOJ's July 2025 memo claimed no client list.)",
+      implication: "The tip and any FBI follow-up are federal records. A FOIA can surface the full, unredacted document and whether the tip was ever investigated. (These are third-party tips and survivor recollections contained in or corroborated by the files, not adjudicated findings — and the survivors' broader accounts vary in verifiability; cited here only for the on-record statements that the party occurred. DOJ's July 2025 memo claimed no client list. Unlimited Hangout's First Friends series independently documents the surrounding circuitry in the same era — Epstein photographed at a 1995 Mar-a-Lago event, Trump circled in Rodriguez's black book, and the Trump–Zampolli–Brunel model-recruitment network — without mentioning this party or these survivors.)",
       sources: [
         { label: "Epstein files tip on Mar-a-Lago \"prostitute party\" (Yahoo)", url: "https://www.yahoo.com/news/articles/epstein-files-dump-reveals-tip-022850330.html" },
         { label: "Molly Skye Brown on the Kim Iversen Show (Jun 2026)", url: "https://www.youtube.com/watch?v=OZk34l_4iZ8" },
-        { label: "Raw Story", url: "https://www.rawstory.com/donald-trump-jeffrey-epstein-2674617242/" }
+        { label: "Raw Story", url: "https://www.rawstory.com/donald-trump-jeffrey-epstein-2674617242/" },
+        { label: "Unlimited Hangout — First Friends, Part 1 (Zampolli/Epstein model-recruitment network)", url: "https://unlimitedhangout.com/2025/07/investigative-series/first-friends-part1/" },
+        { label: "Unlimited Hangout — First Friends, Part 2 (the First Couple's consigliere)", url: "https://unlimitedhangout.com/2025/08/investigative-series/first-friendspt2/" }
       ],
       requests: [
         {
