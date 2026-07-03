@@ -99,7 +99,13 @@ const FOIA = {
       submitNote: "NAVSEA — the parent command of NSWC Crane — accepts FOIA by email (NAVSEAFOIA@navy.mil), the SecureRelease portal (securerelease.us), FOIA.gov, or mail (Commander, NAVSEA, SEA 00A5, FOIA/Privacy Program Division, 1333 Isaac Hull Ave SE, Washington Navy Yard, DC 20376-2101). Requester Service Center: 202-781-4124." },
     { id: "epa", name: "U.S. Environmental Protection Agency", email: null,
       portal: "https://www.epa.gov/foia",
-      submitNote: "EPA takes FOIA electronically — via its FOIAXpress public access link (epa.gov/foia) or FOIA.gov — or by mail to the National FOIA Office. FOIAonline is retired; email submission is not offered." }
+      submitNote: "EPA takes FOIA electronically — via its FOIAXpress public access link (epa.gov/foia) or FOIA.gov — or by mail to the National FOIA Office. FOIAonline is retired; email submission is not offered." },
+    { id: "occ", name: "Office of the Comptroller of the Currency", email: null,
+      portal: "https://foia-pal.occ.gov/",
+      submitNote: "The OCC takes FOIA through its Public Access Link portal (foia-pal.occ.gov) or FOIA.gov — all requests should be submitted online. FOIA-PA@occ.treas.gov is for questions, not submission. Mail (Privacy Act or correspondence): Manager, Disclosure Services & FOIA Officer, Communications Division, OCC, Suite 3E-218, Washington DC 20219." },
+    { id: "cisa", name: "Cybersecurity and Infrastructure Security Agency (DHS)", email: null,
+      portal: "https://www.securerelease.us",
+      submitNote: "CISA is a DHS component. As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA — submit via the SecureRelease portal (securerelease.us; select DHS Headquarters, which covers CISA) or FOIA.gov. Questions only: CISAFOIA@hq.dhs.gov." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -172,6 +178,18 @@ const FOIA = {
     { id: "cbp", name: "U.S. Customs and Border Protection", type: "org" },
     { id: "aes", name: "Accurate Energetic Systems (AES)", type: "company" },
     { id: "nswc-crane", name: "NSWC Crane Division", type: "org" },
+    { id: "occ", name: "Office of the Comptroller of the Currency", type: "org" },
+    { id: "cisa", name: "Cybersecurity and Infrastructure Security Agency", type: "org" },
+    { id: "usss", name: "U.S. Secret Service", type: "org" },
+    { id: "erebor", name: "Erebor Bank", type: "company" },
+    { id: "jonathan-gould", name: "Jonathan Gould", type: "person" },
+    { id: "palmer-luckey", name: "Palmer Luckey", type: "person" },
+    { id: "cti-league", name: "CTI League", type: "org" },
+    { id: "ohad-zaidenberg", name: "Ohad Zaidenberg", type: "person" },
+    { id: "chris-krebs", name: "Chris Krebs", type: "person" },
+    { id: "cybereason", name: "Cybereason", type: "company" },
+    { id: "bin-sulayem", name: "Sultan Ahmed bin Sulayem", type: "person" },
+    { id: "massie", name: "Thomas Massie", type: "person" },
   ],
 
   investigations: [
@@ -1314,6 +1332,121 @@ const FOIA = {
           summary: "DoD — equipment loss / destruction-in-place & cost records (disclosable portions only)",
           subject: "FOIA Request: equipment loss, destruction-in-place, and cost records for the 2025 personnel-recovery operation in or near Iran",
           records: "I request copies of unclassified or reasonably segregable records documenting the loss, abandonment, or deliberate destruction-in-place of U.S. government equipment during the personnel-recovery (downed-aircrew) operation conducted in or near Iran in approximately 2025 — specifically property-accountability records such as financial liability investigations of property loss (reports of survey) and any summary of the replacement or acquisition cost of the destroyed equipment. I am not requesting classified operational details, sources, methods, locations, or tactics; please release all reasonably segregable non-exempt portions, including aggregate cost figures and property-accountability summaries.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "erebor-occ-charter",
+      categories: ["Conflict of interest"],
+      entities: ["erebor", "occ", "jonathan-gould", "thiel", "lonsdale", "palmer-luckey"],
+      investigator: "Unlimited Hangout (Webb & Goodwin)",
+      investigatorLinks: [
+        { label: "The Praxian Kill Chain — Part 1", url: "https://unlimitedhangout.com/2026/04/investigative-series/praxian-kill-chain-part-1/" },
+        { label: "The Praxian Genocidal Kill Chain — Part 2", url: "https://unlimitedhangout.com/2026/05/investigative-series/the-praxian-genocidal-kill-chain-part-2/" }
+      ],
+      status: "confirmed",
+      finding: "Erebor Bank — a digital-asset-focused bank founded by Palmer Luckey and Joe Lonsdale, with backing from Peter Thiel's Founders Fund, and pitched as filling the gap left by the collapse of Silicon Valley Bank — applied to the Office of the Comptroller of the Currency for a de novo national bank charter on June 11, 2025 and won conditional approval about four months later, on October 15, 2025. It was the first de novo national bank charter conditionally approved under Trump-appointed Comptroller Jonathan V. Gould.",
+      implication: "An unusually fast charter for a bank whose founders and backers sit at the center of the administration's defense-tech network, granted by a newly installed Comptroller. The decision file is a named, disclosable federal record: the charter application, the OCC's licensing analysis and decision documents, and any records reflecting expedited or priority handling would show what the review actually weighed and how quickly it moved.",
+      sources: [
+        { label: "OCC news release NR-OCC-2025-101 — conditional approval for chartering Erebor Bank", url: "https://www.occ.gov/news-issuances/news-releases/2025/nr-occ-2025-101.html" },
+        { label: "Banking Dive — Erebor Bank receives national bank charter", url: "https://www.bankingdive.com/news/erebor-bank-receives-national-bank-charter/811724/" },
+        { label: "Unlimited Hangout — The Praxian Kill Chain, Part 1", url: "https://unlimitedhangout.com/2026/04/investigative-series/praxian-kill-chain-part-1/" }
+      ],
+      requests: [
+        {
+          agencyId: "occ",
+          summary: "OCC — Erebor's charter application and the licensing decision file",
+          subject: "FOIA Request: charter application and licensing decision records for Erebor Bank, National Association",
+          records: "I request a copy of the de novo national bank charter application submitted by Erebor Bank, National Association (Columbus, Ohio) on or about June 11, 2025, together with the OCC's licensing decision documents supporting its conditional approval announced October 15, 2025 (NR-OCC-2025-101) — specifically the decision memorandum, the licensing analysis or summary of the licensing decision, the conditions imposed, and any records reflecting expedited, priority, or accelerated handling of the application. To keep this request narrow and minimize search burden, I am not seeking general email correspondence or internal deliberative drafts.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "cisa-cti-league",
+      categories: ["Israel / foreign influence", "Surveillance & privacy"],
+      entities: ["cisa", "cti-league", "unit-8200", "ohad-zaidenberg", "chris-krebs", "israel"],
+      investigator: "Unlimited Hangout (Whitney Webb)",
+      investigatorLinks: [
+        { label: "Meet the IDF-Linked Cybersecurity Group Protecting US Hospitals 'Pro Bono'", url: "https://unlimitedhangout.com/2020/08/investigative-reports/meet-the-idf-linked-cybersecurity-group-protecting-us-hospitals-pro-bono/" }
+      ],
+      status: "reported",
+      finding: "In April 2020, CISA — then led by Christopher Krebs — publicly announced a partnership with the COVID-19 CTI League, an anonymous international volunteer group co-founded by Ohad Zaidenberg, whom Unlimited Hangout identifies as a former Israeli military intelligence (Unit 8200) figure. The arrangement gave the group a working relationship with the U.S. agency responsible for defending healthcare and critical-infrastructure networks.",
+      implication: "A federal cybersecurity agency taking on an information-sharing relationship with an anonymous, foreign-linked volunteer group operating around U.S. critical-infrastructure networks. Krebs announced the relationship publicly, so it isn't deniable — what's missing is the instrument: whatever agreement, onboarding, vetting, or information-sharing record memorializes the arrangement and what network access or data it involved.",
+      sources: [
+        { label: "Unlimited Hangout — Meet the IDF-Linked Cybersecurity Group Protecting US Hospitals 'Pro Bono' (Aug 2020)", url: "https://unlimitedhangout.com/2020/08/investigative-reports/meet-the-idf-linked-cybersecurity-group-protecting-us-hospitals-pro-bono/" }
+      ],
+      requests: [
+        {
+          agencyId: "cisa",
+          summary: "CISA — the agreement / onboarding / information-sharing record for the CTI League relationship",
+          subject: "FOIA Request: CISA records memorializing its 2020 partnership or information-sharing relationship with the COVID-19 CTI League",
+          records: "I request a copy of any memorandum of understanding, information-sharing agreement, onboarding or vetting record, terms of participation, or comparable instrument between the Cybersecurity and Infrastructure Security Agency (or DHS on its behalf) and the COVID-19 Cyber Threat Intelligence (CTI) League, dated between January 1, 2020 and December 31, 2021, together with any record describing what network access, data feeds, or threat-information exchange the relationship involved. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "cybereason-operation-blackout",
+      categories: ["Elections & voting", "Israel / foreign influence"],
+      entities: ["cybereason", "fbi", "dhs", "usss", "unit-8200", "israel"],
+      investigator: "Unlimited Hangout (Whitney Webb)",
+      investigatorLinks: [
+        { label: "Why a Shadowy Tech Firm With Ties to Israeli Intelligence Is Running 'Doomsday' Election Simulations", url: "https://unlimitedhangout.com/2020/01/investigative-series/why-a-shadowy-tech-firm-with-ties-to-israeli-intelligence-is-running-doomsday-election-simulations/" }
+      ],
+      status: "reported",
+      finding: "Cybereason — an Israeli-founded cybersecurity firm with Unit 8200 lineage — ran a series of tabletop exercises called 'Operation Blackout' simulating the collapse of a U.S. election, including a November 2019 iteration and an earlier July 2019 iteration in Boston. Unlimited Hangout reported that personnel from the FBI, DHS, and the U.S. Secret Service participated in the simulations, which ended with the government side unable to keep order.",
+      implication: "A private, foreign-founded firm ran election-collapse war games in which federal law-enforcement and protective agencies took part. The exercise, the agencies, and the dates are all named — so the participation is a records question, not a mystery: the invitations, participation approvals, and any after-action or lessons-learned reports held by each agency would show who attended, under what authority, and what conclusions they drew.",
+      sources: [
+        { label: "Unlimited Hangout — Why a Shadowy Tech Firm ... Is Running 'Doomsday' Election Simulations (Jan 2020)", url: "https://unlimitedhangout.com/2020/01/investigative-series/why-a-shadowy-tech-firm-with-ties-to-israeli-intelligence-is-running-doomsday-election-simulations/" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — participation and after-action records for Cybereason's 2019 'Operation Blackout' election simulations",
+          subject: "FOIA Request: FBI records of participation in Cybereason's 2019 'Operation Blackout' election simulations",
+          records: "I request a copy of any invitation, participation approval or authorization, attendee list, and any after-action, lessons-learned, or trip report held by the FBI concerning the tabletop election-security exercises conducted by Cybereason known as 'Operation Blackout,' including the November 2019 exercise and the July 2019 exercise held in Boston, dated between January 1, 2019 and June 30, 2020. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dhs",
+          summary: "DHS — participation and after-action records for the same Cybereason 'Operation Blackout' simulations",
+          subject: "FOIA Request: DHS records of participation in Cybereason's 2019 'Operation Blackout' election simulations",
+          records: "I request a copy of any invitation, participation approval or authorization, attendee list, and any after-action, lessons-learned, or trip report held by the Department of Homeland Security (including CISA) concerning the tabletop election-security exercises conducted by Cybereason known as 'Operation Blackout,' including the November 2019 exercise and the July 2019 exercise held in Boston, dated between January 1, 2019 and June 30, 2020. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "usss",
+          summary: "USSS — participation and after-action records for the same Cybereason 'Operation Blackout' simulations",
+          subject: "FOIA Request: U.S. Secret Service records of participation in Cybereason's 2019 'Operation Blackout' election simulations",
+          records: "I request a copy of any invitation, participation approval or authorization, attendee list, and any after-action, lessons-learned, or trip report held by the U.S. Secret Service concerning the tabletop election-security exercises conducted by Cybereason known as 'Operation Blackout,' including the November 2019 exercise and the July 2019 exercise held in Boston, dated between January 1, 2019 and June 30, 2020. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "bin-sulayem-doj-redaction",
+      categories: ["Human trafficking"],
+      entities: ["epstein", "bin-sulayem", "doj", "blanche", "massie"],
+      investigator: "Unlimited Hangout (Webb & Goodwin)",
+      investigatorLinks: [
+        { label: "First Friends — Part 1", url: "https://unlimitedhangout.com/2025/07/investigative-series/first-friends-part1/" },
+        { label: "First Friends — How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
+      ],
+      status: "confirmed",
+      finding: "In the released Epstein material, DOJ redacted the identity of the correspondent on at least one disturbing email — later identified as Sultan Ahmed bin Sulayem, the Emirati ports magnate (DP World). Rep. Thomas Massie named him publicly and Deputy Attorney General Todd Blanche confirmed the identity, which means the stated basis for the redaction no longer holds — the government withheld a name it has since acknowledged.",
+      implication: "A redaction whose justification has publicly collapsed: the identity DOJ shielded is now confirmed on the record by the Deputy AG. That makes both the underlying material and the withholding decision itself requestable — the unredacted correspondence, and the disclosure/redaction determination that explains on what exemption and rationale the name was withheld in the first place.",
+      sources: [
+        { label: "Unlimited Hangout — First Friends, Part 1 (Jul 2025)", url: "https://unlimitedhangout.com/2025/07/investigative-series/first-friends-part1/" },
+        { label: "Unlimited Hangout — First Friends: A Smuggler's Paradise (Mar 2026)", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ — the unredacted bin Sulayem correspondence and the redaction determination behind it",
+          subject: "FOIA Request: unredacted Epstein correspondence involving Sultan Ahmed bin Sulayem and the associated redaction/withholding determination",
+          records: "I request a copy, in unredacted form, of the Epstein-related correspondence in which the identity of Sultan Ahmed bin Sulayem was redacted in previously released material, together with any disclosure determination, redaction log, or withholding memorandum stating the FOIA exemption(s) and rationale on which that identity was withheld. The identity has since been confirmed publicly by the Deputy Attorney General, so the basis for withholding the name no longer applies; please release all reasonably segregable non-exempt portions. To keep this request narrow, I am limiting it to the specific correspondence and the determination governing that redaction.",
           ask_no_records: true
         }
       ]
