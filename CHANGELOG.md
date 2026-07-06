@@ -2,6 +2,13 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-06 — Follow-up drafter + stronger boilerplate (first community suggestion!)
+
+- A r/TheDreyDossier commenter pointed at **MuckRock's** preset request language — good call. Two lines from their open-source boilerplate are now in every FAFO letter:
+  - the **public-dissemination sentence** ("the requested records will be made available to the general public…") — a fee-waiver factor the letters weren't asserting;
+  - the **statutory-deadline line** citing the 20-business-day determination window (5 U.S.C. § 552(a)(6)(A)(i)), so the clock is anchored from day one.
+- New **Follow up** drafter: agencies routinely blow the 20-day window, and the polite status-check letter is its own genre. Enter the agency, filing date, tracking number, and a one-line description — it drafts a MuckRock-style neutral follow-up (no boilerplate stack, since your original request already carried it). Works with the same email/portal routing as everything else.
+
 ## 2026-07-06 — Webform-ready output for portal-only agencies
 
 - **Portal version**: for agencies that only take FOIA through a webform (FBI, DOJ, DHS, GSA, Interior, and the rest), the drafter now produces a paste-ready *request description* — no name/address header, no salutation, no signature — because the form collects those in its own fields. Pasting the full letter into a description box duplicated all of that; now it doesn't.

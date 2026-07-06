@@ -25,8 +25,12 @@ const FOIA = {
       "Fee waiver: I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public " +
       "interest because it is likely to contribute significantly to public understanding of the operations and " +
       "activities of government — specifically, how federal authority is exercised and how government programs and " +
-      "investigations are authorized and conducted — and is not in my commercial interest. If a fee waiver is denied, please notify me " +
-      "before incurring any costs over $25.",
+      "investigations are authorized and conducted — and is not in my commercial interest. The requested records " +
+      "will be made available to the general public, and this request is not being made for commercial purposes. " +
+      "If a fee waiver is denied, please notify me before incurring any costs over $25.",
+    deadline:
+      "I look forward to your determination on this request within the 20 business days provided by " +
+      "5 U.S.C. § 552(a)(6)(A)(i).",
     expedited:
       "Expedited processing: I request expedited processing under 5 U.S.C. § 552(a)(6)(E). There is an urgency to " +
       "inform the public concerning actual or alleged federal government activity that is the subject of widespread " +

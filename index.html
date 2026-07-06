@@ -147,6 +147,19 @@
   </div>
 
   <details class="adv">
+    <summary>Follow up · nudge an agency about a request you already filed</summary>
+    <div class="row">
+      <div class="field"><label for="fuAgency">Agency</label><select id="fuAgency"></select></div>
+      <div class="field"><label for="fuTrack">Tracking / reference number (if assigned)</label><input type="text" id="fuTrack" placeholder="e.g. 2026-FOIA-01234"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="fuDate">Date you filed</label><input type="text" id="fuDate" placeholder="e.g. June 19, 2026"></div>
+      <div class="field"><label for="fuWhat">What you asked for (one line)</label><input type="text" id="fuWhat" placeholder="e.g. records schedules filed by or for the National Design Studio"></div>
+    </div>
+    <div class="actions"><button class="btn" id="fuUse">Draft the follow-up ↑</button></div>
+  </details>
+
+  <details class="adv">
     <summary>Advanced · write a custom request</summary>
     <div class="field"><label for="advAgency">Agency</label><select id="advAgency"></select></div>
     <div class="field"><label for="advRecords">What records (be narrow — entities, document types, dates)</label>
@@ -360,14 +373,20 @@
     L.push("FOIA Officer"); L.push(a ? a.name : current.agencyId); L.push("");
     L.push(current.subject); L.push("");
     L.push("Dear FOIA Officer,"); L.push("");
-    L.push("This is a request under the " + FOIA.meta.statute + "."); L.push("");
-    L.push(current.records); L.push("");
-    if(current.askNoRecords){ L.push(b.no_records); L.push(""); }
-    L.push(b.burden_carveout); L.push("");
-    if($("fee").checked){ L.push(b.fee_waiver); L.push(""); }
-    if($("exp").checked){ L.push(b.expedited); L.push(""); }
-    L.push(b.segregability); L.push("");
-    L.push(b.format); L.push("");
+    if(current.bare){
+      // Follow-ups carry no boilerplate stack — the original request already did.
+      L.push(current.records); L.push("");
+    } else {
+      L.push("This is a request under the " + FOIA.meta.statute + "."); L.push("");
+      L.push(current.records); L.push("");
+      if(current.askNoRecords){ L.push(b.no_records); L.push(""); }
+      L.push(b.burden_carveout); L.push("");
+      if($("fee").checked){ L.push(b.fee_waiver); L.push(""); }
+      if($("exp").checked){ L.push(b.expedited); L.push(""); }
+      L.push(b.segregability); L.push("");
+      L.push(b.format); L.push("");
+      if(b.deadline){ L.push(b.deadline); L.push(""); }
+    }
     L.push(fill(b.closing, map));
     fullLetter = L.join("\n");
 
@@ -384,21 +403,26 @@
       // their own fields — pasting the whole letter duplicates all of that. Show a
       // description-box version instead; fee/expedited text gets its own paste boxes.
       const P = [];
-      P.push("This is a request under the " + FOIA.meta.statute + ".");
-      P.push("");
-      P.push(current.records); P.push("");
-      if(current.askNoRecords){ P.push(b.no_records); P.push(""); }
-      P.push(b.burden_carveout); P.push("");
-      P.push(b.segregability); P.push("");
-      P.push(b.format);
+      if(current.bare){
+        P.push(current.records);
+      } else {
+        P.push("This is a request under the " + FOIA.meta.statute + ".");
+        P.push("");
+        P.push(current.records); P.push("");
+        if(current.askNoRecords){ P.push(b.no_records); P.push(""); }
+        P.push(b.burden_carveout); P.push("");
+        P.push(b.segregability); P.push("");
+        P.push(b.format);
+        if(b.deadline){ P.push(""); P.push(b.deadline); }
+      }
       $("out").value = P.join("\n");
       $("outLabel").textContent = "Portal version — paste into the form's request-description box (the form collects your name, address, and fees separately)";
       updateCharline();
       $("charline").style.display = "block";
       $("feeOut").value = b.fee_waiver;
-      $("feeWrap").style.display = $("fee").checked ? "block" : "none";
+      $("feeWrap").style.display = (!current.bare && $("fee").checked) ? "block" : "none";
       $("expOut").value = b.expedited;
-      $("expWrap").style.display = $("exp").checked ? "block" : "none";
+      $("expWrap").style.display = (!current.bare && $("exp").checked) ? "block" : "none";
       const routing = [];
       if(current.component) routing.push("<b>Component to select in the portal:</b> " + esc(current.component) + ".");
       if(a && a.portalNote) routing.push(esc(a.portalNote));
@@ -465,6 +489,27 @@
     const recs = $("advRecords").value.trim();
     if(!recs){ $("advRecords").focus(); return; }
     loadRequest({ subject:"FOIA Request", records:recs, agencyId:id, askNoRecords:false, label:"custom request" });
+  });
+
+  // Follow-up drafter — modeled on MuckRock's follow-up template (suggested by a
+  // r/TheDreyDossier commenter). Neutral status-check tone; cites the statutory
+  // determination window without accusing anyone of missing it.
+  FOIA.agencies.forEach(a => { const o=document.createElement("option"); o.value=a.id; o.textContent=a.name; $("fuAgency").appendChild(o); });
+  $("fuUse").addEventListener("click", ()=>{
+    const id = $("fuAgency").value;
+    const tn = $("fuTrack").value.trim();
+    const dt = $("fuDate").value.trim() || "[date filed]";
+    const what = $("fuWhat").value.trim() || "[one-line description of the records requested]";
+    const body =
+      "I am following up on my Freedom of Information Act request" +
+      (tn ? " (reference number " + tn + ")" : "") +
+      ", originally submitted on " + dt + ", concerning " + what + ". " +
+      "I remain interested in these records. Please let me know the status of the request, the estimated " +
+      "completion date, and the tracking number assigned to it" + (tn ? " if it has changed" : " if one has been assigned") + ". " +
+      "For reference, FOIA provides for a determination within 20 business days of receipt (5 U.S.C. § 552(a)(6)(A)(i)). " +
+      "I am happy to clarify or reasonably narrow the request if that would speed processing.";
+    loadRequest({ subject: "Follow-up: FOIA request" + (tn ? " #" + tn : "") + " — " + what.slice(0,80),
+                  records: body, agencyId: id, askNoRecords: false, label: "follow-up on a filed request", bare: true });
   });
 </script>
 </body>
