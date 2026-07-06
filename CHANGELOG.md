@@ -2,6 +2,14 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-06 — Webform-ready output for portal-only agencies
+
+- **Portal version**: for agencies that only take FOIA through a webform (FBI, DOJ, DHS, GSA, Interior, and the rest), the drafter now produces a paste-ready *request description* — no name/address header, no salutation, no signature — because the form collects those in its own fields. Pasting the full letter into a description box duplicated all of that; now it doesn't.
+- **Fee waiver and expedited processing get their own paste boxes** when drafting for a portal, since portals ask for those justifications in separate form sections.
+- **DOJ component routing**: FOIA STAR makes you pick a DOJ component before filing, and the wrong pick yields a "no records" answer that's a routing artifact. Every DOJ request now names its component up front — Office of Information Policy for AG/DAG-office records (the Epstein memo, the Bondi binders, the NSPM-7 designation list), Civil Rights Division for the state voter-data letters, U.S. Marshals Service for the Flock ALPR agreements, Criminal Division for the MKUltra investigation disposition.
+- **FBI eFOIPA guidance** shown while drafting: one subject per submission, pick the records-about-a-topic request type, paste the portal version into the description box. (The portal's old 3,000-character cap was lifted in 2021; a live character count is shown anyway, with trim advice if a form complains.)
+- "Download full letter .txt" keeps the complete formal letter for your records — useful if a portal fails and you fall back to mail.
+
 ## 2026-07-06 — NSPM-7 and the Department of Labor
 
 - **Three new cards from More Perfect Union's surveillance report** (Daniel Boguslaw, with Ken Klippenstein and former DHS intelligence attorney Spencer Reynolds on record):

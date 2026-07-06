@@ -69,10 +69,12 @@ const FOIA = {
       submitNote: "OGE accepts FOIA by email." },
     { id: "doj", name: "U.S. Department of Justice", email: null,
       portal: "https://www.justice.gov/oip/submit-and-track-request-or-appeal",
-      submitNote: "DOJ takes FOIA through its FOIA STAR portal (or the relevant component's portal), not email." },
+      submitNote: "DOJ takes FOIA through its FOIA STAR portal (or the relevant component's portal), not email.",
+      portalNote: "FOIA STAR makes you pick a DOJ component before anything else — use the component named on this request. Filing against the wrong component gets a \"no records\" answer that's a routing artifact, not a real absence. The form collects your name, address, and fee preference in its own fields." },
     { id: "fbi", name: "Federal Bureau of Investigation", email: null,
       portal: "https://efoia.fbi.gov",
-      submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only." },
+      submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only.",
+      portalNote: "eFOIPA works best as one subject per submission — don't combine requests. Choose the request type for records about a topic/organization (not about yourself), and paste the portal version into the request-description box; the form collects your name, address, and fee preference in its own fields." },
     { id: "treasury", name: "U.S. Department of the Treasury", email: "FOIA@treasury.gov",
       portal: "https://foia.treasury.gov",
       submitNote: "Treasury accepts FOIA by email (FOIA@treasury.gov), its portal (foia.treasury.gov), FOIA.gov, or mail. For a specific bureau, you may route directly through the portal." },
@@ -552,6 +554,7 @@ const FOIA = {
         },
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — covers the Offices of the Attorney General and Deputy Attorney General",
           summary: "DOJ — the July 7, 2025 memo + the index of evidence it reviewed",
           subject: "FOIA Request: July 7, 2025 DOJ/FBI Epstein memorandum and evidence index",
           records: "I request a copy of the final July 7, 2025 joint DOJ/FBI memorandum concerning the Jeffrey Epstein review, together with any index, inventory, or list identifying the categories of evidence reviewed in reaching its conclusions. To keep this request narrow and minimize search burden, I am not seeking general email correspondence."
@@ -576,6 +579,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — covers the Deputy Attorney General's office",
           summary: "DOJ — records of Blanche's late-July 2025 interview of Maxwell",
           subject: "FOIA Request: DOJ records of the July 2025 interview of Ghislaine Maxwell by Deputy AG Todd Blanche",
           records: "I request a copy of any interview memoranda, FD-302 reports, or transcripts documenting the interview of Ghislaine Maxwell conducted by Deputy Attorney General Todd Blanche over two days in late July 2025. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -601,6 +605,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — department-level determinations",
           summary: "DOJ — the records index + any withholding determination under the Transparency Act",
           subject: "FOIA Request: records identified and withheld under the Epstein Files Transparency Act",
           records: "I request a copy of the index, log, or schedule of records identified for processing under the Epstein Files Transparency Act, and any written determination withholding records from release under that Act, dated from the Act's enactment to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -625,6 +630,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — covers the Attorney General's office",
           summary: "DOJ — the binder contents + who assembled them",
           subject: "FOIA Request: contents and preparation of the February 27, 2025 'Epstein files' binders",
           records: "I request a copy of the materials compiled into the binders labeled \"the Epstein files\" distributed at the White House on February 27, 2025, and any records identifying what was included in those binders and which Department of Justice office assembled or vetted them. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -903,6 +909,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — covers the Attorney General's office",
           summary: "DOJ — the records behind Bondi's \"on my desk\" → \"no list\" reversal",
           subject: "FOIA Request: Epstein records reviewed by the Attorney General (Feb 2025) and the basis for the July 2025 no-client-list conclusion",
           records: "I request a copy of any records reflecting the Epstein-related material the Attorney General referenced as being \"on my desk\" for review in February 2025, and any memorandum or analysis stating the basis for the July 7, 2025 conclusion that no Epstein client list exists, dated between January 1 and July 31, 2025. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -962,6 +969,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "U.S. Marshals Service (USMS)",
           summary: "DOJ — US Marshals / FBI access agreements with Flock Safety's ALPR network",
           subject: "FOIA Request: U.S. Marshals Service and FBI access to Flock Safety's ALPR network",
           records: "I request a copy of any contract, memorandum of understanding, data-sharing agreement, or access-and-audit policy governing the U.S. Marshals Service's and/or the FBI's access to or use of Flock Safety's automated license-plate-reader (ALPR) network, in effect between January 1, 2024 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1161,6 +1169,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Civil Rights Division — its Voting Section sent the state letters",
           summary: "DOJ — the request letters to states + legal basis + voter-data retention policy",
           subject: "FOIA Request: DOJ requests to states for voter-registration data and related data-handling",
           records: "I request a copy of the request letters the Department of Justice sent to U.S. states and the District of Columbia in 2025 seeking voter-registration or voter-eligibility data, the memorandum stating the legal authority asserted for those requests, and any written policy governing the retention, use, or sharing of voter data received in response, from January 1, 2025 to the date this request is processed. To keep this request narrow, I am not seeking general email correspondence.",
@@ -1246,6 +1255,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — the task force sits at department leadership level",
           summary: "DOJ — the antisemitism task force's charter, targets, and outside-group coordination",
           subject: "FOIA Request: charter, scope, and case activity of the DOJ Task Force to Combat Antisemitism",
           records: "I request a copy of the charter, mission statement, and operating procedures of the Department of Justice Task Force to Combat Antisemitism; any list or log of individuals, organizations, or cases it has investigated, referred, or taken action on; and any records of its coordination with outside advocacy organizations, dated from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1295,6 +1305,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — Attorney General-issued policy",
           summary: "DOJ — the Bondi memo + revised news-media guidelines (28 C.F.R. § 50.10)",
           subject: "FOIA Request: April 2025 Attorney General memorandum revising the news-media policy (28 C.F.R. § 50.10)",
           records: "I request a copy of the memorandum issued by Attorney General Pamela Bondi in or around April 2025 that rescinded or revised the Department's policy governing the use of subpoenas, search warrants, and other compulsory legal process directed at members of the news media (the policy reflected at 28 C.F.R. § 50.10), together with the current superseding policy text. This is a request for specific, discrete, catalogued policy documents — not general email correspondence.",
@@ -1326,6 +1337,7 @@ const FOIA = {
         },
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — § 50.10 authorizations run through department leadership",
           summary: "DOJ — the senior-official authorization required to target a journalist",
           subject: "FOIA Request: news-media-policy authorization for the January 2026 search of a Washington Post reporter's residence",
           records: "I request a copy of the written authorization, approval memorandum, or certification required under the Department's news-media policy (28 C.F.R. § 50.10) for the January 2026 search of a Washington Post reporter's residence — specifically the Attorney General or designated senior-official approval documenting that the policy's requirements were satisfied. This is a request for a specific, discrete approval record, not general correspondence.",
@@ -1465,6 +1477,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — department-level release/redaction determinations",
           summary: "DOJ — the unredacted bin Sulayem correspondence and the redaction determination behind it",
           subject: "FOIA Request: unredacted Epstein correspondence involving Sultan Ahmed bin Sulayem and the associated redaction/withholding determination",
           records: "I request a copy, in unredacted form, of the Epstein-related correspondence in which the identity of Sultan Ahmed bin Sulayem was redacted in previously released material, together with any disclosure determination, redaction log, or withholding memorandum stating the FOIA exemption(s) and rationale on which that identity was withheld. The identity has since been confirmed publicly by the Deputy Attorney General, so the basis for withholding the name no longer applies; please release all reasonably segregable non-exempt portions. To keep this request narrow, I am limiting it to the specific correspondence and the determination governing that redaction.",
@@ -1588,6 +1601,7 @@ const FOIA = {
         },
         {
           agencyId: "doj",
+          component: "Criminal Division",
           summary: "DOJ — disposition of the criminal investigation AG Bell announced into the MKUltra records destruction",
           subject: "FOIA Request: opening and disposition records for the announced investigation into the 1973 destruction of MKULTRA files",
           records: "I request a copy of the opening memorandum, case-initiation record, declination memorandum, or closing document for the criminal investigation into the 1973 destruction of Project MKULTRA records that was announced during the tenure of Attorney General Griffin Bell (circa 1977–1979). Witness testimony at the June 30, 2026 House Declassification Task Force hearing stated this announced investigation was never conducted; a documented absence of any case-opening record would itself be responsive. These are discrete case-administration documents, not a broad search. I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact, including a description of the search conducted.",
@@ -1711,6 +1725,7 @@ const FOIA = {
         },
         {
           agencyId: "doj",
+          component: "Office of Information Policy (OIP) — the designation authority is the Attorney General's office",
           summary: "DOJ — the NSPM-7 domestic-terrorist-organization designation instrument",
           subject: "FOIA Request: designation instrument for domestic organizations under NSPM-7",
           records: "I request a copy of any final memorandum, order, or list by which the Department of Justice designated, or proposed for designation, groups or entities as domestic terrorist organizations pursuant to National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), created between September 25, 2025 and the date this request is processed. This request seeks the designation instrument itself — a discrete named document — not investigative files or general correspondence. If any responsive record is withheld in full or in part, please cite the specific exemption claimed; if no responsive records exist, I request written confirmation of that fact.",

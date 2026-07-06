@@ -68,6 +68,9 @@
   label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
   select,input[type=text],input[type=email],textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:10px 12px;font-size:14px;font-family:var(--sans)}
   textarea{font-family:var(--mono);font-size:12.5px;line-height:1.55;min-height:300px;white-space:pre-wrap}
+  textarea.snip{min-height:88px;font-size:12px}
+  .charline{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:5px;text-align:right}
+  #portalRouting{margin:0 0 12px}
   .row{display:flex;gap:14px;flex-wrap:wrap}
   .row .field{flex:1;min-width:200px}
   .checks{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}
@@ -133,7 +136,11 @@
     </div>
     <div class="actions"><button class="btn primary" id="genBtn">Draft the request</button></div>
     <div class="out-wrap" id="outWrap">
-      <div class="field"><label for="out">Your request — review and edit before sending</label><textarea id="out" spellcheck="false"></textarea></div>
+      <div class="note" id="portalRouting" style="display:none"></div>
+      <div class="field"><label for="out" id="outLabel">Your request — review and edit before sending</label><textarea id="out" spellcheck="false"></textarea>
+        <div class="charline" id="charline" style="display:none"></div></div>
+      <div class="field" id="feeWrap" style="display:none"><label for="feeOut">Fee waiver — most portals have their own fee section; paste this where the form asks for a waiver justification</label><textarea id="feeOut" class="snip" spellcheck="false"></textarea></div>
+      <div class="field" id="expWrap" style="display:none"><label for="expOut">Expedited processing — if the form has an expedited-processing justification box, paste this there</label><textarea id="expOut" class="snip" spellcheck="false"></textarea></div>
       <div class="actions" id="actions"></div>
       <div class="submit-hint" id="submitHint"></div>
     </div>
@@ -322,7 +329,7 @@
     const r = inv.requests[+b.dataset.req];
     const card = b.closest(".card");
     if(card) card.insertAdjacentElement("afterend", $("gen"));  // expand the drafter inline, right below this finding
-    loadRequest({ subject:r.subject, records:r.records, agencyId:r.agencyId, askNoRecords:!!r.ask_no_records, label:r.summary });
+    loadRequest({ subject:r.subject, records:r.records, agencyId:r.agencyId, askNoRecords:!!r.ask_no_records, label:r.summary, component:r.component||null });
   }));
 
   function loadRequest(req){
@@ -336,9 +343,12 @@
 
   function fill(str, map){ return Object.keys(map).reduce((s,k)=> s.split("{{"+k+"}}").join(map[k]), str); }
 
+  let fullLetter = "";  // always the complete letter, even when the textarea shows the portal version
+
   function generate(){
     if(!current) return;
     const a = agencyById(current.agencyId);
+    const isEmail = !!(a && a.email);
     const name = $("name").value.trim() || "[your name]";
     const email = $("email").value.trim() || "[your email]";
     const addr = $("addr").value.trim();
@@ -359,12 +369,53 @@
     L.push(b.segregability); L.push("");
     L.push(b.format); L.push("");
     L.push(fill(b.closing, map));
-    $("out").value = L.join("\n");
+    fullLetter = L.join("\n");
+
+    if(isEmail){
+      // Email agencies: the letter goes out whole — show it as before.
+      $("out").value = fullLetter;
+      $("outLabel").textContent = "Your request — review and edit before sending";
+      $("charline").style.display = "none";
+      $("feeWrap").style.display = "none";
+      $("expWrap").style.display = "none";
+      $("portalRouting").style.display = "none";
+    } else {
+      // Portal agencies: webforms collect your name, address, and fee preference in
+      // their own fields — pasting the whole letter duplicates all of that. Show a
+      // description-box version instead; fee/expedited text gets its own paste boxes.
+      const P = [];
+      P.push("This is a request under the " + FOIA.meta.statute + ".");
+      P.push("");
+      P.push(current.records); P.push("");
+      if(current.askNoRecords){ P.push(b.no_records); P.push(""); }
+      P.push(b.burden_carveout); P.push("");
+      P.push(b.segregability); P.push("");
+      P.push(b.format);
+      $("out").value = P.join("\n");
+      $("outLabel").textContent = "Portal version — paste into the form's request-description box (the form collects your name, address, and fees separately)";
+      updateCharline();
+      $("charline").style.display = "block";
+      $("feeOut").value = b.fee_waiver;
+      $("feeWrap").style.display = $("fee").checked ? "block" : "none";
+      $("expOut").value = b.expedited;
+      $("expWrap").style.display = $("exp").checked ? "block" : "none";
+      const routing = [];
+      if(current.component) routing.push("<b>Component to select in the portal:</b> " + esc(current.component) + ".");
+      if(a && a.portalNote) routing.push(esc(a.portalNote));
+      $("portalRouting").innerHTML = routing.join(" ");
+      $("portalRouting").style.display = routing.length ? "block" : "none";
+    }
     $("outWrap").style.display = "block";
     renderActions();
-    $("out").scrollIntoView({behavior:"smooth", block:"nearest"});
+    ($("portalRouting").style.display === "block" ? $("portalRouting") : $("out")).scrollIntoView({behavior:"smooth", block:"nearest"});
   }
   $("genBtn").addEventListener("click", generate);
+
+  function updateCharline(){
+    const n = $("out").value.length;
+    $("charline").textContent = n.toLocaleString() + " characters — if the form rejects it for length, keep the records paragraph and the no-records line, drop the rest";
+  }
+  $("out").addEventListener("input", () => { if($("charline").style.display !== "none") updateCharline(); });
 
   function flashCopied(){ const s=$("copied"); if(s){ s.hidden=false; setTimeout(()=>s.hidden=true,2000); } }
   function doCopy(){ const t=$("out"); (navigator.clipboard ? navigator.clipboard.writeText(t.value).then(flashCopied).catch(fallbackCopy) : fallbackCopy()); }
@@ -393,18 +444,19 @@
       g.href = "https://mail.google.com/mail/?" + au + "view=cm&fs=1&to=" + encodeURIComponent(a.email) + "&su=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
       box.appendChild(g);
     }
-    const c = document.createElement("button"); c.className="btn"; c.textContent="Copy"; c.addEventListener("click", doCopy); box.appendChild(c);
-    const d = document.createElement("button"); d.className="btn"; d.textContent="Download .txt";
-    d.addEventListener("click", ()=>{ const blob=new Blob([$("out").value],{type:"text/plain"}); const u=document.createElement("a"); u.href=URL.createObjectURL(blob); u.download="foia-request.txt"; u.click(); URL.revokeObjectURL(u.href); });
+    const isEmail = !!(a && a.email);
+    const c = document.createElement("button"); c.className="btn"; c.textContent = isEmail ? "Copy" : "Copy portal version"; c.addEventListener("click", doCopy); box.appendChild(c);
+    const d = document.createElement("button"); d.className="btn"; d.textContent = isEmail ? "Download .txt" : "Download full letter .txt";
+    d.addEventListener("click", ()=>{ const blob=new Blob([fullLetter],{type:"text/plain"}); const u=document.createElement("a"); u.href=URL.createObjectURL(blob); u.download="foia-request.txt"; u.click(); URL.revokeObjectURL(u.href); });
     box.appendChild(d);
     const p = document.createElement("a"); p.className="btn link"; p.target="_blank"; p.rel="noopener";
     p.href = (a && a.portal) ? a.portal : FOIA.meta.portal;
-    p.textContent = (a && a.email) ? "Or file on the portal →" : ("Copy, then open " + (a?a.name:"the portal") + " →");
+    p.textContent = isEmail ? "Or file on the portal →" : ("Copy, then open " + (a?a.name:"the portal") + " →");
     box.appendChild(p);
     const sp = document.createElement("span"); sp.className="copied"; sp.id="copied"; sp.hidden=true; sp.textContent="copied"; box.appendChild(sp);
     let hint = a && a.submitNote ? a.submitNote : "";
-    if(a && a.email) hint += " \"Open in Gmail\" opens the Google account matching the email you entered above (fill that field first); glance at the avatar top-right to confirm before sending. \"✉ Email\" uses your computer's default mail app. If either opens cut off, click Copy and paste the letter in.";
-    else hint += " This agency has no one-click email — click Copy, then paste your request into its portal.";
+    if(isEmail) hint += " \"Open in Gmail\" opens the Google account matching the email you entered above (fill that field first); glance at the avatar top-right to confirm before sending. \"✉ Email\" uses your computer's default mail app. If either opens cut off, click Copy and paste the letter in.";
+    else hint += " This agency has no one-click email — copy the portal version above and paste it into the form's description box. \"Download full letter\" saves the complete letter for your records (useful if the portal fails and you fall back to mail).";
     $("submitHint").textContent = hint;
   }
 
