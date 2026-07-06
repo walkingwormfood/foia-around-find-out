@@ -12,3 +12,6 @@ Edit `foia-data.js` → add an entry to `investigations[]` (investigator, findin
 
 ## What's new
 See [CHANGELOG.md](CHANGELOG.md) for a human-readable log of new findings, threads, and features.
+
+## Scope
+Federal FOIA only, for now. For **state and local** public-records requests — each state has its own statute, deadlines, and waiver language — use [MuckRock](https://www.muckrock.com), which handles all 50 states and files for you. A per-state jurisdiction layer (statute name, response window, waiver text — the way MuckRock's open-source templates do it) is planned; fusion centers and other state entities in these investigations will need it.

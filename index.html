@@ -178,7 +178,8 @@
   const entName = id => { const e = (FOIA.entities||[]).find(x => x.id === id); return e ? e.name : id; };
 
   $("tagline").textContent = FOIA.meta.tagline;
-  $("submitNote").innerHTML = "<b>How to file:</b> " + esc(FOIA.meta.submit_note);
+  $("submitNote").innerHTML = "<b>How to file:</b> " + esc(FOIA.meta.submit_note) +
+    " <b>State or local records?</b> FAFO covers federal FOIA only — each state has its own public-records statute with different deadlines and language. For those, use <a href=\"https://www.muckrock.com\" target=\"_blank\" rel=\"noopener\">MuckRock</a>, which knows all 50 states' laws and files for you. (A per-state layer here is planned.)";
   $("narrowing").innerHTML = "<b>Why these are narrow:</b> " + esc(FOIA.meta.narrowing_note);
   $("footer").innerHTML = "Client-side only — nothing you type leaves your browser, no analytics, no network calls. The buttons open your email app or the agency's site; you file it yourself. " + esc(FOIA.meta.do_not) + " · CC0 — fork it, mirror it.";
 
