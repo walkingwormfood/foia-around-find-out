@@ -9,3 +9,6 @@ Independent investigators keep surfacing things in public records — who owns a
 
 ## Add a finding
 Edit `foia-data.js` → add an entry to `investigations[]` (investigator, finding, implication, sources, and the narrow `requests` it motivates). No build step.
+
+## What's new
+See [CHANGELOG.md](CHANGELOG.md) for a human-readable log of new findings, threads, and features.
