@@ -88,6 +88,9 @@ const FOIA = {
     { id: "odni", name: "Office of the Director of National Intelligence", email: "DNI-FOIA@dni.gov",
       portal: "https://www.dni.gov/index.php/foia",
       submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." },
+    { id: "cia", name: "Central Intelligence Agency", email: null,
+      portal: "https://www.foia.cia.gov/foia_request/form",
+      submitNote: "CIA takes FOIA through its online request form (foia.cia.gov) or by mail (Information and Privacy Coordinator, Central Intelligence Agency, Washington, DC 20505) — no email submission." },
     { id: "dfc", name: "U.S. International Development Finance Corporation", email: "FOIA@dfc.gov",
       portal: "https://www.foia.gov",
       submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." },
@@ -105,7 +108,10 @@ const FOIA = {
       submitNote: "The OCC takes FOIA through its Public Access Link portal (foia-pal.occ.gov) or FOIA.gov — all requests should be submitted online. FOIA-PA@occ.treas.gov is for questions, not submission. Mail (Privacy Act or correspondence): Manager, Disclosure Services & FOIA Officer, Communications Division, OCC, Suite 3E-218, Washington DC 20219." },
     { id: "cisa", name: "Cybersecurity and Infrastructure Security Agency (DHS)", email: null,
       portal: "https://www.securerelease.us",
-      submitNote: "CISA is a DHS component. As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA — submit via the SecureRelease portal (securerelease.us; select DHS Headquarters, which covers CISA) or FOIA.gov. Questions only: CISAFOIA@hq.dhs.gov." }
+      submitNote: "CISA is a DHS component. As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA — submit via the SecureRelease portal (securerelease.us; select DHS Headquarters, which covers CISA) or FOIA.gov. Questions only: CISAFOIA@hq.dhs.gov." },
+    { id: "dol-oig", name: "U.S. Department of Labor — Office of Inspector General", email: "FOIA.PrivacyAct@oig.dol.gov",
+      portal: "https://www.dol.gov/general/foia/submit",
+      submitNote: "DOL-OIG accepts FOIA by email (FOIA.PrivacyAct@oig.dol.gov; the department-wide FOIArequests@dol.gov also routes to OIG), DOL's Public Access Link portal, FOIA.gov (select Department of Labor → Office of Inspector General), or mail (Disclosure Officer, Office of Inspector General, U.S. Department of Labor, 200 Constitution Ave NW, Room S-5506, Washington DC 20210)." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -190,6 +196,19 @@ const FOIA = {
     { id: "cybereason", name: "Cybereason", type: "company" },
     { id: "bin-sulayem", name: "Sultan Ahmed bin Sulayem", type: "person" },
     { id: "massie", name: "Thomas Massie", type: "person" },
+    { id: "cia", name: "Central Intelligence Agency", type: "org" },
+    { id: "mkultra", name: "Project MKUltra", type: "program" },
+    { id: "luna", name: "Anna Paulina Luna", type: "person" },
+    { id: "capitol-police", name: "U.S. Capitol Police", type: "org" },
+    { id: "task-force-orange", name: "Task Force Orange (Intelligence Support Activity)", type: "org" },
+    { id: "eip", name: "Election Integrity Partnership", type: "program" },
+    { id: "cis", name: "Center for Internet Security", type: "org" },
+    { id: "us-israel-dtci", name: "U.S.-Israel Defense Technology Cooperation Initiative", type: "program" },
+    { id: "nspm-7", name: "NSPM-7 (National Security Presidential Memorandum 7)", type: "program" },
+    { id: "dol", name: "U.S. Department of Labor", type: "org" },
+    { id: "dsac", name: "Domestic Security Alliance Council", type: "org" },
+    { id: "hsin", name: "Homeland Security Information Network", type: "program" },
+    { id: "jonathan-berry", name: "Jonathan Berry", type: "person" },
   ],
 
   investigations: [
@@ -318,7 +337,8 @@ const FOIA = {
           agencyId: "nara",
           summary: "NARA — any records schedule filed for NDS",
           subject: "FOIA Request: records schedules filed by or for the National Design Studio",
-          records: "I request a copy of any records schedule or records-disposition authority that the National Design Studio has filed with the National Archives since the studio's establishment in August 2025 — a single, discrete, catalogued document, not a broad search. If none has been filed, I request written confirmation of that fact.",
+          records: "I request a copy of any records schedule or records-disposition authority that the National Design Studio has filed with the National Archives since the studio's establishment in August 2025 — a single, discrete, catalogued document, not a broad search. If none has been filed, I request written confirmation of that fact. If NARA's position is that the National Design Studio's records fall under the Presidential Records Act rather than the Federal Records Act, I request written confirmation of that determination and any record memorializing it, which would itself be responsive.",
+          priorArt: "NO PRIOR ART (Federal Register shows no NARA schedule notice mentioning NDS — consistent with none filed). Anticipate the PRA-not-FRA shield for a White House Office component (records sealed to ~2040); the request now forces that determination onto paper. Prior-art sweep 2026-07-04.",
           ask_no_records: true
         }
       ]
@@ -374,7 +394,8 @@ const FOIA = {
           agencyId: "eac",
           summary: "EAC — its dealings with NDS over vote.gov",
           subject: "FOIA Request: Election Assistance Commission records concerning the National Design Studio and vote.gov",
-          records: "I request a copy of any interagency agreement, memorandum of understanding, statement of work, or task order between the U.S. Election Assistance Commission and the National Design Studio (or the Executive Office of the President) concerning vote.gov — or any preview, replacement, or redesign of vote.gov — dated between January 1, 2026 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          records: "I request a copy of any interagency agreement, memorandum of understanding, statement of work, or task order between the U.S. Election Assistance Commission and the National Design Studio (or the Executive Office of the President) concerning vote.gov — or any preview, replacement, or redesign of vote.gov — dated between January 1, 2026 and the date this request is processed. I note that the EAC stated to The Guardian (June 2026) that discussions with the National Design Studio regarding possible modernization of vote.gov had taken place and had been paused — records of those discussions and any agreements framing them are responsive. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          priorArt: "NO PRIOR REQUEST (MuckRock: zero vote.gov/NDS requests). Predicate strengthened: EAC admitted to The Guardian (Jun 2026) that NDS modernization discussions occurred and were 'paused' — records must exist. Prior-art sweep 2026-07-04.",
           ask_no_records: true
         }
       ]
@@ -1447,6 +1468,277 @@ const FOIA = {
           summary: "DOJ — the unredacted bin Sulayem correspondence and the redaction determination behind it",
           subject: "FOIA Request: unredacted Epstein correspondence involving Sultan Ahmed bin Sulayem and the associated redaction/withholding determination",
           records: "I request a copy, in unredacted form, of the Epstein-related correspondence in which the identity of Sultan Ahmed bin Sulayem was redacted in previously released material, together with any disclosure determination, redaction log, or withholding memorandum stating the FOIA exemption(s) and rationale on which that identity was withheld. The identity has since been confirmed publicly by the Deputy Attorney General, so the basis for withholding the name no longer applies; please release all reasonably segregable non-exempt portions. To keep this request narrow, I am limiting it to the specific correspondence and the determination governing that redaction.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "j6-pipe-bomb-baker",
+      categories: ["January 6"],
+      entities: ["fbi", "usss", "dod", "capitol-police", "task-force-orange"],
+      investigator: "Steve Baker (The Blaze)",
+      investigatorLinks: [
+        { label: "Tucker Carlson — Steve Baker on the Lies of the J6 Pipe Bomb Case", url: "https://www.youtube.com/watch?v=D-JIqINmoSk" },
+        { label: "Interview transcript", url: "https://singjupost.com/transcript-tucker-carlson-interviews-steve-baker-on-j6-pipe-bomb-case/" }
+      ],
+      status: "reported",
+      finding: "Steve Baker reports the official J6 pipe-bomb story doesn't match the government's own records: FBI whistleblowers describe the two devices as inert training devices (\"they would have been bombs if they had been bombs\"); the FBI holds roughly 30,000 video files of the bomber but has publicly released about 30 seconds; Secret Service agents idled near the DNC device for minutes after notification with none of the standard perimeter response — after an 8–10 agent morning sweep walked past the device location (DHS OIG-24-42 independently confirmed the sweep failure and that USSS never logged the discovery as an Unusual Protective Event); and while the RNC device was found by a passerby, the Capitol Police counter-surveillance pair who then searched the DNC area walked directly to the only two spots where the hooded figure had sat the previous evening and looked nowhere else — officers whose single joint committee interview, given together and unsworn, congressional investigators called the most pre-planned and rehearsed they had ever witnessed. IMPORTANT STATUS NOTE (2026-07-04): Baker's identification of a specific ex-USCP officer was publicly disputed by the FBI, RETRACTED by The Blaze on Dec 5, 2025, and is the subject of Kerkhoff v. Blaze Media defamation litigation; CBS reported the ODNI Director's Initiative Group draft memo named an innocent federal security officer (with her SSN) and the DIG was dissolved (Jan 2026) in the fallout of that misidentification; Brian Cole Jr. was arrested Dec 4, 2025 and faces superseding terrorism/WMD charges (US v. Cole, D.D.C.). Baker maintains his claims (Tucker Carlson interview, July 2026); his dead-HSI-agent claim has no public corroboration found as of this note. The institutional-record anomalies above are independently supported by the Loudermilk/Massie congressional report and DHS OIG-24-42; the identification is not.",
+      implication: "Each claim is testable against a discrete official record: the FBI Laboratory's examination report says whether the devices were functional; the Secret Service's own records say what agents did while a protectee was present; if military special-mission personnel were tasked into the crowd, a deployment or activation order exists. These requests test the institutional paper, NOT any identification. Processing reality (prior-art sweep 2026-07-04): the pending Cole prosecution means FBI investigative records will draw Exemption 7(A) categorical denials until trial — file anyway to lock queue position, citing the criminal-complaint affidavit and the Loudermilk/Massie report as public-domain waiver for already-disclosed portions; the Cole docket's 2–3 TB discovery and third-party-perpetrator defense may produce records faster than FOIA. Capitol Police records are FOIA-exempt, so requests target executive-branch parallels. Non-FOIA avenues: the US v. Reffitt trial transcript is a public court record; the claimed HSI agent death (uncorroborated) would sit in Virginia's state-records regime — a Fairfax County PD records check would confirm or kill the predicate event itself.",
+      sources: [
+        { label: "The Tucker Carlson Show — episode page", url: "https://tuckercarlson.com/tucker-show-steve-baker-070126" },
+        { label: "Revolver News — Mike Benz's March 2021 analysis, vindicated five years on", url: "https://revolver.news/2025/12/mike-benz-and-revolver-predicted-the-black-pipe-bomber-5-years-ago/" },
+        { label: "Revolver News — congressional report confirms its pipe-bomb reporting", url: "https://revolver.news/2025/01/major-congressional-report-confirms-revolver-news-pipe-bomb-reporting-raising-more-questions/" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the Laboratory examination report on both devices + chain of custody",
+          subject: "FOIA Request: FBI Laboratory report of examination for the January 6, 2021 RNC and DNC suspected explosive devices",
+          records: "I request a copy of the FBI Laboratory report(s) of examination for the two suspected explosive devices recovered on January 6, 2021 near the Republican National Committee headquarters (approximately 12:35 p.m.) and the Democratic National Committee headquarters (approximately 1:05 p.m.) in Washington, D.C., including findings as to device composition and functionality, together with the evidence chain-of-custody log for both devices. Substantial portions of the Laboratory's findings have already entered the public domain through the criminal complaint affidavit in United States v. Cole (D.D.C.) and the January 2025 joint interim congressional report on the pipe-bomb investigation, waiving exemption as to those portions; at minimum I request the segregable portions matching the publicly disclosed findings. These are discrete, catalogued laboratory records from a single named investigation, not a broad search. I am not seeking general email correspondence.",
+          ask_no_records: true,
+          priorArt: "Not released, but quoted at length in the US v. Cole complaint affidavit (justice.gov/usao-dc) and the Loudermilk/Massie joint report (cha.house.gov, Jan 2025) — public-domain-waiver ammunition. Expect 7(A) while Cole is pending; the Cole docket (CourtListener 71994556) may produce it first. Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "usss",
+          summary: "Secret Service — the records underlying DHS OIG-24-42's DNC-device findings (sweep, radio, notification)",
+          subject: "FOIA Request: Secret Service records reviewed in DHS OIG-24-42 concerning the January 6, 2021 DNC suspected explosive device",
+          records: "I request a copy of the U.S. Secret Service records concerning the discovery of a suspected explosive device at the Democratic National Committee headquarters on January 6, 2021, as reviewed by the DHS Office of Inspector General for report OIG-24-42 (July 2024): the protective-sweep records for the DNC that morning, the radio-transmission log or transcript reflecting when agents on site were notified and the protective actions taken, and any after-action or protective-operations review of that response. OIG-24-42 found that no Unusual Protective Event record was created for this incident; if that remains the case, I request written confirmation that no UPE or incident report exists, which is itself responsive. These are discrete records of a single named incident on a single date, already identified and reviewed in a published OIG report. I am not seeking general email correspondence.",
+          ask_no_records: true,
+          priorArt: "DHS OIG-24-42 (Aug 2024, redacted public) already analyzes these records and found the sweep missed the device and no UPE was logged — cite it; CREW's broad June 2021 USSS J6 FOIA produced no DNC-device release. Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "dod",
+          summary: "DoD — any tasking order for special-mission personnel in D.C. on January 6",
+          subject: "FOIA Request: deployment or tasking orders for special-mission-unit personnel in Washington, D.C. on January 6, 2021",
+          records: "I request a copy of any deployment, activation, or tasking order — and any resulting after-action report — concerning the presence in Washington, D.C. on January 6, 2021 of personnel assigned to the U.S. Army Intelligence Support Activity or any other special-mission unit headquartered at or operating from Fort Belvoir, Virginia, in plainclothes or any other capacity. This request is for the discrete order and report documents only, not general correspondence. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "fbi",
+          summary: "FBI — the gait-recognition analysis that eliminated the earlier person of interest",
+          subject: "FOIA Request: gait-analysis records used to eliminate a person of interest in the January 6 pipe-bomb investigation",
+          records: "I request a copy of the gait-recognition or gait-comparison analysis report(s) prepared in the FBI's January 6, 2021 pipe-bomb investigation that were used to eliminate an earlier person of interest — reported by the Washington Post (Nov. 14, 2025) to be a gym employee whose gait resembled the suspect's. To be clear, this request concerns the FBI's own forensic analysis, not any privately produced analysis reported in the press. This is a discrete, catalogued forensic analysis from a single named investigation, not a broad search. I am not seeking general email correspondence, and I do not seek — and ask that you withhold — information identifying the eliminated individual. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true,
+          priorArt: "Existence confirmed by WaPo's Nov 14, 2025 investigation (eliminated gym-employee gait lead). DISTINCT from The Blaze's private '94–98%' analysis naming an ex-USCP officer — FBI disputed it, Blaze retracted Dec 5, 2025, now Kerkhoff v. Blaze Media litigation. Expect 7(A) while Cole is pending; Cole's third-party-perpetrator defense makes this prime discovery material. Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "odni",
+          summary: "ODNI — the Director's Initiative Group pipe-bomb memo + the directive dissolving the group",
+          subject: "FOIA Request: Director's Initiative Group records concerning the January 6 pipe-bomb matter and the group's dissolution",
+          records: "I request a copy of (1) the draft memorandum prepared by or for the ODNI Director's Initiative Group in 2025 concerning a person of interest in the January 6, 2021 pipe-bomb investigation (reported by CBS News), with any information identifying the private individual named therein withheld — I do not seek and affirmatively ask you to redact her identity, and (2) the directive, memorandum, or order pausing, dissolving, or disestablishing the Director's Initiative Group (December 2025–January 2026). These are two discrete, identified documents, not a broad search. I am not seeking general email correspondence. If either document does not exist, I request written confirmation of that fact.",
+          ask_no_records: true,
+          priorArt: "No public copy of either instrument. CBS News reviewed the draft memo (reported it named an innocent federal security officer, incl. her SSN); Seth Hettena reported the DIG's Dec 2025 pause and Jan 2026 dissolution. Expect Exemptions 1 (classified draft), 5 (deliberative), 6/7(C) (the misidentified woman's PII — hence the affirmative redaction request). Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "dhs",
+          summary: "DHS/ICE — the internal HSI notification memo on the agent's November 26, 2025 death",
+          subject: "FOIA Request: internal HSI staff notification concerning the death of a senior special agent on or about November 26, 2025",
+          records: "I request a copy of the internal staff notification memorandum or announcement issued by or within Homeland Security Investigations concerning the death of a senior HSI special agent in Fairfax County, Virginia on or about November 26, 2025. This is a single, discrete administrative document, not a broad search. I am not seeking general email correspondence, investigative files, or personnel records. If no responsive record exists, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "mkultra-declass-task-force",
+      categories: ["Declassification"],
+      entities: ["cia", "odni", "mkultra", "luna"],
+      investigator: "House Declassification Task Force · public reporting",
+      investigatorLinks: [
+        { label: "Full hearing — Mind Control and Accountability (Jun 30, 2026)", url: "https://youtu.be/dpQulJS-R50" },
+        { label: "Task force hearing release", url: "https://oversight.house.gov/release/luna-opens-hearing-on-mkultra-project-transparency/" }
+      ],
+      status: "reported",
+      finding: "At the task force's June 30, 2026 MKUltra hearing, Chairwoman Anna Paulina Luna said the CIA \"is currently in the process of declassifying newly found documentation\" — records of a forgery program housed under MKUltra — and in May 2026 a CIA whistleblower testified to the Senate that roughly 40 boxes of JFK and MKUltra material were removed from ODNI while undergoing declassification review.",
+      implication: "The core MKUltra research files were destroyed in 1973 on Director Helms's order, so hearings can only surface the residue — but both statements put specific, recently created paper in play. A declassification-in-progress generates decision memoranda and a document inventory; a physical removal of boxes mid-review generates transfer manifests and chain-of-custody records — or a documented absence, which is its own answer. Either way the record now exists to be asked for by name.",
+      sources: [
+        { label: "Washington Examiner — Luna: CIA declassifying newly discovered MKUltra documents", url: "https://www.washingtonexaminer.com/news/investigations/4630998/cia-declassifying-mkultra-documents-anna-paulina-luna/" },
+        { label: "National Security Archive — MKUltra briefing book (what's released vs. destroyed)", url: "https://nsarchive.gwu.edu/briefing-book/intelligence/2026-06-29/mkultra-declassification-task-force-should-focus-real-secrets" }
+      ],
+      requests: [
+        {
+          agencyId: "cia",
+          summary: "CIA — the declassification decision memo + inventory for the \"newly found\" MKUltra records",
+          subject: "FOIA Request: declassification decision records and inventory for newly located MKUltra-related documents",
+          records: "I request a copy of the declassification decision memorandum(s), the document inventory or manifest, and any projected release schedule for the newly located records related to Project MKULTRA — including records of the forgery program described as having been housed under MKULTRA — referenced by Rep. Anna Paulina Luna as \"currently in the process of declassif[ication]\" at the June 30, 2026 hearing of the House Task Force on the Declassification of Federal Secrets. These are discrete, recently created administrative records concerning an announced declassification action, not a broad historical search. To keep this request narrow, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "odni",
+          summary: "ODNI — transfer manifests / chain of custody for the ~40 boxes removed mid-review",
+          subject: "FOIA Request: transfer and chain-of-custody records for JFK/MKUltra boxes removed from ODNI during declassification review",
+          records: "I request a copy of any transfer manifest, receipt, chain-of-custody record, or records-accountability document concerning the removal or transfer from ODNI facilities of boxes containing Project MKULTRA or President Kennedy assassination-related records during calendar years 2025 and 2026, as described in testimony before the Senate Homeland Security and Governmental Affairs Committee in May 2026 (the Erdman testimony and Rep. Luna's May 14, 2026 letter to the Director, published by the Committee). I further request that these records be preserved pending the processing of this request. This request is for the discrete custody and transfer documents only, not general correspondence. If no responsive records exist, I request written confirmation of that fact, including a description of the search conducted.",
+          ask_no_records: true,
+          priorArt: "NO PRIOR REQUEST (MuckRock: zero on the boxes/DIG). Cite the published predicate: Erdman Senate testimony + Luna's May 14, 2026 letter (hsgac.senate.gov PDF). Preservation demand added because Bloomberg/Freedom of the Press Foundation reported ODNI scrubbed hundreds of previously released FOIA docs from its site in spring 2026. Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "cia",
+          summary: "CIA — Sidney Gottlieb's Germany case-officer posting records (Kinzer's unfulfilled ask, renewed on the record)",
+          subject: "FOIA Request: assignment and posting records for Sidney Gottlieb's service in Germany",
+          records: "I request a copy of the assignment, posting, or tour-of-duty records documenting Sidney Gottlieb's service as a case officer in Germany during the 1950s, including the assignment order and post-of-duty designation. Gottlieb is deceased and was publicly identified as MKULTRA's director decades ago; at the June 30, 2026 hearing of the House Task Force on the Declassification of Federal Secrets, historian Stephen Kinzer testified that his own FOIA request for these records was never fulfilled and urged the task force to pursue them. These are discrete personnel-assignment instruments, not a broad search. I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true,
+          priorArt: "PRIOR REQUEST EXISTS: Kinzer's own pre-2019 FOIA, never fulfilled — sworn to on the record June 30, 2026 (citable as constructive denial). No release: CIA Reading Room's Gottlieb keyword page holds clippings/Church-era material only. Anticipate CIA v. Sims (1985) on personnel names. Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "cia",
+          summary: "CIA — the Victims Task Force tasking document and FINAL report (excluding the already-released progress material)",
+          subject: "FOIA Request: tasking document and final report of the CIA task force assigned to identify MKUltra experiment victims",
+          records: "I request a copy of (1) the tasking, charter, or initiating memorandum and (2) the final report or closing memorandum of the CIA task force assigned, following the 1977 congressional MKULTRA hearings and the Attorney General's 1978 opinion on victim notification, to identify victims of MKULTRA experiments (the effort reflected in investigators Frank Laubinger and Selmi's work under Robert H. Wiltse, special assistant to DDA John F. Blake). I am aware of, and expressly EXCLUDE from this request, the material already released in the CIA FOIA Reading Room under \"MKULTRA Notification of Unwitting Subjects\" (documents 00295568 and 00295569, including the January 18, 1979 progress report) and \"MKULTRA — Institutional Notifications\"; I seek only the initiating instrument and the final/closing document, which do not appear among the released items. These are two discrete documents from a single named internal effort, not a broad search. I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true,
+          priorArt: "PARTIAL RELEASE EXISTS: CIA Reading Room docs 00295568/00295569 ('MKULTRA Notification of Unwitting Subjects', incl. Jan 18, 1979 progress report) + 'Institutional Notifications' — pull these before filing; request re-scoped to exclude them. Task-force operational records reached researcher H.P. Albarelli (~2002), defeating any destruction claim. Adjacent MuckRock request on DDA Blake's Oct 1978 MKULTRA letter pending at CIA since 2016. Black Vault's MKUltra collection does NOT cover the task force. Prior-art sweep 2026-07-04."
+        },
+        {
+          agencyId: "doj",
+          summary: "DOJ — disposition of the criminal investigation AG Bell announced into the MKUltra records destruction",
+          subject: "FOIA Request: opening and disposition records for the announced investigation into the 1973 destruction of MKULTRA files",
+          records: "I request a copy of the opening memorandum, case-initiation record, declination memorandum, or closing document for the criminal investigation into the 1973 destruction of Project MKULTRA records that was announced during the tenure of Attorney General Griffin Bell (circa 1977–1979). Witness testimony at the June 30, 2026 House Declassification Task Force hearing stated this announced investigation was never conducted; a documented absence of any case-opening record would itself be responsive. These are discrete case-administration documents, not a broad search. I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact, including a description of the search conducted.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "us-israel-dtci-executive-agent",
+      categories: ["Israel / foreign influence"],
+      entities: ["us-israel-dtci", "dod", "israel", "netanyahu", "massie"],
+      investigator: "Kim Iversen · Responsible Statecraft",
+      investigatorLinks: [
+        { label: "Kim Iversen — Amendment To Halt U.S. Israel Military Merger FAILS", url: "https://www.youtube.com/watch?v=xePbbDHbGu0" },
+        { label: "Responsible Statecraft", url: "https://responsiblestatecraft.org" }
+      ],
+      status: "reported",
+      finding: "A bipartisan Khanna–Massie amendment to strip the \"United States-Israel Defense Technology Cooperation Initiative\" (the provision formerly designated Section 224) from the pending House NDAA was killed procedurally in July 2026 — the Rules Committee, after no debate, declined to rule it in order, so it never received a floor vote. The surviving provision creates an executive agent within the Department of Defense whose sole responsibility is furthering U.S.-Israeli military-tech integration \"across nearly every facet of the defense process from co-producing weapons to data fusion.\" Netanyahu has publicly described the shift from aid to full military-industrial partnership as \"my plan.\"",
+      implication: "An executive-agent designation is not rhetoric — under DoD Directive 5101.1 it generates discrete, dated paper: a designation memorandum naming the office that holds the role, and a charter or terms of reference defining its scope. Whether the initiative has actually been stood up, who runs it, and how far \"data fusion\" reaches are all answerable by asking for those instruments by name — and if none exists yet, the documented absence dates the program's real start. (The Rules Committee action itself is a congressional record outside FOIA; these requests target the executive-branch implementation paper.)",
+      sources: [
+        { label: "Kim Iversen — full segment", url: "https://www.youtube.com/watch?v=xePbbDHbGu0" },
+        { label: "Ro Khanna — statement on the blocked amendment", url: "https://x.com/RoKhanna" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD — the executive agent designation memo + charter for the Initiative",
+          subject: "FOIA Request: executive agent designation and charter for the United States-Israel Defense Technology Cooperation Initiative",
+          records: "I request a copy of the executive agent designation memorandum issued under DoD Directive 5101.1 (or successor issuance) for the United States-Israel Defense Technology Cooperation Initiative — the National Defense Authorization Act provision formerly designated Section 224 — together with any charter, terms of reference, or implementation directive defining the executive agent's scope and responsibilities. These are discrete, dated administrative instruments, not a broad search. I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dod",
+          summary: "DoD — any framework agreement executed with Israel's Ministry of Defense under the Initiative",
+          subject: "FOIA Request: framework or implementing agreements under the United States-Israel Defense Technology Cooperation Initiative",
+          records: "I request a copy of any framework agreement, memorandum of understanding, or implementing arrangement executed between the Department of Defense and the Israeli Ministry of Defense under or in furtherance of the United States-Israel Defense Technology Cooperation Initiative, including any arrangement governing weapons co-production or data fusion, dated from January 1, 2026 to the date this request is processed. This request is for the discrete executed agreement documents only, not negotiation correspondence. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "cisa-switchboarding-eip",
+      categories: ["Elections & voting", "Civil liberties"],
+      entities: ["cisa", "dhs", "chris-krebs", "eip", "cis"],
+      investigator: "Mike Benz (Foundation for Freedom Online)",
+      investigatorLinks: [
+        { label: "Foundation for Freedom Online — reports", url: "https://foundationforfreedomonline.com" }
+      ],
+      status: "reported",
+      finding: "Mike Benz's Foundation for Freedom Online documented — and House Judiciary staff reports later corroborated with internal documents — that CISA ran a \"switchboarding\" pipeline forwarding state and local election officials' reports of social-media posts to platforms for action, and helped conceive the Election Integrity Partnership (EIP), a university consortium whose mass content-flagging operation ran alongside a DHS-funded \"Misinformation Reporting Portal\" at the Center for Internet Security.",
+      implication: "A federal cybersecurity agency routing content referrals to platforms — directly and through funded intermediaries — lives in discrete instruments: the internal procedure that governed switchboarding, the decision record that ended it, and the cooperative agreement that paid for the reporting portal. The House reports quote fragments of these documents; the public record should hold them whole. (The practice's existence is documented in CISA's own advisory-committee materials; its characterization is contested — these requests fetch the instruments themselves.)",
+      sources: [
+        { label: "House Judiciary — The Weaponization of CISA (staff report, Jun 2023)", url: "https://judiciary.house.gov/sites/evo-subsites/republicans-judiciary.house.gov/files/evo-media-document/cisa-staff-report6-26-23.pdf" },
+        { label: "House Judiciary — The Weaponization of \"Disinformation\" Pseudo-Experts (EIP Jira tickets, Nov 2023)", url: "https://judiciary.house.gov/sites/evo-subsites/republicans-judiciary.house.gov/files/evo-media-document/EIP_Jira_Ticket_Staff_Report_11-6-23_Clean.pdf" }
+      ],
+      requests: [
+        {
+          agencyId: "cisa",
+          summary: "CISA — the switchboarding SOP and the decision record that ended the practice",
+          subject: "FOIA Request: CISA internal procedure governing \"switchboarding\" of election-related social-media reports and the decision record ending it",
+          records: "I request a copy of the standard operating procedure, process document, or internal guidance governing CISA's practice of forwarding (\"switchboarding\") reports of social-media content from state and local election officials to social-media platforms during 2018 through 2022, together with any decision memorandum or guidance documenting the discontinuation of that practice. These are discrete internal-policy documents referenced in CISA's own Cybersecurity Advisory Committee materials and in House committee reports, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "cisa",
+          summary: "CISA/DHS — the CIS cooperative agreement behind the Misinformation Reporting Portal",
+          subject: "FOIA Request: DHS/CISA cooperative agreement with the Center for Internet Security concerning the Misinformation Reporting Portal",
+          records: "I request a copy of the cooperative agreement, including any modifications and statements of work, between the Department of Homeland Security or CISA and the Center for Internet Security funding the Elections Infrastructure Information Sharing and Analysis Center (EI-ISAC) for the 2020 election cycle — specifically any provision, task, or deliverable concerning the \"Misinformation Reporting Portal\" or the intake and forwarding of reports about social-media content — together with any program or closeout report describing the volume or disposition of reports submitted through that portal in 2020 and 2021. This is a discrete named funding instrument, not a broad search. To keep this request narrow, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "nspm7-dhs-class-grievances",
+      categories: ["Surveillance & privacy", "Civil liberties"],
+      entities: ["nspm-7", "dhs"],
+      investigator: "Ken Klippenstein",
+      investigatorLinks: [
+        { label: "kenklippenstein.com", url: "https://www.kenklippenstein.com" },
+        { label: "More Perfect Union — \"We Talked To A Former Surveillance Official\"", url: "https://www.youtube.com/watch?v=RafuYcUolY4" }
+      ],
+      status: "reported",
+      finding: "Ken Klippenstein reports he was leaked the Department of Homeland Security's strategy interpreting NSPM-7 (signed September 25, 2025), and that it introduces \"class-based or economic grievances\" as a terrorism-indicator category — alongside NSPM-7's public indicator list (anti-Christian, anti-\"traditional family,\" anti-American, anti-capitalist sentiment), with \"anti-tech sentiment\" also appearing in federal law-enforcement documents as a surveillance focal point.",
+      implication: "A counterterrorism strategy that treats economic discontent as a threat indicator would sweep in constitutionally protected speech held by most of the public. The strategy is a discrete, final planning document — exactly the kind of instrument FOIA reaches. (The leak is Klippenstein's reporting; this request fetches the document itself so its language can be read rather than characterized.)",
+      sources: [
+        { label: "More Perfect Union video (Boguslaw, w/ Klippenstein)", url: "https://www.youtube.com/watch?v=RafuYcUolY4" },
+        { label: "NSPM-7 (Sept 25, 2025, public record)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "dhs",
+          summary: "DHS — the final NSPM-7 implementation strategy (\"class-based or economic grievances\")",
+          subject: "FOIA Request: DHS strategy or implementation plan for National Security Presidential Memorandum 7 (NSPM-7)",
+          records: "I request a copy of the final Department of Homeland Security strategy, implementation plan, or operational guidance concerning National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), including any annex, definitions section, or indicator list that uses or defines the term \"class-based or economic grievances,\" issued between September 25, 2025 and the date this request is processed. This is a discrete, final planning document, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence or draft versions.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "nspm7-fbi-field-operationalization",
+      categories: ["Surveillance & privacy", "Civil liberties"],
+      entities: ["nspm-7", "fbi", "doj", "bondi"],
+      investigator: "More Perfect Union (Daniel Boguslaw)",
+      investigatorLinks: [
+        { label: "\"We Talked To A Former Surveillance Official\"", url: "https://www.youtube.com/watch?v=RafuYcUolY4" }
+      ],
+      status: "reported",
+      finding: "Daniel Boguslaw reports (documents published with Wired) that NSPM-7 investigations are already underway in FBI field offices \"from Boston to San Francisco,\" mapped in an FBI-produced document that \"was not supposed to leak,\" with briefings and intelligence reports circulating through 70+ fusion centers — and that Attorney General Pam Bondi, asked in congressional testimony whether DOJ prepared the list of groups designated as domestic terrorist organizations under NSPM-7, refused to answer yes or no.",
+      implication: "Whether and how NSPM-7 was converted into bureau-wide investigative tasking — and whether a designation list of domestic organizations exists — are records questions, not rhetoric questions. The implementing directive and any designation instrument are discrete named documents. (A refusal to confirm in testimony is not a denial; a FOIA response, including a Glomar or exemption claim, is itself informative.)",
+      sources: [
+        { label: "More Perfect Union video", url: "https://www.youtube.com/watch?v=RafuYcUolY4" },
+        { label: "Bondi congressional testimony (clip in video)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the bureau-wide directive implementing NSPM-7 in field offices",
+          subject: "FOIA Request: FBI guidance implementing National Security Presidential Memorandum 7 (NSPM-7)",
+          records: "I request a copy of any bureau-wide electronic communication, directive, policy guide amendment, or implementation guidance issued to FBI field offices concerning National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), including any accompanying list or annex of threat indicators, issued between September 25, 2025 and the date this request is processed. This is a discrete implementing instrument, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence, case files, or records identifying investigative subjects.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "doj",
+          summary: "DOJ — the NSPM-7 domestic-terrorist-organization designation instrument",
+          subject: "FOIA Request: designation instrument for domestic organizations under NSPM-7",
+          records: "I request a copy of any final memorandum, order, or list by which the Department of Justice designated, or proposed for designation, groups or entities as domestic terrorist organizations pursuant to National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), created between September 25, 2025 and the date this request is processed. This request seeks the designation instrument itself — a discrete named document — not investigative files or general correspondence. If any responsive record is withheld in full or in part, please cite the specific exemption claimed; if no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "dol-oig-intel-taskforces",
+      categories: ["Surveillance & privacy", "Civil liberties"],
+      entities: ["nspm-7", "dol", "dhs", "fbi", "jonathan-berry"],
+      investigator: "More Perfect Union (Daniel Boguslaw)",
+      investigatorLinks: [
+        { label: "\"We Talked To A Former Surveillance Official\"", url: "https://www.youtube.com/watch?v=RafuYcUolY4" }
+      ],
+      status: "reported",
+      finding: "Boguslaw reports — with ex-DHS intelligence attorney Spencer Reynolds on record — that the Department of Labor's Office of Inspector General participates in DHS joint task forces and liaisons with the FBI and other intelligence agencies, routinely appearing in DOJ enforcement press releases; DOL's current Solicitor, Jonathan Berry, wrote the Project 2025 Department of Labor chapter calling for OIG investigations of worker centers and for union investigations undertaken without any initiating complaint.",
+      implication: "A worker-protection agency's watchdog embedding in counterterrorism-adjacent task forces is a structural repurposing that would live in participation agreements and delegations — discrete instruments. (Task-force participation is documented in press releases; the leap to \"intelligence arm against workers\" is the video's inference. These are the records that would confirm, bound, or refute it.)",
+      sources: [
+        { label: "More Perfect Union video (Reynolds on record)", url: "https://www.youtube.com/watch?v=RafuYcUolY4" },
+        { label: "Project 2025, Department of Labor chapter (Jonathan Berry)", url: "https://static.project2025.org/2025_MandateForLeadership_CHAPTER-18.pdf" }
+      ],
+      requests: [
+        {
+          agencyId: "dol-oig",
+          summary: "DOL-OIG — its task-force participation agreements with DHS/FBI",
+          subject: "FOIA Request: DOL-OIG participation agreements with DHS task forces and FBI Joint Terrorism Task Forces",
+          records: "I request a copy of any memorandum of understanding, participation agreement, or delegation authorizing the Department of Labor Office of Inspector General to participate in a Department of Homeland Security task force, an FBI Joint Terrorism Task Force, or any interagency intelligence-sharing task force, in effect between January 1, 2025 and the date this request is processed. These are discrete named instruments, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence, case files, or records identifying investigative subjects.",
           ask_no_records: true
         }
       ]
