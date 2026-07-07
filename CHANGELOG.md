@@ -2,6 +2,14 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-07 — Portal form answers, from actually filing these
+
+Field-tested against Interior's portal (filing the prosperity-zones request) and templated what the forms ask that the letters don't cover:
+
+- **Every portal draft now answers the form's standard questions up front**: Request Type → FOIA (not Privacy Act) · Requester Category → "All other" (or news media if you publish) · maximum fee → $25, matching the letter · delivery → electronic.
+- **Component pickers templated beyond DOJ**: Interior's "Action Office" dropdown (BLM for the public-lands request), and DHS's SecureRelease component picker on every DHS/CISA/Secret Service request — ICE for the Flock and HSI requests, USCIS for SAVE (it's a USCIS program), CBP for the Epstein-officers request, DHS HQ for the NSPM-7 strategy and everything CISA.
+- **Interior quirk documented**: the portal needs a login.gov account and drops you on a welcome page after sign-in — "Submit Request" is in the top menu.
+
 ## 2026-07-06 — Follow-up drafter + stronger boilerplate (first community suggestion!)
 
 - A r/TheDreyDossier commenter pointed at **MuckRock's** preset request language — good call. Two lines from their open-source boilerplate are now in every FAFO letter:

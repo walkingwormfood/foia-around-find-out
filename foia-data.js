@@ -90,7 +90,8 @@ const FOIA = {
       submitNote: "As of Oct 2025, USSS takes FOIA only through its SecureRelease portal (securerelease.us) or by mail — no email." },
     { id: "dhs", name: "U.S. Department of Homeland Security", email: null,
       portal: "https://www.dhs.gov/foia",
-      submitNote: "As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA requests — submit only via FOIA.gov or the SecureRelease portal (HQ/CBP/FEMA/ICE/TSA/USCG/USSS); USCIS via its online account." },
+      submitNote: "As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA requests — submit only via FOIA.gov or the SecureRelease portal (HQ/CBP/FEMA/ICE/TSA/USCG/USSS); USCIS via its online account.",
+      portalNote: "SecureRelease asks you to pick the DHS component before anything else — use the component named on this request." },
     { id: "odni", name: "Office of the Director of National Intelligence", email: "DNI-FOIA@dni.gov",
       portal: "https://www.dni.gov/index.php/foia",
       submitNote: "ODNI accepts FOIA by email (DNI-FOIA@dni.gov) or by mail — no online portal." },
@@ -102,7 +103,8 @@ const FOIA = {
       submitNote: "DFC accepts FOIA by email (FOIA@dfc.gov) or mail (FOIA Director (Legal), 1100 New York Ave NW, Washington DC 20527). Include your name, contact, a description of the records, and a fee authorization." },
     { id: "interior", name: "U.S. Department of the Interior", email: null,
       portal: "https://securefoia.doi.gov",
-      submitNote: "Interior takes FOIA ONLY electronically — via its FOIAXpress Public Access Link (securefoia.doi.gov) or FOIA.gov; emailed requests are rejected. Public-lands records route to the Bureau of Land Management (BLM), which is also electronic-only." },
+      submitNote: "Interior takes FOIA ONLY electronically — via its FOIAXpress Public Access Link (securefoia.doi.gov) or FOIA.gov; emailed requests are rejected. Public-lands records route to the Bureau of Land Management (BLM), which is also electronic-only.",
+      portalNote: "The portal requires a login.gov account, and after sign-in it drops you on a welcome page — use \"Submit Request\" in the top menu. The form's \"Action Office\" dropdown is the component picker (use the office named on this request), and \"Request Type\" is FOIA, not Privacy." },
     { id: "navsea", name: "U.S. Navy — Naval Sea Systems Command (NAVSEA)", email: "NAVSEAFOIA@navy.mil",
       portal: "https://www.securerelease.us",
       submitNote: "NAVSEA — the parent command of NSWC Crane — accepts FOIA by email (NAVSEAFOIA@navy.mil), the SecureRelease portal (securerelease.us), FOIA.gov, or mail (Commander, NAVSEA, SEA 00A5, FOIA/Privacy Program Division, 1333 Isaac Hull Ave SE, Washington Navy Yard, DC 20376-2101). Requester Service Center: 202-781-4124." },
@@ -270,6 +272,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "interior",
+          component: "Action Office: BLM — Bureau of Land Management (public-land sales and designations)",
           summary: "Interior/BLM — any plan to sell or designate public land for \"prosperity zones\"",
           subject: "FOIA Request: Interior records on \"prosperity zones\" and disposal of public land",
           records: "I request a copy of any framework document, plan, interagency agreement, or land-disposal record held by the Department of the Interior or the Bureau of Land Management concerning the designation, sale, lease, or transfer of public land for \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
@@ -774,6 +777,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "usss",
+          component: "U.S. Secret Service (in SecureRelease's component picker)",
           summary: "Secret Service — EEOB/White House entry records for Andrew Kolvet",
           subject: "FOIA Request: White House complex / EEOB access records for Andrew Kolvet",
           records: "I request a copy of any entry, exit, visitor, or access records for Andrew Kolvet at the White House complex and the Eisenhower Executive Office Building on the date of, and the day before, the Department of Justice's public release of the Epstein files (please insert the specific calendar date before filing). I am not seeking general email correspondence.",
@@ -981,6 +985,7 @@ const FOIA = {
         },
         {
           agencyId: "dhs",
+          component: "ICE — Immigration and Customs Enforcement (in SecureRelease's component picker)",
           summary: "DHS/ICE — policy and request records for obtaining Flock ALPR data via local law enforcement",
           subject: "FOIA Request: ICE policy and request records concerning Flock Safety ALPR data obtained through state and local law enforcement",
           records: "I request a copy of any policy memorandum, guidance document, directive, or standard request form or template governing U.S. Immigration and Customs Enforcement's acquisition or use of automated license-plate-reader (ALPR) data from Flock Safety systems by way of requests to state or local law enforcement agencies, together with any log, register, or audit record of such requests, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1149,6 +1154,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "dhs",
+          component: "USCIS — SAVE is a USCIS-administered program (USCIS FOIA runs through its own online account system)",
           summary: "DHS — the SAVE System / federal voter-citizenship database design + legal authority",
           subject: "FOIA Request: the SAVE System federal citizenship and voter-eligibility verification database",
           records: "I request a copy of the following records for the SAVE System (the federal citizenship/voter-eligibility verification database): its design or architecture document(s), the legal-authority memorandum supporting its use for voter eligibility, any accuracy or false-positive-rate assessment, and the interagency agreement directing its creation, from January 1, 2025 to the date this request is processed. If no such records exist, I request written confirmation of that fact.",
@@ -1235,6 +1241,7 @@ const FOIA = {
         },
         {
           agencyId: "dhs",
+          component: "CBP — Customs and Border Protection (in SecureRelease's component picker)",
           summary: "DHS/CBP — Office of Professional Responsibility records on Epstein's contacts with customs officers",
           subject: "FOIA Request: CBP Office of Professional Responsibility records concerning Jeffrey Epstein's contacts with CBP personnel",
           records: "I request a copy of any Office of Professional Responsibility (or predecessor Internal Affairs) investigation record, integrity or misconduct referral, or security referral held by U.S. Customs and Border Protection concerning Jeffrey Epstein's contacts or relationships with CBP officers stationed in the U.S. Virgin Islands (including Cyril E. King Airport) or Florida, dated between January 1, 2015 and December 31, 2020. Jeffrey Epstein is deceased, extinguishing his personal-privacy interests; I am not seeking the names of the officers involved, which may be redacted. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1417,6 +1424,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "cisa",
+          component: "DHS Headquarters — covers CISA (in SecureRelease's component picker)",
           summary: "CISA — the agreement / onboarding / information-sharing record for the CTI League relationship",
           subject: "FOIA Request: CISA records memorializing its 2020 partnership or information-sharing relationship with the COVID-19 CTI League",
           records: "I request a copy of any memorandum of understanding, information-sharing agreement, onboarding or vetting record, terms of participation, or comparable instrument between the Cybersecurity and Infrastructure Security Agency (or DHS on its behalf) and the COVID-19 Cyber Threat Intelligence (CTI) League, dated between January 1, 2020 and December 31, 2021, together with any record describing what network access, data feeds, or threat-information exchange the relationship involved. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1448,6 +1456,7 @@ const FOIA = {
         },
         {
           agencyId: "dhs",
+          component: "DHS Headquarters (in SecureRelease's component picker)",
           summary: "DHS — participation and after-action records for the same Cybereason 'Operation Blackout' simulations",
           subject: "FOIA Request: DHS records of participation in Cybereason's 2019 'Operation Blackout' election simulations",
           records: "I request a copy of any invitation, participation approval or authorization, attendee list, and any after-action, lessons-learned, or trip report held by the Department of Homeland Security (including CISA) concerning the tabletop election-security exercises conducted by Cybereason known as 'Operation Blackout,' including the November 2019 exercise and the July 2019 exercise held in Boston, dated between January 1, 2019 and June 30, 2020. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1455,6 +1464,7 @@ const FOIA = {
         },
         {
           agencyId: "usss",
+          component: "U.S. Secret Service (in SecureRelease's component picker)",
           summary: "USSS — participation and after-action records for the same Cybereason 'Operation Blackout' simulations",
           subject: "FOIA Request: U.S. Secret Service records of participation in Cybereason's 2019 'Operation Blackout' election simulations",
           records: "I request a copy of any invitation, participation approval or authorization, attendee list, and any after-action, lessons-learned, or trip report held by the U.S. Secret Service concerning the tabletop election-security exercises conducted by Cybereason known as 'Operation Blackout,' including the November 2019 exercise and the July 2019 exercise held in Boston, dated between January 1, 2019 and June 30, 2020. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
@@ -1517,6 +1527,7 @@ const FOIA = {
         },
         {
           agencyId: "usss",
+          component: "U.S. Secret Service (in SecureRelease's component picker)",
           summary: "Secret Service — the records underlying DHS OIG-24-42's DNC-device findings (sweep, radio, notification)",
           subject: "FOIA Request: Secret Service records reviewed in DHS OIG-24-42 concerning the January 6, 2021 DNC suspected explosive device",
           records: "I request a copy of the U.S. Secret Service records concerning the discovery of a suspected explosive device at the Democratic National Committee headquarters on January 6, 2021, as reviewed by the DHS Office of Inspector General for report OIG-24-42 (July 2024): the protective-sweep records for the DNC that morning, the radio-transmission log or transcript reflecting when agents on site were notified and the protective actions taken, and any after-action or protective-operations review of that response. OIG-24-42 found that no Unusual Protective Event record was created for this incident; if that remains the case, I request written confirmation that no UPE or incident report exists, which is itself responsive. These are discrete records of a single named incident on a single date, already identified and reviewed in a published OIG report. I am not seeking general email correspondence.",
@@ -1548,6 +1559,7 @@ const FOIA = {
         },
         {
           agencyId: "dhs",
+          component: "ICE — Immigration and Customs Enforcement (in SecureRelease's component picker)",
           summary: "DHS/ICE — the internal HSI notification memo on the agent's November 26, 2025 death",
           subject: "FOIA Request: internal HSI staff notification concerning the death of a senior special agent on or about November 26, 2025",
           records: "I request a copy of the internal staff notification memorandum or announcement issued by or within Homeland Security Investigations concerning the death of a senior HSI special agent in Fairfax County, Virginia on or about November 26, 2025. This is a single, discrete administrative document, not a broad search. I am not seeking general email correspondence, investigative files, or personnel records. If no responsive record exists, I request written confirmation of that fact.",
@@ -1664,6 +1676,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "cisa",
+          component: "DHS Headquarters — covers CISA (in SecureRelease's component picker)",
           summary: "CISA — the switchboarding SOP and the decision record that ended the practice",
           subject: "FOIA Request: CISA internal procedure governing \"switchboarding\" of election-related social-media reports and the decision record ending it",
           records: "I request a copy of the standard operating procedure, process document, or internal guidance governing CISA's practice of forwarding (\"switchboarding\") reports of social-media content from state and local election officials to social-media platforms during 2018 through 2022, together with any decision memorandum or guidance documenting the discontinuation of that practice. These are discrete internal-policy documents referenced in CISA's own Cybersecurity Advisory Committee materials and in House committee reports, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence.",
@@ -1671,6 +1684,7 @@ const FOIA = {
         },
         {
           agencyId: "cisa",
+          component: "DHS Headquarters — covers CISA (in SecureRelease's component picker)",
           summary: "CISA/DHS — the CIS cooperative agreement behind the Misinformation Reporting Portal",
           subject: "FOIA Request: DHS/CISA cooperative agreement with the Center for Internet Security concerning the Misinformation Reporting Portal",
           records: "I request a copy of the cooperative agreement, including any modifications and statements of work, between the Department of Homeland Security or CISA and the Center for Internet Security funding the Elections Infrastructure Information Sharing and Analysis Center (EI-ISAC) for the 2020 election cycle — specifically any provision, task, or deliverable concerning the \"Misinformation Reporting Portal\" or the intake and forwarding of reports about social-media content — together with any program or closeout report describing the volume or disposition of reports submitted through that portal in 2020 and 2021. This is a discrete named funding instrument, not a broad search. To keep this request narrow, I am not seeking general email correspondence.",
@@ -1697,6 +1711,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "dhs",
+          component: "DHS Headquarters — the strategy is an Office of Intelligence & Analysis / HQ product (in SecureRelease's component picker)",
           summary: "DHS — the final NSPM-7 implementation strategy (\"class-based or economic grievances\")",
           subject: "FOIA Request: DHS strategy or implementation plan for National Security Presidential Memorandum 7 (NSPM-7)",
           records: "I request a copy of the final Department of Homeland Security strategy, implementation plan, or operational guidance concerning National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), including any annex, definitions section, or indicator list that uses or defines the term \"class-based or economic grievances,\" issued between September 25, 2025 and the date this request is processed. This is a discrete, final planning document, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence or draft versions.",
