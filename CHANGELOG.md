@@ -2,6 +2,10 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-07 — GSA portal outage rerouted
+
+- GSA's PAL portal is **down** — its own homepage says to file through FOIA.gov instead. The GSA cards now route there, with FOIA.gov walkthrough guidance (pick GSA as the agency, description box, fee/expedite paste boxes) and a heads-up that GSA correspondence arrives from foia@foiaxpress.gsa.gov (safelist it). Caught while filing the prosperity-zones request.
+
 ## 2026-07-07 — FBI and DOJ filing paths mapped
 
 - **DOJ shortcut**: you don't need a FOIA STAR account. Per DOJ's own privacy assessment of the system, requests filed through FOIA.gov (select DOJ → the component) transmit into FOIA STAR automatically. Both routes are now in the DOJ guidance, along with the DOJ-361 note (identity form — only needed for records about a person, i.e., none of these).
