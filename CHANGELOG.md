@@ -9,6 +9,7 @@ Field-tested against Interior's portal (filing the prosperity-zones request) and
 - **Every portal draft now answers the form's standard questions up front**: Request Type → FOIA (not Privacy Act) · Requester Category → "All other" (or news media if you publish) · maximum fee → $25, matching the letter · delivery → electronic.
 - **Component pickers templated beyond DOJ**: Interior's "Action Office" dropdown (BLM for the public-lands request), and DHS's SecureRelease component picker on every DHS/CISA/Secret Service request — ICE for the Flock and HSI requests, USCIS for SAVE (it's a USCIS program), CBP for the Epstein-officers request, DHS HQ for the NSPM-7 strategy and everything CISA.
 - **Interior quirk documented**: the portal needs a login.gov account and drops you on a welcome page after sign-in — "Submit Request" is in the top menu.
+- **Interior form, full walkthrough** (from a saved copy of the actual Create Request page): the DOI form has dedicated date-range From/To fields, a fee section where you must *uncheck* "Willing to Pay All Fees" and paste the waiver text into a required "Fee Waiver Request Reason" box, an Expedite checkbox that acts as a certification with its own reason box, and a Park/Refuge/Site field to leave blank. All of it is now spelled out while drafting, and the generic portal guidance now covers date-range fields and "pay all fees" checkboxes everywhere.
 
 ## 2026-07-06 — Follow-up drafter + stronger boilerplate (first community suggestion!)
 

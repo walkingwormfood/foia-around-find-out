@@ -427,7 +427,7 @@
       const routing = [];
       if(current.component) routing.push("<b>Component to select in the portal:</b> " + esc(current.component) + ".");
       if(a && a.portalNote) routing.push(esc(a.portalNote));
-      routing.push("<b>Portal forms usually also ask:</b> Request Type → FOIA (not Privacy Act) · Requester Category → \"All other\" (or news media, if you publish what you receive) · maximum fee → $25, matching the letter · delivery format → electronic.");
+      routing.push("<b>Portal forms usually also ask:</b> Request Type → FOIA (not Privacy Act) · Requester Category → \"All other\" (or news media, if you publish what you receive) · date-range fields → the window stated in the request text (From = the start date it names, To = today) · maximum fee → $25, matching the letter (uncheck any \"pay all fees\" box) · fee-waiver and expedite justification boxes → the paste boxes below · delivery format → electronic.");
       $("portalRouting").innerHTML = routing.join(" ");
       $("portalRouting").style.display = "block";
     }
