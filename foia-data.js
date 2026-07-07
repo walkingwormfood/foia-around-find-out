@@ -272,7 +272,7 @@ const FOIA = {
       requests: [
         {
           agencyId: "interior",
-          component: "Action Office: BLM — Bureau of Land Management (public-land sales and designations)",
+          component: "Action Office: BLM-HQ — BLM Headquarters. The dropdown lists every BLM state office; pick HQ because this asks for the policy instrument (plans/directives), which is a Washington-office record. State offices (BLM-NV, BLM-UT, …) hold implementation records — a follow-on request once a plan names its states.",
           summary: "Interior/BLM — any plan to sell or designate public land for \"prosperity zones\"",
           subject: "FOIA Request: Interior records on \"prosperity zones\" and disposal of public land",
           records: "I request a copy of any framework document, plan, interagency agreement, or land-disposal record held by the Department of the Interior or the Bureau of Land Management concerning the designation, sale, lease, or transfer of public land for \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
