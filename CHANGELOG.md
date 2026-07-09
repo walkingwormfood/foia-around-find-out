@@ -2,6 +2,12 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-09 (later) — Two more answers, and the whole docket is now on the cards
+
+- **NARA answered (NGC26-543)**: "Following a search, no records were found" — written confirmation that the National Design Studio has filed **no records schedule** with the National Archives, eleven months in. Exactly what the request was built to force onto paper.
+- **EAC answered (26-0064)**: "The EAC does not possess records responsive" — **no interagency agreement, MOU, SOW, or task order exists** between EAC and NDS/EOP concerning vote.gov, despite EAC's reported admission that modernization discussions occurred. Whatever happened around vote.gov was never papered with the agency that runs it.
+- **Every filed request is now marked**: OMB ×3 (PIA/SORN, PostHog, tracking-script authorization), OGE (Ben Black), DFC (Honduras/Próspera), USADF (the @ndstudio.gov contact), Interior/BLM (control DOI-2026-007659, BLM ack in hand). Scoreboard: 3 answered — all "no records," all findings — 8 pending.
+
 ## 2026-07-09 — Filed requests now show on their cards
 
 - Requests that have been filed carry a **⏳ pending box** (filed date, route, statutory clock); answered ones keep the **📬 response box**. First two pending: the Interior/BLM and GSA prosperity-zones requests.

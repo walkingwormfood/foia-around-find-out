@@ -242,14 +242,16 @@ const FOIA = {
           summary: "OGE — Ben Black's financial disclosure + any ethics/recusal re Próspera/Pronomos",
           subject: "FOIA Request: OGE Form 278e and ethics/recusal records for DFC head Ben Black",
           records: "I request a copy of the OGE Form 278e public financial disclosure report filed by Ben Black in connection with his leadership of the U.S. International Development Finance Corporation, together with any ethics agreement, recusal statement, or authorization to participate concerning his interests in or dealings with Próspera, Pronomos Capital, or charter-city / \"network state\" ventures, dated from January 1, 2025 to the date this request is processed.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 2, 2026 by email to usoge@oge.gov; no acknowledgment yet. (OGE's Gebbia response routes 278e's to the Ethics in Government Act special-access process rather than FOIA — expect the same redirect here; the ethics/recusal records portion still stands.)"
         },
         {
           agencyId: "dfc",
           summary: "DFC — its Honduras / La Ceiba / Próspera-adjacent investment commitments",
           subject: "FOIA Request: DFC investment commitments concerning Honduras, La Ceiba, and Próspera",
           records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee or board decision record of the U.S. International Development Finance Corporation concerning projects in Honduras — specifically any investment in or relating to the city of La Ceiba or the charter city known as Próspera (Roatán) — together with any recusal or ethics-screening record governing the agency head's involvement in those matters, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 2, 2026 by email to FOIA@dfc.gov; no acknowledgment yet."
         }
       ]
     },
@@ -278,7 +280,7 @@ const FOIA = {
           subject: "FOIA Request: Interior records on \"prosperity zones\" and disposal of public land",
           records: "I request a copy of any framework document, plan, interagency agreement, or land-disposal record held by the Department of the Interior or the Bureau of Land Management concerning the designation, sale, lease, or transfer of public land for \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 7, 2026 via Interior's portal (Action Office: BLM-HQ; fee waiver and expedited processing requested). Statutory determination window: 20 business days (5 U.S.C. § 552(a)(6)(A)(i))."
+          filed: "PENDING — filed Jul 7, 2026 via Interior's PAL portal (Action Office: BLM-HQ). DOI control number DOI-2026-007659; BLM acknowledgment letter Jul 8, 2026. Determination due ~Aug 4 (20 business days)."
         },
         {
           agencyId: "gsa",
@@ -351,7 +353,8 @@ const FOIA = {
           subject: "FOIA Request: records schedules filed by or for the National Design Studio",
           records: "I request a copy of any records schedule or records-disposition authority that the National Design Studio has filed with the National Archives since the studio's establishment in August 2025 — a single, discrete, catalogued document, not a broad search. If none has been filed, I request written confirmation of that fact. If NARA's position is that the National Design Studio's records fall under the Presidential Records Act rather than the Federal Records Act, I request written confirmation of that determination and any record memorializing it, which would itself be responsive.",
           priorArt: "NO PRIOR ART (Federal Register shows no NARA schedule notice mentioning NDS — consistent with none filed). Anticipate the PRA-not-FRA shield for a White House Office component (records sealed to ~2040); the request now forces that determination onto paper. Prior-art sweep 2026-07-04.",
-          ask_no_records: true
+          ask_no_records: true,
+          response: "ANSWERED — filed Jun 19, 2026 (tracking NGC26-543; a Jul 4 duplicate was folded into the same number); final response Jul 9, 2026: \"Following a search, no records were found to be responsive.\" NARA confirms in writing that the National Design Studio has filed NO records schedule — the exact fact this request was built to force onto paper. 90-day appeal window open."
         }
       ]
     },
@@ -408,7 +411,8 @@ const FOIA = {
           subject: "FOIA Request: Election Assistance Commission records concerning the National Design Studio and vote.gov",
           records: "I request a copy of any interagency agreement, memorandum of understanding, statement of work, or task order between the U.S. Election Assistance Commission and the National Design Studio (or the Executive Office of the President) concerning vote.gov — or any preview, replacement, or redesign of vote.gov — dated between January 1, 2026 and the date this request is processed. I note that the EAC stated to The Guardian (June 2026) that discussions with the National Design Studio regarding possible modernization of vote.gov had taken place and had been paused — records of those discussions and any agreements framing them are responsive. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           priorArt: "NO PRIOR REQUEST (MuckRock: zero vote.gov/NDS requests). Predicate strengthened: EAC admitted to The Guardian (Jun 2026) that NDS modernization discussions occurred and were 'paused' — records must exist. Prior-art sweep 2026-07-04.",
-          ask_no_records: true
+          ask_no_records: true,
+          response: "ANSWERED — filed Jul 2, 2026 (EAC 26-0064); response Jul 9, 2026 from Associate Counsel Seton Parsons: \"The EAC does not possess records responsive to your request.\" No interagency agreement, MOU, statement of work, or task order exists between EAC and NDS/EOP concerning vote.gov — despite EAC's reported admission that NDS modernization discussions occurred. Whatever happened around vote.gov, it was never papered with the agency. 90-day appeal window open."
         }
       ]
     },
@@ -433,7 +437,8 @@ const FOIA = {
           summary: "OMB — any privacy assessment (PIA/SORN) covering an NDS system",
           subject: "FOIA Request: Privacy Impact Assessments and System of Records Notices for National Design Studio programs",
           records: "I request a copy of any Privacy Impact Assessment (PIA) or System of Records Notice (SORN) prepared for a National Design Studio program or information system since the studio's establishment in August 2025. These are discrete, published privacy documents, not a broad search; if none exists, I request written confirmation of that fact.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jun 19, 2026 by email to OMBFOIA@omb.eop.gov (re-sent Jul 4); no acknowledgment yet. Determination due ~mid-July (20 business days from filing)."
         }
       ]
     },
@@ -459,7 +464,8 @@ const FOIA = {
           summary: "OMB — contracts & privacy reviews for PostHog on federal sites",
           subject: "FOIA Request: federal use of PostHog analytics software",
           records: "I request a copy of any contract, task order, or data-processing agreement covering the use of PostHog analytics software on the federal websites realfood.gov or techforce.gov, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet."
         }
       ]
     },
@@ -484,7 +490,8 @@ const FOIA = {
           summary: "USADF — the authorization for an @ndstudio.gov security contact",
           subject: "FOIA Request: authorization for a National Design Studio security contact on usadf.gov",
           records: "I request a copy of any interagency agreement, memorandum of understanding, or written authorization permitting the National Design Studio, or any @ndstudio.gov email holder (including akash@ndstudio.gov), to serve as the registered security or administrative contact for the usadf.gov domain, in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 4, 2026 by email to info@usadf.gov; no acknowledgment yet."
         }
       ]
     },
@@ -537,7 +544,8 @@ const FOIA = {
           summary: "OMB — privacy review/authorization for NDS tracking scripts on federal sites",
           subject: "FOIA Request: authorization and privacy review for National Design Studio tracking scripts on federal websites",
           records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization on file permitting the National Design Studio to load behavioral-tracking or analytics scripts (including those served from cdn.infra.ndstudio.gov) onto federal agency websites, since the studio's establishment in August 2025. To keep this request narrow, I am not seeking general email correspondence; if no such authorization exists, I request written confirmation of that fact.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet."
         }
       ]
     },
