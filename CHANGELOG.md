@@ -2,6 +2,12 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-09 — Filed requests now show on their cards
+
+- Requests that have been filed carry a **⏳ pending box** (filed date, route, statutory clock); answered ones keep the **📬 response box**. First two pending: the Interior/BLM and GSA prosperity-zones requests.
+- Sister site launched: **[FAFO Utah — Charlie Kirk Edition](https://walkingwormfood.github.io/fafo-utah-kirk/)** — same machinery, Utah GRAMA, built from the Tyler Robinson preliminary-hearing record.
+- Coming: a way for anyone to submit the response an agency sent them, so cards update from the community's filings too.
+
 ## 2026-07-08 — First agency answer: OGE responds on Gebbia (and "no records" is the finding)
 
 - **OGE answered the Gebbia request in one day** (filed Jul 6, tracking OGE FOIA FY 26/080, closed Jul 7): it searched and located **no responsive records** — no Form 278e, no ethics agreement, no waiver, no recusal — eleven months into his appointment. OGE also noted 278e's aren't FOIA-able at all (Exemption 3; the Ethics in Government Act has its own access route, the OGE Form 201).

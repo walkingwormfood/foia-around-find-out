@@ -277,14 +277,16 @@ const FOIA = {
           summary: "Interior/BLM — any plan to sell or designate public land for \"prosperity zones\"",
           subject: "FOIA Request: Interior records on \"prosperity zones\" and disposal of public land",
           records: "I request a copy of any framework document, plan, interagency agreement, or land-disposal record held by the Department of the Interior or the Bureau of Land Management concerning the designation, sale, lease, or transfer of public land for \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 7, 2026 via Interior's portal (Action Office: BLM-HQ; fee waiver and expedited processing requested). Statutory determination window: 20 business days (5 U.S.C. § 552(a)(6)(A)(i))."
         },
         {
           agencyId: "gsa",
           summary: "GSA — any \"prosperity zones\" / Blueprint-for-America federal-property records",
           subject: "FOIA Request: GSA records on \"prosperity zones\" and disposal of federal property",
           records: "I request a copy of any framework document, plan, interagency agreement, or real-property disposal record held by the U.S. General Services Administration concerning \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" and the sale or transfer of federal property for low-regulation corporate development, dated between January 1, 2025 and the date this request is processed. If no responsive records exist, I request written confirmation of that fact.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 2026 via FOIA.gov (GSA's own PAL portal was down; FOIA.gov transmits to GSA). Watch for correspondence from foia@foiaxpress.gsa.gov — safelist it. Statutory determination window: 20 business days."
         }
       ]
     },
