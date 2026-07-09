@@ -2,6 +2,12 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-08 — First agency answer: OGE responds on Gebbia (and "no records" is the finding)
+
+- **OGE answered the Gebbia request in one day** (filed Jul 6, tracking OGE FOIA FY 26/080, closed Jul 7): it searched and located **no responsive records** — no Form 278e, no ethics agreement, no waiver, no recusal — eleven months into his appointment. OGE also noted 278e's aren't FOIA-able at all (Exemption 3; the Ethics in Government Act has its own access route, the OGE Form 201).
+- The card now carries the response inline, and answered requests get a **response box** on their card — the site's first filed-request outcome on display.
+- Next step is on the card too: a **Form 201 to the home agency's ethics office** (White House Office DAEO for the EOP). A § 13107 access request isn't FOIA, so the EOP's usual FOIA shield doesn't reach it. If the answer is "he files confidentially as a Special Government Employee," that answer is the story.
+
 ## 2026-07-07 — GSA portal outage rerouted
 
 - GSA's PAL portal is **down** — its own homepage says to file through FOIA.gov instead. The GSA cards now route there, with FOIA.gov walkthrough guidance (pick GSA as the agency, description box, fee/expedite paste boxes) and a heads-up that GSA correspondence arrives from foia@foiaxpress.gsa.gov (safelist it). Caught while filing the prosperity-zones request.

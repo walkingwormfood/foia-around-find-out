@@ -496,11 +496,12 @@ const FOIA = {
         { label: "Substack", url: "https://thedreydossier.substack.com" }
       ],
       status: "confirmed",
-      finding: "Joe Gebbia leads the National Design Studio (effective Aug 21, 2025) while reportedly retaining an active Tesla board seat — with no public ethics disclosure linked.",
-      implication: "A presidential-appointee design chief with an unresolved private-sector tie and no visible Form 278e disclosure or ethics waiver.",
+      finding: "Joe Gebbia leads the National Design Studio (effective Aug 21, 2025) while reportedly retaining an active Tesla board seat — and OGE has now confirmed in writing (Jul 7, 2026) that it holds no Form 278e, ethics agreement, waiver, or recusal for him.",
+      implication: "Eleven months into a presidential appointment, the government's central ethics office has no financial disclosure on file for the design chief. Either his disclosure sits only at his home agency, he files confidentially as a Special Government Employee (never public, the standard DOGE-cohort maneuver), or he hasn't filed. The next request forces which.",
       sources: [
         { label: "Executive Order 14338", url: "" },
-        { label: "FedScoop / Wikipedia (URLs pending)", url: "" }
+        { label: "FedScoop / Wikipedia (URLs pending)", url: "" },
+        { label: "OGE FOIA FY 26/080 final response letter (Jul 7, 2026)", url: "" }
       ],
       requests: [
         {
@@ -508,7 +509,8 @@ const FOIA = {
           summary: "OGE — Gebbia's financial disclosure + any ethics waiver",
           subject: "FOIA Request: OGE Form 278e and ethics waiver for Joe Gebbia",
           records: "I request a copy of the OGE Form 278e public financial disclosure report filed by Joe Gebbia in connection with his federal appointment, and any ethics waiver, recusal agreement, or authorization to hold outside positions issued to him, dated between August 1, 2025 and the date this request is processed.",
-          ask_no_records: true
+          ask_no_records: true,
+          response: "ANSWERED — filed Jul 6, 2026 (tracking OGE FOIA FY 26/080); closed Jul 7, 2026. OGE searched and located NO responsive records, and noted 278e reports aren't processed under FOIA at all (Exemption 3 — the Ethics in Government Act, 5 U.S.C. § 13107, has its own access route). The 'no records' is the finding: no certified disclosure exists at OGE. Follow-up: OGE Form 201 to the home agency's ethics office (NDS is an EOP component — White House Office DAEO, ethics@who.eop.gov). A § 13107 request isn't FOIA, so the usual EOP FOIA shield doesn't apply; if the answer is 'confidential SGE filer,' that answer is itself the story."
         }
       ]
     },
