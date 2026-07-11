@@ -76,6 +76,9 @@ const FOIA = {
       portal: "https://www.justice.gov/oip/submit-and-track-request-or-appeal",
       submitNote: "DOJ takes FOIA through its FOIA STAR portal (or the relevant component's portal), not email.",
       portalNote: "Two ways in: register an account on FOIA STAR (doj-foia.entellitrak.com → Account Management → Register), or skip registration entirely and file through FOIA.gov (select Department of Justice → the component) — per DOJ's own privacy assessment, FOIA.gov submissions transmit into FOIA STAR automatically. Either way you pick a DOJ component first — use the component named on this request; the wrong pick gets a \"no records\" answer that's a routing artifact, not a real absence. The form collects your name, address, and fee preference in its own fields; a DOJ-361 identity form is only needed for records about a person." },
+    { id: "atfagency", name: "Bureau of Alcohol, Tobacco, Firearms and Explosives", email: null,
+      portal: "https://www.foia.gov/",
+      submitNote: "ATF FOIA routes through FOIA.gov (select Department of Justice → Bureau of Alcohol, Tobacco, Firearms and Explosives) or ATF's own eFOIA channels. Direct-email intake unverified — file via the portal. Expect 7(A) claims while the related prosecution is pending; the written denial still fixes what records exist." },
     { id: "fbi", name: "Federal Bureau of Investigation", email: null,
       portal: "https://efoia.fbi.gov",
       submitNote: "FBI takes FOIA only through its eFOIPA portal (efoia.fbi.gov); its email address is for questions only.",
@@ -139,6 +142,7 @@ const FOIA = {
     { id: "eac", name: "U.S. Election Assistance Commission", type: "org" },
     { id: "doj", name: "U.S. Department of Justice", type: "org" },
     { id: "fbi", name: "Federal Bureau of Investigation", type: "org" },
+    { id: "atf", name: "ATF", type: "org" },
     { id: "dod", name: "U.S. Department of Defense", type: "org" },
     { id: "dhs", name: "U.S. Department of Homeland Security", type: "org" },
     { id: "treasury", name: "U.S. Department of the Treasury", type: "org" },
@@ -743,6 +747,30 @@ const FOIA = {
           summary: "DoD — SAM702 tasking order, manifest, and itinerary (Sept 2025)",
           subject: "FOIA Request: tasking and manifest for military flight SAM702, September 2025",
           records: "I request a copy of the tasking order, passenger manifest, and itinerary for the military flight designated SAM702 for the period September 7–9, 2025, including records identifying the office that requested or sponsored the mission. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "atf-dna-consumed",
+      categories: ["Kirk assassination & coverup"],
+      entities: ["atf", "charlie-kirk"],
+      investigator: "Day 5 courtroom record, State v. Robinson prelim",
+      investigatorLinks: [
+        { label: "Sister site: FAFO Utah — Charlie Kirk Edition", url: "https://fafo-utah-kirk.pages.dev/" }
+      ],
+      status: "confirmed",
+      finding: "ATF's DNA section chief (Katelyn Oliver) testified on the final day of the Robinson preliminary hearing that NINE evidence samples were entirely consumed in testing — no split preserved for independent defense retesting, against the practice recommended since the 1996 NRC report — that the reported \"1 trillion times more likely\" figures are a reporting CAP, and that elimination testing showed \"support for inclusion\" of the defendant's father on the rifle bolt and of Lance Twiggs on the Dremel tool.",
+      implication: "The federal lab records behind the state's DNA case are ATF records: the three reports, the case notes containing the permission-to-consume authorization, and the elimination-sample paperwork. Expect Exemption 7(A) while the prosecution is pending — the written response still fixes on paper what exists and what was destroyed.",
+      sources: [
+        { label: "Day 5 courtroom audio (whisper transcript), Jul 10 2026 — direct and cross of ATF examiner Katelyn Oliver", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "atfagency",
+          summary: "ATF — the DNA reports, the consumption authorization, and the elimination-sample records",
+          subject: "FOIA Request: ATF DNA laboratory records concerning the Utah Valley University homicide investigation",
+          records: "I request, concerning ATF Forensic Science Laboratory DNA analyses performed for the September 10, 2025 Utah Valley University homicide investigation (State v. Robinson, Utah Fourth District No. 251403576), whose author testified publicly at the July 10, 2026 preliminary hearing: (1) the three DNA examination reports authored by the DNA section chief (admitted in court as exhibits 30 and 34, plus the elimination-sample report referenced as report 157); (2) the case-file record authorizing complete consumption of samples 1.4, 1.6, 1.9, 1.10, 1.12, 2.1, 3.1, 4.1, and 5.1, including the permission-to-consume communication referenced in testimony; and (3) the records of elimination-sample requests made to household members and to investigating agents, including whether the agents' samples were ever provided. These records were described in public testimony; I am not seeking the underlying DNA profiles or any person's genetic data.",
           ask_no_records: true
         }
       ]
