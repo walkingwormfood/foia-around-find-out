@@ -2,6 +2,9 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **52 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-11 — New card: a congressman detained in the West Bank, and the embassy knew in real time
+
+Rep. Ro Khanna says armed Israeli settlers with U.S.-made M4s detained his delegation for over an hour at Zanuta, and that the IDF sided with the settlers on arrival; the Israeli military's statement says troops dispersed the settlers and waved the vehicles through. Both cannot be true — and the U.S. government's own contemporaneous records support exactly one of them. Two State Department requests: Embassy Jerusalem's real-time incident reporting plus the Diplomatic Security file, and any protest/demarche/press guidance that followed (with written confirmation demanded if the answer is none).
 ## 2026-07-09 (later) — Two more answers, and the whole docket is now on the cards
 
 - **NARA answered (NGC26-543)**: "Following a search, no records were found" — written confirmation that the National Design Studio has filed **no records schedule** with the National Archives, eleven months in. Exactly what the request was built to force onto paper.

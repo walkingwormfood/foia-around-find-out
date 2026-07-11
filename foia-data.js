@@ -209,6 +209,7 @@ const FOIA = {
     { id: "cybereason", name: "Cybereason", type: "company" },
     { id: "bin-sulayem", name: "Sultan Ahmed bin Sulayem", type: "person" },
     { id: "massie", name: "Thomas Massie", type: "person" },
+    { id: "ro-khanna", name: "Rep. Ro Khanna", type: "person" },
     { id: "cia", name: "Central Intelligence Agency", type: "org" },
     { id: "mkultra", name: "Project MKUltra", type: "program" },
     { id: "luna", name: "Anna Paulina Luna", type: "person" },
@@ -225,6 +226,38 @@ const FOIA = {
   ],
 
   investigations: [
+    {
+      id: "khanna-westbank-detention",
+      categories: ["Israel / foreign influence", "Civil liberties"],
+      entities: ["ro-khanna", "israel", "state-dept"],
+      investigator: "Ro Khanna (firsthand) · wire reporting",
+      investigatorLinks: [
+        { label: "Sabby Sabs — breaking coverage with Khanna's own footage", url: "https://www.youtube.com/watch?v=HFp3DgGnRkU" }
+      ],
+      status: "reported",
+      finding: "Rep. Ro Khanna says he and his delegation — Americans, with video rolling — were detained for over an hour by armed Israeli settlers carrying U.S.-made M4 rifles while touring Zanuta, a southern West Bank village destroyed in settler attacks, and that when the IDF arrived it sided with the settlers and continued the detention. The Israeli military's statement says the opposite: troops \"dispersed the Israeli civilians and allowed the vehicles to continue on their way.\" Both cannot be true.",
+      implication: "A congressional delegation detained abroad generates federal paper in real time: the delegation's translator told the settlers the American embassy was concerned, which means the embassy knew during the incident. Embassy Jerusalem's contemporaneous cables and incident reporting, Diplomatic Security's incident file, and any protest or demarche to the Israeli government are discrete, dated records — and they will support one of the two conflicting accounts. Khanna, publicly weighing a 2028 run, says: \"You'll be hearing from me soon.\"",
+      sources: [
+        { label: "Khanna's public statement and footage (via X, aired in coverage)", url: "" },
+        { label: "Reuters report incl. the Israeli military statement", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "state",
+          summary: "State — Embassy Jerusalem's real-time incident reporting + the Diplomatic Security file",
+          subject: "FOIA Request: records concerning the detention of a congressional delegation near Zanuta, West Bank, July 2026",
+          records: "I request: (1) cables, situation reports, spot reports, or incident reports authored or received by U.S. Embassy Jerusalem or the U.S. Office of Palestinian Affairs, dated July 1 through July 31, 2026, concerning the detention, obstruction, or delay of a delegation including Representative Ro Khanna near the village of Zanuta in the southern West Bank; (2) any Bureau of Diplomatic Security incident report or after-action record concerning that event; and (3) records of real-time communications between Department or embassy personnel and the delegation, its escorts, or Israeli authorities during the incident. To keep this request narrow, I am not seeking general country-condition reporting — records concerning this incident only.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "state",
+          summary: "State — the diplomatic follow-through: any protest, demarche, or press guidance",
+          subject: "FOIA Request: communications with the Government of Israel concerning the July 2026 detention of a congressional delegation",
+          records: "I request, for July 1 through August 31, 2026: (1) any demarche, protest note, talking points, or record of communication between the Department of State (including U.S. Embassy Jerusalem) and the Government of Israel concerning the detention of a delegation including Representative Ro Khanna by Israeli civilians and/or Israel Defense Forces personnel near Zanuta in the southern West Bank; and (2) any press guidance or briefing material prepared for the Department spokesperson concerning that incident. If the Department made no protest and prepared no guidance, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
     {
       id: "dfc-ben-black-prospera",
       categories: ["Network state", "Conflict of interest"],
