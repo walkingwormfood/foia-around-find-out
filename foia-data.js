@@ -251,7 +251,7 @@ const FOIA = {
           subject: "FOIA Request: DFC investment commitments concerning Honduras, La Ceiba, and Próspera",
           records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee or board decision record of the U.S. International Development Finance Corporation concerning projects in Honduras — specifically any investment in or relating to the city of La Ceiba or the charter city known as Próspera (Roatán) — together with any recusal or ethics-screening record governing the agency head's involvement in those matters, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 2, 2026 by email to FOIA@dfc.gov; no acknowledgment yet."
+          filed: "ACTION NEEDED — filed Jul 2, 2026; DFC answered Jul 10 (Request 26-039) demanding the request be \"perfected\": name the specific projects (their own database and press releases do — the $1B Honduras initiative, the Jilamito hydropower project serving La Ceiba, the Ficohsa loan) and route the ethics records through OGE Form 201 instead. Amended request due to DFC by JULY 16 or the request is treated as abandoned."
         }
       ]
     },
