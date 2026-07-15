@@ -288,7 +288,7 @@ const FOIA = {
           subject: "FOIA Request: DFC investment commitments concerning Honduras, La Ceiba, and Próspera",
           records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee or board decision record of the U.S. International Development Finance Corporation concerning projects in Honduras — specifically any investment in or relating to the city of La Ceiba or the charter city known as Próspera (Roatán) — together with any recusal or ethics-screening record governing the agency head's involvement in those matters, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (amended) — filed Jul 2, 2026; DFC demanded a perfected request Jul 10 (26-039). Amended the same day: named projects from DFC's own press releases (the $1B Honduras initiative, Jilamito hydropower serving La Ceiba, Próspera/Roatán entities, Ficohsa and Lafise commitments) plus CEO Black's Tegucigalpa delegation records; the ethics portion withdrawn and routed through OGE Form 201. Clock restarts from perfection."
+          filed: "ACTION REQUIRED BY JUL 17 — filed Jul 2, 2026; perfected Jul 10 after DFC's first demand (26-039); DFC's Jul 14 acknowledgement letter accepts the request into the COMPLEX queue but demands a second round of clarification by Jul 17 or the items die: (1) the $1B-Honduras item is 'not reasonably described' (DFC notes the cited press release is dated Jul 21, 2020 — pre-dates the request window; name a specific project); (2) Jilamito accepted as interpreted; (3) the Próspera/Ficohsa/Lafise item must name a specific project, commitment, or entity; (4) 'memorandum of conversation' for Black's Tegucigalpa trip is 'uninterpretable' — describe the record type. DFC also unilaterally interprets 'investment commitment' = commitment letters (correct by Jul 17 if wrong) and notes Board resolutions are already public (public-domain material isn't FOIA-able). Fee waiver DENIED and expedited DENIED — both final agency decisions, 90-day appeal windows open; classified 'all other requesters' (2 hrs search + 100 pages free; $25 cap stands). EO 12600 third-party notice and interagency consultation warned as added delay."
         }
       ]
     },
@@ -317,7 +317,7 @@ const FOIA = {
           subject: "FOIA Request: Interior records on \"prosperity zones\" and disposal of public land",
           records: "I request a copy of any framework document, plan, interagency agreement, or land-disposal record held by the Department of the Interior or the Bureau of Land Management concerning the designation, sale, lease, or transfer of public land for \"prosperity zones,\" \"maritime prosperity zones,\" or the \"Blueprint for America,\" dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence. If no responsive records exist, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 7, 2026 via Interior's PAL portal (Action Office: BLM-HQ). DOI control number DOI-2026-007659; BLM acknowledgment letter Jul 8, 2026. Determination due ~Aug 4 (20 business days)."
+          filed: "PENDING — filed Jul 7, 2026 via Interior's PAL portal (Action Office: BLM-HQ). DOI control number DOI-2026-007659; BLM acknowledgment letter Jul 8, 2026: fee-waiver request accepted for processing, requester classified News Media (no search/review charges, 100 free pages), but the request is placed in the COMPLEX track (21–60 workdays — so a determination could run to ~Oct rather than the statutory ~Aug 4), with BLM promising to 'prioritize and process your request as the records become available.'"
         },
         {
           agencyId: "gsa",
@@ -528,7 +528,7 @@ const FOIA = {
           subject: "FOIA Request: authorization for a National Design Studio security contact on usadf.gov",
           records: "I request a copy of any interagency agreement, memorandum of understanding, or written authorization permitting the National Design Studio, or any @ndstudio.gov email holder (including akash@ndstudio.gov), to serve as the registered security or administrative contact for the usadf.gov domain, in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 4, 2026 by email to info@usadf.gov; no acknowledgment yet."
+          response: "ANSWERED — filed Jul 4, 2026 by email to info@usadf.gov; final response Jul 13, 2026 from USADF (Bailey Dowling, no tracking number assigned): \"There are no documents responsive to your request.\" No charge (22 C.F.R. § 1502.7). USADF confirms in writing that NO agreement, MOU, or written authorization exists permitting NDS or any @ndstudio.gov holder (including akash@ndstudio.gov) to serve as security/administrative contact for the usadf.gov domain — the registration happened with no paper behind it, the exact absence this request was built to force onto the record."
         }
       ]
     },
