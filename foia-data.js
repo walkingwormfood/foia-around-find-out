@@ -288,7 +288,7 @@ const FOIA = {
           subject: "FOIA Request: DFC investment commitments concerning Honduras, La Ceiba, and Próspera",
           records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee or board decision record of the U.S. International Development Finance Corporation concerning projects in Honduras — specifically any investment in or relating to the city of La Ceiba or the charter city known as Próspera (Roatán) — together with any recusal or ethics-screening record governing the agency head's involvement in those matters, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "ACTION REQUIRED BY JUL 17 — filed Jul 2, 2026; perfected Jul 10 after DFC's first demand (26-039); DFC's Jul 14 acknowledgement letter accepts the request into the COMPLEX queue but demands a second round of clarification by Jul 17 or the items die: (1) the $1B-Honduras item is 'not reasonably described' (DFC notes the cited press release is dated Jul 21, 2020 — pre-dates the request window; name a specific project); (2) Jilamito accepted as interpreted; (3) the Próspera/Ficohsa/Lafise item must name a specific project, commitment, or entity; (4) 'memorandum of conversation' for Black's Tegucigalpa trip is 'uninterpretable' — describe the record type. DFC also unilaterally interprets 'investment commitment' = commitment letters (correct by Jul 17 if wrong) and notes Board resolutions are already public (public-domain material isn't FOIA-able). Fee waiver DENIED and expedited DENIED — both final agency decisions, 90-day appeal windows open; classified 'all other requesters' (2 hrs search + 100 pages free; $25 cap stands). EO 12600 third-party notice and interagency consultation warned as added delay."
+          filed: "PENDING (perfected, round two) — filed Jul 2, 2026 (26-039); perfected Jul 10 after DFC's first demand; DFC's Jul 14 acknowledgement demanded a second round of clarification by Jul 17, answered Jul 15 ahead of deadline: 'investment commitment' = commitment letters confirmed; Item 1 ($1B-Honduras catch-all) withdrawn as subsumed; Item 2 (Jilamito) confirmed as interpreted; Item 3 perfected with named entities (Honduras Próspera Inc. / its Próspera ZEDE Roatán affiliate, Banco Ficohsa Honduras, Banco Lafise Honduras — with per-entity no-records confirmation demanded); Item 4's 'memorandum of conversation' recast as trip report / after-action or read-out memo / briefing memo / delegation agenda for Black's Tegucigalpa meetings. Written confirmation of perfection and the clock-start date requested. COMPLEX queue; EO 12600 third-party notice and interagency consultation warned as added delay. Fee waiver DENIED and expedited DENIED — both final agency decisions, 90-day appeal windows open (from Jul 14); classified 'all other requesters' (2 hrs search + 100 pages free; $25 cap stands)."
         }
       ]
     },
@@ -475,7 +475,7 @@ const FOIA = {
           subject: "FOIA Request: Privacy Impact Assessments and System of Records Notices for National Design Studio programs",
           records: "I request a copy of any Privacy Impact Assessment (PIA) or System of Records Notice (SORN) prepared for a National Design Studio program or information system since the studio's establishment in August 2025. These are discrete, published privacy documents, not a broad search; if none exists, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING — filed Jun 19, 2026 by email to OMBFOIA@omb.eop.gov (re-sent Jul 4); no acknowledgment yet. Determination due ~mid-July (20 business days from filing)."
+          filed: "PENDING (constructive-denial posture) — filed Jun 19, 2026 by email to OMBFOIA@omb.eop.gov (re-sent Jul 4); no acknowledgment or tracking number ever issued. Status demand sent Jul 15 on the original thread: determination deadline computed to on-or-about Jul 21 (received Mon Jun 22 + 20 business days, Jul 3 holiday observed); notice given that silence past the deadline = constructive denial with remedies exhausted under § 552(a)(6)(C)(i), OGIS and further remedies to follow. Tracking numbers also demanded for the two Jul 4 OMB requests in the same letter."
         }
       ]
     },
@@ -502,7 +502,7 @@ const FOIA = {
           subject: "FOIA Request: federal use of PostHog analytics software",
           records: "I request a copy of any contract, task order, or data-processing agreement covering the use of PostHog analytics software on the federal websites realfood.gov or techforce.gov, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet."
+          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet. A tracking number was demanded in the Jul 15 status letter sent on the Jun 19 PIAs/SORNs thread; determination due ~Aug 3 (20 business days from Mon Jul 6 receipt)."
         }
       ]
     },
@@ -582,7 +582,7 @@ const FOIA = {
           subject: "FOIA Request: authorization and privacy review for National Design Studio tracking scripts on federal websites",
           records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization on file permitting the National Design Studio to load behavioral-tracking or analytics scripts (including those served from cdn.infra.ndstudio.gov) onto federal agency websites, since the studio's establishment in August 2025. To keep this request narrow, I am not seeking general email correspondence; if no such authorization exists, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet."
+          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet. A tracking number was demanded in the Jul 15 status letter sent on the Jun 19 PIAs/SORNs thread; determination due ~Aug 3 (20 business days from Mon Jul 6 receipt)."
         }
       ]
     },
