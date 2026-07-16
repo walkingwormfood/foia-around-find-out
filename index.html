@@ -57,7 +57,7 @@
   .btn.gen:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
   .btn.viewpending{flex:0 0 auto;background:transparent;border-color:var(--line);color:var(--ink2)}
   .btn.viewpending:hover{border-color:var(--ink2);color:var(--ink)}
-  .req .resp.pending.collapsed{display:none}
+  .req .resp.collapsed{display:none}
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 2px}
   .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;border:1px solid var(--line);border-radius:20px;padding:5px 12px;cursor:pointer;background:var(--panel);color:var(--ink2)}
   .chip:hover{border-color:#39414e}
@@ -243,9 +243,12 @@
       const title = email ? ("Opens a pre-addressed email to " + a.name)
                           : ("Copies the letter and opens " + (a?a.name:"the agency") + "'s FOIA portal");
       return `<div class="req${r.refined ? " refined" : ""}"><div class="desc">${esc(r.summary)}${r.refined ? '<span class="reftag">⟳ refined</span>' : ""}<span class="agency">${esc(a?a.name:r.agencyId)} · ${tag}</span>`+
-             (r.response ? `<span class="resp">📬 ${esc(r.response)}</span>` : r.filed ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : "")+
+             (r.response ? `<span class="resp${r.refined ? " collapsed" : ""}">📬 ${esc(r.response)}</span>` : r.filed ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : "")+
              `</div>`+
-             (!r.response && r.filed
+             (r.refined
+               ? `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate refined request</button>`+
+                 (r.filed || r.response ? `<button class="btn viewpending" title="Click for the docket status">⏳ View status</button>` : "")+`</div>`
+               : !r.response && r.filed
                ? `<button class="btn viewpending" title="Already filed and in flight — one copy per office; click for the docket status">⏳ View pending</button></div>`
                : `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate this request</button></div>`);
     }).join("");
@@ -350,10 +353,10 @@
   FOIA.agencies.forEach(a => { const o=document.createElement("option"); o.value=a.id; o.textContent=a.name; $("advAgency").appendChild(o); });
 
   document.querySelectorAll("button.viewpending").forEach(b => b.addEventListener("click", () => {
-    const sp = b.closest(".req").querySelector(".resp.pending");
+    const sp = b.closest(".req").querySelector(".resp");
     if(!sp) return;
     const nowCollapsed = sp.classList.toggle("collapsed");
-    b.textContent = nowCollapsed ? "⏳ View pending" : "⏳ Hide pending";
+    b.textContent = b.textContent.replace(nowCollapsed ? "Hide" : "View", nowCollapsed ? "View" : "Hide");
   }));
 
   document.querySelectorAll("button.gen").forEach(b => b.addEventListener("click", () => {
