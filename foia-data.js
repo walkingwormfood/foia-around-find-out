@@ -828,6 +828,29 @@ const FOIA = {
       ]
     },
     {
+      id: "nest-doorbell-vehicle",
+      categories: ["Kirk assassination & coverup"],
+      entities: ["fbi", "charlie-kirk"],
+      investigator: "Preliminary-hearing record (State v. Robinson)",
+      investigatorLinks: [],
+      status: "confirmed",
+      finding: "A testifying officer at the preliminary hearing confirmed the contents of an investigative report documenting the interview of homeowners whose Nest doorbell camera captured a vehicle associated with the Utah Valley University homicide investigation parked on their street overnight September 10\u201311, 2025 \u2014 including recorded descriptions of the vehicle's driver and occupants.",
+      implication: "A vehicle parked overnight near the scene, with witness descriptions of its occupants on file, is either accounted for in the state's timeline or it isn't. The interview report is a discrete, named record whose existence was confirmed under oath; its substance \u2014 who was described, and whether that description was ever run down \u2014 is the question.",
+      sources: [
+        { label: "Preliminary-hearing testimony, State v. Robinson (Utah Fourth District No. 251403576)" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI \u2014 the Nest-doorbell homeowner interview report (vehicle parked overnight near the scene)",
+          subject: "FOIA Request: interview report concerning doorbell-camera footage of a vehicle, Utah Valley University homicide investigation",
+          records: "I request, concerning the September 10, 2025 Utah Valley University homicide investigation (State v. Robinson, Utah Fourth District No. 251403576): the investigative report, FD-302, or interview summary documenting the interview of the homeowners whose Nest doorbell camera captured a vehicle parked on their street overnight September 10\u201311, 2025 \u2014 the report whose contents, including the recorded descriptions of the vehicle's driver and occupants, were confirmed by a testifying officer at the July 2026 preliminary hearing. Witness personal identifiers may be redacted; the substance of the recorded descriptions is the request. To keep this request narrow, I am not seeking general case-file correspondence.",
+          ask_no_records: true,
+          filed: "PENDING \u2014 filed Jul 16, 2026 via the FBI's eFOIPA portal (efoia.fbi.gov); intake confirmation received same day, FOIPA request number to follow ('correspondence will be forthcoming'). Filing quirk to watch: the as-filed text carried Utah GRAMA citations (fee waiver under Utah Code \u00a7 63G-2-203(4)(a), Utah response deadlines) rather than 5 U.S.C. \u00a7 552 \u2014 the FBI will process it as FOIA regardless, but expect the fee-waiver justification to be read against the federal standard; the $25 cap stands either way. If the waiver is denied on that basis, the cure is a corrected justification citing \u00a7 552(a)(4)(A)(iii), not a re-file."
+        }
+      ]
+    },
+    {
       id: "fbi-kirk-tipline",
       categories: ["Kirk assassination & coverup", "NDS takeover"],
       entities: ["nds", "fbi", "charlie-kirk"],
