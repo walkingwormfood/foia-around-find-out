@@ -58,6 +58,15 @@
   .btn.viewpending{flex:0 0 auto;background:transparent;border-color:var(--line);color:var(--ink2)}
   .btn.viewpending:hover{border-color:var(--ink2);color:var(--ink)}
   .req .resp.collapsed{display:none}
+  .resp.chain{background:transparent;border-left:none;padding:0;margin-top:8px}
+  .chain .round{border-left:2px solid var(--line);margin:8px 0 8px 4px;padding:2px 0 2px 12px}
+  .chain .round.cur{border-left-color:#5b8fd8}
+  .chain .rlbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;margin-bottom:4px}
+  .chain .rreq{font-size:12px;color:var(--ink2);background:var(--panel2);border-radius:4px;padding:6px 8px;white-space:pre-wrap}
+  .chain .round.cur .rreq{color:var(--ink);border:1px solid #5b8fd8}
+  .chain .rout{font-size:12px;color:var(--warn);margin-top:5px}
+  .chain .rout.ok{color:var(--ok)}
+  .chain .rfix{font-size:12px;color:#5b8fd8;margin-top:4px}
   .filters{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 2px}
   .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;border:1px solid var(--line);border-radius:20px;padding:5px 12px;cursor:pointer;background:var(--panel);color:var(--ink2)}
   .chip:hover{border-color:#39414e}
@@ -243,11 +252,15 @@
       const title = email ? ("Opens a pre-addressed email to " + a.name)
                           : ("Copies the letter and opens " + (a?a.name:"the agency") + "'s FOIA portal");
       return `<div class="req${r.refined ? " refined" : ""}"><div class="desc">${esc(r.summary)}${r.refined ? '<span class="reftag">⟳ refined</span>' : ""}<span class="agency">${esc(a?a.name:r.agencyId)} · ${tag}</span>`+
-             (r.response ? `<span class="resp${r.refined ? " collapsed" : ""}">📬 ${esc(r.response)}</span>` : r.filed ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : "")+
+             (r.history ? `<div class="resp chain collapsed">`+
+               r.history.map((h,n)=>`<div class="round"><div class="rlbl">Round ${n+1}${h.label ? " — "+esc(h.label) : ""}</div><div class="rreq">${esc(h.records)}</div><div class="rout">⛔ ${esc(h.outcome)}</div><div class="rfix">⟳ ${esc(h.refinement)}</div></div>`).join("")+
+               `<div class="round cur"><div class="rlbl">Current request — what Generate produces</div><div class="rreq">${esc(r.records)}</div>`+
+               (r.response ? `<div class="rout ok">📬 ${esc(r.response)}</div>` : r.filed ? `<div class="rout">⏳ ${esc(r.filed)}</div>` : "")+`</div></div>`
+               : r.response ? `<span class="resp${r.refined ? " collapsed" : ""}">📬 ${esc(r.response)}</span>` : r.filed ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : "")+
              `</div>`+
              (r.refined
                ? `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate refined request</button>`+
-                 (r.filed || r.response ? `<button class="btn viewpending" title="Click for the docket status">⏳ View status</button>` : "")+`</div>`
+                 (r.filed || r.response ? `<button class="btn viewpending" title="Click for the full request-refinement history">⏳ ${r.history ? "View progression" : "View status"}</button>` : "")+`</div>`
                : !r.response && r.filed
                ? `<button class="btn viewpending" title="Already filed and in flight — one copy per office; click for the docket status">⏳ View pending</button></div>`
                : `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate this request</button></div>`);
