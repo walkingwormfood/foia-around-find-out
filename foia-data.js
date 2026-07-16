@@ -73,9 +73,21 @@ const FOIA = {
       portal: "https://www.oge.gov",
       submitNote: "OGE accepts FOIA by email." },
     { id: "doj", name: "U.S. Department of Justice", email: null,
-      portal: "https://www.justice.gov/oip/submit-and-track-request-or-appeal",
-      submitNote: "DOJ takes FOIA through its FOIA STAR portal (or the relevant component's portal), not email.",
+      portal: "https://doj-foia.entellitrak.com/etk-doj-foia-prod/login.request.do",
+      submitNote: "This button opens FOIA STAR directly — DOJ's portal for the eight leadership offices (OAG, ODAG, Associate AG, Legislative Affairs, Pardon Attorney, Public Affairs, Legal Policy, OIP). First visit: hover Account Management \u2192 Register. One account files every OIP-routed request on this site and shows live status. No email intake.",
       portalNote: "Two ways in: register an account on FOIA STAR (doj-foia.entellitrak.com → Account Management → Register), or skip registration entirely and file through FOIA.gov (select Department of Justice → the component) — per DOJ's own privacy assessment, FOIA.gov submissions transmit into FOIA STAR automatically. KNOW THE SPLIT: OIP/FOIA STAR only processes EIGHT leadership offices — Attorney General, Deputy AG, Associate AG, Legislative Affairs, Pardon Attorney, Public Affairs, Legal Policy, Information Policy. Requests aimed at the AG's or Deputy AG's records (Bondi memos/binders, Blanche interview records, NSPM-7 designation) belong exactly there; one FOIA STAR account files them all and shows live status. Any other component — National Security Division (FARA unit), U.S. Marshals, Criminal Division — has its OWN intake and OIP will punt you: file at the component directly (FOIA.gov's component picker reaches them too). Either way you pick a DOJ component first — use the component named on this request; the wrong pick gets a \"no records\" answer that's a routing artifact, not a real absence. The form collects your name, address, and fee preference in its own fields; a DOJ-361 identity form is only needed for records about a person." },
+    { id: "usms", name: "U.S. Marshals Service (DOJ component)", email: null,
+      portal: "https://www.foia.gov/",
+      submitNote: "USMS runs its own FOIA shop — OIP/FOIA STAR will punt this. File through FOIA.gov: pick Department of Justice \u2192 U.S. Marshals Service and paste the letter into the description box.",
+      portalNote: "On FOIA.gov select Department of Justice, then the U.S. Marshals Service component. Fee-waiver and expedited justifications go in the paste boxes below." },
+    { id: "doj-crt", name: "DOJ Civil Rights Division", email: null,
+      portal: "https://www.foia.gov/",
+      submitNote: "The Civil Rights Division has its own FOIA intake — OIP/FOIA STAR will punt this. File through FOIA.gov: Department of Justice \u2192 Civil Rights Division.",
+      portalNote: "On FOIA.gov select Department of Justice, then Civil Rights Division. Name the Voting Section in the request text so it routes internally." },
+    { id: "doj-crm", name: "DOJ Criminal Division", email: null,
+      portal: "https://www.foia.gov/",
+      submitNote: "The Criminal Division has its own FOIA intake — OIP/FOIA STAR will punt this. File through FOIA.gov: Department of Justice \u2192 Criminal Division.",
+      portalNote: "On FOIA.gov select Department of Justice, then Criminal Division." },
     { id: "atfagency", name: "Bureau of Alcohol, Tobacco, Firearms and Explosives", email: null,
       portal: "https://www.foia.gov/",
       submitNote: "ATF FOIA routes through FOIA.gov (select Department of Justice → Bureau of Alcohol, Tobacco, Firearms and Explosives) or ATF's own eFOIA channels. Direct-email intake unverified — file via the portal. Expect 7(A) claims while the related prosecution is pending; the written denial still fixes what records exist." },
@@ -1092,7 +1104,7 @@ const FOIA = {
       ],
       requests: [
         {
-          agencyId: "doj",
+          agencyId: "usms",
           component: "U.S. Marshals Service (USMS)",
           summary: "DOJ — US Marshals / FBI access agreements with Flock Safety's ALPR network",
           subject: "FOIA Request: U.S. Marshals Service and FBI access to Flock Safety's ALPR network",
@@ -1294,7 +1306,7 @@ const FOIA = {
       ],
       requests: [
         {
-          agencyId: "doj",
+          agencyId: "doj-crt",
           component: "Civil Rights Division — its Voting Section sent the state letters",
           summary: "DOJ — the request letters to states + legal basis + voter-data retention policy",
           subject: "FOIA Request: DOJ requests to states for voter-registration data and related data-handling",
@@ -1732,7 +1744,7 @@ const FOIA = {
           priorArt: "PARTIAL RELEASE EXISTS: CIA Reading Room docs 00295568/00295569 ('MKULTRA Notification of Unwitting Subjects', incl. Jan 18, 1979 progress report) + 'Institutional Notifications' — pull these before filing; request re-scoped to exclude them. Task-force operational records reached researcher H.P. Albarelli (~2002), defeating any destruction claim. Adjacent MuckRock request on DDA Blake's Oct 1978 MKULTRA letter pending at CIA since 2016. Black Vault's MKUltra collection does NOT cover the task force. Prior-art sweep 2026-07-04."
         },
         {
-          agencyId: "doj",
+          agencyId: "doj-crm",
           component: "Criminal Division",
           summary: "DOJ — disposition of the criminal investigation AG Bell announced into the MKUltra records destruction",
           subject: "FOIA Request: opening and disposition records for the announced investigation into the 1973 destruction of MKULTRA files",
