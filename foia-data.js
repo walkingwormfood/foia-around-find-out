@@ -475,7 +475,7 @@ const FOIA = {
           subject: "FOIA Request: Privacy Impact Assessments and System of Records Notices for National Design Studio programs",
           records: "I request a copy of any Privacy Impact Assessment (PIA) or System of Records Notice (SORN) prepared for a National Design Studio program or information system since the studio's establishment in August 2025. These are discrete, published privacy documents, not a broad search; if none exists, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING (constructive-denial posture) — filed Jun 19, 2026 by email to OMBFOIA@omb.eop.gov (re-sent Jul 4); no acknowledgment or tracking number ever issued. Status demand sent Jul 15 on the original thread: determination deadline computed to on-or-about Jul 21 (received Mon Jun 22 + 20 business days, Jul 3 holiday observed); notice given that silence past the deadline = constructive denial with remedies exhausted under § 552(a)(6)(C)(i), OGIS and further remedies to follow. Tracking numbers also demanded for the two Jul 4 OMB requests in the same letter."
+          response: "ANSWERED (custody deflection — the shield is now on paper) — filed Jun 19, 2026; ignored until the Jul 15 status demand, which produced OMB's answer within one business day (Jul 16): NDS 'is not a component of OMB' — it was established within the White House Office of the EOP by E.O. 14338 of Aug 21, 2025 ('Improving Our Nation Through Better Design'); NDS records 'are not within the legal custody and control of OMB'; 'OMB does not process FOIA requests on behalf of NDS.' No tracking numbers issued for any of the three requests. What this wins: the anticipated shield is now an official written statement — NDS sits inside the White House Office, the one EOP corner FOIA cannot reach (PRA, sealed to ~2040), and the E.O. number is on the record. What OMB dodged: whether OMB ITSELF holds copies — E-Government Act § 208 PIAs are submitted TO OMB, and OMB Circular A-108 makes OMB the SORN reviewer, so a narrowed follow-up ('any PIA or SORN concerning an NDS program in OMB's own files, and any A-108/A-130 correspondence with NDS') targets records the custody argument cannot deflect."
         }
       ]
     },
@@ -502,7 +502,7 @@ const FOIA = {
           subject: "FOIA Request: federal use of PostHog analytics software",
           records: "I request a copy of any contract, task order, or data-processing agreement covering the use of PostHog analytics software on the federal websites realfood.gov or techforce.gov, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet. A tracking number was demanded in the Jul 15 status letter sent on the Jun 19 PIAs/SORNs thread; determination due ~Aug 3 (20 business days from Mon Jul 6 receipt)."
+          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet. A tracking number was demanded in the Jul 15 status letter; determination due ~Aug 3 (20 business days from Mon Jul 6 receipt). Expect the same custody deflection OMB issued Jul 16 on the PIAs/SORNs request (NDS = White House Office per E.O. 14338, not OMB) — if it comes, the counter is the same: narrow to records in OMB's own files."
         }
       ]
     },
@@ -582,7 +582,7 @@ const FOIA = {
           subject: "FOIA Request: authorization and privacy review for National Design Studio tracking scripts on federal websites",
           records: "I request a copy of any privacy review, Privacy Impact Assessment, or written authorization on file permitting the National Design Studio to load behavioral-tracking or analytics scripts (including those served from cdn.infra.ndstudio.gov) onto federal agency websites, since the studio's establishment in August 2025. To keep this request narrow, I am not seeking general email correspondence; if no such authorization exists, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet. A tracking number was demanded in the Jul 15 status letter sent on the Jun 19 PIAs/SORNs thread; determination due ~Aug 3 (20 business days from Mon Jul 6 receipt)."
+          filed: "PENDING — filed Jul 4, 2026 by email to OMBFOIA@omb.eop.gov; no acknowledgment yet. A tracking number was demanded in the Jul 15 status letter; determination due ~Aug 3 (20 business days from Mon Jul 6 receipt). Expect the same custody deflection OMB issued Jul 16 on the PIAs/SORNs request (NDS = White House Office per E.O. 14338, not OMB) — if it comes, the counter is the same: narrow to records in OMB's own files."
         }
       ]
     },
