@@ -41,6 +41,8 @@
   .pry{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
   .pry .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:8px}
   .req{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:8px 0;border-top:1px solid var(--panel2)}
+  .req.refined{border-left:3px solid #5b8fd8;padding-left:10px;background:rgba(91,143,216,.07);border-radius:4px}
+  .reftag{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:10.5px;color:#7fb4d8;border:1px solid #35597e;border-radius:4px;padding:1px 6px;vertical-align:middle;opacity:.9}
   .req:first-of-type{border-top:none}
   .req .desc{font-size:13.5px;color:var(--ink)}
   .req .agency{display:block;font-size:11px;color:var(--faint);font-family:var(--mono);margin-top:2px}
@@ -240,7 +242,7 @@
       const tag = email ? "email" : "portal";
       const title = email ? ("Opens a pre-addressed email to " + a.name)
                           : ("Copies the letter and opens " + (a?a.name:"the agency") + "'s FOIA portal");
-      return `<div class="req"><div class="desc">${esc(r.summary)}<span class="agency">${esc(a?a.name:r.agencyId)} · ${tag}</span>`+
+      return `<div class="req${r.refined ? " refined" : ""}"><div class="desc">${esc(r.summary)}${r.refined ? '<span class="reftag">⟳ refined</span>' : ""}<span class="agency">${esc(a?a.name:r.agencyId)} · ${tag}</span>`+
              (r.response ? `<span class="resp">📬 ${esc(r.response)}</span>` : r.filed ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : "")+
              `</div>`+
              (!r.response && r.filed
