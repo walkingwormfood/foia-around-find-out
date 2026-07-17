@@ -644,7 +644,8 @@ const FOIA = {
           summary: "FBI — the complete, unedited facility video for the date of Epstein's death",
           subject: "FOIA Request: complete unedited surveillance video referenced in the July 7, 2025 Epstein memo",
           records: "I request a copy of the complete, unedited surveillance-camera footage from the federal facility where Jeffrey Epstein died, covering the 24-hour period of his death, as referenced in the July 7, 2025 joint DOJ/FBI memorandum. I am requesting the original continuous recording, not an excerpted or compiled version.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 16, 2026 via the FBI's eFOIPA portal (efoia.fbi.gov); intake confirmation received same day, FOIPA number to follow (check status at vault.fbi.gov). Requester category not set (eFOIPA); fee waiver + expedite requested under the generic pre-Jul-17 language."
         },
         {
           agencyId: "doj",
