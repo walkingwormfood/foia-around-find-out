@@ -268,7 +268,8 @@ const FOIA = {
       entities: ["ro-khanna", "israel", "state-dept"],
       investigator: "Ro Khanna (firsthand) · wire reporting",
       investigatorLinks: [
-        { label: "Sabby Sabs — breaking coverage with Khanna's own footage", url: "https://www.youtube.com/watch?v=HFp3DgGnRkU" }
+        { label: "Sabby Sabs — breaking coverage with Khanna's own footage", url: "https://www.youtube.com/watch?v=HFp3DgGnRkU" },
+        { label: "John Kiriakou — adds the embassy-sponsorship detail and Khanna's \"total impunity\" statement", url: "https://www.youtube.com/watch?v=ZVJVEy0Zu80" }
       ],
       status: "reported",
       finding: "Rep. Ro Khanna says he and his delegation — Americans, with video rolling — were detained for over an hour by armed Israeli settlers carrying U.S.-made M4 rifles while touring Zanuta, a southern West Bank village destroyed in settler attacks, and that when the IDF arrived it sided with the settlers and continued the detention. The Israeli military's statement says the opposite: troops \"dispersed the Israeli civilians and allowed the vehicles to continue on their way.\" Both cannot be true.",
@@ -290,6 +291,13 @@ const FOIA = {
           summary: "State — the diplomatic follow-through: any protest, demarche, or press guidance",
           subject: "FOIA Request: communications with the Government of Israel concerning the July 2026 detention of a congressional delegation",
           records: "I request, for July 1 through August 31, 2026: (1) any demarche, protest note, talking points, or record of communication between the Department of State (including U.S. Embassy Jerusalem) and the Government of Israel concerning the detention of a delegation including Representative Ro Khanna by Israeli civilians and/or Israel Defense Forces personnel near Zanuta in the southern West Bank; and (2) any press guidance or briefing material prepared for the Department spokesperson concerning that incident. If the Department made no protest and prepared no guidance, I request written confirmation of that fact.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "state",
+          summary: "State — the embassy sponsorship of the visit itself: trip memo, itinerary, and security plan",
+          subject: "FOIA Request: Embassy Jerusalem sponsorship and planning records for the July 2026 congressional delegation visit to the West Bank",
+          records: "Khanna's delegation described the trip as sponsored by the American Embassy — which means planning records predate the incident. I request: (1) the trip memorandum, itinerary, or visit-support plan prepared by U.S. Embassy Jerusalem or the U.S. Office of Palestinian Affairs for the July 2026 visit of a delegation including Representative Ro Khanna to the southern West Bank, including any stop at or near the village of Zanuta; (2) any security assessment, movement plan, or escort arrangement prepared for that visit; and (3) any pre-visit coordination record with Israeli authorities concerning the delegation's route or access. I am requesting the planning instruments for this one visit, not general post security documentation. To keep this request narrow, I am not seeking general email correspondence beyond the specific records described.",
           ask_no_records: true
         }
       ]
