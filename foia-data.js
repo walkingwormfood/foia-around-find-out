@@ -32,9 +32,12 @@ const FOIA = {
       "I look forward to your determination on this request within the 20 business days provided by " +
       "5 U.S.C. § 552(a)(6)(A)(i).",
     expedited:
-      "Expedited processing: I request expedited processing under 5 U.S.C. § 552(a)(6)(E). There is an urgency to " +
-      "inform the public concerning actual or alleged federal government activity that is the subject of widespread " +
-      "and ongoing media attention.",
+      "Expedited processing: I request expedited processing under 5 U.S.C. § 552(a)(6)(E) on two grounds. " +
+      "(1) There is an urgency to inform the public about actual or alleged federal government activity, and I am a " +
+      "person primarily engaged in disseminating information: I publish the government records I obtain through a " +
+      "public records docket available to the general public. (2) This request concerns a matter of widespread and " +
+      "exceptional media interest in which there exist possible questions about the government\u2019s integrity that " +
+      "affect public confidence. I certify that the foregoing is true and correct to the best of my knowledge and belief.",
     segregability:
       "If any portion of a responsive record is withheld, please cite the specific FOIA exemption claimed and release " +
       "all reasonably segregable non-exempt portions, as required by 5 U.S.C. § 552(b).",
