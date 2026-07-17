@@ -140,7 +140,16 @@ const FOIA = {
       submitNote: "CISA is a DHS component. As of Jan 22, 2026, DHS no longer accepts emailed or mailed FOIA — submit via the SecureRelease portal (securerelease.us; select DHS Headquarters, which covers CISA) or FOIA.gov. Questions only: CISAFOIA@hq.dhs.gov." },
     { id: "dol-oig", name: "U.S. Department of Labor — Office of Inspector General", email: "FOIA.PrivacyAct@oig.dol.gov",
       portal: "https://www.dol.gov/general/foia/submit",
-      submitNote: "DOL-OIG accepts FOIA by email (FOIA.PrivacyAct@oig.dol.gov; the department-wide FOIArequests@dol.gov also routes to OIG), DOL's Public Access Link portal, FOIA.gov (select Department of Labor → Office of Inspector General), or mail (Disclosure Officer, Office of Inspector General, U.S. Department of Labor, 200 Constitution Ave NW, Room S-5506, Washington DC 20210)." }
+      submitNote: "DOL-OIG accepts FOIA by email (FOIA.PrivacyAct@oig.dol.gov; the department-wide FOIArequests@dol.gov also routes to OIG), DOL's Public Access Link portal, FOIA.gov (select Department of Labor → Office of Inspector General), or mail (Disclosure Officer, Office of Inspector General, U.S. Department of Labor, 200 Constitution Ave NW, Room S-5506, Washington DC 20210)." },
+    { id: "doj-nsd", name: "DOJ National Security Division (FARA Unit)", email: "nsdfoia@usdoj.gov",
+      portal: "https://www.foia.gov/",
+      submitNote: "NSD runs its own FOIA intake — OIP/FOIA STAR will punt this. Email works (nsdfoia@usdoj.gov), or file via FOIA.gov: Department of Justice → National Security Division. Before FOIAing, remember the FARA registration statements, supplementals, and exhibits themselves are already public — search efile.fara.gov first; FOIA is for what the public database doesn't show (unit correspondence, review files, advisory opinions). Checked July 2026." },
+    { id: "dea", name: "Drug Enforcement Administration (DOJ component)", email: "DEA.FOIA@dea.gov",
+      portal: "https://www.dea.gov/foia/requesting-foia-records",
+      submitNote: "DEA prefers its FOIA Public Access Link (PAL) portal — the linked page walks through registration — but still accepts email (DEA.FOIA@dea.gov), just with slower processing. Requester Service Center: (571) 776-2300. Checked July 2026." },
+    { id: "faa", name: "Federal Aviation Administration", email: "7-AWA-ARC-FOIA@faa.gov",
+      portal: "https://www.faa.gov/foia",
+      submitNote: "FAA's National FOIA Office accepts email (7-AWA-ARC-FOIA@faa.gov) or electronic submission from the FAA FOIA page. FAA is a DOT component, so FOIA.gov (Department of Transportation → Federal Aviation Administration) also works. Checked July 2026." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -241,6 +250,15 @@ const FOIA = {
     { id: "dsac", name: "Domestic Security Alliance Council", type: "org" },
     { id: "hsin", name: "Homeland Security Information Network", type: "program" },
     { id: "jonathan-berry", name: "Jonathan Berry", type: "person" },
+    { id: "frbny", name: "Federal Reserve Bank of New York", type: "org" },
+    { id: "ofac", name: "Office of Foreign Assets Control (Treasury)", type: "org" },
+    { id: "usaid", name: "USAID (dissolved 2025, folded into State)", type: "org" },
+    { id: "greg-brown", name: "Greg Brown / Global Cast Partners LLC", type: "person" },
+    { id: "venezuela", name: "Venezuela", type: "country" },
+    { id: "iraq", name: "Iraq", type: "country" },
+    { id: "libya", name: "Libya", type: "country" },
+    { id: "cuba", name: "Cuba", type: "country" },
+    { id: "ukraine", name: "Ukraine", type: "country" },
   ],
 
   investigations: [
@@ -1797,6 +1815,203 @@ const FOIA = {
           summary: "DOL-OIG — its task-force participation agreements with DHS/FBI",
           subject: "FOIA Request: DOL-OIG participation agreements with DHS task forces and FBI Joint Terrorism Task Forces",
           records: "I request a copy of any memorandum of understanding, participation agreement, or delegation authorizing the Department of Labor Office of Inspector General to participate in a Department of Homeland Security task force, an FBI Joint Terrorism Task Force, or any interagency intelligence-sharing task force, in effect between January 1, 2025 and the date this request is processed. These are discrete named instruments, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence, case files, or records identifying investigative subjects.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "fara-greg-brown-libya",
+      categories: ["Israel / foreign influence", "Economic coercion"],
+      entities: ["greg-brown", "epstein", "libya", "doj"],
+      investigator: "Mike Benz (Foundation for Freedom Online)",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "Benz reads released Epstein-file emails — 42 of them, Greg Brown to Jeffrey Epstein, June 2011–June 2013 — scheming to unfreeze Libya's sovereign assets (\"$80 billion in frozen funds, 32 billion is in the US\") on a ~25% contingency, with Brown writing he has \"friends formally with MI6 and Mossad\" willing to help identify and recover the assets. Brown (Global Cast Partners LLC, Beverly Hills) appears in a DOJ FARA filing recording May 2011 payments for UN consulting tied to Kuwait's Sheikh Ali Al-Sabah, arranging meetings with members of Congress, banks, media organizations, IRI, NDI, and NED.",
+      implication: "The FARA registration statement and exhibits are already public — the eFile database lookup is free and instant, no FOIA needed. What the public database doesn't show is the FARA Unit's own file: correspondence with the registrant, deficiency or inquiry letters, advisory opinions, and any enforcement review. That file is a discrete, requestable record set. (The emails are in the released Epstein tranche; the MI6/Mossad line is Brown's own claim in them; \"Epstein worked for the CIA\" is Benz's inference, not a document.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\" (reads the emails and FARA filing on screen)", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" },
+        { label: "DOJ FARA eFile — public registration search (start here, no FOIA needed)", url: "https://efile.fara.gov" }
+      ],
+      requests: [
+        {
+          agencyId: "doj-nsd",
+          summary: "DOJ-NSD FARA Unit — its file on the Greg Brown / Global Cast Partners registration beyond the public eFile documents",
+          subject: "FOIA Request: FARA Unit records concerning registrant Global Cast Partners LLC / Greg Brown",
+          records: "I request a copy of the FARA Unit's records concerning the registration of Global Cast Partners LLC and/or Greg Brown (registration activity beginning in or around May 2011, concerning consulting tied to Sheikh Ali Al-Sabah of Kuwait), other than the registration statements, supplemental statements, and exhibits already published on the FARA eFile public database — specifically: any deficiency letter, inquiry letter, or other correspondence between the FARA Unit and the registrant; any advisory opinion issued to or concerning the registrant; and any review or determination memorandum concerning the registrant's obligations, from January 1, 2011 to December 31, 2014. These are discrete registrant-file records, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence beyond the registrant-correspondence file described.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "treasury-frbny-revenue-custody",
+      categories: ["Economic coercion"],
+      entities: ["treasury", "ofac", "frbny", "venezuela", "iraq", "libya"],
+      investigator: "Mike Benz (Foundation for Freedom Online), reading a New York Times feature and The Cradle",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "The NYT feature Benz reads reports that the U.S. Treasury receives the revenue from most of Venezuela's exports and disperses it gradually through the country's private banks — \"akin to parents handing out allowances to children.\" Benz pairs it with the post-2003 Iraq arrangement (all oil revenue deposited to a single Federal Reserve Bank of New York account, Baghdad sending a monthly invoice to Treasury, cash flown in on pallets because key Iraqi banks are sanctioned — reported by Charmaine Narwani in The Cradle) and Libya (~$80B frozen at the fall of Gaddafi, ~$32B of it in the U.S.).",
+      implication: "Each arrangement is an instrument, not a vibe: a custody or depository agreement, an OFAC licensing framework, and a disbursement procedure. The FRBNY itself is not subject to FOIA, but Treasury's side of each arrangement is. These requests ask for the governing instruments — the cleanest way to confirm, bound, or refute the \"tranche-disbursement control\" characterization. (The Venezuela description is a single-outlet, largely anonymous-sourced NYT feature; the Iraq account arrangement has confirmed real elements; \"economic anaconda\" is Benz's framing.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\" (reads the NYT feature and The Cradle reporting)", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      requests: [
+        {
+          agencyId: "treasury",
+          summary: "Treasury — the Venezuela export-revenue custody and disbursement instrument",
+          subject: "FOIA Request: governing instrument for U.S. custody and disbursement of Venezuelan export revenue",
+          records: "I request a copy of any currently effective agreement, licensing framework, general or specific license, directive, or memorandum — held by the Office of Foreign Assets Control, the Office of International Affairs, or the Fiscal Service — that governs the receipt, custody, or scheduled disbursement of revenue from Venezuelan exports (including oil) through U.S. government or Federal Reserve accounts and Venezuelan private banks, in effect between January 1, 2025 and the date this request is processed. I am requesting the governing instrument(s), not transaction-level records. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "treasury",
+          summary: "Treasury — the current Iraq oil-revenue account arrangement (successor to the Development Fund for Iraq) and its disbursement procedure",
+          subject: "FOIA Request: governing arrangement for Iraq oil-revenue deposits at the Federal Reserve Bank of New York",
+          records: "I request a copy of the currently effective agreement or arrangement under which Government of Iraq oil revenue is deposited to an account at the Federal Reserve Bank of New York (the successor arrangement to the Development Fund for Iraq), together with any Treasury procedure, directive, or memorandum governing how disbursements from that account are requested (including any periodic invoice or request process) and approved, in effect between January 1, 2023 and the date this request is processed. I am requesting the governing instruments and procedures, not transaction-level records. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "treasury",
+          summary: "Treasury/OFAC — the accounting of blocked Libyan sovereign assets held in the U.S.",
+          subject: "FOIA Request: OFAC accounting of blocked Government of Libya sovereign assets",
+          records: "I request a copy of any OFAC report, summary, or accounting stating the aggregate value of blocked Government of Libya sovereign assets (including Libyan Investment Authority and Central Bank of Libya assets) held within U.S. jurisdiction, together with any currently effective general license or licensing policy governing their release, for the period January 1, 2011 to the date this request is processed. Annual aggregate figures (such as those compiled for the Terrorist Assets Report or successor reporting) are responsive; I am not seeking records identifying individual private account holders. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "epstein-havana-ofac-license",
+      categories: ["Economic coercion", "Human trafficking"],
+      entities: ["epstein", "cuba", "ofac", "treasury", "state-dept"],
+      investigator: "Mike Benz (Foundation for Freedom Online), citing Miami Herald reporting",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "Benz recounts (citing Miami Herald reporting and released Epstein emails) that Jeffrey Epstein funded a state-backed neuroscience conference in Havana held November 6–8, 2017, with the money routed through a Hong Kong academic intermediary and Sapienza University of Rome — and that the Trump State Department's Cuba Restricted List, prohibiting certain direct financial transactions, took effect November 9, 2017, one day after the conference ended. A 2009 Epstein email conceiving the conference reportedly reads \"I need to check with State Department.\"",
+      implication: "A U.S. person financing a Cuban state-backed event in 2017 sits squarely in OFAC-license territory, and the one-day sanctions gap is date-anchored and testable: either a license or clearance record exists, or it doesn't — both answers matter. (The routing details and the 2009 email are reporting Benz reads on screen; \"the conference was CIA-seeded\" is his inference, not a document.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      requests: [
+        {
+          agencyId: "treasury",
+          summary: "Treasury/OFAC — any license covering the Epstein-funded Havana conference payments",
+          subject: "FOIA Request: OFAC license or determination concerning a November 2017 Havana neuroscience conference",
+          records: "I request a copy of any specific license, license application, interpretive guidance, or determination issued or considered by the Office of Foreign Assets Control concerning funding for, travel to, or payments connected with a neuroscience or brain-science conference held in Havana, Cuba on or about November 6–8, 2017 — including any application or license naming Jeffrey Epstein, his foundations, a Hong Kong academic intermediary, or Sapienza University of Rome — from January 1, 2016 to December 31, 2018. This is a discrete, date-anchored event, not a broad search. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "state",
+          summary: "State — any clearance or review of the conference, set against the Nov 9, 2017 Cuba Restricted List effective date",
+          subject: "Freedom of Information Act/Privacy Act Request",
+          records: "I request a copy of any memorandum, clearance, guidance, or determination held by the Bureau of Western Hemisphere Affairs, the Office of Economic Sanctions Policy and Implementation, or the Bureau of Educational and Cultural Affairs concerning a neuroscience or brain-science conference held in Havana, Cuba on or about November 6–8, 2017, or concerning funding of Cuban academic or medical events by Jeffrey Epstein or his foundations, from January 1, 2009 to December 31, 2018. I note the State Department's Cuba Restricted List took effect November 9, 2017; I am requesting records about this specific event and funder, not the Restricted List rulemaking file. To keep this request narrow and minimize search burden, I am not seeking general email correspondence beyond the specific clearance or review records described.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "state-ukraine-nyfed-freeze-memo",
+      categories: ["Economic coercion"],
+      entities: ["state-dept", "ukraine", "frbny"],
+      investigator: "Mike Benz (Foundation for Freedom Online) — firsthand account",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "Benz — a former State Department official — says he personally saw an inbound State Department policy piece proposing to freeze Ukrainian government funds held at the Federal Reserve Bank of New York in order to pressure Ukraine's parliament out of a bill that would have returned school-accreditation authority from a Euro-Atlantic accrediting body to Ukraine's Ministry of Education, in the years after 2014.",
+      implication: "This is a firsthand-witness claim about a specific internal document — unusually concrete for this genre. A targeted FOIA either surfaces the memo, or produces a no-records response that bounds the claim. Needle-in-a-haystack odds, but the ask is narrow enough to be answerable. (Entirely single-witness; no document has been published; the characterization of the accrediting body is Benz's.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      requests: [
+        {
+          agencyId: "state",
+          summary: "State — the post-2014 policy memo proposing to freeze Ukraine's NY-Fed funds over the education-accreditation bill",
+          subject: "Freedom of Information Act/Privacy Act Request",
+          records: "I request a copy of any policy memorandum, options paper, or action memorandum held by the Bureau of European and Eurasian Affairs or the Office of the Under Secretary for Economic Growth that discusses freezing, withholding, or conditioning Government of Ukraine funds held at the Federal Reserve Bank of New York in connection with proposed Ukrainian legislation concerning school or university accreditation authority or the Ministry of Education, dated between January 1, 2014 and December 31, 2019. This is a request for a specific described policy document, not a broad subject-matter search. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "doj-epstein-bounty-hunter-memo",
+      categories: ["Human trafficking", "Economic coercion"],
+      entities: ["epstein", "doj", "fbi", "israel"],
+      investigator: "Mike Benz (Foundation for Freedom Online)",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "In the released Epstein files, Benz surfaces a 5-page legal memo prepared for the Justice Department proposing ways to prosecute Epstein, whose background section — per Benz's on-air reading — makes a facial claim that Jeffrey Epstein \"worked for the United States government as a financial bounty hunter,\" with \"significant political connections with Israel and the US.\" The memo's author and originating agency are not identified in the released copy (Benz guesses DEA or FBI). It also notes Epstein's one-man firm Intercontinental Assets Group, formed in 1981 after he nominally left Bear Stearns.",
+      implication: "The memo itself is public; what isn't public is who wrote it and what it relied on. The FOIA value is the unredacted original plus provenance — the originating component, author, and transmittal. That's a discrete record set, and even a Glomar or exemption response fixes which agency claims the record. (\"Financial bounty hunter\" is Benz's paraphrase of a memo shown but not quoted in full; \"worked for the CIA\" is his inference beyond the document.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\" (reads the memo on screen)", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — the unredacted memo + records identifying its author and originating office",
+          subject: "FOIA Request: five-page prosecution memorandum concerning Jeffrey Epstein and its provenance",
+          records: "I request a copy of the approximately five-page legal memorandum prepared for the Department of Justice proposing potential avenues for prosecuting Jeffrey Epstein, which includes a background statement describing Epstein as having worked for the United States government in a financial asset-recovery or \"financial bounty hunter\" capacity — a version of which has been publicly released in the Epstein files tranche — together with any transmittal record, routing slip, or cover memorandum identifying its author, originating office, and date of preparation. This is a request for a specific, publicly described document and its provenance records, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking the broader investigative file.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dea",
+          summary: "DEA — the same memo and provenance, if DEA-originated",
+          subject: "FOIA Request: five-page prosecution memorandum concerning Jeffrey Epstein and its provenance",
+          records: "I request a copy of the approximately five-page legal memorandum prepared for the Department of Justice proposing potential avenues for prosecuting Jeffrey Epstein, which includes a background statement describing Epstein as having worked for the United States government in a financial asset-recovery or \"financial bounty hunter\" capacity — a version of which has been publicly released in the Epstein files tranche — together with any transmittal record, routing slip, or cover memorandum identifying its author, originating office, and date of preparation, if this memorandum originated with or was routed through the Drug Enforcement Administration. This is a request for a specific, publicly described document and its provenance records, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking the broader investigative file.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "faa-epstein-flight-records",
+      categories: ["Human trafficking"],
+      entities: ["epstein", "cuba"],
+      investigator: "Mike Benz (Foundation for Freedom Online)",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "Benz recounts that Epstein traveled to Cuba in 2003 and met Fidel Castro, and flew Bill Clinton around Africa in 2002 — and that when researchers sought the federal flight records, \"the FAA dog ate the records.\" His argument: Cuba travel in 2003, under a Republican administration, had to be authorized — making the missing records themselves the story.",
+      implication: "If the records exist, they document the trips; if they were destroyed, the disposition paperwork (what was destroyed, when, under what records schedule) is itself a record — and an improper destruction is a federal records issue. Either answer is informative. (Check overlap with already-public Epstein flight logs from litigation before filing; those are pilot logs, not FAA records, so the FAA ask is complementary rather than duplicative.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      requests: [
+        {
+          agencyId: "faa",
+          summary: "FAA — flight records for Epstein aircraft (2002 Africa, 2003 Cuba) or the disposition paperwork if destroyed",
+          subject: "FOIA Request: flight records for aircraft registered to Jeffrey Epstein or his companies, 2002–2003, and any records-disposition documentation",
+          records: "I request copies of flight plans, international flight-plan filings, overflight or departure clearances, and aircraft registry records held by the FAA for aircraft registered to Jeffrey Epstein or to companies he controlled, for (1) travel to or from Cuba during calendar year 2003 and (2) travel to or from countries in Africa during calendar year 2002. If any such records have been destroyed or otherwise disposed of, I request the records-disposition documentation: the applicable records schedule, any disposal authorization, and any log recording the destruction. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "state-usaid-aba-oil-legislation",
+      categories: ["Economic coercion"],
+      entities: ["state-dept", "usaid", "iraq"],
+      investigator: "Mike Benz (Foundation for Freedom Online)",
+      investigatorLinks: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      status: "reported",
+      finding: "Benz describes a recurring post-crisis pattern: USAID arrives with the American Bar Association and the World Justice Project to draft a target country's oil-revenue-management legislation — the domestic legal plumbing that routes state resource revenue into the U.S.-controlled account arrangements described in the same broadcast (Iraq's single FRBNY account being the template).",
+      implication: "Rule-of-law contracting is real and documented in awards databases; whether it extended to drafting foreign oil-revenue-management statutes is checkable through the contracts and cooperative agreements themselves. USAID's records now sit with State, which makes State the FOIA target. (The \"floods ministries with bribe cash to create the oligarch class\" half of the claim is Benz's characterization, not something a contract will state; the award instruments are what's testable.)",
+      sources: [
+        { label: "Mike Benz — \"Hard Power.\"", url: "https://www.youtube.com/watch?v=drwU6Hh6xQk" }
+      ],
+      requests: [
+        {
+          agencyId: "state",
+          summary: "State (ex-USAID records) — rule-of-law awards to ABA/WJP for drafting foreign oil-revenue-management legislation",
+          subject: "Freedom of Information Act/Privacy Act Request",
+          records: "I request copies of the award instruments — contracts, grants, or cooperative agreements, including statements of work — issued by USAID (whose records are now held by the Department of State) to the American Bar Association (including its Rule of Law Initiative) or the World Justice Project, under which the recipient advised on, drafted, or assisted in drafting legislation or regulations governing the management of oil, gas, or mineral revenue in Iraq or Libya, from January 1, 2003 to December 31, 2020. I am requesting the award instruments and statements of work only, not implementation reports or correspondence. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true
         }
       ]
