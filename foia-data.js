@@ -844,6 +844,42 @@ const FOIA = {
       ]
     },
     {
+      id: "backpack-untested-returned",
+      categories: ["Kirk assassination & coverup"],
+      entities: ["fbi", "atf", "charlie-kirk"],
+      investigator: "Preliminary-hearing record (State v. Robinson); Baron Coleman & Candace Owens (surfacing)",
+      investigatorLinks: [],
+      status: "confirmed",
+      finding: "At the preliminary hearing, FBI laboratory analyst Amanda Baker testified that a backpack recovered at the Fulton Library bus stop \u2014 logged as Exhibit 9, and found with a jacket and gloves on the route the shooter allegedly fled \u2014 was DNA-processed and then had testing stopped. Per defense counsel reading her file, the stated reason was a note \u2018at page 20\u2019 that \u2018the backpack belongs to Kirk\u2019s detail.\u2019 Baker disowned authorship of that note: \u2018that was not my communication log, that was someone else within the laboratory.\u2019 The Ep-360 record has UVU DPS Sgt. Filomena similarly not remembering telling the lab to stop testing \u2014 so two named witnesses disclaim an instruction that both the physical evidence and the stop-testing decision turned on.",
+      implication: "Untested items dropped on the shooter\u2019s escape route were returned on the claim they belonged to a member of the victim\u2019s own security detail \u2014 a claim neither testifying witness will own. The lab\u2019s own communication log, the Exhibit 9 examination report, and the ATF\u2019s parallel record are discrete, named documents. They either contain the \u2018page 20\u2019 attribution and who wrote it, or they don\u2019t.",
+      sources: [
+        { label: "Amanda Baker Day-2 preliminary-hearing testimony, State v. Robinson (Utah Fourth District No. 251403576)" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI Lab \u2014 the communication log with the \u2018page 20\u2019 note attributing the backpack to Kirk\u2019s detail",
+          subject: "FOIA Request: FBI Laboratory communication log for Exhibit 9, Utah Valley University homicide investigation",
+          records: "I request, concerning the September 10, 2025 Utah Valley University homicide investigation (State v. Robinson, Utah Fourth District No. 251403576): the FBI Laboratory communication log, bench notes, or case-communication record \u2014 referenced in preliminary-hearing testimony as containing a note \u2018at page 20\u2019 stating that the backpack logged as Exhibit 9 \u2018belongs to Kirk\u2019s detail\u2019 and on which the decision to stop testing was based. The analyst who testified (Amanda Baker) stated this was not her communication log; I therefore request the record as authored, including any indication of the author or originating unit. To keep this request narrow, I am not seeking general case-file correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "fbi",
+          summary: "FBI Lab \u2014 the Exhibit 9 examination report (backpack, jacket, gloves)",
+          subject: "FOIA Request: FBI Laboratory examination report for Exhibit 9 and associated items",
+          records: "I request the FBI Laboratory examination report(s) and DNA processing records for the backpack logged as Exhibit 9, and the jacket and gloves recovered with it at the Fulton Library bus stop, in the September 10, 2025 Utah Valley University homicide investigation \u2014 including the record of what analysis was performed, what was left unperformed, and the decision to discontinue testing. I am not seeking any person\u2019s underlying DNA profile or genetic data; I seek the examination and decision records described in public testimony.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "atfagency",
+          summary: "ATF \u2014 any report on the same items and the decision not to test them",
+          subject: "FOIA Request: ATF records concerning the Fulton Library bus-stop items, Utah Valley University homicide investigation",
+          records: "I request any ATF report, laboratory record, or evidence-processing record concerning the backpack, jacket, and gloves recovered at the Fulton Library bus stop in the September 10, 2025 Utah Valley University homicide investigation, together with any record of a decision to discontinue or forgo testing of those items and the stated basis for it. If ATF holds no such records, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
       id: "nest-doorbell-vehicle",
       categories: ["Kirk assassination & coverup"],
       entities: ["fbi", "charlie-kirk"],
