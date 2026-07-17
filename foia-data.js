@@ -22,12 +22,14 @@ const FOIA = {
       "law-enforcement methodologies, or private personal information unrelated to official government business. " +
       "This request seeks records of official government activity only.",
     fee_waiver:
-      "Fee waiver: I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public " +
-      "interest because it is likely to contribute significantly to public understanding of the operations and " +
-      "activities of government — specifically, how federal authority is exercised and how government programs and " +
-      "investigations are authorized and conducted — and is not in my commercial interest. The requested records " +
-      "will be made available to the general public, and this request is not being made for commercial purposes. " +
-      "If a fee waiver is denied, please notify me before incurring any costs over $25.",
+      "Fee waiver: I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure meets each factor of the " +
+      "public-interest standard: (1) the subject specifically concerns the identifiable government operations, programs, or " +
+      "investigations described in this request; (2) disclosure is meaningfully informative about those operations and how " +
+      "they are conducted; (3) it will contribute to public understanding at large, not merely my own, because I will make " +
+      "the records available to the general public; and (4) it is likely to contribute significantly to public understanding " +
+      "of how federal authority is exercised and how government programs and investigations are authorized and conducted. " +
+      "This request is not in my commercial interest and is not made for a commercial purpose. If a fee waiver is denied, " +
+      "please notify me before incurring any costs over $25.",
     deadline:
       "I look forward to your determination on this request within the 20 business days provided by " +
       "5 U.S.C. § 552(a)(6)(A)(i).",
