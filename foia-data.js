@@ -184,6 +184,7 @@ const FOIA = {
     { id: "feinberg", name: "Stephen Feinberg", type: "person" },
     { id: "hansell", name: "Bradley Hansell", type: "person" },
     { id: "charlie-kirk", name: "Charlie Kirk", type: "person" },
+    { id: "graham-allen", name: "Graham Allen", type: "person" },
     { id: "erika-kirk", name: "Erika Kirk", type: "person" },
     { id: "kolvet", name: "Andrew Kolvet", type: "person" },
     { id: "kash-patel", name: "Kash Patel", type: "person" },
@@ -839,6 +840,28 @@ const FOIA = {
           summary: "ATF — the DNA reports, the consumption authorization, and the elimination-sample records",
           subject: "FOIA Request: ATF DNA laboratory records concerning the Utah Valley University homicide investigation",
           records: "I request, concerning ATF Forensic Science Laboratory DNA analyses performed for the September 10, 2025 Utah Valley University homicide investigation (State v. Robinson, Utah Fourth District No. 251403576), whose author testified publicly at the July 10, 2026 preliminary hearing: (1) the three DNA examination reports authored by the DNA section chief (admitted in court as exhibits 30 and 34, plus the elimination-sample report referenced as report 157); (2) the case-file record authorizing complete consumption of samples 1.4, 1.6, 1.9, 1.10, 1.12, 2.1, 3.1, 4.1, and 5.1, including the permission-to-consume communication referenced in testimony; and (3) the records of elimination-sample requests made to household members and to investigating agents, including whether the agents' samples were ever provided. These records were described in public testimony; I am not seeking the underlying DNA profiles or any person's genetic data.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "influencer-govt-contracts",
+      categories: ["Kirk assassination & coverup"],
+      entities: ["dod", "graham-allen"],
+      investigator: "Liberty Lockdown (surfacing)",
+      investigatorLinks: [],
+      status: "reported",
+      finding: "In the post-assassination influencer fight, TPUSA-aligned commentators with prior federal-government roles have surfaced. Graham Allen \u2014 who appears alongside newly-hired TPUSA \u2018debate trainer\u2019 Andrew Wilson \u2014 has a disclosed prior job as a Pentagon \u2018senior strategic consultant for digital media, communications, and rapid response.\u2019 That is a government contract or engagement, a discrete record, distinct from anyone\u2019s opinions about it.",
+      implication: "Where a paid-messaging figure in a pending prosecution\u2019s media environment held a federal digital-communications contract, that contract\u2019s scope, dates, and deliverables are records \u2014 the documentary layer beneath the jury-taint question, sitting next to the Salem/Clock Tower X FARA paper.",
+      sources: [
+        { label: "Liberty Lockdown episode surfacing Allen\u2019s disclosed Pentagon role" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD \u2014 Graham Allen\u2019s digital-media / strategic-communications contract or engagement",
+          subject: "FOIA Request: Department of Defense contract or engagement records for Graham Allen (strategic communications / digital media)",
+          records: "I request the contract, task order, consulting agreement, or engagement record under which Graham Allen served as a strategic consultant, advisor, or contractor for digital media, communications, or rapid-response work for the Department of Defense or any component, together with the statement of work and period of performance. These are discrete named records, not a broad search. If no responsive records exist, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
