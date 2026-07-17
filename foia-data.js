@@ -867,6 +867,45 @@ const FOIA = {
       ]
     },
     {
+      id: "election-address-vs-record",
+      categories: ["Election integrity", "Surveillance & privacy"],
+      entities: ["trump", "odni", "dhs", "doj"],
+      investigator: "The Drey Dossier (fact-check)",
+      investigatorLinks: [
+        { label: "Trump Addresses the Nation: Fact-Checks + Breakdown", url: "https://www.youtube.com/watch?v=a2O9uqy1nNo" }
+      ],
+      status: "reported",
+      finding: "In a July 2026 national address, Trump presented \u2018declassified\u2019 material to claim foreign actors compromised US elections. Drey\u2019s line-by-line fact-check surfaces that Trump\u2019s OWN 2021 declassified intelligence assessment \u2014 produced by his first-term appointees \u2014 found with high confidence that no foreign actor altered any vote, registration, ballot, tabulation, or result; that the 2020 foreign influence which did occur was Russian and aimed at helping Trump; and that voting/tabulation systems are air-gapped, ~96% paper-verifiable, with no documented flaw ever changing a US outcome. She also catches Trump attributing a DHS non-citizen-voter analysis to \u2018the FBI.\u2019",
+      implication: "The address\u2019s claims are checkable against records the government already holds \u2014 above all the 2021 assessment that contradicts the new release. Whether the new \u2018declassified\u2019 claims rest on any intelligence product, or on none, is a documentary question, not a rhetorical one.",
+      sources: [
+        { label: "The Drey Dossier fact-check (address replayed and rebutted line by line)", url: "https://www.youtube.com/watch?v=a2O9uqy1nNo" },
+        { label: "2021 ODNI declassified election-security assessment (Trump first-term)" }
+      ],
+      requests: [
+        {
+          agencyId: "odni",
+          summary: "ODNI \u2014 the 2021 declassified election-security assessment (and any 2026 product behind the new claims)",
+          subject: "FOIA Request: 2021 declassified election-security intelligence assessment and any 2026 assessment underlying the July 2026 address",
+          records: "I request: (1) the declassified 2021 intelligence community assessment concerning foreign interference or influence in the 2020 US federal election \u2014 the assessment finding that no foreign actor altered vote counts, voter registration, ballots, tabulation, or results; and (2) any finished intelligence product, assessment, or memorandum dated in 2026 that the intelligence community produced concerning foreign compromise of US election infrastructure and that underlies the claims made in the President\u2019s July 2026 national address. If no 2026 product exists, I request written confirmation of that fact.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "doj-crt",
+          summary: "DOJ Civil Rights Division \u2014 the \u2018election integrity\u2019 enforcement records and site postings",
+          subject: "FOIA Request: DOJ Civil Rights Division election-integrity enforcement matters (2025\u20132026)",
+          records: "I request the enforcement records \u2014 complaints, notices, letters, or settlement/consent documents \u2014 for the election-integrity matters the Civil Rights Division has posted on its public website concerning Mississippi, Hawaii, and California, together with the records reflecting when each matter was initiated. Fact-check reporting indicates the site\u2019s enforcement entries carry dates pre-dated relative to their posting; I seek the underlying dated instruments. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "dhs",
+          summary: "DHS \u2014 the ~278,000 non-citizen voter-roll review + the election-system cyber-vulnerability briefing",
+          subject: "FOIA Request: DHS non-citizen voter-roll analysis and election-system cyber-vulnerability briefing materials",
+          records: "I request: (1) the DHS analysis or report identifying approximately 278,000 non-citizens on US voter rolls, referenced in the President\u2019s July 2026 address; and (2) the briefing materials for the DHS Secretary\u2019s stated briefing on voting-system cyber vulnerability referenced in the same period. These are discrete, described records, not a broad search. If no responsive records exist, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
       id: "backpack-untested-returned",
       categories: ["Kirk assassination & coverup"],
       entities: ["fbi", "atf", "charlie-kirk"],
