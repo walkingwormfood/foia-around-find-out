@@ -687,7 +687,7 @@ const FOIA = {
           summary: "DOJ — the July 7, 2025 memo + the index of evidence it reviewed",
           subject: "FOIA Request: July 7, 2025 DOJ/FBI Epstein memorandum and evidence index",
           records: "I request a copy of the final July 7, 2025 joint DOJ/FBI memorandum concerning the Jeffrey Epstein review, together with any index, inventory, or list identifying the categories of evidence reviewed in reaching its conclusions. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04058 (filed Jul 16, 2026); confirmed by the request-receipt PDF in the Hearth foia-mail folder. Subject: the final July 7, 2025 joint DOJ/FBI Epstein-review memo + evidence index. Determination pending."
         }
       ]
     },
@@ -714,7 +714,7 @@ const FOIA = {
           subject: "FOIA Request: DOJ records of the July 2025 interview of Ghislaine Maxwell by Deputy AG Todd Blanche",
           records: "I request a copy of any interview memoranda, FD-302 reports, or transcripts documenting the interview of Ghislaine Maxwell conducted by Deputy Attorney General Todd Blanche over two days in late July 2025. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04059 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
         }
       ]
     },
@@ -741,7 +741,7 @@ const FOIA = {
           subject: "FOIA Request: records identified and withheld under the Epstein Files Transparency Act",
           records: "I request a copy of the index, log, or schedule of records identified for processing under the Epstein Files Transparency Act, and any written determination withholding records from release under that Act, dated from the Act's enactment to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04060 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
         }
       ]
     },
@@ -767,7 +767,7 @@ const FOIA = {
           subject: "FOIA Request: contents and preparation of the February 27, 2025 'Epstein files' binders",
           records: "I request a copy of the materials compiled into the binders labeled \"the Epstein files\" distributed at the White House on February 27, 2025, and any records identifying what was included in those binders and which Department of Justice office assembled or vetted them. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04061 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
         }
       ]
     },
@@ -974,7 +974,7 @@ const FOIA = {
           subject: "FOIA Request: Epstein records reviewed by the Attorney General (Feb 2025) and the basis for the July 2025 no-client-list conclusion",
           records: "I request a copy of any records reflecting the Epstein-related material the Attorney General referenced as being \"on my desk\" for review in February 2025, and any memorandum or analysis stating the basis for the July 7, 2025 conclusion that no Epstein client list exists, dated between January 1 and July 31, 2025. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04062 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
         }
       ]
     },
@@ -1034,7 +1034,8 @@ const FOIA = {
           summary: "DOJ — US Marshals / FBI access agreements with Flock Safety's ALPR network",
           subject: "FOIA Request: U.S. Marshals Service and FBI access to Flock Safety's ALPR network",
           records: "I request a copy of any contract, memorandum of understanding, data-sharing agreement, or access-and-audit policy governing the U.S. Marshals Service's and/or the FBI's access to or use of Flock Safety's automated license-plate-reader (ALPR) network, in effect between January 1, 2024 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04063 (filed Jul 16, 2026); confirmed by the request-receipt PDF (USMS/FBI Flock ALPR access agreement). Determination pending."
         },
         {
           agencyId: "dhs",
@@ -1236,7 +1237,8 @@ const FOIA = {
           summary: "DOJ — the request letters to states + legal basis + voter-data retention policy",
           subject: "FOIA Request: DOJ requests to states for voter-registration data and related data-handling",
           records: "I request a copy of the request letters the Department of Justice sent to U.S. states and the District of Columbia in 2025 seeking voter-registration or voter-eligibility data, the memorandum stating the legal authority asserted for those requests, and any written policy governing the retention, use, or sharing of voter data received in response, from January 1, 2025 to the date this request is processed. To keep this request narrow, I am not seeking general email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04064 (filed Jul 16, 2026); confirmed by the request-receipt PDF (DOJ letters to states for voter data). Determination pending."
         }
       ]
     },
@@ -1324,7 +1326,7 @@ const FOIA = {
           subject: "FOIA Request: charter, scope, and case activity of the DOJ Task Force to Combat Antisemitism",
           records: "I request a copy of the charter, mission statement, and operating procedures of the Department of Justice Task Force to Combat Antisemitism; any list or log of individuals, organizations, or cases it has investigated, referred, or taken action on; and any records of its coordination with outside advocacy organizations, dated from January 1, 2025 to the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04065 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
         }
       ]
     },
@@ -1375,7 +1377,7 @@ const FOIA = {
           subject: "FOIA Request: April 2025 Attorney General memorandum revising the news-media policy (28 C.F.R. § 50.10)",
           records: "I request a copy of the memorandum issued by Attorney General Pamela Bondi in or around April 2025 that rescinded or revised the Department's policy governing the use of subpoenas, search warrants, and other compulsory legal process directed at members of the news media (the policy reflected at 28 C.F.R. § 50.10), together with the current superseding policy text. This is a request for specific, discrete, catalogued policy documents — not general email correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04066 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
         }
       ]
     },
@@ -1408,7 +1410,7 @@ const FOIA = {
           subject: "FOIA Request: news-media-policy authorization for the January 2026 search of a Washington Post reporter's residence",
           records: "I request a copy of the written authorization, approval memorandum, or certification required under the Department's news-media policy (28 C.F.R. § 50.10) for the January 2026 search of a Washington Post reporter's residence — specifically the Attorney General or designated senior-official approval documenting that the policy's requirements were satisfied. This is a request for a specific, discrete approval record, not general correspondence.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "NOT FILED — the nine confirmed FOIA STAR receipts (FOIA-2026-04058 to 04066) do NOT include this request; it was held as batch-filed pending attribution, but the resolved mapping shows it was never actually submitted. ACTION: file it."
         }
       ]
     },
@@ -1552,7 +1554,7 @@ const FOIA = {
           subject: "FOIA Request: unredacted Epstein correspondence involving Sultan Ahmed bin Sulayem and the associated redaction/withholding determination",
           records: "I request a copy, in unredacted form, of the Epstein-related correspondence in which the identity of Sultan Ahmed bin Sulayem was redacted in previously released material, together with any disclosure determination, redaction log, or withholding memorandum stating the FOIA exemption(s) and rationale on which that identity was withheld. The identity has since been confirmed publicly by the Deputy Attorney General, so the basis for withholding the name no longer applies; please release all reasonably segregable non-exempt portions. To keep this request narrow, I am limiting it to the specific correspondence and the determination governing that redaction.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "NOT FILED — not among the nine confirmed FOIA STAR receipts (04058 to 04066); held as batch-filed but never actually submitted. ACTION: file it."
         }
       ]
     },
@@ -1806,7 +1808,7 @@ const FOIA = {
           subject: "FOIA Request: designation instrument for domestic organizations under NSPM-7",
           records: "I request a copy of any final memorandum, order, or list by which the Department of Justice designated, or proposed for designation, groups or entities as domestic terrorist organizations pursuant to National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), created between September 25, 2025 and the date this request is processed. This request seeks the designation instrument itself — a discrete named document — not investigative files or general correspondence. If any responsive record is withheld in full or in part, please cite the specific exemption claimed; if no responsive records exist, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "PENDING (batch, attribution pending) — nine OIP requests filed via FOIA STAR on Jul 16, 2026, tracking numbers FOIA-2026-04058 through FOIA-2026-04066. Nine of the ten OIP-routed asks on this site are in flight; per-request attribution waits on FOIA STAR's confirmation emails — until numbers map to subjects, ALL ten are held as filed to prevent duplicates. One may still be unfiled; it gets released when the mapping lands."
+          filed: "NOT FILED — not among the nine confirmed FOIA STAR receipts (04058 to 04066); held as batch-filed but never actually submitted. ACTION: file it."
         }
       ]
     },
