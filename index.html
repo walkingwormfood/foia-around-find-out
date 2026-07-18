@@ -74,6 +74,8 @@
   .cats{margin:8px 0 2px}
   .cat{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:6px}
   .card.hide{display:none}
+  .card.needsfiling{border-color:#ff4d4d;box-shadow:0 0 0 1px #ff4d4d,0 0 22px rgba(255,77,77,.22)}
+  .card.needsfiling::before{content:"⚑ Needs filing — submit on FOIA STAR";display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ff6a6a;font-weight:600;margin:0 0 10px}
 
   #gen{display:none;background:var(--panel2);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;scroll-margin-top:14px}
   #gen.open{display:block;animation:genExpand .22s ease}
@@ -236,9 +238,10 @@
   }
 
   const wrap = $("findings");
-  FOIA.investigations.forEach(inv => {
+  const needsFiling = inv => (inv.requests||[]).some(r => r.filed && r.filed.trim().startsWith("NOT FILED"));
+  [...FOIA.investigations].sort((a,b) => (needsFiling(b)?1:0) - (needsFiling(a)?1:0)).forEach(inv => {
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card" + (needsFiling(inv) ? " needsfiling" : "");
     card.dataset.cats = (inv.categories||[]).join("|");
     card.dataset.ents = (inv.entities||[]).join("|");
     card.dataset.voices = voicesFor(inv).join("|");
