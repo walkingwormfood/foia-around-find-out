@@ -75,7 +75,9 @@
   .cat{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:6px}
   .card.hide{display:none}
   .card.needsfiling{border-color:#ff4d4d;box-shadow:0 0 0 1px #ff4d4d,0 0 22px rgba(255,77,77,.22)}
-  .card.needsfiling::before{content:"⚑ Needs filing — submit on FOIA STAR";display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ff6a6a;font-weight:600;margin:0 0 10px}
+  .card.needsfiling::before{content:"⚑ Needs filing — submit it";display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ff6a6a;font-weight:600;margin:0 0 10px}
+  .resp.needsfile{display:block;font-size:12px;color:#ffb3b3;background:rgba(255,77,77,.09);border-left:3px solid #ff4d4d;border-radius:4px;padding:6px 8px;margin-top:6px;overflow-wrap:anywhere}
+  .rout.needsfile{color:#ff9a9a}
 
   #gen{display:none;background:var(--panel2);border:1px solid var(--accent);border-radius:10px;padding:16px 18px;margin:18px 0;scroll-margin-top:14px}
   #gen.open{display:block;animation:genExpand .22s ease}
@@ -249,6 +251,7 @@
     const sources = (inv.sources||[]).map(s => s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>` : esc(s.label)).join(" · ");
     const reqs = inv.requests.map((r,i) => {
       const a = agencyById(r.agencyId);
+      const filedOk = r.filed && !r.filed.trim().startsWith("NOT FILED");
       const email = !!(a && a.email);
       const icon = email ? "✉" : "↗";
       const tag = email ? "email" : "portal";
@@ -258,15 +261,15 @@
              (r.history ? `<div class="resp chain collapsed">`+
                r.history.map((h,n)=>`<div class="round"><div class="rlbl">Round ${n+1}${h.label ? " — "+esc(h.label) : ""}</div><div class="rreq">${esc(h.records)}</div><div class="rout">⛔ ${esc(h.outcome)}</div><div class="rfix">⟳ ${esc(h.refinement)}</div></div>`).join("")+
                `<div class="round cur"><div class="rlbl">Current request — what Generate produces</div><div class="rreq">${esc(r.records)}</div>`+
-               (r.response ? `<div class="rout ok">📬 ${esc(r.response)}</div>` : r.filed ? `<div class="rout">⏳ ${esc(r.filed)}</div>` : "")+`</div></div>`
-               : r.response ? `<span class="resp collapsed">📬 ${esc(r.response)}</span>` : r.filed ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : "")+
+               (r.response ? `<div class="rout ok">📬 ${esc(r.response)}</div>` : filedOk ? `<div class="rout">⏳ ${esc(r.filed)}</div>` : r.filed ? `<div class="rout needsfile">⚑ ${esc(r.filed)}</div>` : "")+`</div></div>`
+               : r.response ? `<span class="resp collapsed">📬 ${esc(r.response)}</span>` : filedOk ? `<span class="resp pending collapsed">⏳ ${esc(r.filed)}</span>` : r.filed ? `<span class="resp needsfile">⚑ ${esc(r.filed)}</span>` : "")+
              `</div>`+
              (r.refined
                ? `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate refined request</button>`+
-                 (r.filed || r.response ? `<button class="btn viewpending" title="Click for the full request-refinement history">⏳ ${r.history ? "View progression" : "View status"}</button>` : "")+`</div>`
+                 (filedOk || r.response ? `<button class="btn viewpending" title="Click for the full request-refinement history">⏳ ${r.history ? "View progression" : "View status"}</button>` : "")+`</div>`
                : r.response
                ? `<button class="btn viewpending" title="This request has been answered — click for the response">📬 View answer</button></div>`
-               : r.filed
+               : filedOk
                ? `<button class="btn viewpending" title="Already filed and in flight — one copy per office; click for the docket status">⏳ View pending</button></div>`
                : `<button class="btn gen" title="${esc(title)}" data-inv="${esc(inv.id)}" data-req="${i}">${icon} Generate this request</button></div>`);
     }).join("");

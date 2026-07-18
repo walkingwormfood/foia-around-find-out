@@ -1401,7 +1401,8 @@ const FOIA = {
           summary: "FBI — the search-warrant application, affidavit, and return for the reporter's residence",
           subject: "FOIA Request: search-warrant application and affidavit for the January 2026 search of a Washington Post reporter's residence",
           records: "I request a copy of the search-warrant application, supporting affidavit, and warrant return for the January 2026 search of the residence of a Washington Post journalist conducted in connection with a criminal investigation into the unauthorized disclosure of national-security information by a government contractor. I request only the warrant package and return — discrete, catalogued case documents — not general investigative files or email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 18, 2026 via the FBI eFOIPA portal (efoia.fbi.gov); request receipt saved to the Hearth foia-mail folder. FOIPA number to follow. This is the FBI half (the warrant package); the DOJ half below — the § 50.10 senior-official authorization — still needs FOIA STAR.",
         },
         {
           agencyId: "doj",
