@@ -184,6 +184,8 @@ const FOIA = {
     { id: "dialog-society", name: "Dialog society", type: "org" },
     { id: "unit-8200", name: "Unit 8200", type: "org" },
     { id: "adl", name: "Anti-Defamation League", type: "org" },
+    { id: "betar", name: "Betar US", type: "org" },
+    { id: "ice", name: "U.S. Immigration and Customs Enforcement", type: "org" },
     { id: "washington-post", name: "The Washington Post", type: "org" },
     { id: "gebbia", name: "Joe Gebbia", type: "person" },
     { id: "epstein", name: "Jeffrey Epstein", type: "person" },
@@ -2021,6 +2023,33 @@ const FOIA = {
           summary: "State (ex-USAID records) — rule-of-law awards to ABA/WJP for drafting foreign oil-revenue-management legislation",
           subject: "Freedom of Information Act/Privacy Act Request",
           records: "I request copies of the award instruments — contracts, grants, or cooperative agreements, including statements of work — issued by USAID (whose records are now held by the Department of State) to the American Bar Association (including its Rule of Law Initiative) or the World Justice Project, under which the recipient advised on, drafted, or assisted in drafting legislation or regulations governing the management of oil, gas, or mineral revenue in Iraq or Libya, from January 1, 2003 to December 31, 2020. I am requesting the award instruments and statements of work only, not implementation reports or correspondence. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "betar-dhs-deport-list",
+      categories: ["Israel / foreign influence", "Surveillance & privacy", "Civil liberties"],
+      entities: ["betar", "ice", "dhs", "adl"],
+      investigator: "The Intercept, Washington Post, CNN, Boston Globe — and Betar's own public statements",
+      investigatorLinks: [
+        { label: "The Intercept — the far-right group building a list of pro-Palestine activists to deport", url: "https://theintercept.com/2025/02/06/betar-palestine-school-activists-target-deport-trump/" },
+        { label: "CNN — pro-Israel group says it gave the US a list of protesters to deport", url: "https://www.cnn.com/2025/04/02/us/israel-protesters-us-students-deport" }
+      ],
+      status: "reported",
+      finding: "Betar US — the far-right Zionist group the ADL added to its extremist database in February 2025 (the only Jewish organization on it), and which entered a January 2026 settlement of the New York Attorney General's civil-rights investigation into bias-motivated harassment — publicly claims to have submitted the names of hundreds to thousands of pro-Palestinian students, activists, and protesters to the Trump administration, DHS, and ICE, urging their deportation under the President's executive orders. Betar spokesperson Daniel Levy told CNN in 2025: \"We submitted the names of hundreds of protesters and activists to the Trump administration/DHS urging ICE to deport them.\" Betar publicly claimed it had placed Columbia graduate Mahmoud Khalil on its \"deport list\" roughly six weeks before ICE detained him. Its posted \"Students Deport List\" named dozens of people with photos, compiled via facial-recognition and open-source databases, and contained multiple errors (cited \"offenses\" included jaywalking and a noise complaint).",
+      implication: "Whether and how a designated-extremist private group's target list entered federal immigration enforcement is a records question, not a rhetorical one. If DHS or ICE received, logged, or acted on Betar's submissions, that generates agency records on the government side: the intake or correspondence from Betar, any referral or tasking for review, and any enforcement action cross-referencing the list. This is the same private-actor-feeds-federal-targeting pattern the NSPM-7 cluster tracks — here with a group a state attorney general has already found engaged in bias-motivated harassment. (Betar's submission figures are its own public statements; the government side is what these records would confirm, bound, or refute.)",
+      sources: [
+        { label: "Washington Post — Betar pushes on X for deporting more pro-Palestinians", url: "https://www.washingtonpost.com/technology/2025/03/29/zionist-palestinians-deportations-x/" },
+        { label: "Boston Globe — is this the deportation list the Trump administration is using?", url: "https://www.bostonglobe.com/2025/04/17/metro/zionist-group-deportation-lists/" },
+        { label: "Haaretz — ADL lists far-right Betar USA as a hate group", url: "https://www.haaretz.com/us-news/2025-02-21/ty-article/.premium/embraces-islamophobia-harasses-muslims-adl-lists-far-right-betar-usa-as-hate-group/00000195-2a1d-d05a-ab9f-2e1d09680000" }
+      ],
+      requests: [
+        {
+          agencyId: "dhs",
+          summary: "DHS/ICE — the intake and routing records for names or lists Betar submitted for immigration enforcement",
+          subject: "FOIA Request: DHS/ICE records concerning names or lists submitted by Betar for immigration enforcement",
+          records: "I request records held by U.S. Immigration and Customs Enforcement and the Department of Homeland Security concerning submissions from the organization Betar (including Betar US or Betar Worldwide) that identify individuals for immigration enforcement, investigation, or removal, from January 1, 2025 to the date this request is processed. Specifically: (1) any correspondence, email, web-form submission, letter, or list of names received from Betar or persons identifying themselves as acting on its behalf; and (2) any record referring, forwarding, logging, or assigning such submissions for review within ICE or DHS. To keep this request narrow and minimize processing burden, I am NOT requesting the immigration file of any named individual — I am requesting the intake and routing records for the Betar submissions themselves. If responsive records are withheld in whole or part, please describe each withheld record and cite the specific FOIA exemption claimed.",
           ask_no_records: true
         }
       ]
