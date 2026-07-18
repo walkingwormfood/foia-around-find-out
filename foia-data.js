@@ -1411,7 +1411,7 @@ const FOIA = {
           subject: "FOIA Request: news-media-policy authorization for the January 2026 search of a Washington Post reporter's residence",
           records: "I request a copy of the written authorization, approval memorandum, or certification required under the Department's news-media policy (28 C.F.R. § 50.10) for the January 2026 search of a Washington Post reporter's residence — specifically the Attorney General or designated senior-official approval documenting that the policy's requirements were satisfied. This is a request for a specific, discrete approval record, not general correspondence.",
           ask_no_records: true,
-          filed: "NOT FILED — the nine confirmed FOIA STAR receipts (FOIA-2026-04058 to 04066) do NOT include this request; it was held as batch-filed pending attribution, but the resolved mapping shows it was never actually submitted. ACTION: file it."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04079 (filed Jul 18, 2026); receipt PDF on the Hearth. DOJ Section 50.10 news-media authorization. Determination pending. (The FBI half was filed via eFOIPA — see the request above.)"
         }
       ]
     },
@@ -1555,7 +1555,7 @@ const FOIA = {
           subject: "FOIA Request: unredacted Epstein correspondence involving Sultan Ahmed bin Sulayem and the associated redaction/withholding determination",
           records: "I request a copy, in unredacted form, of the Epstein-related correspondence in which the identity of Sultan Ahmed bin Sulayem was redacted in previously released material, together with any disclosure determination, redaction log, or withholding memorandum stating the FOIA exemption(s) and rationale on which that identity was withheld. The identity has since been confirmed publicly by the Deputy Attorney General, so the basis for withholding the name no longer applies; please release all reasonably segregable non-exempt portions. To keep this request narrow, I am limiting it to the specific correspondence and the determination governing that redaction.",
           ask_no_records: true,
-          filed: "NOT FILED — not among the nine confirmed FOIA STAR receipts (04058 to 04066); held as batch-filed but never actually submitted. ACTION: file it."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04080 (filed Jul 18, 2026); receipt PDF on the Hearth. Unredacted bin Sulayem correspondence + redaction determination. Determination pending."
         }
       ]
     },
@@ -1800,7 +1800,8 @@ const FOIA = {
           summary: "FBI — the bureau-wide directive implementing NSPM-7 in field offices",
           subject: "FOIA Request: FBI guidance implementing National Security Presidential Memorandum 7 (NSPM-7)",
           records: "I request a copy of any bureau-wide electronic communication, directive, policy guide amendment, or implementation guidance issued to FBI field offices concerning National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), including any accompanying list or annex of threat indicators, issued between September 25, 2025 and the date this request is processed. This is a discrete implementing instrument, not a broad search. To keep this request narrow and minimize processing burden, I am not seeking general email correspondence, case files, or records identifying investigative subjects.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "FILED — filed Jul 18, 2026 via the FBI eFOIPA portal (efoia.fbi.gov); receipt PDF on the Hearth. FOIPA number to follow."
         },
         {
           agencyId: "doj",
@@ -1809,7 +1810,7 @@ const FOIA = {
           subject: "FOIA Request: designation instrument for domestic organizations under NSPM-7",
           records: "I request a copy of any final memorandum, order, or list by which the Department of Justice designated, or proposed for designation, groups or entities as domestic terrorist organizations pursuant to National Security Presidential Memorandum 7 (NSPM-7, September 25, 2025), created between September 25, 2025 and the date this request is processed. This request seeks the designation instrument itself — a discrete named document — not investigative files or general correspondence. If any responsive record is withheld in full or in part, please cite the specific exemption claimed; if no responsive records exist, I request written confirmation of that fact.",
           ask_no_records: true,
-          filed: "NOT FILED — not among the nine confirmed FOIA STAR receipts (04058 to 04066); held as batch-filed but never actually submitted. ACTION: file it."
+          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04081 (filed Jul 18, 2026); receipt PDF on the Hearth. DOJ NSPM-7 domestic-terror designation instrument. Determination pending."
         }
       ]
     },
