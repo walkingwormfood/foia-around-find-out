@@ -1017,14 +1017,17 @@ const FOIA = {
       entities: ["flock", "fbi", "doj"],
       investigator: "Tommy G (on Julian Dorey's podcast)",
       investigatorLinks: [
-        { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" }
+        { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
+        { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" }
       ],
       status: "reported",
       finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
-      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.)",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates.",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "Ben Jordan — Flock reporting", url: "" },
+        { label: "OrwellDay — Cleveland Council finds a \"side door\" in Flock's architecture", url: "https://x.com/OrwellDay/status/2078464389552685440" },
+        { label: "OrwellDay — Flock tracks phones via Bluetooth (demo)", url: "https://x.com/OrwellDay/status/2078128018736746692" },
         { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" }
       ],
       requests: [
