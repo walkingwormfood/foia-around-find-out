@@ -287,21 +287,24 @@ const FOIA = {
           summary: "State — Embassy Jerusalem's real-time incident reporting + the Diplomatic Security file",
           subject: "FOIA Request: records concerning the detention of a congressional delegation near Zanuta, West Bank, July 2026",
           records: "I request: (1) cables, situation reports, spot reports, or incident reports authored or received by U.S. Embassy Jerusalem or the U.S. Office of Palestinian Affairs, dated July 1 through July 31, 2026, concerning the detention, obstruction, or delay of a delegation including Representative Ro Khanna near the village of Zanuta in the southern West Bank; (2) any Bureau of Diplomatic Security incident report or after-action record concerning that event; and (3) records of real-time communications between Department or embassy personnel and the delegation, its escorts, or Israeli authorities during the incident. To keep this request narrow, I am not seeking general country-condition reporting — records concerning this incident only.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed by email to FOIARequest@state.gov (State's required subject format) Jul 16, 2026 and re-sent Jul 18, 2026; both confirmed in the sent-mail record. No State acknowledgment yet (State FOIA/PAL acks lag)."
         },
         {
           agencyId: "state",
           summary: "State — the diplomatic follow-through: any protest, demarche, or press guidance",
           subject: "FOIA Request: communications with the Government of Israel concerning the July 2026 detention of a congressional delegation",
           records: "I request, for July 1 through August 31, 2026: (1) any demarche, protest note, talking points, or record of communication between the Department of State (including U.S. Embassy Jerusalem) and the Government of Israel concerning the detention of a delegation including Representative Ro Khanna by Israeli civilians and/or Israel Defense Forces personnel near Zanuta in the southern West Bank; and (2) any press guidance or briefing material prepared for the Department spokesperson concerning that incident. If the Department made no protest and prepared no guidance, I request written confirmation of that fact.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed by email to FOIARequest@state.gov (State's required subject format) Jul 16, 2026 and re-sent Jul 18, 2026; both confirmed in the sent-mail record. No State acknowledgment yet."
         },
         {
           agencyId: "state",
           summary: "State — the pre-trip notification Khanna says he gave (consular services + the DCM), which Huckabee denies",
           subject: "FOIA Request: consular/embassy notification records for the July 2026 congressional delegation visit to the West Bank",
           records: "Rep. Khanna states he notified the Department in advance through consular services and had the direct contact of the Deputy Chief of Mission at U.S. Embassy Jerusalem; Ambassador Huckabee has stated the delegation did not notify the embassy. This request seeks the records that resolve that dispute. I request, for June 1 through July 31, 2026: (1) any consular notification, member-travel or congressional-delegation (CODEL) travel-notification, or country-clearance record concerning the visit of a delegation including Representative Ro Khanna to the West Bank; and (2) any communication to or from the office of the Deputy Chief of Mission at U.S. Embassy Jerusalem concerning that visit, including any advance notice of the delegation's travel. I am requesting the notification and DCM-office records for this one visit; I am not seeking general email correspondence beyond the records described.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed by email to FOIARequest@state.gov Jul 18, 2026 (this request was reworked earlier that day from Khanna's TYT interview); confirmed in the sent-mail record. No State acknowledgment yet."
         }
       ]
     },
@@ -408,14 +411,16 @@ const FOIA = {
           summary: "State — the Subic Bay AI-park agreement + the U.S. delegation roster",
           subject: "FOIA Request: State Department records on the Subic Bay AI industrial park and U.S. delegation",
           records: "I request a copy of any agreement, memorandum of understanding, framework document, or signing/ceremony record held by the Department of State concerning the approximately 4,000-acre \"AI-native industrial park\" or regulatory zone near Subic Bay, Philippines, together with any record identifying the members of the U.S. delegation to that event, including any private-sector participants (such as Joe Lonsdale or 8VC), dated between January 1, 2025 and the date this request is processed. To keep this request narrow, I am not seeking general email correspondence.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed by email to FOIARequest@state.gov (State's required subject format) Jul 16, 2026; confirmed in the sent-mail record. No State acknowledgment yet."
         },
         {
           agencyId: "dfc",
           summary: "DFC — any U.S. financing commitment for the Subic Bay project",
           subject: "FOIA Request: DFC financing records for the Subic Bay (Philippines) AI industrial park",
           records: "I request a copy of any investment commitment, term sheet, memorandum of understanding, or investment-committee decision record of the U.S. International Development Finance Corporation concerning the AI-native industrial park or regulatory zone near Subic Bay, Philippines, dated between January 1, 2025 and the date this request is processed. If no responsive records exist, I request written confirmation of that fact.",
-          ask_no_records: true
+          ask_no_records: true,
+          filed: "PENDING — filed by email to FOIA@dfc.gov Jul 16, 2026; confirmed in the sent-mail record. No DFC acknowledgment on this specific request yet (distinct from the Honduras/Próspera DFC request 26-039)."
         }
       ]
     },
@@ -441,7 +446,7 @@ const FOIA = {
           summary: "State Dept — the instrument authorizing EOP/NDS to operate passports.gov",
           subject: "FOIA Request: Department of State authorization for passports.gov under the EOP/National Design Studio",
           records: "I request a copy of the specific instrument(s) that authorized the Executive Office of the President or the National Design Studio — rather than the Department of State — to register or operate the passports.gov domain: namely, any interagency agreement, memorandum of understanding, memorandum of agreement, or delegation of authority between the Department of State and the National Design Studio (or the Executive Office of the President) concerning passports.gov, executed or in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          filed: "PENDING — filed by email to FOIARequest@state.gov (subject line per State's required format). Filing date and tracking number to be confirmed from the sent-mail record — State acknowledgments arrive from its FOIA/PAL system and can lag. Carded Jul 16 to stop duplicate generation; details to follow."
+          filed: "NOT CONFIRMED SENT — a Jul 2026 reconcile against the full sent-mail record found NO email to FOIARequest@state.gov for this passports.gov request. It appears to have been carded (Jul 16, to prevent duplicate generation) but never actually filed — the State requests that DID go out are the Khanna and Subic Bay ones. ACTION: file it (FOIARequest@state.gov, subject 'Freedom of Information Act/Privacy Act Request')."
         },
         {
           agencyId: "nara",
@@ -541,7 +546,7 @@ const FOIA = {
           ],
           refined: true,
           ask_no_records: true,
-          response: "ANSWERED (custody deflection — the shield is now on paper) — filed Jun 19, 2026; ignored until the Jul 15 status demand, which produced OMB's answer within one business day (Jul 16): NDS 'is not a component of OMB' — it was established within the White House Office of the EOP by E.O. 14338 of Aug 21, 2025 ('Improving Our Nation Through Better Design'); NDS records 'are not within the legal custody and control of OMB'; 'OMB does not process FOIA requests on behalf of NDS.' No tracking numbers issued for any of the three requests. What this wins: the anticipated shield is now an official written statement — NDS sits inside the White House Office, the one EOP corner FOIA cannot reach (PRA, sealed to ~2040), and the E.O. number is on the record. What OMB dodged: whether OMB ITSELF holds copies — E-Government Act § 208 PIAs are submitted TO OMB, and OMB Circular A-108 makes OMB the SORN reviewer, so a narrowed follow-up ('any PIA or SORN concerning an NDS program in OMB's own files, and any A-108/A-130 correspondence with NDS') targets records the custody argument cannot deflect."
+          response: "ANSWERED (custody deflection — the shield is now on paper) — filed Jun 19, 2026; ignored until the Jul 15 status demand, which produced OMB's answer within one business day (Jul 16): NDS 'is not a component of OMB' — it was established within the White House Office of the EOP by E.O. 14338 of Aug 21, 2025 ('Improving Our Nation Through Better Design'); NDS records 'are not within the legal custody and control of OMB'; 'OMB does not process FOIA requests on behalf of NDS.' Verified against the inbox Jul 2026: the deflection is OMB's own words (Jul 16), and a same-day re-send of the PIA/SORN request was then logged as OMB FOIA 2026-745 (a routing number; OMB still maintains the custody position). The PostHog and automonitor requests drew no separate acknowledgment. What this wins: the anticipated shield is now an official written statement — NDS sits inside the White House Office, the one EOP corner FOIA cannot reach (PRA, sealed to ~2040), and the E.O. number is on the record. What OMB dodged: whether OMB ITSELF holds copies — E-Government Act § 208 PIAs are submitted TO OMB, and OMB Circular A-108 makes OMB the SORN reviewer, so a narrowed follow-up ('any PIA or SORN concerning an NDS program in OMB's own files, and any A-108/A-130 correspondence with NDS') targets records the custody argument cannot deflect."
         }
       ]
     },
