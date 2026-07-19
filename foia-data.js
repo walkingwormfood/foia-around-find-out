@@ -801,18 +801,22 @@ const FOIA = {
     {
       id: "dialog-society-officials",
       categories: ["Conflict of interest"],
-      entities: ["thiel", "bessent", "hoffman", "driscoll", "lonsdale", "palantir", "dialog-society", "treasury", "dod"],
+      entities: ["thiel", "bessent", "hoffman", "driscoll", "lonsdale", "palantir", "dialog-society", "treasury", "dod", "epstein"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "Ian Carroll — \"Recent Peter Thiel allegations\"", url: "https://www.youtube.com/watch?v=T3Vcra08-IQ" }
       ],
       status: "confirmed",
       finding: "A leaked roster of Peter Thiel's secretive, off-the-record \"Dialog\" society (exposed June 16, 2026 by Wired, from researcher maia arson crimew's leak) places sitting Cabinet officials alongside executives of the industries they regulate — e.g., Treasury Secretary Scott Bessent with data-broker chairman Auren Hoffman (SafeGraph / LiveRamp), and Army Secretary Dan Driscoll with Palantir's Joe Lonsdale, whose software runs Pentagon and ICE systems.",
-      implication: "Senior executive officials convening privately, under no-attribution rules, with executives of industries they regulate — a textbook conflict-of-interest question. Attendees reportedly used personal/corporate email to keep communications outside FOIA, so the requestable records are official-travel authorizations, ethics reviews, and recusals — not emails.",
+      implication: "Senior executive officials convening privately, under no-attribution rules, with executives of industries they regulate — a textbook conflict-of-interest question. Attendees reportedly used personal/corporate email to keep communications outside FOIA, so the requestable records are official-travel authorizations, ethics reviews, and recusals — not emails. Separately (Palantir-specific): Thiel and Palantir are documented in Jeffrey Epstein's orbit on three fronts — DOJ-released 2013 audio of Epstein pitching ex-Israeli PM Ehud Barak onto Palantir's board via Thiel (the two later met, 2014-2017); Thiel's own spokesman confirming Epstein was a limited partner in Thiel's venture fund; and Epstein's ties to Peter Mandelson's Global Counsel, Palantir's secret UK lobbyist (\"Project Onion,\" ~£30k/month, undeclared ~4 years).",
       sources: [
         { label: "Wired exposé (Jun 16 2026)", url: "" },
         { label: "Washington Times (Jun 18 2026)", url: "https://www.washingtontimes.com/news/2026/jun/18/data-leak-unmasks-members-peter-thiels-elite-secretive-dialog-society/" },
-        { label: "maia arson crimew (leak)", url: "" }
+        { label: "maia arson crimew (leak)", url: "" },
+        { label: "DOJ-released Epstein audio (2013): Epstein pitches Ehud Barak onto Palantir's board via Thiel — Al Jazeera", url: "https://www.aljazeera.com/news/2026/2/4/epstein-israels-barak-discussed-gigantic-consultancy-sums-paid-to-blair" },
+        { label: "Byline Times: Thiel spokesman confirms Epstein was a limited partner in Thiel's venture fund", url: "https://bylinetimes.com/2026/02/04/jeffrey-epstein-and-peter-thiel-co-owned-venture-fund-as-thiels-palantir-entered-uk-government/" },
+        { label: "Byline Times: Mandelson's Global Counsel secretly lobbied for Palantir ('Project Onion')", url: "https://bylinetimes.com/2026/06/01/my-personal-pride-and-joy-mandelsons-uk-palantir-deal/" },
+        { label: "Geoghegan & Amin — 'This looks absolutely rubbish: Palantir and the NHS' (LRB); free companion at Democracy for Sale", url: "https://democracyforsale.substack.com/p/its-just-a-waste-of-time-inside-palantir-nhs-peter-mandelson" }
       ],
       requests: [
         {
