@@ -721,17 +721,18 @@ const FOIA = {
     {
       id: "epstein-pages-withheld",
       categories: ["Human trafficking"],
-      entities: ["epstein", "doj"],
+      entities: ["epstein", "doj", "massie", "ro-khanna"],
       investigator: "John Kiriakou (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "The Deep State — Kiriakou × Dorey, Pt 1", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" }
       ],
       status: "confirmed",
-      finding: "John Kiriakou says roughly 3–3.5 million additional Epstein-related pages remain withheld despite the Epstein Files Transparency Act (which he cites as passing the House 419–1 and the Senate 100–0).",
+      finding: "John Kiriakou says roughly 3–3.5 million additional Epstein-related pages remain withheld despite the Epstein Files Transparency Act (which he cites as passing the House 419–1 and the Senate 100–0). Corroborated Jul 2026 (Breaking Points): VP JD Vance said on Joe Rogan that DOJ \"collected 6 million documents,\" while Rep. Thomas Massie noted only ~3 million have been released — the same withholding gap, now with a total from the VP on record.",
       implication: "If a near-unanimous transparency law was enacted, the index of what was identified — and any decision to withhold — are themselves records. (Kiriakou's page figure and vote counts are on-air assertions; this request tests them against the record.)",
       sources: [
         { label: "The Deep State — Kiriakou × Dorey, Pt 1 (@1:08)", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" },
-        { label: "Unlimited Hangout — First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
+        { label: "Unlimited Hangout — First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" },
+        { label: "Breaking Points — Massie & Khanna on the Transparency Act sequel (Vance's 6M figure; Massie: only 3M released)", url: "https://www.youtube.com/watch?v=8-ug7Od3230" }
       ],
       requests: [
         {
@@ -768,6 +769,32 @@ const FOIA = {
           records: "I request a copy of the materials compiled into the binders labeled \"the Epstein files\" distributed at the White House on February 27, 2025, and any records identifying what was included in those binders and which Department of Justice office assembled or vetted them. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
           filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04061 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
+        }
+      ]
+    },
+    {
+      id: "epstein-privilege-memos",
+      categories: ["Human trafficking"],
+      entities: ["epstein", "doj", "massie", "ro-khanna"],
+      investigator: "Reps. Thomas Massie & Ro Khanna (Breaking Points)",
+      investigatorLinks: [
+        { label: "Breaking Points — Massie & Khanna on the Epstein Files Transparency Act sequel", url: "https://www.youtube.com/watch?v=8-ug7Od3230" }
+      ],
+      status: "reported",
+      finding: "Rep. Massie says DOJ has told Congress twice, in written notes or memos, that it is invoking the deliberative-process privilege to withhold Epstein files — the stated basis for not turning over records on why certain individuals were or were not prosecuted. The Massie–Khanna sequel bill is written specifically to strip that privilege claim.",
+      implication: "A deliberative-process-privilege claim asserted to Congress is a discrete written record — the notes/memos themselves, plus any legal opinion supporting the position. They fix on paper exactly what DOJ is withholding and on what stated ground, which is the appealable core of the dispute. (Massie's account is on-air; the request tests it against the paper.)",
+      sources: [
+        { label: "Breaking Points — Massie & Khanna (the deliberative-process-privilege memos)", url: "https://www.youtube.com/watch?v=8-ug7Od3230" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          component: "Office of Information Policy (OIP) — department-level determinations & congressional correspondence",
+          summary: "DOJ — the notes/memos to Congress invoking deliberative-process privilege over Epstein files",
+          subject: "FOIA Request: DOJ communications to Congress asserting deliberative-process privilege to withhold Epstein-related records",
+          records: "I request copies of any written communications — notes, memoranda, or letters — sent by the Department of Justice to Congress or any congressional committee that assert or invoke the deliberative-process privilege as a basis for withholding records concerning Jeffrey Epstein or the Epstein Files Transparency Act, together with any legal memorandum or opinion supporting that assertion. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true,
+          filed: "NOT FILED — drafted Jul 18, 2026; queued for OIP via FOIA STAR."
         }
       ]
     },
