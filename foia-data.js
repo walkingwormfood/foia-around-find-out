@@ -215,6 +215,10 @@ const FOIA = {
     { id: "fort-huachuca", name: "Fort Huachuca", type: "place" },
     { id: "mar-a-lago", name: "Mar-a-Lago", type: "place" },
     { id: "israel", name: "Israel", type: "country" },
+    { id: "shabtai", name: "Shabtai (Yale 'Jewish leadership society')", type: "org" },
+    { id: "fidf", name: "Friends of the IDF (FIDF)", type: "org" },
+    { id: "colby", name: "Elbridge Colby", type: "person" },
+    { id: "benny-shabtai", name: "Benny Shabtai", type: "person" },
     { id: "iran", name: "Iran", type: "country" },
     { id: "dfc", name: "U.S. International Development Finance Corporation", type: "org" },
     { id: "ben-black", name: "Ben Black", type: "person" },
@@ -769,6 +773,41 @@ const FOIA = {
           records: "I request a copy of the materials compiled into the binders labeled \"the Epstein files\" distributed at the White House on February 27, 2025, and any records identifying what was included in those binders and which Department of Justice office assembled or vetted them. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
           filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04061 (filed Jul 16, 2026); confirmed by the request-receipt PDF. Determination pending."
+        }
+      ]
+    },
+    {
+      id: "shabtai-yale",
+      categories: ["Conflict of interest"],
+      entities: ["shabtai", "fidf", "colby", "benny-shabtai", "israel", "epstein", "palantir"],
+      investigator: "Kim Iversen",
+      investigatorLinks: [
+        { label: "Kim Iversen — 'The Secret Society Behind Israel's Power Pipeline'", url: "https://www.youtube.com/watch?v=aGf2zzdZ64Y" }
+      ],
+      status: "reported",
+      finding: "Shabtai (founded at Yale in 1996, formerly the Eliezer Society) is a secretive, lifetime-membership society self-described as 'the global Jewish leadership society based at Yale,' whose stated purpose is grooming 'the future leaders of the Jewish people' — though many known members are not Jewish. Per public materials and Kim Iversen's reporting: co-founded by Rabbi Shmully Hecht, Ben Karp (brother of Palantir CEO Alex Karp), and Sen. Cory Booker; financed by Israeli-American businessman Benny Shabtai (longtime Friends of the IDF board). Publicly acknowledged members/speakers include Booker, Vivek Ramaswamy, Michael Knowles, senior Pentagon policy official Elbridge Colby, ex-Israeli ambassador Michael Oren (who lived in the house), plus speakers Blumenthal, Scaramucci, Simcha Rothman, and Itamar Ben-Gvir. The released Epstein documents reference Benny Shabtai — a Little St. James travel schedule, Epstein invited to his wedding, a proto-Shabtai dinner invitation to Epstein, and a 2008 Israel trip together to military facilities (an unproven lawsuit allegation adds 'funding undisclosed operations').",
+      implication: "Elite relationship-building isn't itself a records question — but two things are. (1) A sitting senior Pentagon policy official (Colby) belonging to a secretive society whose stated mission serves a foreign state raises the same conflict-of-interest/recusal question as the Dialog society: his financial-disclosure and ethics/recusal records are federal records. (2) A US nonprofit that grooms leaders 'in the best interest of the State of Israel' invites the foreign-principal question FARA exists to answer — any FARA registration, or correspondence about the absence of one, is a DOJ record. The public Form 990s of Shabtai and Friends of the IDF (officers, contractors, related orgs) round it out. (The name traces to financier Benny Shabtai, not a self-declared ideology — the records are the point.)",
+      sources: [
+        { label: "Kim Iversen segment (public materials, archived sites, Epstein docs)", url: "https://www.youtube.com/watch?v=aGf2zzdZ64Y" },
+        { label: "Shabtai & Friends of the IDF — public IRS Form 990s (ProPublica Nonprofit Explorer)", url: "https://projects.propublica.org/nonprofits/" }
+      ],
+      requests: [
+        {
+          agencyId: "dod",
+          summary: "DoD — Elbridge Colby's financial-disclosure + ethics/recusal records",
+          subject: "FOIA Request: financial disclosure and ethics/recusal records for Elbridge Colby",
+          records: "I request the public financial-disclosure reports (OGE Form 278e) filed by Elbridge Colby in connection with his Department of Defense position, together with any ethics agreement, recusal statement, or conflict-of-interest determination concerning his affiliations with outside organizations. I am not requesting classified information or records unrelated to official financial disclosure and ethics.",
+          ask_no_records: true,
+          filed: "NOT FILED — drafted; queue via the DoD OSD/WHS FOIA portal (pal.whs.mil)."
+        },
+        {
+          agencyId: "doj",
+          component: "FARA Registration Unit (National Security Division)",
+          summary: "DOJ FARA Unit — any registration or foreign-agent correspondence re: Shabtai / Friends of the IDF",
+          records: "I request any Foreign Agents Registration Act (FARA) registration statements, supplemental filings, or correspondence held by the FARA Registration Unit concerning (a) the organization known as Shabtai (formerly the Eliezer Society) associated with Yale University, and (b) Friends of the Israel Defense Forces (FIDF) — including any letter of inquiry sent to, or determination made about, either organization regarding a possible obligation to register as an agent of a foreign principal. If no such records exist for either, I request written confirmation of that fact.",
+          subject: "FOIA Request: FARA registration and correspondence concerning Shabtai and Friends of the IDF",
+          ask_no_records: true,
+          filed: "NOT FILED — drafted; queue via DOJ FOIA STAR (National Security Division / FARA Unit)."
         }
       ]
     },
