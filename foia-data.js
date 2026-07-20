@@ -93,6 +93,10 @@ const FOIA = {
       portal: "https://www.foia.gov/",
       submitNote: "The Criminal Division has its own FOIA intake — OIP/FOIA STAR will punt this. File through FOIA.gov: Department of Justice \u2192 Criminal Division.",
       portalNote: "On FOIA.gov select Department of Justice, then Criminal Division." },
+    { id: "doj-atr", name: "DOJ Antitrust Division", email: null,
+      portal: "https://www.foia.gov/",
+      submitNote: "The Antitrust Division runs its own FOIA unit — OIP/FOIA STAR will punt this. File through FOIA.gov: Department of Justice → Antitrust Division.",
+      portalNote: "On FOIA.gov select Department of Justice, then Antitrust Division. Requests aimed at leadership-office records (the Deputy Attorney General's or Attorney General's calendars, the ODAG side of a settlement) route to OIP/FOIA STAR instead — use the main DOJ entry for those; the wrong pick gets a routing-artifact 'no records.'" },
     { id: "atfagency", name: "Bureau of Alcohol, Tobacco, Firearms and Explosives", email: null,
       portal: "https://www.foia.gov/",
       submitNote: "ATF FOIA routes through FOIA.gov (select Department of Justice → Bureau of Alcohol, Tobacco, Firearms and Explosives) or ATF's own eFOIA channels. Direct-email intake unverified — file via the portal. Expect 7(A) claims while the related prosecution is pending; the written denial still fixes what records exist." },
@@ -268,6 +272,11 @@ const FOIA = {
     { id: "libya", name: "Libya", type: "country" },
     { id: "cuba", name: "Cuba", type: "country" },
     { id: "ukraine", name: "Ukraine", type: "country" },
+    { id: "mike-davis", name: "Mike Davis (Article III Project)", type: "person" },
+    { id: "gail-slater", name: "Gail Slater (ex-AAG, Antitrust)", type: "person" },
+    { id: "roger-alford", name: "Roger Alford (ex-DOJ Antitrust)", type: "person" },
+    { id: "hpe", name: "Hewlett Packard Enterprise", type: "company" },
+    { id: "live-nation", name: "Live Nation / Ticketmaster", type: "company" },
   ],
 
   investigations: [
@@ -2101,6 +2110,38 @@ const FOIA = {
           summary: "State (ex-USAID records) — rule-of-law awards to ABA/WJP for drafting foreign oil-revenue-management legislation",
           subject: "Freedom of Information Act/Privacy Act Request",
           records: "I request copies of the award instruments — contracts, grants, or cooperative agreements, including statements of work — issued by USAID (whose records are now held by the Department of State) to the American Bar Association (including its Rule of Law Initiative) or the World Justice Project, under which the recipient advised on, drafted, or assisted in drafting legislation or regulations governing the management of oil, gas, or mineral revenue in Iraq or Libya, from January 1, 2003 to December 31, 2020. I am requesting the award instruments and statements of work only, not implementation reports or correspondence. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "doj-merger-fixer-settlements",
+      categories: ["Conflict of interest"],
+      entities: ["doj", "mike-davis", "gail-slater", "roger-alford", "hpe", "live-nation"],
+      investigator: "More Perfect Union (Roger Alford on camera; WSJ-sourced internals)",
+      investigatorLinks: [
+        { label: "\"We Talked to a Trump Whistleblower\" — Alford, plus AGs Weiser (CO) and Skrmetti (TN)", url: "https://www.youtube.com/watch?v=f3o4nCfmGco" }
+      ],
+      status: "reported",
+      finding: "Fired DOJ Antitrust official Roger Alford describes, on camera, a repeatable merger-fixer play: a company facing suit hires a fixer with the president's ear — above all Mike Davis ($300,000/month plus a $1M+ contingency per approved merger, per Alford; Davis denies the threatening call attributed to him) — and the case dies from the top down. The documented run-throughs: HPE–Juniper, where per DOJ sources to the Wall Street Journal a settlement WRITTEN BY HPE'S OWN LAWYERS was placed on AAG Gail Slater's desk, she was told her deputies would be fired if she refused, she signed, and they were fired anyway (Alford among those terminated for objecting); and Live Nation/Ticketmaster, which hired Davis and Kellyanne Conway, donated to the inaugural fund, saw Slater herself fired after Davis lobbied the president directly, and settled two weeks later on terms critics put at four days of the company's operating revenue — after which state AGs kept the suit alive without DOJ and won a federal jury verdict that Live Nation/Ticketmaster violated antitrust law. Nexstar–Tegna and Compass–Anywhere cleared with no investigation (Compass also hired Davis); Paramount–Warner Bros was approved over staff attorneys leaning toward suit, per WSJ.",
+      implication: "The play leaves administrative paper at exactly two spots: the leadership offices that overrode the line attorneys, and the division that had to swallow it. Who transmitted the HPE-drafted settlement to ODAG, when Davis got on leadership calendars and about which mergers, and what the division's own decision memos recommended before being overruled — those are discrete, dated records. Expect b(5) deliberative-process withholding on the memos; the written denial still fixes on paper that the memos exist and who wrote them. (The jury verdict, the Slater firing, and the settlement terms are public record; the desk-drop and staff-overruled details are WSJ-sourced; the fee figures are Alford's account, documents not shown.)",
+      sources: [
+        { label: "MPU transcript + digest in the library (manual caption track incl. interview outtakes; re-scraped and re-verified Jul 20 2026)", url: "https://www.youtube.com/watch?v=f3o4nCfmGco" },
+        { label: "WSJ reporting cited in the piece (settlement placed on Slater's desk; Paramount–WBD staff attorneys overruled)", url: "" }
+      ],
+      requests: [
+        {
+          agencyId: "doj",
+          summary: "DOJ leadership (ODAG) — the HPE-drafted settlement's transmittal + leadership calendars/call logs for Mike Davis",
+          subject: "FOIA Request: ODAG records concerning the HPE–Juniper settlement and meetings or calls with Mike Davis or the Article III Project",
+          records: "I request, for the period November 1, 2024 through the date this request is processed: (1) the communication or cover record by which a draft settlement or proposed final judgment in United States v. Hewlett Packard Enterprise Co. (HPE–Juniper Networks) authored or transmitted by counsel for the merging parties was received by, or forwarded from, the Office of the Deputy Attorney General to the Assistant Attorney General for Antitrust; and (2) calendar entries, visitor records, and telephone or meeting logs of the Deputy Attorney General and the Attorney General reflecting meetings or calls with Mike Davis or the Article III Project concerning any of: HPE–Juniper, Live Nation/Ticketmaster, Compass–Anywhere, Nexstar–Tegna, or Paramount–Warner Bros. I am requesting transmittal records, calendars, and logs — to keep this request narrow, I am not seeking general email correspondence beyond the transmittal record described in item (1).",
+          ask_no_records: true
+        },
+        {
+          agencyId: "doj-atr",
+          summary: "Antitrust Division — the AAG front office's own record: settlement drafts received from outside counsel + the Live Nation decision paper",
+          subject: "FOIA Request: Antitrust Division front-office records concerning the HPE–Juniper and Live Nation/Ticketmaster settlements",
+          records: "I request, for the period January 1, 2025 through the date this request is processed: (1) any draft settlement, draft proposed final judgment, or settlement term sheet in United States v. Hewlett Packard Enterprise Co. received by the Antitrust Division front office from counsel for the merging parties or from the Office of the Deputy Attorney General, together with its transmittal record; (2) the Division's decision or recommendation memorandum concerning settlement of United States v. Live Nation Entertainment, Inc., including any record of the Division staff's recommendation; and (3) the front-office calendar entries and meeting logs of the Assistant Attorney General for Antitrust reflecting meetings or calls with Mike Davis, the Article III Project, or Kellyanne Conway or her firm. If any record is withheld as deliberative, I request the written denial identify each memorandum withheld, its date, and its author's office, and release all segregable portions.",
           ask_no_records: true
         }
       ]
