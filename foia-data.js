@@ -149,10 +149,7 @@ const FOIA = {
       submitNote: "DEA prefers its FOIA Public Access Link (PAL) portal — the linked page walks through registration — but still accepts email (DEA.FOIA@dea.gov), just with slower processing. Requester Service Center: (571) 776-2300. Checked July 2026." },
     { id: "faa", name: "Federal Aviation Administration", email: "7-AWA-ARC-FOIA@faa.gov",
       portal: "https://www.faa.gov/foia",
-      submitNote: "FAA's National FOIA Office accepts email (7-AWA-ARC-FOIA@faa.gov) or electronic submission from the FAA FOIA page. FAA is a DOT component, so FOIA.gov (Department of Transportation → Federal Aviation Administration) also works. Checked July 2026." },
-    { id: "irs", name: "Internal Revenue Service — Exempt Organizations", email: null, fed: true,
-      portal: "https://www.irs.gov/charities-non-profits/irs-complaint-process-tax-exempt-organizations",
-      submitNote: "NOT a FOIA route. A nonprofit's Forms 990 are already public (IRS Tax Exempt Organization Search + ProPublica Nonprofit Explorer). The actionable instrument is IRS Form 13909 (Tax-Exempt Organization Complaint), which refers suspected private inurement / self-dealing to EO Examinations — mail or fax to IRS EO Classification (Ogden, UT). 26 U.S.C. § 6103 bars the IRS from telling a third-party complainant the outcome, so the record trail is the complaint itself plus the public 990/Schedule L and state charity records that support it. Checked July 2026." }
+      submitNote: "FAA's National FOIA Office accepts email (7-AWA-ARC-FOIA@faa.gov) or electronic submission from the FAA FOIA page. FAA is a DOT component, so FOIA.gov (Department of Transportation → Federal Aviation Administration) also works. Checked July 2026." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -205,8 +202,6 @@ const FOIA = {
     { id: "charlie-kirk", name: "Charlie Kirk", type: "person" },
     { id: "graham-allen", name: "Graham Allen", type: "person" },
     { id: "erika-kirk", name: "Erika Kirk", type: "person" },
-    { id: "tpusa", name: "Turning Point USA", type: "org" },
-    { id: "sheridan", name: "Stacy Sheridan", type: "person" },
     { id: "kolvet", name: "Andrew Kolvet", type: "person" },
     { id: "kash-patel", name: "Kash Patel", type: "person" },
     { id: "crooks", name: "Thomas Matthew Crooks", type: "person" },
@@ -220,10 +215,6 @@ const FOIA = {
     { id: "fort-huachuca", name: "Fort Huachuca", type: "place" },
     { id: "mar-a-lago", name: "Mar-a-Lago", type: "place" },
     { id: "israel", name: "Israel", type: "country" },
-    { id: "shabtai", name: "Shabtai (Yale 'Jewish leadership society')", type: "org" },
-    { id: "fidf", name: "Friends of the IDF (FIDF)", type: "org" },
-    { id: "colby", name: "Elbridge Colby", type: "person" },
-    { id: "benny-shabtai", name: "Benny Shabtai", type: "person" },
     { id: "iran", name: "Iran", type: "country" },
     { id: "dfc", name: "U.S. International Development Finance Corporation", type: "org" },
     { id: "ben-black", name: "Ben Black", type: "person" },
@@ -730,18 +721,17 @@ const FOIA = {
     {
       id: "epstein-pages-withheld",
       categories: ["Human trafficking"],
-      entities: ["epstein", "doj", "massie", "ro-khanna"],
+      entities: ["epstein", "doj"],
       investigator: "John Kiriakou (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "The Deep State — Kiriakou × Dorey, Pt 1", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" }
       ],
       status: "confirmed",
-      finding: "John Kiriakou says roughly 3–3.5 million additional Epstein-related pages remain withheld despite the Epstein Files Transparency Act (which he cites as passing the House 419–1 and the Senate 100–0). Corroborated Jul 2026 (Breaking Points): VP JD Vance said on Joe Rogan that DOJ \"collected 6 million documents,\" while Rep. Thomas Massie noted only ~3 million have been released — the same withholding gap, now with a total from the VP on record.",
+      finding: "John Kiriakou says roughly 3–3.5 million additional Epstein-related pages remain withheld despite the Epstein Files Transparency Act (which he cites as passing the House 419–1 and the Senate 100–0).",
       implication: "If a near-unanimous transparency law was enacted, the index of what was identified — and any decision to withhold — are themselves records. (Kiriakou's page figure and vote counts are on-air assertions; this request tests them against the record.)",
       sources: [
         { label: "The Deep State — Kiriakou × Dorey, Pt 1 (@1:08)", url: "https://www.youtube.com/watch?v=eKTJ8T4D02w" },
-        { label: "Unlimited Hangout — First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" },
-        { label: "Breaking Points — Massie & Khanna on the Transparency Act sequel (Vance's 6M figure; Massie: only 3M released)", url: "https://www.youtube.com/watch?v=8-ug7Od3230" }
+        { label: "Unlimited Hangout — First Friends: How Andrew Farkas and an Emirati Sultan Helped Epstein Build a Smuggler's Paradise", url: "https://unlimitedhangout.com/2026/03/investigative-series/first-friends-how-andrew-farkas-and-an-emirati-sultan-helped-epstein-build-a-smugglers-paradise/" }
       ],
       requests: [
         {
@@ -782,113 +772,20 @@ const FOIA = {
       ]
     },
     {
-      id: "shabtai-yale",
-      categories: ["Conflict of interest"],
-      entities: ["shabtai", "fidf", "colby", "benny-shabtai", "israel", "epstein", "palantir"],
-      investigator: "Kim Iversen",
-      investigatorLinks: [
-        { label: "Kim Iversen — 'The Secret Society Behind Israel's Power Pipeline'", url: "https://www.youtube.com/watch?v=aGf2zzdZ64Y" }
-      ],
-      status: "reported",
-      finding: "Shabtai (founded at Yale in 1996, formerly the Eliezer Society) is a secretive, lifetime-membership society self-described as 'the global Jewish leadership society based at Yale,' whose stated purpose is grooming 'the future leaders of the Jewish people' — though many known members are not Jewish. Per public materials and Kim Iversen's reporting: co-founded by Rabbi Shmully Hecht, Ben Karp (brother of Palantir CEO Alex Karp), and Sen. Cory Booker; financed by Israeli-American businessman Benny Shabtai (longtime Friends of the IDF board). Publicly acknowledged members/speakers include Booker, Vivek Ramaswamy, Michael Knowles, senior Pentagon policy official Elbridge Colby, ex-Israeli ambassador Michael Oren (who lived in the house), plus speakers Blumenthal, Scaramucci, Simcha Rothman, and Itamar Ben-Gvir. The released Epstein documents reference Benny Shabtai — a Little St. James travel schedule, Epstein invited to his wedding, a proto-Shabtai dinner invitation to Epstein, and a 2008 Israel trip together to military facilities (an unproven lawsuit allegation adds 'funding undisclosed operations').",
-      implication: "Elite relationship-building isn't itself a records question — but two things are. (1) A sitting senior Pentagon policy official (Colby) belonging to a secretive society whose stated mission serves a foreign state raises the same conflict-of-interest/recusal question as the Dialog society: his financial-disclosure and ethics/recusal records are federal records. (2) A US nonprofit that grooms leaders 'in the best interest of the State of Israel' invites the foreign-principal question FARA exists to answer — any FARA registration, or correspondence about the absence of one, is a DOJ record. The public Form 990s of Shabtai and Friends of the IDF (officers, contractors, related orgs) round it out. (The name traces to financier Benny Shabtai, not a self-declared ideology — the records are the point.)",
-      sources: [
-        { label: "Kim Iversen segment (public materials, archived sites, Epstein docs)", url: "https://www.youtube.com/watch?v=aGf2zzdZ64Y" },
-        { label: "Shabtai & Friends of the IDF — public IRS Form 990s (ProPublica Nonprofit Explorer)", url: "https://projects.propublica.org/nonprofits/" }
-      ],
-      requests: [
-        {
-          agencyId: "dod",
-          summary: "DoD — Elbridge Colby's financial-disclosure + ethics/recusal records",
-          subject: "FOIA Request: financial disclosure and ethics/recusal records for Elbridge Colby",
-          records: "I request the public financial-disclosure reports (OGE Form 278e) filed by Elbridge Colby in connection with his Department of Defense position, together with any ethics agreement, recusal statement, or conflict-of-interest determination concerning his affiliations with outside organizations. I am not requesting classified information or records unrelated to official financial disclosure and ethics.",
-          ask_no_records: true,
-          filed: "NOT FILED — drafted; queue via the DoD OSD/WHS FOIA portal (pal.whs.mil)."
-        },
-        {
-          agencyId: "doj",
-          component: "FARA Registration Unit (National Security Division)",
-          summary: "DOJ FARA Unit — any registration or foreign-agent correspondence re: Shabtai / Friends of the IDF",
-          records: "I request any Foreign Agents Registration Act (FARA) registration statements, supplemental filings, or correspondence held by the FARA Registration Unit concerning (a) the organization known as Shabtai (formerly the Eliezer Society) associated with Yale University, and (b) Friends of the Israel Defense Forces (FIDF) — including any letter of inquiry sent to, or determination made about, either organization regarding a possible obligation to register as an agent of a foreign principal. If no such records exist for either, I request written confirmation of that fact.",
-          subject: "FOIA Request: FARA registration and correspondence concerning Shabtai and Friends of the IDF",
-          ask_no_records: true,
-          filed: "NOT FILED — drafted; queue via DOJ FOIA STAR (National Security Division / FARA Unit)."
-        }
-      ]
-    },
-    {
-      id: "epstein-privilege-memos",
-      categories: ["Human trafficking"],
-      entities: ["epstein", "doj", "massie", "ro-khanna"],
-      investigator: "Reps. Thomas Massie & Ro Khanna (Breaking Points)",
-      investigatorLinks: [
-        { label: "Breaking Points — Massie & Khanna on the Epstein Files Transparency Act sequel", url: "https://www.youtube.com/watch?v=8-ug7Od3230" }
-      ],
-      status: "reported",
-      finding: "Rep. Massie says DOJ has told Congress twice, in written notes or memos, that it is invoking the deliberative-process privilege to withhold Epstein files — the stated basis for not turning over records on why certain individuals were or were not prosecuted. The Massie–Khanna sequel bill is written specifically to strip that privilege claim.",
-      implication: "A deliberative-process-privilege claim asserted to Congress is a discrete written record — the notes/memos themselves, plus any legal opinion supporting the position. They fix on paper exactly what DOJ is withholding and on what stated ground, which is the appealable core of the dispute. (Massie's account is on-air; the request tests it against the paper.)",
-      sources: [
-        { label: "Breaking Points — Massie & Khanna (the deliberative-process-privilege memos)", url: "https://www.youtube.com/watch?v=8-ug7Od3230" }
-      ],
-      requests: [
-        {
-          agencyId: "doj",
-          component: "Office of Information Policy (OIP) — department-level determinations & congressional correspondence",
-          summary: "DOJ — the notes/memos to Congress invoking deliberative-process privilege over Epstein files",
-          subject: "FOIA Request: DOJ communications to Congress asserting deliberative-process privilege to withhold Epstein-related records",
-          records: "I request copies of any written communications — notes, memoranda, or letters — sent by the Department of Justice to Congress or any congressional committee that assert or invoke the deliberative-process privilege as a basis for withholding records concerning Jeffrey Epstein or the Epstein Files Transparency Act, together with any legal memorandum or opinion supporting that assertion. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          ask_no_records: true,
-          filed: "NOT FILED — drafted Jul 18, 2026; queued for OIP via FOIA STAR."
-        }
-      ]
-    },
-    {
-      id: "tpusa-sheridan-selfdealing",
-      categories: ["Conflict of interest"],
-      entities: ["tpusa", "sheridan", "erika-kirk"],
-      investigator: "@leahfiles (theleahfiles)",
-      investigatorLinks: [
-        { label: "leahfiles — TPUSA fraud playbook, Pt 3: Stacy Sheridan", url: "https://x.com/leahfiles/status/2079002400770146626" }
-      ],
-      status: "reported",
-      finding: "Per @leahfiles' public-filings analysis: Stacy Sheridan is TPUSA's salaried Senior Advancement Director (~$180k+) and ALSO owns the outside fundraising firm the charity pays — a relay of shells (GSM Strategy → Lionrock Ventures → Cloverstone Ventures), each going dark as it drew scrutiny. Over five years her firms held CUSTODY of $88M+ in donor money (FY2025: Cloverstone held $19.3M, forwarded $18.8M, kept $482,568; Sheridan personally another $3.1M), and her private companies kept ~$5M in fees on top of the salary. She now sits at the right hand of TPUSA CEO Erika Kirk. The 990 books Cloverstone as an ordinary contractor; its ownership shows only in another state's corporate records and a Minnesota AG professional-fundraiser registration (#02304, now lapsed) certified UNDER OATH as 'independent' — a sworn statement that can't be squared with the arm's-length federal return.",
-      implication: "The textbook 'insider-controlled custody fundraiser': the employee who helps pick the vendor owns the vendor, holds and counts the donations, and hides the ownership across two agencies in two states. The documentary basis is PUBLIC — the Forms 990 (esp. Schedule L insider-transaction disclosure), state corporate records (CA shows Lionrock terminated; Cloverstone never registered there), and the Minnesota AG charitable-registration file (#02304). The actionable federal instrument is an IRS Form 13909 Tax-Exempt Organization Complaint referring the suspected private inurement / self-dealing (IRC §4958 excess-benefit exposure; revocation risk). (leahfiles' own caveat, preserved: no agency has investigated or charged Sheridan; most of the $88M did reach the charity; the issue is the structure and fees, not a claim of theft — it's the setup regulators are trained to look for.)",
-      sources: [
-        { label: "leahfiles — Pt 3: Sheridan (Pts 1-2 cover Bowyer, Kolvet)", url: "https://x.com/leahfiles/status/2079002400770146626" },
-        { label: "IRS Tax Exempt Organization Search / ProPublica Nonprofit Explorer — TPUSA & Cloverstone Forms 990", url: "https://projects.propublica.org/nonprofits/" },
-        { label: "Minnesota AG — charities & professional-fundraiser registrations (Cloverstone #02304)", url: "https://www.ag.state.mn.us/charity/" }
-      ],
-      requests: [
-        {
-          agencyId: "irs",
-          component: "Exempt Organizations — EO Classification / Examinations",
-          summary: "IRS — Form 13909 referral of suspected private inurement / self-dealing at TPUSA",
-          subject: "IRS Form 13909 (Tax-Exempt Organization Complaint): TPUSA insider-controlled fundraiser",
-          records: "This is an IRS Form 13909 Tax-Exempt Organization Complaint (not a FOIA request), referring for examination the relationship between Turning Point USA and its Senior Advancement Director Stacy Sheridan, who owns the outside fundraiser (Cloverstone Ventures, formerly Lionrock Ventures and GSM Strategy) that the organization pays and which holds custody of its donations — presenting the four indicia of an insider-controlled custody fundraiser: the same party on both sides of the contract, custody of the donated funds, a relay of shell entities, and non-disclosure of the insider's ownership on the Form 990. The supporting records are public: TPUSA's and Cloverstone's Forms 990 (including Schedule L), state corporate registrations, and Minnesota AG professional-fundraiser registration #02304.",
-          ask_no_records: true,
-          filed: "NOT FILED — IRS Form 13909 referral (a complaint, not a FOIA; § 6103 bars disclosure of any resulting exam to the complainant). Documentary basis is the public 990/Schedule L + state records."
-        }
-      ]
-    },
-    {
       id: "dialog-society-officials",
       categories: ["Conflict of interest"],
-      entities: ["thiel", "bessent", "hoffman", "driscoll", "lonsdale", "palantir", "dialog-society", "treasury", "dod", "epstein"],
+      entities: ["thiel", "bessent", "hoffman", "driscoll", "lonsdale", "palantir", "dialog-society", "treasury", "dod"],
       investigator: "Ian Carroll",
       investigatorLinks: [
         { label: "Ian Carroll — \"Recent Peter Thiel allegations\"", url: "https://www.youtube.com/watch?v=T3Vcra08-IQ" }
       ],
       status: "confirmed",
       finding: "A leaked roster of Peter Thiel's secretive, off-the-record \"Dialog\" society (exposed June 16, 2026 by Wired, from researcher maia arson crimew's leak) places sitting Cabinet officials alongside executives of the industries they regulate — e.g., Treasury Secretary Scott Bessent with data-broker chairman Auren Hoffman (SafeGraph / LiveRamp), and Army Secretary Dan Driscoll with Palantir's Joe Lonsdale, whose software runs Pentagon and ICE systems.",
-      implication: "Senior executive officials convening privately, under no-attribution rules, with executives of industries they regulate — a textbook conflict-of-interest question. Attendees reportedly used personal/corporate email to keep communications outside FOIA, so the requestable records are official-travel authorizations, ethics reviews, and recusals — not emails. Separately (Palantir-specific): Thiel and Palantir are documented in Jeffrey Epstein's orbit on three fronts — DOJ-released 2013 audio of Epstein pitching ex-Israeli PM Ehud Barak onto Palantir's board via Thiel (the two later met, 2014-2017); Thiel's own spokesman confirming Epstein was a limited partner in Thiel's venture fund; and Epstein's ties to Peter Mandelson's Global Counsel, Palantir's secret UK lobbyist (\"Project Onion,\" ~£30k/month, undeclared ~4 years).",
+      implication: "Senior executive officials convening privately, under no-attribution rules, with executives of industries they regulate — a textbook conflict-of-interest question. Attendees reportedly used personal/corporate email to keep communications outside FOIA, so the requestable records are official-travel authorizations, ethics reviews, and recusals — not emails.",
       sources: [
         { label: "Wired exposé (Jun 16 2026)", url: "" },
         { label: "Washington Times (Jun 18 2026)", url: "https://www.washingtontimes.com/news/2026/jun/18/data-leak-unmasks-members-peter-thiels-elite-secretive-dialog-society/" },
-        { label: "maia arson crimew (leak)", url: "" },
-        { label: "DOJ-released Epstein audio (2013): Epstein pitches Ehud Barak onto Palantir's board via Thiel — Al Jazeera", url: "https://www.aljazeera.com/news/2026/2/4/epstein-israels-barak-discussed-gigantic-consultancy-sums-paid-to-blair" },
-        { label: "Byline Times: Thiel spokesman confirms Epstein was a limited partner in Thiel's venture fund", url: "https://bylinetimes.com/2026/02/04/jeffrey-epstein-and-peter-thiel-co-owned-venture-fund-as-thiels-palantir-entered-uk-government/" },
-        { label: "Byline Times: Mandelson's Global Counsel secretly lobbied for Palantir ('Project Onion')", url: "https://bylinetimes.com/2026/06/01/my-personal-pride-and-joy-mandelsons-uk-palantir-deal/" },
-        { label: "Geoghegan & Amin — 'This looks absolutely rubbish: Palantir and the NHS' (LRB); free companion at Democracy for Sale", url: "https://democracyforsale.substack.com/p/its-just-a-waste-of-time-inside-palantir-nhs-peter-mandelson" }
+        { label: "maia arson crimew (leak)", url: "" }
       ],
       requests: [
         {
@@ -1121,21 +1018,17 @@ const FOIA = {
       investigator: "Tommy G (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
-        { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" },
-        { label: "Tucker Carlson Network — Flock CEO Garrett Langley brands DeFlock a \"terroristic organization\"", url: "https://www.youtube.com/watch?v=nBP_Z3csrLo" },
-        { label: "OrwellDay — Axon is replacing Flock's ALPRs in cities that dropped Flock (why the fix is a category-wide state ban, not vendor-by-vendor fights)", url: "https://x.com/OrwellDay/status/2078900826743996795" }
+        { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" }
       ],
       status: "reported",
       finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
-      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates. The citizen mirror of these audit-log asks is now operational: DeFlock (deflock.com) crowd-maps camera locations, populated by cheap ESP32 detectors that passively sniff Flock's RF and war-drive the results to open databases — which Flock's own CEO brands \"terroristic,\" while conceding nothing about where the data goes; the company's pivot to surveillance drones would erase even that ground-level visibility.",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates.",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "Ben Jordan — Flock reporting", url: "" },
         { label: "OrwellDay — Cleveland Council finds a \"side door\" in Flock's architecture", url: "https://x.com/OrwellDay/status/2078464389552685440" },
         { label: "OrwellDay — Flock tracks phones via Bluetooth (demo)", url: "https://x.com/OrwellDay/status/2078128018736746692" },
-        { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" },
-        { label: "DeFlock (deflock.com) — crowdsourced map of Flock camera locations", url: "https://deflock.com" },
-        { label: "Valleytech — open-source ESP32 firmware (Unified Blue / Marauder / Biscuit) passively detects Flock cameras and war-drives them to wigle.net / WDG", url: "https://www.youtube.com/watch?v=lI_ubTeLL3k" }
+        { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" }
       ],
       requests: [
         {
@@ -1194,15 +1087,14 @@ const FOIA = {
     {
       id: "us-israel-aid-to-partnership-mou",
       categories: ["Israel / foreign influence"],
-      entities: ["israel", "netanyahu", "state-dept", "dod", "massie"],
+      entities: ["israel", "netanyahu", "state-dept", "dod"],
       investigator: "James Li (51/49)",
       investigatorLinks: [
-        { label: "James Li (51/49) — \"We aren't just funding Israel. (It's way worse)\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
-        { label: "Rep. Thomas Massie — House floor, Amendment #8 to strike $3.3B FMF to Israel (7/15/26)", url: "https://www.youtube.com/watch?v=-A0NmOU5Kts" }
+        { label: "James Li (51/49) — \"We aren't just funding Israel. (It's way worse)\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" }
       ],
       status: "reported",
       finding: "James Li reports — and reads aloud — a letter he attributes to Israeli PM Benjamin Netanyahu, addressed to Rep. Marlin Stutzman (R-IN), endorsing a plan to \"shift the framework for U.S.-Israel defense cooperation from aid to partnership.\" The letter references a May 27, 2026 meeting in Jerusalem and a new memorandum of understanding that would draw down U.S. financial military assistance over the next decade and replace it with joint co-development, co-production, and mutual investment (advanced missile defense, AI, unmanned systems, cyber, next-gen platforms).",
-      implication: "A new U.S.-Israel MOU replacing the current aid framework would be negotiated by the executive branch (State and DoD), so the draft MOU or framework document and any U.S. record of the May 27, 2026 Jerusalem meeting are requestable — even though Congress's role isn't. (The letter and its authenticity are Li's reporting; U.S.-Israel security cooperation is longstanding and bipartisan, and the current 2016 ten-year MOU runs through 2028 — a successor framework is a normal, expected negotiation.) Corroborated on the House floor (7/15/26): Rep. Thomas Massie, arguing his Amendment #8 to strike $3.3B in FMF to Israel, confirmed a new security partnership is being negotiated for after FY2028 and warned its funding mechanisms would \"co-mingle our technology and supply chains\" with \"even less transparency than what's going on today\" — naming the exact opacity these requests target. (Amendment failed on a voice vote; Massie requested a recorded vote — the roll call becomes a citable receipt once posted.)",
+      implication: "A new U.S.-Israel MOU replacing the current aid framework would be negotiated by the executive branch (State and DoD), so the draft MOU or framework document and any U.S. record of the May 27, 2026 Jerusalem meeting are requestable — even though Congress's role isn't. (The letter and its authenticity are Li's reporting; U.S.-Israel security cooperation is longstanding and bipartisan, and the current 2016 ten-year MOU runs through 2028 — a successor framework is a normal, expected negotiation.)",
       sources: [
         { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
         { label: "Unlimited Hangout — Isabel Maxwell: Israel's \"Back Door\" Into Silicon Valley", url: "https://unlimitedhangout.com/2020/07/investigative-reports/isabel-maxwell-israels-back-door-into-silicon-valley/" }
