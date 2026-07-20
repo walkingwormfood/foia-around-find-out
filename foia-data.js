@@ -1122,7 +1122,8 @@ const FOIA = {
       investigatorLinks: [
         { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" },
-        { label: "Tucker Carlson Network — Flock CEO Garrett Langley brands DeFlock a \"terroristic organization\"", url: "https://www.youtube.com/watch?v=nBP_Z3csrLo" }
+        { label: "Tucker Carlson Network — Flock CEO Garrett Langley brands DeFlock a \"terroristic organization\"", url: "https://www.youtube.com/watch?v=nBP_Z3csrLo" },
+        { label: "OrwellDay — Axon is replacing Flock's ALPRs in cities that dropped Flock (why the fix is a category-wide state ban, not vendor-by-vendor fights)", url: "https://x.com/OrwellDay/status/2078900826743996795" }
       ],
       status: "reported",
       finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
