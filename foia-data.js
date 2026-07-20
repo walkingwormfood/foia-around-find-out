@@ -1088,17 +1088,20 @@ const FOIA = {
       investigator: "Tommy G (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
-        { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" }
+        { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" },
+        { label: "Tucker Carlson Network — Flock CEO Garrett Langley brands DeFlock a \"terroristic organization\"", url: "https://www.youtube.com/watch?v=nBP_Z3csrLo" }
       ],
       status: "reported",
       finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
-      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates.",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates. The citizen mirror of these audit-log asks is now operational: DeFlock (deflock.com) crowd-maps camera locations, populated by cheap ESP32 detectors that passively sniff Flock's RF and war-drive the results to open databases — which Flock's own CEO brands \"terroristic,\" while conceding nothing about where the data goes; the company's pivot to surveillance drones would erase even that ground-level visibility.",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "Ben Jordan — Flock reporting", url: "" },
         { label: "OrwellDay — Cleveland Council finds a \"side door\" in Flock's architecture", url: "https://x.com/OrwellDay/status/2078464389552685440" },
         { label: "OrwellDay — Flock tracks phones via Bluetooth (demo)", url: "https://x.com/OrwellDay/status/2078128018736746692" },
-        { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" }
+        { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" },
+        { label: "DeFlock (deflock.com) — crowdsourced map of Flock camera locations", url: "https://deflock.com" },
+        { label: "Valleytech — open-source ESP32 firmware (Unified Blue / Marauder / Biscuit) passively detects Flock cameras and war-drives them to wigle.net / WDG", url: "https://www.youtube.com/watch?v=lI_ubTeLL3k" }
       ],
       requests: [
         {
@@ -1157,14 +1160,15 @@ const FOIA = {
     {
       id: "us-israel-aid-to-partnership-mou",
       categories: ["Israel / foreign influence"],
-      entities: ["israel", "netanyahu", "state-dept", "dod"],
+      entities: ["israel", "netanyahu", "state-dept", "dod", "massie"],
       investigator: "James Li (51/49)",
       investigatorLinks: [
-        { label: "James Li (51/49) — \"We aren't just funding Israel. (It's way worse)\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" }
+        { label: "James Li (51/49) — \"We aren't just funding Israel. (It's way worse)\"", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
+        { label: "Rep. Thomas Massie — House floor, Amendment #8 to strike $3.3B FMF to Israel (7/15/26)", url: "https://www.youtube.com/watch?v=-A0NmOU5Kts" }
       ],
       status: "reported",
       finding: "James Li reports — and reads aloud — a letter he attributes to Israeli PM Benjamin Netanyahu, addressed to Rep. Marlin Stutzman (R-IN), endorsing a plan to \"shift the framework for U.S.-Israel defense cooperation from aid to partnership.\" The letter references a May 27, 2026 meeting in Jerusalem and a new memorandum of understanding that would draw down U.S. financial military assistance over the next decade and replace it with joint co-development, co-production, and mutual investment (advanced missile defense, AI, unmanned systems, cyber, next-gen platforms).",
-      implication: "A new U.S.-Israel MOU replacing the current aid framework would be negotiated by the executive branch (State and DoD), so the draft MOU or framework document and any U.S. record of the May 27, 2026 Jerusalem meeting are requestable — even though Congress's role isn't. (The letter and its authenticity are Li's reporting; U.S.-Israel security cooperation is longstanding and bipartisan, and the current 2016 ten-year MOU runs through 2028 — a successor framework is a normal, expected negotiation.)",
+      implication: "A new U.S.-Israel MOU replacing the current aid framework would be negotiated by the executive branch (State and DoD), so the draft MOU or framework document and any U.S. record of the May 27, 2026 Jerusalem meeting are requestable — even though Congress's role isn't. (The letter and its authenticity are Li's reporting; U.S.-Israel security cooperation is longstanding and bipartisan, and the current 2016 ten-year MOU runs through 2028 — a successor framework is a normal, expected negotiation.) Corroborated on the House floor (7/15/26): Rep. Thomas Massie, arguing his Amendment #8 to strike $3.3B in FMF to Israel, confirmed a new security partnership is being negotiated for after FY2028 and warned its funding mechanisms would \"co-mingle our technology and supply chains\" with \"even less transparency than what's going on today\" — naming the exact opacity these requests target. (Amendment failed on a voice vote; Massie requested a recorded vote — the roll call becomes a citable receipt once posted.)",
       sources: [
         { label: "James Li (51/49)", url: "https://www.youtube.com/watch?v=VhMAv7PkTaE" },
         { label: "Unlimited Hangout — Isabel Maxwell: Israel's \"Back Door\" Into Silicon Valley", url: "https://unlimitedhangout.com/2020/07/investigative-reports/isabel-maxwell-israels-back-door-into-silicon-valley/" }
