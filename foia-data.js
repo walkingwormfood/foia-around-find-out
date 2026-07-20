@@ -184,8 +184,6 @@ const FOIA = {
     { id: "dialog-society", name: "Dialog society", type: "org" },
     { id: "unit-8200", name: "Unit 8200", type: "org" },
     { id: "adl", name: "Anti-Defamation League", type: "org" },
-    { id: "betar", name: "Betar US", type: "org" },
-    { id: "ice", name: "U.S. Immigration and Customs Enforcement", type: "org" },
     { id: "washington-post", name: "The Washington Post", type: "org" },
     { id: "gebbia", name: "Joe Gebbia", type: "person" },
     { id: "epstein", name: "Jeffrey Epstein", type: "person" },
@@ -861,45 +859,6 @@ const FOIA = {
       ]
     },
     {
-      id: "election-address-vs-record",
-      categories: ["Election integrity", "Surveillance & privacy"],
-      entities: ["trump", "odni", "dhs", "doj"],
-      investigator: "The Drey Dossier (fact-check)",
-      investigatorLinks: [
-        { label: "Trump Addresses the Nation: Fact-Checks + Breakdown", url: "https://www.youtube.com/watch?v=a2O9uqy1nNo" }
-      ],
-      status: "reported",
-      finding: "In a July 2026 national address, Trump presented \u2018declassified\u2019 material to claim foreign actors compromised US elections. Drey\u2019s line-by-line fact-check surfaces that Trump\u2019s OWN 2021 declassified intelligence assessment \u2014 produced by his first-term appointees \u2014 found with high confidence that no foreign actor altered any vote, registration, ballot, tabulation, or result; that the 2020 foreign influence which did occur was Russian and aimed at helping Trump; and that voting/tabulation systems are air-gapped, ~96% paper-verifiable, with no documented flaw ever changing a US outcome. She also catches Trump attributing a DHS non-citizen-voter analysis to \u2018the FBI.\u2019",
-      implication: "The address\u2019s claims are checkable against records the government already holds \u2014 above all the 2021 assessment that contradicts the new release. Whether the new \u2018declassified\u2019 claims rest on any intelligence product, or on none, is a documentary question, not a rhetorical one.",
-      sources: [
-        { label: "The Drey Dossier fact-check (address replayed and rebutted line by line)", url: "https://www.youtube.com/watch?v=a2O9uqy1nNo" },
-        { label: "2021 ODNI declassified election-security assessment (Trump first-term)" }
-      ],
-      requests: [
-        {
-          agencyId: "odni",
-          summary: "ODNI \u2014 the 2021 declassified election-security assessment (and any 2026 product behind the new claims)",
-          subject: "FOIA Request: 2021 declassified election-security intelligence assessment and any 2026 assessment underlying the July 2026 address",
-          records: "I request: (1) the declassified 2021 intelligence community assessment concerning foreign interference or influence in the 2020 US federal election \u2014 the assessment finding that no foreign actor altered vote counts, voter registration, ballots, tabulation, or results; and (2) any finished intelligence product, assessment, or memorandum dated in 2026 that the intelligence community produced concerning foreign compromise of US election infrastructure and that underlies the claims made in the President\u2019s July 2026 national address. If no 2026 product exists, I request written confirmation of that fact.",
-          ask_no_records: true
-        },
-        {
-          agencyId: "doj-crt",
-          summary: "DOJ Civil Rights Division \u2014 the \u2018election integrity\u2019 enforcement records and site postings",
-          subject: "FOIA Request: DOJ Civil Rights Division election-integrity enforcement matters (2025\u20132026)",
-          records: "I request the enforcement records \u2014 complaints, notices, letters, or settlement/consent documents \u2014 for the election-integrity matters the Civil Rights Division has posted on its public website concerning Mississippi, Hawaii, and California, together with the records reflecting when each matter was initiated. Fact-check reporting indicates the site\u2019s enforcement entries carry dates pre-dated relative to their posting; I seek the underlying dated instruments. If no responsive records exist, I request written confirmation of that fact.",
-          ask_no_records: true
-        },
-        {
-          agencyId: "dhs",
-          summary: "DHS \u2014 the ~278,000 non-citizen voter-roll review + the election-system cyber-vulnerability briefing",
-          subject: "FOIA Request: DHS non-citizen voter-roll analysis and election-system cyber-vulnerability briefing materials",
-          records: "I request: (1) the DHS analysis or report identifying approximately 278,000 non-citizens on US voter rolls, referenced in the President\u2019s July 2026 address; and (2) the briefing materials for the DHS Secretary\u2019s stated briefing on voting-system cyber vulnerability referenced in the same period. These are discrete, described records, not a broad search. If no responsive records exist, I request written confirmation of that fact.",
-          ask_no_records: true
-        }
-      ]
-    },
-    {
       id: "posthog-no-contract",
       categories: ["Surveillance & privacy"],
       entities: ["posthog", "gsa"],
@@ -1018,16 +977,13 @@ const FOIA = {
       investigator: "Tommy G (on Julian Dorey's podcast)",
       investigatorLinks: [
         { label: "Julian Dorey × Tommy G — Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
-        { label: "Mrgunsngear — CT FOIA: 500k+ third-party accesses to one town's Flock data in 9 weeks", url: "https://x.com/Mrgunsngear/status/2078501504823017815" }
       ],
       status: "reported",
       finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
-      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates.",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.)",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
         { label: "Ben Jordan — Flock reporting", url: "" },
-        { label: "OrwellDay — Cleveland Council finds a \"side door\" in Flock's architecture", url: "https://x.com/OrwellDay/status/2078464389552685440" },
-        { label: "OrwellDay — Flock tracks phones via Bluetooth (demo)", url: "https://x.com/OrwellDay/status/2078128018736746692" },
         { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" }
       ],
       requests: [
@@ -2039,32 +1995,5 @@ const FOIA = {
         }
       ]
     },
-    {
-      id: "betar-dhs-deport-list",
-      categories: ["Israel / foreign influence", "Surveillance & privacy", "Civil liberties"],
-      entities: ["betar", "ice", "dhs", "adl"],
-      investigator: "The Intercept, Washington Post, CNN, Boston Globe — and Betar's own public statements",
-      investigatorLinks: [
-        { label: "The Intercept — the far-right group building a list of pro-Palestine activists to deport", url: "https://theintercept.com/2025/02/06/betar-palestine-school-activists-target-deport-trump/" },
-        { label: "CNN — pro-Israel group says it gave the US a list of protesters to deport", url: "https://www.cnn.com/2025/04/02/us/israel-protesters-us-students-deport" }
-      ],
-      status: "reported",
-      finding: "Betar US — the far-right Zionist group the ADL added to its extremist database in February 2025 (the only Jewish organization on it), and which entered a January 2026 settlement of the New York Attorney General's civil-rights investigation into bias-motivated harassment — publicly claims to have submitted the names of hundreds to thousands of pro-Palestinian students, activists, and protesters to the Trump administration, DHS, and ICE, urging their deportation under the President's executive orders. Betar spokesperson Daniel Levy told CNN in 2025: \"We submitted the names of hundreds of protesters and activists to the Trump administration/DHS urging ICE to deport them.\" Betar publicly claimed it had placed Columbia graduate Mahmoud Khalil on its \"deport list\" roughly six weeks before ICE detained him. Its posted \"Students Deport List\" named dozens of people with photos, compiled via facial-recognition and open-source databases, and contained multiple errors (cited \"offenses\" included jaywalking and a noise complaint).",
-      implication: "Whether and how a designated-extremist private group's target list entered federal immigration enforcement is a records question, not a rhetorical one. If DHS or ICE received, logged, or acted on Betar's submissions, that generates agency records on the government side: the intake or correspondence from Betar, any referral or tasking for review, and any enforcement action cross-referencing the list. This is the same private-actor-feeds-federal-targeting pattern the NSPM-7 cluster tracks — here with a group a state attorney general has already found engaged in bias-motivated harassment. (Betar's submission figures are its own public statements; the government side is what these records would confirm, bound, or refute.)",
-      sources: [
-        { label: "Washington Post — Betar pushes on X for deporting more pro-Palestinians", url: "https://www.washingtonpost.com/technology/2025/03/29/zionist-palestinians-deportations-x/" },
-        { label: "Boston Globe — is this the deportation list the Trump administration is using?", url: "https://www.bostonglobe.com/2025/04/17/metro/zionist-group-deportation-lists/" },
-        { label: "Haaretz — ADL lists far-right Betar USA as a hate group", url: "https://www.haaretz.com/us-news/2025-02-21/ty-article/.premium/embraces-islamophobia-harasses-muslims-adl-lists-far-right-betar-usa-as-hate-group/00000195-2a1d-d05a-ab9f-2e1d09680000" }
-      ],
-      requests: [
-        {
-          agencyId: "dhs",
-          summary: "DHS/ICE — the intake and routing records for names or lists Betar submitted for immigration enforcement",
-          subject: "FOIA Request: DHS/ICE records concerning names or lists submitted by Betar for immigration enforcement",
-          records: "I request records held by U.S. Immigration and Customs Enforcement and the Department of Homeland Security concerning submissions from the organization Betar (including Betar US or Betar Worldwide) that identify individuals for immigration enforcement, investigation, or removal, from January 1, 2025 to the date this request is processed. Specifically: (1) any correspondence, email, web-form submission, letter, or list of names received from Betar or persons identifying themselves as acting on its behalf; and (2) any record referring, forwarding, logging, or assigning such submissions for review within ICE or DHS. To keep this request narrow and minimize processing burden, I am NOT requesting the immigration file of any named individual — I am requesting the intake and routing records for the Betar submissions themselves. If responsive records are withheld in whole or part, please describe each withheld record and cite the specific FOIA exemption claimed.",
-          ask_no_records: true
-        }
-      ]
-    }
   ]
 };
