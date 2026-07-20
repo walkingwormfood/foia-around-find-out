@@ -149,7 +149,10 @@ const FOIA = {
       submitNote: "DEA prefers its FOIA Public Access Link (PAL) portal — the linked page walks through registration — but still accepts email (DEA.FOIA@dea.gov), just with slower processing. Requester Service Center: (571) 776-2300. Checked July 2026." },
     { id: "faa", name: "Federal Aviation Administration", email: "7-AWA-ARC-FOIA@faa.gov",
       portal: "https://www.faa.gov/foia",
-      submitNote: "FAA's National FOIA Office accepts email (7-AWA-ARC-FOIA@faa.gov) or electronic submission from the FAA FOIA page. FAA is a DOT component, so FOIA.gov (Department of Transportation → Federal Aviation Administration) also works. Checked July 2026." }
+      submitNote: "FAA's National FOIA Office accepts email (7-AWA-ARC-FOIA@faa.gov) or electronic submission from the FAA FOIA page. FAA is a DOT component, so FOIA.gov (Department of Transportation → Federal Aviation Administration) also works. Checked July 2026." },
+    { id: "irs", name: "Internal Revenue Service — Exempt Organizations", email: null, fed: true,
+      portal: "https://www.irs.gov/charities-non-profits/irs-complaint-process-tax-exempt-organizations",
+      submitNote: "NOT a FOIA route. A nonprofit's Forms 990 are already public (IRS Tax Exempt Organization Search + ProPublica Nonprofit Explorer). The actionable instrument is IRS Form 13909 (Tax-Exempt Organization Complaint), which refers suspected private inurement / self-dealing to EO Examinations — mail or fax to IRS EO Classification (Ogden, UT). 26 U.S.C. § 6103 bars the IRS from telling a third-party complainant the outcome, so the record trail is the complaint itself plus the public 990/Schedule L and state charity records that support it. Checked July 2026." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -202,6 +205,8 @@ const FOIA = {
     { id: "charlie-kirk", name: "Charlie Kirk", type: "person" },
     { id: "graham-allen", name: "Graham Allen", type: "person" },
     { id: "erika-kirk", name: "Erika Kirk", type: "person" },
+    { id: "tpusa", name: "Turning Point USA", type: "org" },
+    { id: "sheridan", name: "Stacy Sheridan", type: "person" },
     { id: "kolvet", name: "Andrew Kolvet", type: "person" },
     { id: "kash-patel", name: "Kash Patel", type: "person" },
     { id: "crooks", name: "Thomas Matthew Crooks", type: "person" },
@@ -834,6 +839,34 @@ const FOIA = {
           records: "I request copies of any written communications — notes, memoranda, or letters — sent by the Department of Justice to Congress or any congressional committee that assert or invoke the deliberative-process privilege as a basis for withholding records concerning Jeffrey Epstein or the Epstein Files Transparency Act, together with any legal memorandum or opinion supporting that assertion. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
           filed: "NOT FILED — drafted Jul 18, 2026; queued for OIP via FOIA STAR."
+        }
+      ]
+    },
+    {
+      id: "tpusa-sheridan-selfdealing",
+      categories: ["Conflict of interest"],
+      entities: ["tpusa", "sheridan", "erika-kirk"],
+      investigator: "@leahfiles (theleahfiles)",
+      investigatorLinks: [
+        { label: "leahfiles — TPUSA fraud playbook, Pt 3: Stacy Sheridan", url: "https://x.com/leahfiles/status/2079002400770146626" }
+      ],
+      status: "reported",
+      finding: "Per @leahfiles' public-filings analysis: Stacy Sheridan is TPUSA's salaried Senior Advancement Director (~$180k+) and ALSO owns the outside fundraising firm the charity pays — a relay of shells (GSM Strategy → Lionrock Ventures → Cloverstone Ventures), each going dark as it drew scrutiny. Over five years her firms held CUSTODY of $88M+ in donor money (FY2025: Cloverstone held $19.3M, forwarded $18.8M, kept $482,568; Sheridan personally another $3.1M), and her private companies kept ~$5M in fees on top of the salary. She now sits at the right hand of TPUSA CEO Erika Kirk. The 990 books Cloverstone as an ordinary contractor; its ownership shows only in another state's corporate records and a Minnesota AG professional-fundraiser registration (#02304, now lapsed) certified UNDER OATH as 'independent' — a sworn statement that can't be squared with the arm's-length federal return.",
+      implication: "The textbook 'insider-controlled custody fundraiser': the employee who helps pick the vendor owns the vendor, holds and counts the donations, and hides the ownership across two agencies in two states. The documentary basis is PUBLIC — the Forms 990 (esp. Schedule L insider-transaction disclosure), state corporate records (CA shows Lionrock terminated; Cloverstone never registered there), and the Minnesota AG charitable-registration file (#02304). The actionable federal instrument is an IRS Form 13909 Tax-Exempt Organization Complaint referring the suspected private inurement / self-dealing (IRC §4958 excess-benefit exposure; revocation risk). (leahfiles' own caveat, preserved: no agency has investigated or charged Sheridan; most of the $88M did reach the charity; the issue is the structure and fees, not a claim of theft — it's the setup regulators are trained to look for.)",
+      sources: [
+        { label: "leahfiles — Pt 3: Sheridan (Pts 1-2 cover Bowyer, Kolvet)", url: "https://x.com/leahfiles/status/2079002400770146626" },
+        { label: "IRS Tax Exempt Organization Search / ProPublica Nonprofit Explorer — TPUSA & Cloverstone Forms 990", url: "https://projects.propublica.org/nonprofits/" },
+        { label: "Minnesota AG — charities & professional-fundraiser registrations (Cloverstone #02304)", url: "https://www.ag.state.mn.us/charity/" }
+      ],
+      requests: [
+        {
+          agencyId: "irs",
+          component: "Exempt Organizations — EO Classification / Examinations",
+          summary: "IRS — Form 13909 referral of suspected private inurement / self-dealing at TPUSA",
+          subject: "IRS Form 13909 (Tax-Exempt Organization Complaint): TPUSA insider-controlled fundraiser",
+          records: "This is an IRS Form 13909 Tax-Exempt Organization Complaint (not a FOIA request), referring for examination the relationship between Turning Point USA and its Senior Advancement Director Stacy Sheridan, who owns the outside fundraiser (Cloverstone Ventures, formerly Lionrock Ventures and GSM Strategy) that the organization pays and which holds custody of its donations — presenting the four indicia of an insider-controlled custody fundraiser: the same party on both sides of the contract, custody of the donated funds, a relay of shell entities, and non-disclosure of the insider's ownership on the Form 990. The supporting records are public: TPUSA's and Cloverstone's Forms 990 (including Schedule L), state corporate registrations, and Minnesota AG professional-fundraiser registration #02304.",
+          ask_no_records: true,
+          filed: "NOT FILED — IRS Form 13909 referral (a complaint, not a FOIA; § 6103 bars disclosure of any resulting exam to the complainant). Documentary basis is the public 990/Schedule L + state records."
         }
       ]
     },
