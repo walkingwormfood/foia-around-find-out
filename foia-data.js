@@ -156,7 +156,16 @@ const FOIA = {
       submitNote: "FAA's National FOIA Office accepts email (7-AWA-ARC-FOIA@faa.gov) or electronic submission from the FAA FOIA page. FAA is a DOT component, so FOIA.gov (Department of Transportation → Federal Aviation Administration) also works. Checked July 2026." },
     { id: "irs", name: "Internal Revenue Service — Exempt Organizations", email: null, fed: true,
       portal: "https://www.irs.gov/charities-non-profits/irs-complaint-process-tax-exempt-organizations",
-      submitNote: "NOT a FOIA route. A nonprofit's Forms 990 are already public (IRS Tax Exempt Organization Search + ProPublica Nonprofit Explorer). The actionable instrument is IRS Form 13909 (Tax-Exempt Organization Complaint), which refers suspected private inurement / self-dealing to EO Examinations — mail or fax to IRS EO Classification (Ogden, UT). 26 U.S.C. § 6103 bars the IRS from telling a third-party complainant the outcome, so the record trail is the complaint itself plus the public 990/Schedule L and state charity records that support it. Checked July 2026." }
+      submitNote: "NOT a FOIA route. A nonprofit's Forms 990 are already public (IRS Tax Exempt Organization Search + ProPublica Nonprofit Explorer). The actionable instrument is IRS Form 13909 (Tax-Exempt Organization Complaint), which refers suspected private inurement / self-dealing to EO Examinations — mail or fax to IRS EO Classification (Ogden, UT). 26 U.S.C. § 6103 bars the IRS from telling a third-party complainant the outcome, so the record trail is the complaint itself plus the public 990/Schedule L and state charity records that support it. Checked July 2026." },
+    { id: "darpa", name: "Defense Advanced Research Projects Agency (via OSD/JS FOIA)", email: null,
+      portal: "https://www.esd.whs.mil/FOID/Submit-Request/",
+      submitNote: "DARPA does not run its own FOIA intake — the OSD/Joint Staff Office of Freedom of Information processes all DARPA requests, and per DARPA's own FOIA page a request sent to DARPA directly just gets re-routed there with delay. File electronically at the OSD/JS submission page (esd.whs.mil/FOID/Submit-Request) or via FOIA.gov (Department of Defense → Office of the Secretary of Defense/Joint Staff); name DARPA in the request text so it routes internally. Requester Service Center: 1-866-574-4970. Checked July 2026." },
+    { id: "ftc", name: "Federal Trade Commission", email: null,
+      portal: "https://foiaxpresspal.ftc.gov/",
+      submitNote: "The FTC takes FOIA through its Public Access Link portal (foiaxpresspal.ftc.gov — register or sign in) or FOIA.gov; fax (202-326-2477) and mail (FOIA Request, Office of General Counsel, FTC, 600 Pennsylvania Ave NW, Washington DC 20580) also work. No email intake. Checked July 2026." },
+    { id: "uspis", name: "U.S. Postal Inspection Service", email: "foia@uspis.gov", emailSubject: "Freedom of Information Act Request",
+      portal: "https://about.usps.com/who/legal/foia/welcome.htm",
+      submitNote: "USPIS runs its own FOIA unit, separate from USPS headquarters and the USPS OIG. Email works (foia@uspis.gov) — caption the request \"Freedom of Information Act Request\". Mail: Manager, FOIA Unit, U.S. Postal Inspection Service, 475 L'Enfant Plaza SW, Room 3301, Washington DC 20260-2101; fax 202-268-4538. Checked July 2026." }
   ],
 
   /* Entities the investigations reference — the connective tissue across categories.
@@ -278,6 +287,15 @@ const FOIA = {
     { id: "hpe", name: "Hewlett Packard Enterprise", type: "company" },
     { id: "live-nation", name: "Live Nation / Ticketmaster", type: "company" },
     { id: "betar", name: "Betar US", type: "org" },
+    { id: "polymarket", name: "Polymarket", type: "company" },
+    { id: "augur", name: "Augur", type: "company" },
+    { id: "darpa", name: "DARPA", type: "org" },
+    { id: "pam-futuremap", name: "Policy Analysis Market / FutureMAP (DARPA IAO)", type: "program" },
+    { id: "shayne-coplan", name: "Shayne Coplan", type: "person" },
+    { id: "robin-hanson", name: "Robin Hanson", type: "person" },
+    { id: "cantor-fitzgerald", name: "Cantor Fitzgerald", type: "company" },
+    { id: "howard-lutnick", name: "Howard Lutnick", type: "person" },
+    { id: "max-blumenthal", name: "Max Blumenthal", type: "person" },
   ],
 
   investigations: [
@@ -1094,11 +1112,11 @@ const FOIA = {
         { label: "OrwellDay — Axon is replacing Flock's ALPRs in cities that dropped Flock (why the fix is a category-wide state ban, not vendor-by-vendor fights)", url: "https://x.com/OrwellDay/status/2078900826743996795" }
       ],
       status: "reported",
-      finding: "Tommy G and tech journalist Ben Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
-      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates. The citizen mirror of these audit-log asks is now operational: DeFlock (deflock.com) crowd-maps camera locations, populated by cheap ESP32 detectors that passively sniff Flock's RF and war-drive the results to open databases — which Flock's own CEO brands \"terroristic,\" while conceding nothing about where the data goes; Flock's expansion into drones (\"Drone as First Responder,\" per its own product pages) would erase even that ground-level visibility. (Sourcing note, re-verified Jul 20 2026: the Langley \"terroristic organization\" quote is a third-party interview clip replayed in a TCN monologue, and the drones-erase-visibility warning is Tucker's commentary — the product line itself is on Flock's site.)",
+      finding: "Tommy G and musician-technologist Benn Jordan investigated Flock Safety, whose automated license-plate-reader (ALPR) cameras — voted in piecemeal by local city councils and sheriffs — feed a national network, with new \"scope-creep\" updates reportedly adding audio and facial capabilities. Federal agencies (e.g., the U.S. Marshals) tap the network to locate people.",
+      implication: "A privately-run national surveillance network that local bodies opt into piecemeal, increasingly queried by federal law enforcement. The federal access agreements and query/audit logs — not the local camera contracts — are the requestable federal records. (Unlimited Hangout reports ICE has no direct Flock contract and instead sources the data by making requests to local law enforcement — an indirect route that leaves exactly the policy and request records this card asks for.) A July 2026 Connecticut municipal FOIA sharpened the point: third parties — credit-card and cell-phone companies, \"alphabet agencies,\" retailers, foreign governments — accessed one town's Flock data over 500,000 times in nine weeks, and Flock \"could not guarantee\" it isn't sharing with federal agencies; CT towns also learned they can't switch the cameras off, owning neither the hardware nor the data. The document behind that number is the Flock access / network-audit log, obtainable through ordinary state and local records law — the local mirror of the federal access records this card targets, and the template for a per-jurisdiction audit-log request anywhere Flock operates. The citizen mirror of these audit-log asks is now operational: DeFlock (deflock.com) crowd-maps camera locations, populated by cheap ESP32 detectors that passively sniff Flock's RF and war-drive the results to open databases — which Flock's own CEO brands \"terroristic,\" while conceding nothing about where the data goes; Flock's expansion into drones (\"Drone as First Responder,\" per its own product pages) would erase even that ground-level visibility. The security-negligence layer now has a named federal instrument: Benn Jordan told the Dunwoody, GA city council in public testimony that he, John Gaines, and Joshua Michael found close to 60 vulnerabilities in or closely related to Flock's ecosystem — full camera takeover, footage viewing and modification, hard-coded credentials \"that led to other places,\" one bug exposing real-time GPS of police vehicles — with findings published through the MITRE/CVE process, some still rated high or critical, and that members of Congress cited the research in a letter asking the FTC to investigate Flock's negligence as a national-security risk, while Flock's CEO maintains the company has \"never been hacked.\" The FTC's disposition of that letter is a discrete, dated federal record — the new request below. And the Cleveland \"side door\" has a primary-source path of its own: if the clip is genuine council footage, the session is public record — pull the Cleveland City Council meeting video and minutes (mid-July 2026) rather than resting on the X clip. (Sourcing note, re-verified Jul 20 2026: the Langley \"terroristic organization\" quote is a third-party interview clip replayed in a TCN monologue, and the drones-erase-visibility warning is Tucker's commentary — the product line itself is on Flock's site. The vulnerability count, CVE status, and congressional-letter claims are Jordan's testimony — checkable against the CVE database and the published letter.)",
       sources: [
         { label: "Tommy G × Julian Dorey, Ep 437", url: "https://www.youtube.com/watch?v=WoIgX-i2hSs" },
-        { label: "Ben Jordan — Flock reporting", url: "" },
+        { label: "Benn Jordan — testimony at the Dunwoody, GA council hearing on a Flock contract (~60 vulnerabilities; congressional FTC letter)", url: "https://www.youtube.com/watch?v=I_y7OjsI1Zk" },
         { label: "OrwellDay — Cleveland Council finds a \"side door\" in Flock's architecture", url: "https://x.com/OrwellDay/status/2078464389552685440" },
         { label: "OrwellDay — Flock tracks phones via Bluetooth (demo)", url: "https://x.com/OrwellDay/status/2078128018736746692" },
         { label: "Unlimited Hangout — The Rise of the Military Retail Industrial Complex", url: "https://unlimitedhangout.com/2026/05/investigative-reports/the-military-retail-industrial-complex/" },
@@ -1121,6 +1139,13 @@ const FOIA = {
           summary: "DHS/ICE — policy and request records for obtaining Flock ALPR data via local law enforcement",
           subject: "FOIA Request: ICE policy and request records concerning Flock Safety ALPR data obtained through state and local law enforcement",
           records: "I request a copy of any policy memorandum, guidance document, directive, or standard request form or template governing U.S. Immigration and Customs Enforcement's acquisition or use of automated license-plate-reader (ALPR) data from Flock Safety systems by way of requests to state or local law enforcement agencies, together with any log, register, or audit record of such requests, dated between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true
+        },
+        {
+          agencyId: "ftc",
+          summary: "FTC — the congressional letter on Flock's security failures + the Commission's matter-opening or declination",
+          subject: "FOIA Request: congressional correspondence and disposition records concerning Flock Safety security vulnerabilities",
+          records: "Security researchers (Benn Jordan, John Gaines, and Joshua Michael) have publicly testified that a year of formal research found close to 60 vulnerabilities in or closely related to Flock Safety's ecosystem, several published through the CVE process, and that members of Congress cited the research in a letter asking the Federal Trade Commission to open an investigation into Flock Safety. I request, for the period January 1, 2025 through the date this request is processed: (1) the letter from members of Congress received by the Commission citing security research into Flock Safety's camera systems and requesting an investigation; and (2) any matter-opening memorandum, declination memorandum, or written response by the Commission concerning that letter. These are discrete, dated documents; I am not seeking investigative files or general email correspondence.",
           ask_no_records: true
         }
       ]
@@ -2170,6 +2195,57 @@ const FOIA = {
           summary: "DHS — the inbound Betar communications and what the department did with them",
           subject: "FOIA Request: communications received from Betar US concerning individuals proposed for immigration enforcement",
           records: "I request, for the period January 1, 2025 through the date this request is processed: (1) communications received by the Department of Homeland Security (including the Office of the Secretary, ICE, and CBP intake channels) from Betar US, or from individuals identifying themselves as representing Betar US, that identify or list individuals proposed for visa revocation, deportation, or other immigration enforcement action; (2) any intake, referral, or tasking record generated in response to such communications, including any transmittal to ICE Homeland Security Investigations or to the Department of State; and (3) records sufficient to show the disposition of any such referral. I am NOT requesting the names of the private individuals listed — those may be redacted in full; the existence, dates, senders, and disposition of the communications is the request. If the Department has no responsive records, I request written confirmation of that fact.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "polymarket-darpa-pam",
+      categories: ["Surveillance & privacy", "Elections & voting"],
+      entities: ["polymarket", "augur", "darpa", "pam-futuremap", "shayne-coplan", "robin-hanson", "thiel", "palantir", "cantor-fitzgerald", "howard-lutnick"],
+      investigator: "Unlimited Hangout (Whitney Webb & Mark Goodwin)",
+      investigatorLinks: [
+        { label: "\"The Secret History of Polymarket, Part One\"", url: "https://unlimitedhangout.com/2026/06/investigative-series/the-secret-history-of-polymarket-part-1/" },
+        { label: "Unlimited Hangout Podcast Ep #01 — the authors walk their own article", url: "https://www.youtube.com/watch?v=x7lzXv2vIuU" }
+      ],
+      status: "reported",
+      finding: "Webb and Goodwin trace Polymarket's lineage to DARPA. Inside John Poindexter's post-9/11 Information Awareness Office — home of Total Information Awareness — sat a program called FutureMAP, and within it the Policy Analysis Market (PAM), a geopolitical-events betting market (system architect: economist Robin Hanson; Intrade consulting; scope cut to eight Middle East countries) that two senators branded a \"terrorism futures market\" and killed in July 2003 before it ever launched. The thread then goes private: Augur (2014) — Hanson advising, its logo deliberately the IAO's one-eye pyramid, co-founder Joey Krug stating publicly \"the CIA, DARPA, and the DoD are huge fans of Augur,\" Krug a 2016 Thiel Fellow — was wound down and its assets sold to Coinbase; Polymarket founder Shayne Coplan said in a 2020 interview that much of the passion behind Polymarket \"was DARPA's policy analysis market,\" and Krug, by then at Thiel's Founders Fund, led Polymarket's Series A. An earlier echo the hosts flag: Cantor Fitzgerald under Howard Lutnick (now Commerce Secretary) bought the Hollywood Stock Exchange and lobbied to launch real-money film futures until post-2008-crisis legislation banned them expressly (per the hosts; the statute fitting their description is Dodd-Frank's box-office-futures ban — verify against the text) — and Rich Jacobs, a lobbyist on that Cantor push, is per the hosts now a senior Polymarket hire.",
+      implication: "If a shuttered DARPA betting market was resurrected as a private company by overlapping personnel with intelligence-community enthusiasm on the record, the overlap is testable on paper — starting with DARPA's own FutureMAP/PAM program file, which names the contractors and consultants who built the thing Congress killed. Most of the rest of the trail is public filings rather than FOIA: Senate LDA lobbying disclosures (Cantor Fitzgerald's film-futures push and Rich Jacobs; any current Polymarket registrations), SEC Form D filings for Polymarket's 2020 seed (~$4M, largely from Coinbase's earliest employees, per the hosts) and the Founders Fund-led Series A — a paper check on the founder's no-connections \"built it in my bathroom\" origin story — Thiel Fellowship rosters (Vitalik Buterin ~2013, Krug 2016), and the CFTC's public record (the University of Iowa academic-market waiver then; event-contract dockets now). Two claims stay flagged as claims: the asserted Polymarket–Palantir \"market integrity\" partnership is stated in the episode without a cited primary source — pull the actual announcement or contract language before treating it as record — and the claimed Trump-family involvement with Polymarket \"and its main competitor\" names no competitor in the episode and is deferred to the authors' Part Two.",
+      sources: [
+        { label: "Unlimited Hangout — The Secret History of Polymarket, Part One (the article carrying the citations)", url: "https://unlimitedhangout.com/2026/06/investigative-series/the-secret-history-of-polymarket-part-1/" },
+        { label: "Senate lobbying disclosures (LDA filings)", url: "https://lda.senate.gov/system/public/" },
+        { label: "SEC EDGAR full-text search — Form D filings on the Polymarket raises", url: "https://efts.sec.gov/LATEST/search-index?q=%22Polymarket%22" }
+      ],
+      requests: [
+        {
+          agencyId: "darpa",
+          summary: "DoD/DARPA — the FutureMAP/PAM program file: contracts, contractor list, and the 2003 termination memo",
+          subject: "FOIA Request: DARPA Information Awareness Office records — FutureMAP and the Policy Analysis Market (PAM), 2001–2003",
+          records: "I request, concerning the FutureMAP program of DARPA's Information Awareness Office and its Policy Analysis Market (PAM) project, for the period January 1, 2001 through December 31, 2003: (1) the program plan or program-description document, and the solicitation or broad agency announcement, under which FutureMAP/PAM work was performed; (2) the contracts, task orders, grants, or other agreements with the contractors, subcontractors, and paid consultants who designed, built, or advised PAM, including awardee names and award amounts; and (3) the termination, cancellation, or close-out memorandum following the program's July 2003 shutdown. This program was publicly acknowledged, was terminated more than two decades ago, and has previously been the subject of FOIA release; I am not seeking classified material or general email correspondence.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "blumenthal-mailed-death-threat",
+      categories: ["Press freedom"],
+      entities: ["max-blumenthal", "betar"],
+      investigator: "Max Blumenthal (firsthand)",
+      investigatorLinks: [
+        { label: "Blumenthal's post with the photographed letter (Jul 17, 2026)", url: "https://x.com/MaxBlumenthal/status/2078186776594939931" }
+      ],
+      status: "reported",
+      finding: "Max Blumenthal, editor of The Grayzone, posted a photograph of a death threat he says arrived in the mail: a letter reading, in full, \"hey fucking kapo, / You are moving up on 'the List.' You are fucked. / The Committee,\" in an envelope bearing a printed return-address label — \"Yoor Dedmeet, 26080 Berg Rd, Southfield, MI 48033\" — and a Buffalo, NY postmark of June 26, 2026. The photographed letter is the documented core; the rest is Blumenthal's own account: that the letter's authorship points to \"a Zionist fanatic, possibly affiliated with an outfit like JDL Brotherhood 613, or... Betar dead-enders\"; that Howard Heath, a New Hampshire state representative campaigning for Congress on cutting military aid to Israel, reported a letter from the same \"Yoor Dedmeet\"; that the return address is the field office of Rep. Rashida Tlaib, the only Palestinian member of Congress; and that he has filed a report with local police and informed the U.S. Postal Inspection Service.",
+      implication: "A threatening letter moved through the mail across state lines to a journalist — that is the Postal Inspection Service's beat, and the target says on the record that he reported it there, which is what makes a records request possible at all. Whether USPIS docketed a complaint and opened an inspection case is a discrete federal record. The photographed envelope fixes the checkable physical facts for anyone verifying independently: the sender alias, the Southfield MI return label, and the Buffalo NY postmark set against that Michigan return address. Whether 26080 Berg Rd is in fact Rep. Tlaib's field office is checkable against public office listings — the photo itself doesn't show it. Expect personal-privacy and open-investigation withholding; the written response still fixes whether a complaint exists and was acted on.",
+      sources: [
+        { label: "The photographed envelope and letter (attached to the post; preserved in the library receipts)", url: "https://x.com/MaxBlumenthal/status/2078186776594939931" }
+      ],
+      requests: [
+        {
+          agencyId: "uspis",
+          summary: "USPIS — the complaint-intake / case-opening record for the reported threat mailing",
+          subject: "FOIA Request: Postal Inspection Service complaint and case-opening records concerning a threatening mailing reported by journalist Max Blumenthal, July 2026",
+          records: "Journalist Max Blumenthal stated publicly on July 17, 2026 that he had informed the U.S. Postal Inspection Service of a threatening letter he received in the mail (postmarked Buffalo, NY, June 26, 2026, bearing a Southfield, MI return-address label under the alias \"Yoor Dedmeet\"). I request, for the period June 1, 2026 through the date this request is processed: (1) the complaint-intake, referral, or case-opening record created in response to that report; and (2) any closing or disposition record concerning it. I am not seeking investigative work product, suspect information, or records identifying any private individual, and I ask that personal identifying information be redacted rather than treated as grounds to withhold the fact of a complaint. If the Inspection Service's position is that any such records are categorically third-party records requiring the subject's authorization, I request written confirmation of that determination.",
           ask_no_records: true
         }
       ]
