@@ -2,6 +2,10 @@
 
 What's new in FOIA Around, Find Out — the findings added, the requests tightened, and the plumbing fixed. Currently **60 findings** with ready-to-file requests across **20+ federal agencies**. Newest first.
 
+## 2026-07-20 (later) — Betar card rebuilt from the archived captures
+
+The Betar-DHS deportation-list card — withdrawn during the Opus audit — is rebuilt (`betar-dhs-deport-list`), this time pinned to the mechanically archived source captures in the library harvest: The Intercept (Feb 2025), Washington Post (Mar 2025), CNN and Boston Globe (Apr 2025), reporting Betar US's own repeated claims that it submitted lists of pro-Palestinian students and visa holders to administration officials for deportation. One DHS FOIA aimed at the only thing the reporting can't show: whether the department actually received the lists, and what it did with them — with the listed individuals' names expressly excluded from the ask.
+
 ## 2026-07-20 — New card: the merger-fixer play at DOJ Antitrust
 
 From More Perfect Union's whistleblower piece (fired DOJ Antitrust official Roger Alford on camera, with AGs Weiser and Skrmetti; transcript re-scraped today from the manual caption track, interview outtakes included — v2 in the library): the repeatable play — get sued, hire Mike Davis ($300k/month + $1M+ contingency per approved merger, per Alford), and the case dies from the top down. HPE–Juniper settled on a document written by HPE's own lawyers and placed on AAG Gail Slater's desk (per DOJ sources to the WSJ); Live Nation settled two weeks after Slater was fired — and then the state AGs won the case DOJ walked away from, a federal jury verdict that Live Nation/Ticketmaster violated antitrust law. Two requests aimed at where the paper actually sits: ODAG's transmittal of the HPE-drafted settlement plus leadership calendars/call logs for Davis and the Article III Project (FOIA STAR), and the Antitrust Division front office's own drafts-received, Live Nation decision memo, and AAG meeting logs (new agency entry: DOJ Antitrust Division via FOIA.gov). Expect b(5) on the memos — the written denial still fixes that they exist and who wrote them.

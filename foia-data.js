@@ -277,6 +277,7 @@ const FOIA = {
     { id: "roger-alford", name: "Roger Alford (ex-DOJ Antitrust)", type: "person" },
     { id: "hpe", name: "Hewlett Packard Enterprise", type: "company" },
     { id: "live-nation", name: "Live Nation / Ticketmaster", type: "company" },
+    { id: "betar", name: "Betar US", type: "org" },
   ],
 
   investigations: [
@@ -2142,6 +2143,33 @@ const FOIA = {
           summary: "Antitrust Division — the AAG front office's own record: settlement drafts received from outside counsel + the Live Nation decision paper",
           subject: "FOIA Request: Antitrust Division front-office records concerning the HPE–Juniper and Live Nation/Ticketmaster settlements",
           records: "I request, for the period January 1, 2025 through the date this request is processed: (1) any draft settlement, draft proposed final judgment, or settlement term sheet in United States v. Hewlett Packard Enterprise Co. received by the Antitrust Division front office from counsel for the merging parties or from the Office of the Deputy Attorney General, together with its transmittal record; (2) the Division's decision or recommendation memorandum concerning settlement of United States v. Live Nation Entertainment, Inc., including any record of the Division staff's recommendation; and (3) the front-office calendar entries and meeting logs of the Assistant Attorney General for Antitrust reflecting meetings or calls with Mike Davis, the Article III Project, or Kellyanne Conway or her firm. If any record is withheld as deliberative, I request the written denial identify each memorandum withheld, its date, and its author's office, and release all segregable portions.",
+          ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "betar-dhs-deport-list",
+      categories: ["Israel / foreign influence", "Civil liberties"],
+      entities: ["betar", "israel", "dhs"],
+      investigator: "Wire reporting (The Intercept, WaPo, Boston Globe, CNN; captures in the library harvest)",
+      investigatorLinks: [
+        { label: "The Intercept — Betar targeting activists for deportation (Feb 6, 2025)", url: "https://theintercept.com/2025/02/06/betar-palestine-school-activists-target-deport-trump/" }
+      ],
+      status: "reported",
+      finding: "Beginning in early 2025, Betar US publicly and repeatedly claimed it compiled lists of pro-Palestinian students and visa holders and submitted them to Trump administration officials for deportation action — reported by The Intercept (Feb 2025), The Washington Post (Mar 2025), CNN and Al Jazeera (Mar–Apr 2025), and The Boston Globe (Apr 2025), with Betar itself boasting about the submissions on its own accounts. The ADL added Betar to its extremism database in February 2025. What has never been documented publicly: whether DHS actually received the lists, through whom, and whether any enforcement action traces to them.",
+      implication: "A private organization feeding a deportation target list to immigration authorities — and the government acting on it — would sit in ordinary agency records: the inbound communications themselves, intake or referral records, and any transmittal to ICE/HSI or the State Department's visa office. If DHS has no responsive records, that written answer separates Betar's self-promotion from actual government uptake; if it does, the records show which claimed submissions were real and what happened next. Either answer is a finding. (Rebuilt Jul 20 2026 from the mechanically archived source captures after the prior card was withdrawn in the Opus audit.)",
+      sources: [
+        { label: "The Intercept, Feb 6 2025 (harvest capture in library)", url: "https://theintercept.com/2025/02/06/betar-palestine-school-activists-target-deport-trump/" },
+        { label: "Washington Post, Mar 29 2025 (harvest capture via Wayback)", url: "https://www.washingtonpost.com/technology/2025/03/29/zionist-palestinians-deportations-x/" },
+        { label: "Boston Globe, Apr 17 2025 (harvest capture in library)", url: "https://www.bostonglobe.com/2025/04/17/metro/zionist-group-deportation-lists/" },
+        { label: "CNN, Apr 2 2025 (harvest capture in library)", url: "https://www.cnn.com/2025/04/02/us/israel-protesters-us-students-deport" }
+      ],
+      requests: [
+        {
+          agencyId: "dhs",
+          summary: "DHS — the inbound Betar communications and what the department did with them",
+          subject: "FOIA Request: communications received from Betar US concerning individuals proposed for immigration enforcement",
+          records: "I request, for the period January 1, 2025 through the date this request is processed: (1) communications received by the Department of Homeland Security (including the Office of the Secretary, ICE, and CBP intake channels) from Betar US, or from individuals identifying themselves as representing Betar US, that identify or list individuals proposed for visa revocation, deportation, or other immigration enforcement action; (2) any intake, referral, or tasking record generated in response to such communications, including any transmittal to ICE Homeland Security Investigations or to the Department of State; and (3) records sufficient to show the disposition of any such referral. I am NOT requesting the names of the private individuals listed — those may be redacted in full; the existence, dates, senders, and disposition of the communications is the request. If the Department has no responsive records, I request written confirmation of that fact.",
           ask_no_records: true
         }
       ]
