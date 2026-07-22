@@ -135,7 +135,7 @@ const FOIA = {
       submitNote: "NAVSEA — the parent command of NSWC Crane — accepts FOIA by email (NAVSEAFOIA@navy.mil), the SecureRelease portal (securerelease.us), FOIA.gov, or mail (Commander, NAVSEA, SEA 00A5, FOIA/Privacy Program Division, 1333 Isaac Hull Ave SE, Washington Navy Yard, DC 20376-2101). Requester Service Center: 202-781-4124." },
     { id: "epa", name: "U.S. Environmental Protection Agency", email: null,
       portal: "https://www.epa.gov/foia",
-      submitNote: "EPA takes FOIA electronically — via its FOIAXpress public access link (epa.gov/foia) or FOIA.gov — or by mail to the National FOIA Office. FOIAonline is retired; email submission is not offered." },
+      submitNote: "EPA takes FOIA electronically — via its FOIAXpress public access link (epa.gov/foia) or FOIA.gov — or by mail to the National FOIA Office. FOIAonline is retired; email submission is not offered. Route verified live Jul 21, 2026 by filing: a FOIA.gov submission transmits to EPA Headquarters and drew an EPA case number the same day. Requester Service Center / FOIA Public Liaison: Timothy R. Epp, Associate General Counsel, 202-566-1667, hq.foia@epa.gov (National FOIA Office, Office of General Counsel — contact address for questions, not submission)." },
     { id: "occ", name: "Office of the Comptroller of the Currency", email: null,
       portal: "https://foia-pal.occ.gov/",
       submitNote: "The OCC takes FOIA through its Public Access Link portal (foia-pal.occ.gov) or FOIA.gov — all requests should be submitted online. FOIA-PA@occ.treas.gov is for questions, not submission. Mail (Privacy Act or correspondence): Manager, Disclosure Services & FOIA Officer, Communications Division, OCC, Suite 3E-218, Washington DC 20219." },
@@ -2247,6 +2247,76 @@ const FOIA = {
           subject: "FOIA Request: Postal Inspection Service complaint and case-opening records concerning a threatening mailing reported by journalist Max Blumenthal, July 2026",
           records: "Journalist Max Blumenthal stated publicly on July 17, 2026 that he had informed the U.S. Postal Inspection Service of a threatening letter he received in the mail (postmarked Buffalo, NY, June 26, 2026, bearing a Southfield, MI return-address label under the alias \"Yoor Dedmeet\"). I request, for the period June 1, 2026 through the date this request is processed: (1) the complaint-intake, referral, or case-opening record created in response to that report; and (2) any closing or disposition record concerning it. I am not seeking investigative work product, suspect information, or records identifying any private individual, and I ask that personal identifying information be redacted rather than treated as grounds to withhold the fact of a complaint. If the Inspection Service's position is that any such records are categorically third-party records requiring the subject's authorization, I request written confirmation of that determination.",
           ask_no_records: true
+        }
+      ]
+    },
+    {
+      id: "crane-aes-xs-device",
+      categories: ["Military ops"],
+      entities: ["aes", "nswc-crane", "dod", "charlie-kirk"],
+      investigator: "Baron Coleman",
+      investigatorLinks: [
+        { label: "\"Explosive\" Documents FOIA; AES Documents Produced — Ep 135 (document walkthrough begins ~29:00)", url: "https://www.youtube.com/watch?v=l3lKV39xOjs&t=1742s" }
+      ],
+      status: "reported",
+      finding: "Baron Coleman — a Tennessee lawyer who does FOIA and records work about 60 miles from the plant — obtained, via a Navy FOIA answered June 23, 2026, a 33-page production on a contract between Naval Surface Warfare Center, Crane Division (Crane, Indiana) and Accurate Energetic Systems (AES) — the McEwen, Tennessee explosives plant destroyed with 16 dead on October 10, 2025 — for a firm-fixed-price \"demolition charge, AP, extra small mini\" (~$440,000 total; quantity and unit price redacted), ordered around April 1, 2025 with a firm August 25, 2025 delivery date. He found the award on SAM.gov two days after the blast and reads the production on air page by page. The production applied the rare exemption B7F (disclosure \"could reasonably be expected to endanger the life or physical safety of any individual\") to the project code, the operational-requirement name, and quantities; the statement of work permitted additive manufacturing (3D printing) with dimensional-tolerance deviations accepted \"provided assembly may be completed\"; and the item's sensitivity category is 1.1D — the mass-casualty tier. Coleman reads the explosive as Composition C4 off a partly redacted line (a TriggerSmart researcher has said PETN; Coleman concedes the point is unresolved). The day after the AES blast, news broke that EPA had cited the Crane installation in September 2025 for mishandling hazardous waste and explosives.",
+      implication: "A buy of a miniature anti-personnel charge on a hard deadline, whose very requirement name is withheld as life-endangering — followed within weeks by the destruction of its manufacturer. What the production withholds is what the procurement file must still contain: if the award was made without full and open competition, a Justification & Approval names the requirement and why AES (whether one exists is itself a finding — the production shows firm-fixed-price but not the competition status); the DD Form 250 receiving report shows who accepted delivery and when; post-October-10 contract modifications show how the government closed out a contract with a vendor that had ceased to exist; and EPA's own violation file fixes the regulator's paper on conditions at Crane. (The contract facts are read off the produced FOIA documents as shown on-screen by Coleman — the full transcript and digest are preserved in the FAFO library. His \"prototype, not standard Navy inventory\" read of the 3D-print clause is his inference, and any connection to the Kirk assassination is his explicitly-labeled hypothesis, disclaimed on air at least three times — these requests test the record, not the hypothesis.)",
+      sources: [
+        { label: "Baron Coleman, Ep 135 — the Navy's 33-page production read on air (full transcript + digest in the FAFO library)", url: "https://www.youtube.com/watch?v=l3lKV39xOjs&t=1742s" },
+        { label: "SAM.gov — AES federal award records (the public anchor the thread rests on)", url: "https://sam.gov" }
+      ],
+      requests: [
+        {
+          agencyId: "navsea",
+          summary: "NAVSEA — the J&A / sole-source justification + requirements document for the Crane–AES \"extra small\" charge",
+          subject: "FOIA Request: Justification & Approval and requirements document for NSWC Crane contract with Accurate Energetic Systems (demolition charge, AP, extra small mini)",
+          records: "I request a copy of the Justification and Approval (J&A) for other than full and open competition, or any limited-source or sole-source justification, supporting the contract awarded in or around April 2025 by Naval Surface Warfare Center, Crane Division to Accurate Energetic Systems, LLC (McEwen, Tennessee) for the item described in the statement of work as \"demolition charge, AP, extra small mini,\" together with the purchase request or requirements document stating the operational requirement the procurement supported. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 21, 2026 by email to NAVSEAFOIA@navy.mil; confirmed in the sent-mail record. No acknowledgment yet. Determination due ~Aug 18, 2026."
+        },
+        {
+          agencyId: "navsea",
+          summary: "NAVSEA — acceptance record + any post-explosion modification/close-out of the same contract",
+          subject: "FOIA Request: DD Form 250 and post-October 2025 modifications for NSWC Crane contract with Accurate Energetic Systems",
+          records: "I request a copy of the material inspection and receiving report (DD Form 250) or equivalent acceptance record, and any contract modification, termination notice, or close-out document dated after October 10, 2025, for the contract awarded in or around April 2025 by Naval Surface Warfare Center, Crane Division to Accurate Energetic Systems, LLC (McEwen, Tennessee) for the item described as \"demolition charge, AP, extra small mini.\" To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 21, 2026 by email to NAVSEAFOIA@navy.mil; confirmed in the sent-mail record. No acknowledgment yet. Determination due ~Aug 18, 2026."
+        },
+        {
+          agencyId: "epa",
+          summary: "EPA — the September 2025 notice of violation to Crane for hazardous-waste/explosives handling",
+          subject: "FOIA Request: EPA notice of violation and inspection report concerning Naval Support Activity Crane (September 2025)",
+          records: "I request a copy of the notice of violation or enforcement notice issued by the U.S. Environmental Protection Agency in or around September 2025 to Naval Support Activity Crane and/or Crane Army Ammunition Activity (Crane, Indiana) concerning the handling, storage, or management of hazardous waste and explosives, together with the underlying RCRA inspection report and any written response from the Navy or Army, dated between June 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
+          ask_no_records: true,
+          filed: "PENDING — filed Jul 21, 2026 via FOIA.gov (confirmation 3042521); EPA case number 2026-EPA-06621 assigned the same day. Determination due ~Aug 18, 2026."
+        }
+      ]
+    },
+    {
+      id: "nds-fbi-tipline-agreement",
+      categories: ["NDS takeover"],
+      entities: ["nds", "fbi", "charlie-kirk"],
+      investigator: "The Drey Dossier",
+      investigatorLinks: [
+        { label: "NDS servers map", url: "https://thedreydossier.github.io/NDS_servers_map/" },
+        { label: "Notice the Map — the tip-line claim, with sources and counter-evidence", url: "https://notice-the-map.pages.dev/claims/fbi-kirk-tipline-preview" }
+      ],
+      status: "confirmed",
+      finding: "The National Design Studio built a preview of an FBI \"Charlie Kirk\" tip-line site on its own infrastructure: fbi-kirk-tipline.previews.ndstudio.gov exists, with a TLS certificate on the public record (crt.sh certificate 24970208643) and live DNS A records — while the public root domain, fbi-kirk-tipline.gov, was never registered in CISA's federal .gov registry. A White House design office stood up a preview of a federal law-enforcement tip line for the highest-profile homicide investigation in the country, and the public site never appeared.",
+      implication: "A preview existing is not a launched FBI program — the correct framing is: a preview exists; the public site does not. What would make it official is paper: an interagency agreement, task order, statement of work, or written authorization between the FBI and NDS. Every prior probe for NDS paper has come back empty — no records schedule at NARA (NGC26-543), no agreement at the EAC over vote.gov (26-0064), no PIA or SORN anywhere — so either the FBI holds the first documented NDS interagency instrument on the record, or a law-enforcement tip-line preview was built with no authorization on file. Either answer is a finding. (The preview's existence and the unregistered root are independently checkable against crt.sh and CISA's dotgov-data; the preview certificate was set to expire June 11, 2026, and whether it was renewed or allowed to lapse is a live re-check.)",
+      sources: [
+        { label: "crt.sh — certificate 24970208643 (fbi-kirk-tipline.previews.ndstudio.gov)", url: "https://crt.sh/?id=24970208643" },
+        { label: "CISA dotgov-data — fbi-kirk-tipline.gov absent from the federal .gov registry", url: "https://github.com/cisagov/dotgov-data" },
+        { label: "Notice the Map — claim page (status: confirmed, with counter-evidence carried)", url: "https://notice-the-map.pages.dev/claims/fbi-kirk-tipline-preview" }
+      ],
+      requests: [
+        {
+          agencyId: "fbi",
+          summary: "FBI — any interagency agreement, task order, SOW, or written authorization between the FBI and NDS for the tip-line site",
+          subject: "FOIA Request: interagency agreement or written authorization between the FBI and the National Design Studio concerning an FBI tip-line website",
+          records: "I request a copy of any interagency agreement, task order, statement of work, or written authorization between the FBI and the National Design Studio concerning an FBI \"Charlie Kirk\" tip-line website or program (including any site at fbi-kirk-tipline.gov), dated from September 1, 2025 to the date this request is processed. To keep this request narrow, I am not seeking general email correspondence; if no such records exist, I request written confirmation of that fact.",
+          ask_no_records: true,
+          filed: "FILED — via the FBI eFOIPA portal (efoia.fbi.gov); the request-as-filed receipt PDF is saved on the Hearth (Jul 20, 2026 — eFOIPA receipts carry no filing date; filed Jul 18–20). FOIPA number to follow (check status at vault.fbi.gov)."
         }
       ]
     },
