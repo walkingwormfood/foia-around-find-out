@@ -481,7 +481,7 @@ const FOIA = {
           summary: "State Dept — the instrument authorizing EOP/NDS to operate passports.gov",
           subject: "FOIA Request: Department of State authorization for passports.gov under the EOP/National Design Studio",
           records: "I request a copy of the specific instrument(s) that authorized the Executive Office of the President or the National Design Studio — rather than the Department of State — to register or operate the passports.gov domain: namely, any interagency agreement, memorandum of understanding, memorandum of agreement, or delegation of authority between the Department of State and the National Design Studio (or the Executive Office of the President) concerning passports.gov, executed or in effect between January 1, 2025 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
-          filed: "NOT CONFIRMED SENT — a Jul 2026 reconcile against the full sent-mail record found NO email to FOIARequest@state.gov for this passports.gov request. It appears to have been carded (Jul 16, to prevent duplicate generation) but never actually filed — the State requests that DID go out are the Khanna and Subic Bay ones. ACTION: file it (FOIARequest@state.gov, subject 'Freedom of Information Act/Privacy Act Request')."
+          filed: "PENDING — filed Jul 18, 2026 by email to FOIARequest@state.gov (State's required subject format), closing the gap a Jul 2026 sent-mail reconcile caught (the request had been carded Jul 16 but never actually sent); confirmed in the sent-mail record. Determination due ~Aug 14, 2026. No State acknowledgment yet (State FOIA/PAL acks lag)."
         },
         {
           agencyId: "nara",
@@ -714,7 +714,7 @@ const FOIA = {
           subject: "FOIA Request: complete unedited surveillance video referenced in the July 7, 2025 Epstein memo",
           records: "I request a copy of the complete, unedited surveillance-camera footage from the federal facility where Jeffrey Epstein died, covering the 24-hour period of his death, as referenced in the July 7, 2025 joint DOJ/FBI memorandum. I am requesting the original continuous recording, not an excerpted or compiled version.",
           ask_no_records: true,
-          filed: "PENDING — filed Jul 16, 2026 via the FBI's eFOIPA portal (efoia.fbi.gov); intake confirmation received same day, FOIPA number to follow (check status at vault.fbi.gov). Requester category not set (eFOIPA); fee waiver + expedite requested under the generic pre-Jul-17 language."
+          filed: "PENDING — filed Jul 17, 2026 via the FBI's eFOIPA portal (efoia.fbi.gov), per the results ledger; intake confirmation received, FOIPA number to follow (check status at vault.fbi.gov). Requester category not set (eFOIPA); fee waiver + expedite requested under the generic pre-Jul-17 language."
         },
         {
           agencyId: "doj",
@@ -1131,7 +1131,7 @@ const FOIA = {
           subject: "FOIA Request: U.S. Marshals Service and FBI access to Flock Safety's ALPR network",
           records: "I request a copy of any contract, memorandum of understanding, data-sharing agreement, or access-and-audit policy governing the U.S. Marshals Service's and/or the FBI's access to or use of Flock Safety's automated license-plate-reader (ALPR) network, in effect between January 1, 2024 and the date this request is processed. To keep this request narrow and minimize search burden, I am not seeking general email correspondence.",
           ask_no_records: true,
-          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04063 (filed Jul 16, 2026); confirmed by the request-receipt PDF (USMS/FBI Flock ALPR access agreement). Determination pending."
+          response: "CLOSED WITHOUT A SEARCH (form letter — refile at the components) — filed Jul 16, 2026, OIP via FOIA STAR (FOIA-2026-04063); OIP closed it Jul 21, 2026 with a no-search form letter: \"neither this Office nor any of these senior leadership offices of the Department typically maintains records on individuals and, as such, would not maintain the type of records you are seeking\" — treating a program-records request (agency access agreements with Flock's ALPR network) as if it asked for records on a person, and redirecting to the FBI and USMS directly. Signed for Andrew D. Fiorillo, Chief, Initial Request Staff. 90-day appeal window open — due Oct 19, 2026. Next move: refile this request at the FBI and USMS component FOIA offices directly (in parallel with or instead of an appeal) — the custodians OIP itself named, on paper."
         },
         {
           agencyId: "dhs",
@@ -1659,7 +1659,7 @@ const FOIA = {
           subject: "FOIA Request: unredacted Epstein correspondence involving Sultan Ahmed bin Sulayem and the associated redaction/withholding determination",
           records: "I request a copy, in unredacted form, of the Epstein-related correspondence in which the identity of Sultan Ahmed bin Sulayem was redacted in previously released material, together with any disclosure determination, redaction log, or withholding memorandum stating the FOIA exemption(s) and rationale on which that identity was withheld. The identity has since been confirmed publicly by the Deputy Attorney General, so the basis for withholding the name no longer applies; please release all reasonably segregable non-exempt portions. To keep this request narrow, I am limiting it to the specific correspondence and the determination governing that redaction.",
           ask_no_records: true,
-          filed: "FILED — OIP via FOIA STAR, tracking FOIA-2026-04080 (filed Jul 18, 2026); receipt PDF on the Hearth. Unredacted bin Sulayem correspondence + redaction determination. Determination pending."
+          response: "DENIED (non-responsive answer — appealed) — filed Jul 18, 2026, OIP via FOIA STAR (FOIA-2026-04080); OIP's final response came Jul 21, 2026 and answers a request that was never sent: it recharacterizes this narrow ask as one for \"the Jeffrey Epstein and/or Ghislaine Maxwell files,\" asserts Exemptions (b)(3) (citing 18 U.S.C. §§ 2252–2252A), (b)(5), (b)(6), (b)(7)(A), and (b)(7)(C) categorically, invokes an SDNY court seal covering \"a portion of the responsive records,\" and points to the public EFTA Epstein Library — while never addressing the two records actually requested (the specific redacted correspondence and the withholding determination behind it). Signed for Andrew D. Fiorillo, Chief, Initial Request Staff. Administrative appeal A-2026-01951 filed via FOIA STAR Jul 21, 2026, with expedited processing requested (Standard 4); OIP response due Aug 18, 2026. Appeal grounds: non-responsiveness, categorical exemptions with no segregability analysis, a privacy rationale foreclosed by the Deputy AG's public confirmation of the name, and a partial seal is not a total seal."
         }
       ]
     },
